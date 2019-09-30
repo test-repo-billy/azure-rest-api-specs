@@ -1,6 +1,10 @@
 name: "Azure OpenAPI"
 
-trigger: none
+trigger:
+  batch: false
+  branches:
+    include:
+      - master
 
 variables:
   TRAVIS: 'true'
@@ -11,14 +15,25 @@ variables:
   TRAVIS_PULL_REQUEST_SHA: $(Build.SourceVersion)
   PR_ONLY: 'true'
 
-jobs:
-- template: .azure-pipelines/BranchProtectionForPrivateRepo.yml
-- template: .azure-pipelines/Syntax.yml
-- template: .azure-pipelines/Semantic.yml
-- template: .azure-pipelines/Avocado.yml
-- template: .azure-pipelines/ModelValidation.yml
-- template: .azure-pipelines/BreakingChange.yml
-- template: .azure-pipelines/LintDiff.yml
-- template: .azure-pipelines/SwaggerToSDK.yml
-- template: .azure-pipelines/NetworkValidation.yml
-- template: .azure-pipelines/Spellcheck.yml
+stages:
+  - stage: PullRequestGated
+    displayName: PR Gated
+    condition: in(variables['Build.Reason'], 'PullRequest', 'Manual')
+    jobs:
+    - template: .azure-pipelines/BranchProtectionForPrivateRepo.yml
+    - template: .azure-pipelines/Syntax.yml
+    - template: .azure-pipelines/Semantic.yml
+    - template: .azure-pipelines/Avocado.yml
+    - template: .azure-pipelines/ModelValidation.yml
+    - template: .azure-pipelines/BreakingChange.yml
+    - template: .azure-pipelines/LintDiff.yml
+    - template: .azure-pipelines/NetworkValidation.yml
+    - template: .azure-pipelines/Spellcheck.yml
+    - template: .azure-pipelines/SDKAutomation.yml
+
+  - stage: BranchUpdated
+    displayName: Branch Updated
+    condition: in(variables['Build.Reason'], 'IndividualCI')
+    dependsOn: []
+    jobs:
+    - template: .azure-pipelines/SDKAutomation.yml
