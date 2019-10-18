@@ -257,6 +257,10 @@
       "description": "Application stack minor version.",
       "type": "object",
       "properties": {
+        "testOnly": {
+          "description": "For test",
+          "type": "boolean"
+        },
         "displayVersion": {
           "description": "Application stack minor version (display only).",
           "type": "string"
