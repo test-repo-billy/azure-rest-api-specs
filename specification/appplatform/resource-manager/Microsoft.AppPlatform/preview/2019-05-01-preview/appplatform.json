@@ -22,7 +22,7 @@
           "AppPlatform"
         ],
         "description": "Get a Service and its properties.",
-        "operationId": "Services_Get",
+        "operationId": "ServicesTest_Get",
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
