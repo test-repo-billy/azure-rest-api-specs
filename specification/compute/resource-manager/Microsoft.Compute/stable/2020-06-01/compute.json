@@ -7114,11 +7114,11 @@
           "description": "The KBID of the patch. Only applies to Windows patches."
         },
         "classifications": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The classification(s) of the patch as provided by the patch publisher."
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The classification(s) of the patch as provided by the patch publisher."
         },
         "rebootBehavior": {
           "type": "string",
@@ -7159,7 +7159,7 @@
             "Available"
           ],
           "x-ms-enum": {
-           "name": "PatchInstallationState",
+            "name": "PatchInstallationState",
             "modelAsString": true
           }
         }
@@ -7194,7 +7194,7 @@
             "CompletedWithWarnings"
           ],
           "x-ms-enum": {
-           "name": "PatchOperationStatus",
+            "name": "PatchOperationStatus",
             "modelAsString": true
           }
         },
@@ -7212,7 +7212,7 @@
             "false"
           ],
           "x-ms-enum": {
-           "name": "RebootPending",
+            "name": "RebootPending",
             "modelAsString": true
           }
         },
