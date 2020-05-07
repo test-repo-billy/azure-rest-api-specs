@@ -32,7 +32,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Operations_List",
+        "operationId": "Operations_List_foo",
         "description": "Lists all of the available Addons RP operations.",
         "x-ms-examples": {
           "Operations_List": {
@@ -45,13 +45,7 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "List all the operations.",
-            "schema": {
-              "$ref": "#/definitions/OperationList"
-            }
-          },
-          "default": {
+            "default": {
             "description": "Unexpected error",
             "schema": {
               "$ref": "#/definitions/ErrorDefinition"
@@ -108,7 +102,7 @@
         "tags": [
           "AddonDetails"
         ],
-        "operationId": "SupportPlanTypes_CreateOrUpdate",
+        "operationId": "SupportPlanTypes_CreateOr",
         "description": "Creates or updates the Canonical support plan of type {type} for the subscription.",
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
