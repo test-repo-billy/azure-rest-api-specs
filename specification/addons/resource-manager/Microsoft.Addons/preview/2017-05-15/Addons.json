@@ -66,7 +66,7 @@
           "AddonDetails"
         ],
         "operationId": "SupportPlanTypes_Get",
-        "description": "Returns whether or not the canonical support plan of type {type} is enabled for the subscription.",
+        "description": "Returns whether or not the canonical support plan of type {type} is enabled for the subscription. dummy update",
         "x-ms-examples": {
           "SupportPlanTypes_Get": {
             "$ref": "./examples/SupportPlanTypes_Get.json"
@@ -109,7 +109,7 @@
           "AddonDetails"
         ],
         "operationId": "SupportPlanTypes_CreateOrUpdate",
-        "description": "Creates or updates the Canonical support plan of type {type} for the subscription.",
+        "description": "Creates or updates the Canonical support plan of type {type} for the subscription. dummy update",
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "SupportPlanTypes_CreateOrUpdate": {
