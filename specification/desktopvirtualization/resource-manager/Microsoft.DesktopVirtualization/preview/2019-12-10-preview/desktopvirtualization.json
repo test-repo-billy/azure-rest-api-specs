@@ -320,58 +320,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/workspaces/{workspaceName}/userApplicationGroupAssignments": {
-      "get": {
-        "tags": [
-          "ApplicationGroup"
-        ],
-        "operationId": "ApplicationGroupAssignments_WorkspaceLevelList",
-        "description": "List application group that user can use.",
-        "x-ms-examples": {
-          "ApplicationGroupAssignment_WorkspaceLevelList": {
-            "$ref": "./examples/ApplicationGroupAssignment_WorkspaceLevelList.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "#/parameters/WorkspaceNameParameter"
-          },
-          {
-            "name": "$filter",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "OData filter expression. Valid properties for filtering are applicationGroupType."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully retrieved user application group assignments in workspace.",
-            "schema": {
-              "$ref": "#/definitions/ApplicationGroupList"
-            }
-          },
-          "default": {
-            "description": "Automation error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DesktopVirtualization/applicationGroups/{applicationGroupName}": {
       "get": {
         "tags": [
