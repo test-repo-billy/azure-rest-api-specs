@@ -11,7 +11,8 @@
             "provider": "Microsoft Addons",
             "resource": "supportPlanTypes",
             "operation": "Get Canonical support plan state",
-            "description": "Get the specified Canonical support plan state."
+            "description": "Get the specified Canonical support plan state.",
+            "test": "test"
           }
         },
         {
