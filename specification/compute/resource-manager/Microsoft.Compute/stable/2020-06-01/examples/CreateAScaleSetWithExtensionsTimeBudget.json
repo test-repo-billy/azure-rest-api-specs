@@ -121,7 +121,7 @@
             "osProfile": {
               "computerNamePrefix": "{vmss-name}",
               "adminUsername": "{your-username}",
-              "secrets": [ ],
+              "secrets": [],
               "windowsConfiguration": {
                 "provisionVMAgent": true,
                 "enableAutomaticUpdates": true
@@ -136,7 +136,7 @@
                     "publisher": "{extension-Publisher}",
                     "type": "{extension-Type}",
                     "typeHandlerVersion": "{handler-version}",
-                    "settings": { }
+                    "settings": {}
                   }
                 }
               ],
@@ -148,7 +148,7 @@
                   "name": "{vmss-name}",
                   "properties": {
                     "dnsSettings": {
-                      "dnsServers": [ ]
+                      "dnsServers": []
                     },
                     "primary": true,
                     "enableIPForwarding": true,
@@ -179,7 +179,7 @@
         "id": "/subscriptions/{subscription-id}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/{vmss-name}"
       }
     },
-     "201": {
+    "201": {
       "body": {
         "sku": {
           "tier": "Standard",
@@ -216,7 +216,7 @@
             "osProfile": {
               "computerNamePrefix": "{vmss-name}",
               "adminUsername": "{your-username}",
-              "secrets": [ ],
+              "secrets": [],
               "windowsConfiguration": {
                 "provisionVMAgent": true,
                 "enableAutomaticUpdates": true
@@ -238,31 +238,31 @@
               "extensionsTimeBudget": "PT1H20M"
             },
             "networkProfile": {
-            "networkInterfaceConfigurations": [
-              {
-                "name": "{vmss-name}",
-                "properties": {
-                  "dnsSettings": {
-                    "dnsServers": [ ]
-                  },
-                  "primary": true,
-                  "enableIPForwarding": true,
-                  "ipConfigurations": [
-                    {
-                      "name": "{vmss-name}",
-                      "properties": {
-                        "subnet": {
-                          "id": "/subscriptions/{subscription-id}/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/nsgExistingVnet/subnets/nsgExistingSubnet"
-                        },
-                        "privateIPAddressVersion": "IPv4"
+              "networkInterfaceConfigurations": [
+                {
+                  "name": "{vmss-name}",
+                  "properties": {
+                    "dnsSettings": {
+                      "dnsServers": []
+                    },
+                    "primary": true,
+                    "enableIPForwarding": true,
+                    "ipConfigurations": [
+                      {
+                        "name": "{vmss-name}",
+                        "properties": {
+                          "subnet": {
+                            "id": "/subscriptions/{subscription-id}/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/nsgExistingVnet/subnets/nsgExistingSubnet"
+                          },
+                          "privateIPAddressVersion": "IPv4"
+                        }
                       }
-                    }
-                  ],
-                  "enableAcceleratedNetworking": false
+                    ],
+                    "enableAcceleratedNetworking": false
+                  }
                 }
-              }
-            ]
-          }
+              ]
+            }
           },
           "upgradePolicy": {
             "mode": "Manual"

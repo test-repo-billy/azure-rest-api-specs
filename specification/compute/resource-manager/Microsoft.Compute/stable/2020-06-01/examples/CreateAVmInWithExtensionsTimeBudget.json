@@ -47,7 +47,7 @@
             "enabled": true
           }
         },
-        "extensionsTimeBudget":  "PT30M"
+        "extensionsTimeBudget": "PT30M"
       }
     }
   },
@@ -59,7 +59,7 @@
         "properties": {
           "osProfile": {
             "adminUsername": "{your-username}",
-            "secrets": [ ],
+            "secrets": [],
             "computerName": "myVM",
             "windowsConfiguration": {
               "provisionVMAgent": true,
@@ -92,7 +92,7 @@
                 "storageAccountType": "Standard_LRS"
               }
             },
-            "dataDisks": [ ]
+            "dataDisks": []
           },
           "diagnosticsProfile": {
             "bootDiagnostics": {
@@ -118,7 +118,7 @@
         "properties": {
           "osProfile": {
             "adminUsername": "{your-username}",
-            "secrets": [ ],
+            "secrets": [],
             "computerName": "myVM",
             "windowsConfiguration": {
               "provisionVMAgent": true,
@@ -151,7 +151,7 @@
                 "storageAccountType": "Standard_LRS"
               }
             },
-            "dataDisks": [ ]
+            "dataDisks": []
           },
           "diagnosticsProfile": {
             "bootDiagnostics": {
