@@ -44,6 +44,15 @@ openapi-type: arm
 tag: package-2019-06-preview
 ```
 
+
+### Tag: package-preview-2020-06
+
+These settings apply only when `--tag=package-preview-2020-06` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2020-06'
+input-file:
+  - Microsoft.AlertsManagement/preview/2020-06-10/AlertsManagement.json
+```
 ### Tag: package-2019-06-preview
 
 These settings apply only when `--tag=package-2019-06-preview` is specified on the command line.
