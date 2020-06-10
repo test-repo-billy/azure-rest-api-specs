@@ -1,13 +1,13 @@
 # Attestation
-    
+
 > see https://aka.ms/autorest
 
 This is the AutoRest configuration file for Attestation.
 
-
-
 ---
-## Getting Started 
+
+## Getting Started
+
 To build the SDK for Attestation, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,20 +15,29 @@ To build the SDK for Attestation, simply [Install AutoRest](https://aka.ms/autor
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
+### Basic Information
 
-
-### Basic Information 
 These are the global settings for the Attestation API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2018-09-preview
+tag: package-preview-2020-06
 ```
 
+
+### Tag: package-preview-2020-06
+
+These settings apply only when `--tag=package-preview-2020-06` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2020-06'
+input-file:
+  - Microsoft.Attestation/preview/2020-06-10/attestation.json
+```
 ### Tag: package-2018-09-preview
 
 These settings apply only when `--tag=package-2018-09-preview` is specified on the command line.
@@ -39,6 +48,7 @@ input-file:
 ```
 
 ---
+
 # Code Generation
 
 ## Swagger to SDK
@@ -58,7 +68,8 @@ swagger-to-sdk:
 See configuration in [readme.python.md](./readme.python.md)
 
 ---
-## C# 
+
+## C#
 
 These settings apply only when `--csharp` is specified on the command line.
 Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azure-sdk-for-net clone>`.
@@ -76,8 +87,7 @@ csharp:
 
 See configuration in [readme.go.md](./readme.go.md)
 
-
-## Multi-API/Profile support for AutoRest v3 generators 
+## Multi-API/Profile support for AutoRest v3 generators
 
 AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
 
@@ -93,11 +103,10 @@ input-file:
 
 ```
 
-If there are files that should not be in the `all-api-versions` set, 
+If there are files that should not be in the `all-api-versions` set,
 uncomment the  `exclude-file` section below and add the file paths.
 
 ``` yaml $(tag) == 'all-api-versions'
 #exclude-file: 
 #  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
 ```
-
