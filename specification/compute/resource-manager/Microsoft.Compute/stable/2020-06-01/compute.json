@@ -251,7 +251,7 @@
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The expand expression to apply to the operation."
+            "description": "The expand expression to apply to the operation. Allowed values are 'instanceView'."
           }
         ],
         "responses": {
@@ -781,6 +781,20 @@
             "required": true,
             "type": "string",
             "description": "The name of the dedicated host group."
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The expand expression to apply on the operation. The response shows the list of instance view of the dedicated hosts under the dedicated host group.",
+            "enum": [
+              "instanceView"
+            ],
+            "x-ms-enum": {
+              "name": "InstanceViewTypes",
+              "modelAsString": false
+            }
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -2700,6 +2714,9 @@
           },
           "Create a vm with a patch setting patchMode of Manual.": {
             "$ref": "./examples/CreateAVmWithPatchSettingModeOfManual.json"
+          },
+          "Create a vm with an extensions time budget.": {
+            "$ref": "./examples/CreateAVmWithExtensionsTimeBudget.json"
           }
         }
       },
@@ -2855,6 +2872,9 @@
         "x-ms-examples": {
           "Get a Virtual Machine.": {
             "$ref": "./examples/GetVirtualMachine.json"
+          },
+          "Get a virtual machine placed on a dedicated host group through automatic placement": {
+            "$ref": "./examples/GetVirtualMachineAutoPlacedOnDedicatedHostGroup.json"
           }
         }
       }
@@ -2899,6 +2919,9 @@
         "x-ms-examples": {
           "Get Virtual Machine Instance View.": {
             "$ref": "./examples/GetVirtualMachineInstanceView.json"
+          },
+          "Get instance view of a virtual machine placed on a dedicated host group through automatic placement.": {
+            "$ref": "./examples/GetVirtualMachineInstanceViewAutoPlacedOnDedicatedHostGroup.json"
           }
         }
       }
@@ -3555,6 +3578,63 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/assessPatches": {
+      "post": {
+        "tags": [
+          "VirtualMachines"
+        ],
+        "operationId": "VirtualMachines_AssessPatches",
+        "x-ms-examples": {
+          "Assess patch state of a virtual machine.": {
+            "$ref": "./examples/VirtualMachineAssessPatches.json"
+          }
+        },
+        "description": "Assess patches on the VM.",
+        "parameters": [
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the resource group."
+          },
+          {
+            "name": "vmName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the virtual machine."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/VirtualMachineAssessPatchesResult"
+            }
+          },
+          "202": {
+            "description": "Accepted"
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}": {
       "put": {
         "tags": [
@@ -3662,6 +3742,9 @@
           },
           "Create a scale set with ephemeral os disks using placement property.": {
             "$ref": "./examples/CreateAScaleSetWithDiffOsDiskUsingDiffDiskPlacement.json"
+          },
+          "Create a scale set with extension time budget.": {
+            "$ref": "./examples/CreateAScaleSetWithExtensionsTimeBudget.json"
           },
           "Create a scale set with Host Encryption using encryptionAtHost property.": {
             "$ref": "./examples/CreateAScaleSetWithEncryptionAtHost.json"
@@ -3790,6 +3873,11 @@
             "schema": {
               "$ref": "#/definitions/VirtualMachineScaleSet"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Get a virtual machine scale set placed on a dedicated host group through automatic placement.": {
+            "$ref": "./examples/GetVirtualMachineScaleSetAutoPlacedOnDedicatedHostGroup.json"
           }
         }
       }
@@ -5757,6 +5845,11 @@
               "$ref": "#/definitions/VirtualMachineScaleSetVMInstanceView"
             }
           }
+        },
+        "x-ms-examples": {
+          "Get instance view of a virtual machine from a VM scale set placed on a dedicated host group through automatic placement.": {
+            "$ref": "./examples/GetVirtualMachineScaleSetVMInstanceViewAutoPlacedOnDedicatedHostGroup.json"
+          }
         }
       }
     },
@@ -5787,21 +5880,21 @@
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The filter to apply to the operation."
+            "description": "The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code, 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'."
           },
           {
             "name": "$select",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The list parameters."
+            "description": "The list parameters. Allowed values are 'instanceView', 'instanceView/statuses'."
           },
           {
             "name": "$expand",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The expand expression to apply to the operation."
+            "description": "The expand expression to apply to the operation. Allowed values are 'instanceView'."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -6629,6 +6722,17 @@
       ],
       "description": "The List Proximity Placement Group operation response."
     },
+    "DedicatedHostGroupInstanceView": {
+      "properties": {
+        "hosts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DedicatedHostInstanceViewWithName"
+          },
+          "description": "List of instance view of the dedicated hosts under the dedicated host group."
+        }
+      }
+    },
     "DedicatedHostGroupProperties": {
       "properties": {
         "platformFaultDomainCount": {
@@ -6645,6 +6749,15 @@
           },
           "readOnly": true,
           "description": "A list of references to all dedicated hosts in the dedicated host group."
+        },
+        "instanceView": {
+          "$ref": "#/definitions/DedicatedHostGroupInstanceView",
+          "readOnly": true,
+          "description": "The dedicated host group instance view, which has the list of instance view of the dedicated hosts under the dedicated host group."
+        },
+        "supportAutomaticPlacement": {
+          "type": "boolean",
+          "description": "Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'true' when not provided. <br><br>Minimum api-version: 2020-06-01."
         }
       },
       "required": [
@@ -6772,6 +6885,21 @@
         }
       },
       "description": "The instance view of a dedicated host."
+    },
+    "DedicatedHostInstanceViewWithName": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The name of the dedicated host."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DedicatedHostInstanceView"
+        }
+      ],
+      "description": "The instance view of a dedicated host that includes the name of the dedicated host. It is used for the response to the instance view of a dedicated host group."
     },
     "DedicatedHostProperties": {
       "properties": {
@@ -7224,6 +7352,149 @@
         }
       },
       "description": "The List Extension operation response"
+    },
+    "VirtualMachineSoftwarePatchProperties": {
+      "properties": {
+        "patchId": {
+          "type": "string",
+          "readOnly": true,
+          "description": "A unique identifier for the patch."
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The friendly name of the patch."
+        },
+        "version": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The version number of the patch. This property applies only to Linux patches."
+        },
+        "kbid": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The KBID of the patch. Only applies to Windows patches."
+        },
+        "classifications": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "type": "string"
+          },
+          "description": "The classification(s) of the patch as provided by the patch publisher."
+        },
+        "rebootBehavior": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Describes the reboot requirements of the patch.",
+          "enum": [
+            "NeverReboots",
+            "AlwaysRequiresReboot",
+            "CanRequestReboot"
+          ],
+          "x-ms-enum": {
+            "name": "SoftwareUpdateRebootBehavior",
+            "modelAsString": true
+          }
+        },
+        "activityId": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs."
+        },
+        "publishedDate": {
+          "type": "string",
+          "readOnly": true,
+          "format": "date-time",
+          "description": "The UTC timestamp when the repository published this patch."
+        },
+        "lastModifiedDateTime": {
+          "type": "string",
+          "readOnly": true,
+          "format": "date-time",
+          "description": "The UTC timestamp of the last update to this patch record."
+        },
+        "assessmentState": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Describes the outcome of an install operation for a given patch.",
+          "enum": [
+            "Installed",
+            "Failed",
+            "Excluded",
+            "NotSelected",
+            "Pending",
+            "Available"
+          ],
+          "x-ms-enum": {
+            "name": "PatchAssessmentState",
+            "modelAsString": true
+          }
+        }
+      },
+      "description": "Describes the properties of a Virtual Machine software patch."
+    },
+    "VirtualMachineAssessPatchesResult": {
+      "properties": {
+        "status": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The overall success or failure status of the operation. It remains \"InProgress\" until the operation completes. At that point it will become \"Failed\", \"Succeeded\", or \"CompletedWithWarnings.\"",
+          "enum": [
+            "InProgress",
+            "Failed",
+            "Succeeded",
+            "CompletedWithWarnings"
+          ],
+          "x-ms-enum": {
+            "name": "PatchOperationStatus",
+            "modelAsString": true
+          }
+        },
+        "assessmentActivityId": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs."
+        },
+        "rebootPending": {
+          "type": "boolean",
+          "readOnly": true,
+          "description": "The overall reboot status of the VM. It will be true when partially installed patches require a reboot to complete installation but the reboot has not yet occurred."
+        },
+        "criticalAndSecurityPatchCount": {
+          "type": "integer",
+          "readOnly": true,
+          "format": "int32",
+          "description": "The number of critical or security patches that have been detected as available and not yet installed."
+        },
+        "otherPatchCount": {
+          "type": "integer",
+          "readOnly": true,
+          "format": "int32",
+          "description": "The number of all available patches excluding critical and security."
+        },
+        "startDateTime": {
+          "type": "string",
+          "readOnly": true,
+          "format": "date-time",
+          "description": "The UTC timestamp when the operation began."
+        },
+        "patches": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "x-ms-client-flatten": true,
+            "$ref": "#/definitions/VirtualMachineSoftwarePatchProperties"
+          },
+          "description": "The list of patches that have been detected as available for installation."
+        },
+        "error": {
+          "$ref": "#/definitions/ApiError",
+          "readOnly": true,
+          "description": "The errors that were encountered during execution of the operation. The details array contains the list of them."
+        }
+      },
+      "description": "Describes the properties of an AssessPatches result."
     },
     "PurchasePlan": {
       "properties": {
@@ -8597,6 +8868,11 @@
           "$ref": "#/definitions/BootDiagnosticsInstanceView",
           "description": "Boot Diagnostics is a debugging feature which allows you to view Console Output and Screenshot to diagnose VM status. <br><br> You can easily view the output of your console log. <br><br> Azure also enables you to see a screenshot of the VM from the hypervisor."
         },
+        "assignedHost": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource id of the dedicated host, on which the virtual machine is allocated through automatic placement, when the virtual machine is associated with a dedicated host group that has automatic placement enabled. <br><br>Minimum api-version: 2020-06-01."
+        },
         "statuses": {
           "type": "array",
           "items": {
@@ -8655,7 +8931,7 @@
         },
         "evictionPolicy": {
           "$ref": "#/definitions/evictionPolicy",
-          "description": "Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. <br><br>For Azure Spot virtual machines, the only supported value is 'Deallocate' and the minimum api-version is 2019-03-01. <br><br>For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview."
+          "description": "Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. <br><br>For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. <br><br>For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview."
         },
         "billingProfile": {
           "$ref": "#/definitions/BillingProfile",
@@ -8664,6 +8940,10 @@
         "host": {
           "$ref": "#/definitions/SubResource",
           "description": "Specifies information about the dedicated host that the virtual machine resides in. <br><br>Minimum api-version: 2018-10-01."
+        },
+        "hostGroup": {
+          "$ref": "#/definitions/SubResource",
+          "description": "Specifies information about the dedicated host group that the virtual machine resides in. <br><br>Minimum api-version: 2020-06-01. <br><br>NOTE: User cannot specify both host and hostGroup properties."
         },
         "provisioningState": {
           "readOnly": true,
@@ -8683,6 +8963,10 @@
           "readOnly": true,
           "type": "string",
           "description": "Specifies the VM unique ID which is a 128-bits identifier that is encoded and stored in all Azure IaaS VMs SMBIOS and can be read using platform BIOS commands."
+        },
+        "extensionsTimeBudget": {
+          "type": "string",
+          "description": "Specifies the time alloted for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default value is 90 minutes (PT1H30M). <br><br> Minimum api-version: 2020-06-01"
         }
       },
       "description": "Describes the properties of a Virtual Machine."
@@ -9435,14 +9719,14 @@
           "items": {
             "$ref": "#/definitions/SubResource"
           },
-          "description": "Specifies an array of references to backend address pools of load balancers. A scale set can reference backend address pools of one public and one internal load balancer. Multiple scale sets cannot use the same load balancer."
+          "description": "Specifies an array of references to backend address pools of load balancers. A scale set can reference backend address pools of one public and one internal load balancer. Multiple scale sets cannot use the same basic sku load balancer."
         },
         "loadBalancerInboundNatPools": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/SubResource"
           },
-          "description": "Specifies an array of references to inbound Nat pools of the load balancers. A scale set can reference inbound nat pools of one public and one internal load balancer. Multiple scale sets cannot use the same load balancer"
+          "description": "Specifies an array of references to inbound Nat pools of the load balancers. A scale set can reference inbound nat pools of one public and one internal load balancer. Multiple scale sets cannot use the same basic sku load balancer."
         }
       },
       "description": "Describes a virtual machine scale set network profile's IP configuration properties."
@@ -9917,6 +10201,10 @@
             "$ref": "#/definitions/VirtualMachineScaleSetExtension"
           },
           "description": "The virtual machine scale set child extension resources."
+        },
+        "extensionsTimeBudget": {
+          "type": "string",
+          "description": "Specifies the time alloted for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default value is 90 minutes (PT1H30M). <br><br> Minimum api-version: 2020-06-01"
         }
       },
       "description": "Describes a virtual machine scale set extension profile."
@@ -9957,7 +10245,7 @@
         },
         "evictionPolicy": {
           "$ref": "#/definitions/evictionPolicy",
-          "description": "Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. <br><br>For Azure Spot virtual machines, the only supported value is 'Deallocate' and the minimum api-version is 2019-03-01. <br><br>For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview."
+          "description": "Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. <br><br>For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. <br><br>For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview."
         },
         "billingProfile": {
           "$ref": "#/definitions/BillingProfile",
@@ -10059,6 +10347,10 @@
         "proximityPlacementGroup": {
           "$ref": "#/definitions/SubResource",
           "description": "Specifies information about the proximity placement group that the virtual machine scale set should be assigned to. <br><br>Minimum api-version: 2018-04-01."
+        },
+        "hostGroup": {
+          "$ref": "#/definitions/SubResource",
+          "description": "Specifies information about the dedicated host group that the virtual machine scale set resides in. <br><br>Minimum api-version: 2020-06-01."
         },
         "additionalCapabilities": {
           "$ref": "#/definitions/AdditionalCapabilities",
@@ -10755,6 +11047,11 @@
             "$ref": "#/definitions/InstanceViewStatus"
           },
           "description": "The resource status information."
+        },
+        "assignedHost": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource id of the dedicated host, on which the virtual machine is allocated through automatic placement, when the virtual machine is associated with a dedicated host group that has automatic placement enabled. <br><br>Minimum api-version: 2020-06-01."
         },
         "placementGroupId": {
           "type": "string",
