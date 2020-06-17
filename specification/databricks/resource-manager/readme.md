@@ -4,8 +4,6 @@
 
 This is the AutoRest configuration file for Databricks.
 
-
-
 ---
 
 ### Java multi-api
@@ -15,6 +13,15 @@ batch:
   - tag: package-2018-04-01
 ```
 
+
+### Tag: package-preview-2020-06
+
+These settings apply only when `--tag=package-preview-2020-06` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2020-06'
+input-file:
+  - Microsoft.Databricks/preview/2020-06-17/databricks.json
+```
 ### Tag: package-2018-04-01 and java
 
 These settings apply only when `--tag=package-2018-04-01 --java` is specified on the command line.
@@ -28,8 +35,8 @@ regenerate-manager: true
 generate-interface: true
 ```
 
-
 ## Getting Started
+
 To build the SDK for Databricks, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -37,20 +44,19 @@ To build the SDK for Databricks, simply [Install AutoRest](https://aka.ms/autore
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
-
 ### Basic Information
+
 These are the global settings for the Databricks API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2018-04-01
+tag: package-preview-2020-06
 ```
-
 
 ### Tag: package-2018-04-01
 
@@ -83,7 +89,8 @@ See configuration in [readme.go.md](./readme.go.md)
 ## Python
 
 See configuration in [readme.python.md](./readme.python.md)
-## Multi-API/Profile support for AutoRest v3 generators 
+
+## Multi-API/Profile support for AutoRest v3 generators
 
 AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
 
@@ -99,11 +106,10 @@ input-file:
 
 ```
 
-If there are files that should not be in the `all-api-versions` set, 
+If there are files that should not be in the `all-api-versions` set,
 uncomment the  `exclude-file` section below and add the file paths.
 
 ``` yaml $(tag) == 'all-api-versions'
 #exclude-file: 
 #  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
 ```
-
