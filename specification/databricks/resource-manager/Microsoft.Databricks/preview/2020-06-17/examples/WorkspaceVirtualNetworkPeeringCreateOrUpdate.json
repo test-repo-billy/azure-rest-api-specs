@@ -4,7 +4,7 @@
     "resourceGroupName": "rg",
     "workspaceName": "myWorkspace",
     "peeringName": "vNetPeeringTest",
-    "api-version": "2018-04-01",
+    "api-version": "2020-06-17",
     "VirtualNetworkPeeringParameters": {
       "properties": {
         "allowForwardedTraffic": false,
