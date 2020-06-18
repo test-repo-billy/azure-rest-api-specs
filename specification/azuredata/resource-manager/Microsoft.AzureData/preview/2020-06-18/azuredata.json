@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2017-03-01-preview",
+    "version": "2020-06-18",
     "title": "AzureDataManagementClient",
     "description": "The AzureData management API provides a RESTful set of web APIs to manage Azure Data Resources. For example, register, delete and retrieve a SQL Server, SQL Server registration."
   },

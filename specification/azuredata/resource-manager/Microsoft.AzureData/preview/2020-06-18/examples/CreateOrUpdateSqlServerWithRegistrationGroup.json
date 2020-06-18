@@ -4,7 +4,7 @@
     "resourceGroupName": "testrg",
     "sqlServerRegistrationName": "testsqlregistration",
     "sqlServerName": "testsqlserver",
-    "api-version": "2017-03-01-preview",
+    "api-version": "2020-06-18",
     "parameters": {
       "properties": {
         "cores": 8,
