@@ -2,7 +2,7 @@
   "parameters": {
     "resourceGroupName": "rg1",
     "serviceName": "apimService1",
-    "api-version": "2018-01-01",
+    "api-version": "2020-06-19",
     "subscriptionId": "subid"
   },
   "responses": {
