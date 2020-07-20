@@ -5131,9 +5131,34 @@
           "type": "integer",
           "format": "int32",
           "description": "The scale unit for this vpn gateway."
+        },
+        "ipConfigurations": {
+          "type": "array",
+          "readOnly": true,
+          "description": "List of all IPs configured on the gateway.",
+          "items": {
+            "$ref": "#/definitions/VpnGatewayIpConfiguration"
+          }
         }
       },
       "description": "Parameters for VpnGateway."
+    },
+    "VpnGatewayIpConfiguration": {
+      "description": "IP Configuration of a VPN Gateway Resource.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The identifier of the IP configuration for a VPN Gateway."
+        },
+        "publicIpAddress": {
+          "type": "string",
+          "description": "The public IP address of this IP configuration."
+        },
+        "privateIpAddress": {
+          "type": "string",
+          "description": "The private IP address of this IP configuration."
+        }
+      }
     },
     "VpnGateway": {
       "required": [
