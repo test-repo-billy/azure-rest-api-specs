@@ -5143,23 +5143,6 @@
       },
       "description": "Parameters for VpnGateway."
     },
-    "VpnGatewayIpConfiguration": {
-      "description": "IP Configuration of a VPN Gateway Resource.",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The identifier of the IP configuration for a VPN Gateway."
-        },
-        "publicIpAddress": {
-          "type": "string",
-          "description": "The public IP address of this IP configuration."
-        },
-        "privateIpAddress": {
-          "type": "string",
-          "description": "The private IP address of this IP configuration."
-        }
-      }
-    },
     "VpnGateway": {
       "required": [
         "location"
@@ -5182,6 +5165,23 @@
         }
       ],
       "description": "VpnGateway Resource."
+    },
+    "VpnGatewayIpConfiguration": {
+      "description": "IP Configuration of a VPN Gateway Resource.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The identifier of the IP configuration for a VPN Gateway."
+        },
+        "publicIpAddress": {
+          "type": "string",
+          "description": "The public IP address of this IP configuration."
+        },
+        "privateIpAddress": {
+          "type": "string",
+          "description": "The private IP address of this IP configuration."
+        }
+      }
     },
     "ListVpnGatewaysResult": {
       "description": "Result of the request to list VpnGateways. It contains a list of VpnGateways and a URL nextLink to get the next set of results.",
@@ -5213,7 +5213,7 @@
         "dpdTimeoutSeconds": {
           "type": "integer",
           "format": "int32",
-          "description": "The dead peer detection timeout for a vpn connection in seconds."
+          "description": "DPD timeout in seconds for vpn connection."
         },
         "connectionStatus": {
           "description": "The connection status.",
@@ -5537,7 +5537,7 @@
           "description": "List of all connections associated with this route table.",
           "readOnly": true,
           "items": {
-            "type": "string"
+            "$ref": "./network.json#/definitions/SubResource"
           }
         },
         "propagatingConnections": {
@@ -5545,7 +5545,7 @@
           "description": "List of all connections that advertise to this route table.",
           "readOnly": true,
           "items": {
-            "type": "string"
+            "$ref": "./network.json#/definitions/SubResource"
           }
         },
         "provisioningState": {
@@ -6612,7 +6612,7 @@
         }
       }
     },
-    "VirtualHubEffectiveRouteList": {
+    "VirtualHubEffectiveRouteEffectiveRouteList": {
       "description": "EffectiveRoutes List.",
       "properties": {
         "value": {
