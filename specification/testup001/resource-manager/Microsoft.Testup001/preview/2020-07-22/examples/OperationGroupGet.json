@@ -1,0 +1,15 @@
+{
+  "parameters": {
+    "accountName": "sampleacct",
+    "resourceGroupName": "testup001Client",
+    "api-version": "2020-07-22",
+    "subscriptionId": "subid"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "sampleProperty": "sampleProperty"
+      }
+    }
+  }
+}
