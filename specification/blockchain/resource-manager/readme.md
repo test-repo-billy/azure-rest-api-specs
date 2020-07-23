@@ -98,7 +98,7 @@ require: $(this-folder)/../../../profiles/readme.md
 
 # all the input files across all versions
 input-file:
-  - $(this-folder)/Microsoft.Blockchain/preview/2018-06-01-preview/blockchain.json
+  - $(this-folder)/Microsoft.Blockchain/preview/2018-06-01-preview/blockchaxin.json
 
 ```
 
