@@ -60,7 +60,7 @@
           "BlockchainMember"
         ],
         "description": "Create a blockchain member.",
-        "operationId": "BlockchainMembers_Create",
+        "operationId": "BlockchainMembers_Cre",
         "parameters": [
           {
             "name": "blockchainMemberName",
