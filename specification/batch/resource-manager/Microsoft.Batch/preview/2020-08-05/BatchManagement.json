@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "BatchManagement",
-    "version": "2020-05-01",
+    "version": "2020-08-05",
     "x-ms-code-generation-settings": {
       "name": "BatchManagementClient"
     }
