@@ -26,18 +26,27 @@ These are the global settings for the Batch API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2020-05
+tag: package-preview-2020-08
 ```
 
 
+### Tag: package-preview-2020-08
+
+These settings apply only when `--tag=package-preview-2020-08` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2020-08'
+input-file:
+  - Microsoft.Batch/preview/2020-08-11/BatchManagement.json
+```
 ### Tag: package-2020-05
 
 These settings apply only when `--tag=package-2020-05` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-05'
+``` yaml $(tag) == 'package-2020-05'
 input-file:
   - Microsoft.Batch/stable/2020-05-01/BatchManagement.json
 ```
+
 ### Tag: package-2020-03
 
 These settings apply only when `--tag=package-2020-03` is specified on the command line.
