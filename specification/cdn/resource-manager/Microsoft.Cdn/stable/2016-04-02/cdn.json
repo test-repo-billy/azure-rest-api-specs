@@ -158,7 +158,7 @@
           "Profiles"
         ],
         "summary": "Creates a new CDN profile with the specified parameters.",
-        "operationId": "Profiles_Create",
+        "operationId": "Profiles_Update",
         "parameters": [
           {
             "name": "profileName",
@@ -171,6 +171,15 @@
             "description": "Profile properties needed for creation.",
             "in": "body",
             "name": "profileProperties",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProfileCreateParameters"
+            }
+          },
+          {
+            "description": "Profile properties needed for creation.",
+            "in": "body",
+            "name": "profilesProperties",
             "required": true,
             "schema": {
               "$ref": "#/definitions/ProfileCreateParameters"
@@ -1698,6 +1707,17 @@
       }
     },
     "ProfileListResult": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Profile"
+          },
+          "description": "List of CDN profiles within a resource group."
+        }
+      }
+    },
+    "ProfileResult": {
       "properties": {
         "value": {
           "type": "array",
