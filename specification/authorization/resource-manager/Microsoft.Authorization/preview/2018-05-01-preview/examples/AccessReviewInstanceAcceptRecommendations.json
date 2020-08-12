@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "api-version": "2018-05-01-preview",
+    "id": "d9b9e056-7004-470b-bf21-1635e98487da"
+  },
+  "responses": {
+    "204": {}
+  }
+}

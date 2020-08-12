@@ -613,6 +613,56 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleDefinitions/{scheduleDefinitionId}/instances/{id}/decisionStatistics": {
+      "get": {
+        "tags": [
+          "GetAccessReviewInstanceDecisionStatistics"
+        ],
+        "operationId": "AccessReviewInstanceDecisions_GetStatistics",
+        "x-ms-examples": {
+          "GetAccessReviews": {
+            "$ref": "./examples/GetAccessReviewInstanceDecisionStatistics.json"
+          }
+        },
+        "description": "Get access review instance decisions",
+        "parameters": [
+          {
+            "name": "scheduleDefinitionId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review schedule definition."
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review instance."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AccessReviewInstanceStatistics"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/accessReviewScheduleSettings/default": {
       "get": {
         "tags": [
@@ -681,6 +731,303 @@
             "description": "Describe the result of a successful operation.",
             "schema": {
               "$ref": "#/definitions/AccessReviewDefaultSettings"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        }
+      }
+    },
+    "/providers/Microsoft.Authorization/accessReviewInstancesAssignedForMyApproval": {
+      "get": {
+        "tags": [
+          "GetAccessReviewInstancesAssignedForMyApproval"
+        ],
+        "operationId": "AccessReviewInstancesAssignedForMyApproval_List",
+        "x-ms-examples": {
+          "GetAccessReviews": {
+            "$ref": "./examples/GetAccessReviewInstancesAssignedForMyApproval.json"
+          }
+        },
+        "description": "Get access review instances assigned for my approval.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AccessReviewInstanceListResult"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/providers/Microsoft.Authorization/accessReviewInstancesAssignedForMyApproval/{id}": {
+      "get": {
+        "tags": [
+          "GetAccessReviewInstance"
+        ],
+        "operationId": "AccessReviewInstancesAssignedForMyApproval_GetById",
+        "x-ms-examples": {
+          "GetAccessReviews": {
+            "$ref": "./examples/GetAccessReviewInstanceAssignedForMyApproval.json"
+          }
+        },
+        "description": "Get single access review instance assigned for my approval.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review instance."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AccessReviewInstance"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        }
+      }
+    },
+    "/providers/Microsoft.Authorization/accessReviewInstancesAssignedForMyApproval/{id}/acceptRecommendations": {
+      "post": {
+        "tags": [
+          "AccessReviewInstanceAcceptRecommmendations"
+        ],
+        "operationId": "AccessReviewInstance_AcceptRecommendations",
+        "x-ms-examples": {
+          "GetAccessReview": {
+            "$ref": "./examples/AccessReviewInstanceAcceptRecommendations.json"
+          }
+        },
+        "description": "An action to accept recommendations for decision in an access review instance.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review instance."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Describe the result of a successful operation."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        }
+      }
+    },
+    "/providers/Microsoft.Authorization/accessReviewInstancesAssignedForMyApproval/{id}/decisions": {
+      "get": {
+        "tags": [
+          "GetAccessReviewMyInstanceDecisions"
+        ],
+        "operationId": "AccessReviewInstanceMyDecisions_List",
+        "x-ms-examples": {
+          "GetAccessReviews": {
+            "$ref": "./examples/GetAccessReviewInstanceMyDecisions.json"
+          }
+        },
+        "description": "Get my access review instance decisions.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review instance."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AccessReviewDecisionListResult"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/providers/Microsoft.Authorization/accessReviewInstancesAssignedForMyApproval/{id}/decisions/{decisionId}": {
+      "get": {
+        "tags": [
+          "GetAccessReviewMyInstanceDecision"
+        ],
+        "operationId": "AccessReviewInstanceMyDecisions_GetById",
+        "x-ms-examples": {
+          "GetAccessReviews": {
+            "$ref": "./examples/GetAccessReviewInstanceMyDecisionById.json"
+          }
+        },
+        "description": "Get my single access review instance decision.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review instance."
+          },
+          {
+            "name": "decisionId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the decision record."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AccessReviewDecision"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "PatchAccessReviewMyInstanceDecision"
+        ],
+        "operationId": "AccessReviewInstanceMyDecisions_Patch",
+        "x-ms-examples": {
+          "GetAccessReviews": {
+            "$ref": "./examples/PatchAccessReviewInstanceMyDecisionById.json"
+          }
+        },
+        "description": "Record a decision.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review instance."
+          },
+          {
+            "name": "decisionId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the decision record."
+          },
+          {
+            "name": "properties",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccessReviewDecisionProperties"
+            },
+            "description": "Access review decision properties to patch."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AccessReviewDecision"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ErrorDefinition"
+            }
+          }
+        }
+      }
+    },
+    "/providers/Microsoft.Authorization/accessReviewInstancesAssignedForMyApproval/{id}/decisionStatistics": {
+      "get": {
+        "tags": [
+          "GetAccessReviewMyInstanceDecisionStatistics"
+        ],
+        "operationId": "AccessReviewInstanceMyDecisions_GetStatistics",
+        "x-ms-examples": {
+          "GetAccessReviews": {
+            "$ref": "./examples/GetAccessReviewMyInstanceDecisionStatistics.json"
+          }
+        },
+        "description": "Get access review my instance decision statistics",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id of the access review instance."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Describe the result of a successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AccessReviewInstanceStatistics"
             }
           },
           "default": {
@@ -779,6 +1126,20 @@
             "$ref": "#/definitions/AccessReviewReviewer"
           },
           "description": "This is the collection of reviewers."
+        },
+        "reviewersType": {
+          "type": "string",
+          "readOnly": true,
+          "description": "This field specifies the type of reviewers for a review. Usually for a review, reviewers are explicitly assigned. However, in some cases, the reviewers may not be assigned and instead be chosen dynamically. For example managers review or self review.",
+          "enum": [
+            "Assigned",
+            "Self",
+            "Managers"
+          ],
+          "x-ms-enum": {
+            "name": "AccessReviewScheduleDefinitionReviewersType",
+            "modelAsString": true
+          }
         }
       },
       "description": "Access Review."
@@ -844,9 +1205,107 @@
           "format": "date-time",
           "description": "The DateTime when the review instance is scheduled to end.",
           "x-nullable": false
+        },
+        "definition": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/AccessReviewScheduleDefinition",
+          "description": "Detailed of the associated definition."
         }
       },
       "description": "Access Review Instance properties."
+    },
+    "AccessReviewInstanceStatistics": {
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The total count of instance statistics."
+        },
+        "decisionsSummary": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/AccessReviewInstanceDecisionsSummary",
+          "description": "Decisions summary."
+        },
+        "recommendationsSummary": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/AccessReviewInstanceRecommendationsSummary",
+          "description": "Decisions summary."
+        }
+      },
+      "description": "Access Review Instance properties."
+    },
+    "AccessReviewInstanceDecisionsSummary": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccessReviewInstanceDecisionCount"
+          },
+          "description": "Access Review Instance Decision Summary list."
+        }
+      },
+      "description": "List of Access Review decision counts."
+    },
+    "AccessReviewInstanceRecommendationsSummary": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AccessReviewInstanceRecommendationCount"
+          },
+          "description": "Access Review Instance Recommendations Summary list."
+        }
+      },
+      "description": "List of Access Review recommendations count."
+    },
+    "AccessReviewInstanceDecisionCount": {
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The count of records with decision = {decision}."
+        },
+        "decision": {
+          "type": "string",
+          "description": "The reviewer's decision type. This can be one of NotReviewed, Approve and Deny",
+          "enum": [
+            "Approve",
+            "Deny",
+            "NotReviewed",
+            "DontKnow",
+            "NotNotified"
+          ],
+          "x-ms-enum": {
+            "name": "AccessReviewInstanceDecisionType",
+            "modelAsString": true
+          }
+        }
+      },
+      "description": "Access Review Instance Decision Count."
+    },
+    "AccessReviewInstanceRecommendationCount": {
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The count of records with recommendation = {recommendation}."
+        },
+        "recommendation": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The feature-generated recommendation shown to the reviewer.",
+          "enum": [
+            "Approve",
+            "Deny",
+            "NoInfoAvailable"
+          ],
+          "x-ms-enum": {
+            "name": "AccessReviewInstanceRecommendationType",
+            "modelAsString": true
+          }
+        }
+      },
+      "description": "Access Review Instance Decision Count."
     },
     "AccessReviewScheduleSettings": {
       "properties": {
@@ -1355,14 +1814,20 @@
       "type": "object",
       "properties": {
         "name": {
-          "description": "Operation name: {provider}/{resource}/{operation}.",
-          "type": "string",
-          "readOnly": true
+          "description": "Name of the operation",
+          "type": "string"
+        },
+        "isDataAction": {
+          "description": "Indicates whether the operation is a data action",
+          "type": "boolean"
         },
         "display": {
-          "readOnly": true,
           "$ref": "#/definitions/OperationDisplay",
-          "description": "The display information for the Microsoft.Authorization operation."
+          "description": "Display of the operation"
+        },
+        "origin": {
+          "description": "Origin of the operation",
+          "type": "string"
         }
       }
     },
