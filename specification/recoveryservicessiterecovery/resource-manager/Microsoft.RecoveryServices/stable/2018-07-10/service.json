@@ -16761,12 +16761,12 @@
         "machineId": {
           "description": "The machine Id.",
           "type": "string",
-          "readOnly":true
+          "readOnly": true
         },
         "machineName": {
           "description": "The machine name.",
           "type": "string",
-          "readOnly":true
+          "readOnly": true
         },
         "authenticationIdentityDetails": {
           "$ref": "#/definitions/IdentityProviderDetails",
@@ -16779,7 +16779,7 @@
         "dataPlaneAuthenticationIdentityDetails": {
           "$ref": "#/definitions/IdentityProviderDetails",
           "description": "The data plane authentication identity details.",
-          "readOnly":true
+          "readOnly": true
         },
         "providerVersionDetails": {
           "$ref": "#/definitions/VersionDetails",
