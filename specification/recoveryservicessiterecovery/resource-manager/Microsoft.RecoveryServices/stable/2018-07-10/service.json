@@ -12891,7 +12891,7 @@
         },
         "lastHeartbeatUtc": {
           "format": "date-time",
-          "description": "The time of the last heartbeat recieved from the agent.",
+          "description": "The time of the last heartbeat received from the agent.",
           "type": "string",
           "readOnly": true
         },
@@ -16760,11 +16760,13 @@
         },
         "machineId": {
           "description": "The machine Id.",
-          "type": "string"
+          "type": "string",
+          "readOnly":true
         },
         "machineName": {
           "description": "The machine name.",
-          "type": "string"
+          "type": "string",
+          "readOnly":true
         },
         "authenticationIdentityDetails": {
           "$ref": "#/definitions/IdentityProviderDetails",
@@ -16776,7 +16778,8 @@
         },
         "dataPlaneAuthenticationIdentityDetails": {
           "$ref": "#/definitions/IdentityProviderDetails",
-          "description": "The data plane authentication identity details."
+          "description": "The data plane authentication identity details.",
+          "readOnly":true
         },
         "providerVersionDetails": {
           "$ref": "#/definitions/VersionDetails",
