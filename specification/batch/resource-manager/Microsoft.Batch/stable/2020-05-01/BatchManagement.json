@@ -2364,7 +2364,8 @@
           "description": "The type of identity used for the Batch account.",
           "enum": [
             "SystemAssigned",
-            "None"
+            "None",
+            "NONE"
           ],
           "x-ms-enum": {
             "name": "ResourceIdentityType",
