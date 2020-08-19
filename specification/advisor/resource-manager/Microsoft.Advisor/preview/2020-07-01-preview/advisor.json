@@ -48,7 +48,7 @@
           "AdvisorScore"
         ],
         "description": "Gets the list of advisor scores.",
-        "operationId": "AdvisorScores_List",
+        "operationId": "AdvisorScores_Listxxx",
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionIdParameter"
