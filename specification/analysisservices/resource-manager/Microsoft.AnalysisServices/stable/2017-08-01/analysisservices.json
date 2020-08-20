@@ -146,7 +146,7 @@
         "tags": [
           "Servers"
         ],
-        "operationId": "Servers_Delete",
+        "operationId": "Servers_Get",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupNameParameter"
