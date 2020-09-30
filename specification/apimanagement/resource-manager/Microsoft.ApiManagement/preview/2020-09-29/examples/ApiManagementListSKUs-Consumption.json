@@ -1,6 +1,6 @@
 {
   "parameters": {
-    "api-version": "2019-12-01",
+    "api-version": "2020-09-29",
     "serviceName": "apimService1",
     "resourceGroupName": "rg1",
     "subscriptionId": "subid"
