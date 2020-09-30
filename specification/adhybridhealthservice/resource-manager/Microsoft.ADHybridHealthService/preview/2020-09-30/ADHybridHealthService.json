@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2014-01-01",
+    "version": "2020-09-30",
     "title": "ADHybridHealthService",
     "description": "REST APIs for Azure Active Directory Connect Health"
   },
