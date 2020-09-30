@@ -28,7 +28,7 @@ These are the global settings for the ApplicationInsights API.
 title: ApplicationInsightsManagementClient
 description: Composite Swagger for Application Insights Management Client
 openapi-type: arm
-tag: package-preview-2020-06
+tag: package-preview-2020-09
 ```
 
 ## Suppression
@@ -105,6 +105,16 @@ directive:
     reason: 'delete API returns empty response and is already part of the previous api, cannot change it'
 ```
 
+
+### Tag: package-preview-2020-09
+
+These settings apply only when `--tag=package-preview-2020-09` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2020-09'
+input-file:
+  - Microsoft.Insights/preview/2020-09-30/componentFeaturesAndPricing_API.json
+  - Microsoft.Insights/preview/2020-09-30/eaSubscriptionMigration_API.json
+```
 ### Tag: package-preview-2020-06-only
 
 These settings apply only when `--tag=package-preview-2020-06-only` is specified on the command line.
@@ -351,4 +361,3 @@ input-file:
 ## AzureResourceSchema
 
 See configuration in [readme.azureresourceschema.md](./readme.azureresourceschema.md)
-
