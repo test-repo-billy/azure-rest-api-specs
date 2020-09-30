@@ -4,10 +4,10 @@
 
 This is the AutoRest configuration file for ADHybridHealthService.
 
-
-
 ---
+
 ## Getting Started
+
 To build the SDK for ADHybridHealthService, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,21 +15,29 @@ To build the SDK for ADHybridHealthService, simply [Install AutoRest](https://ak
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
-
 ### Basic Information
+
 These are the global settings for the ADHybridHealthService API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2014-01
+tag: package-preview-2020-09
 ```
 
 
+### Tag: package-preview-2020-09
+
+These settings apply only when `--tag=package-preview-2020-09` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2020-09'
+input-file:
+  - Microsoft.ADHybridHealthService/preview/2020-09-30/ADHybridHealthService.json
+```
 ### Tag: package-2014-01
 
 These settings apply only when `--tag=package-2014-01` is specified on the command line.
@@ -40,8 +48,8 @@ input-file:
 ```
 
 ---
-# Code Generation
 
+# Code Generation
 
 ## Swagger to SDK
 
@@ -58,7 +66,6 @@ swagger-to-sdk:
     after_scripts:
       - node sdkauto_afterscript.js adhybridhealthservice/resource-manager
 ```
-
 
 ## Python
 
@@ -77,17 +84,18 @@ python:
   package-version: 1.0.1
   clear-output-folder: true
 ```
+
 ``` yaml $(python) && $(python-mode) == 'update'
 python:
   no-namespace-folders: true
   output-folder: $(python-sdks-folder)/azure-mgmt-adhybridhealthservice/azure/mgmt/adhybridhealthservice
 ```
+
 ``` yaml $(python) && $(python-mode) == 'create'
 python:
   basic-setup-py: true
   output-folder: $(python-sdks-folder)/azure-mgmt-adhybridhealthservice
 ```
-
 
 ## Go
 
@@ -100,4 +108,3 @@ See configuration in [readme.java.md](./readme.java.md)
 ## AzureResourceSchema
 
 See configuration in [readme.azureresourceschema.md](./readme.azureresourceschema.md)
-
