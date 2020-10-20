@@ -1,6 +1,6 @@
 {
     "properties": {
         "kind" : "Bundles",
-            "bundles": ["AppServices", "KeyVaults", "KubernetesService", "SqlServers", "StorageAccounts", "VirtualMachines"] // You can choose bundles frpm this list
+            "bundles": ["AppServices", "KeyVaults", "KubernetesService", "SqlServers", "StorageAccounts", "VirtualMachines"]
     }
 }
