@@ -555,7 +555,7 @@
             "$ref": "../../../common/v1/types.json#/parameters/AscLocation"
           },
           {
-            "$ref": "#/parameters/AlertSimulatorRequest"
+            "$ref": "#/parameters/AlertSimulatorRequestBody"
           }
         ],
         "responses": {
@@ -991,7 +991,7 @@
         }
       }
     },
-    "AlertSimulatorRequest": {
+    "AlertSimulatorRequestBody": {
       "type": "object",
       "description": "Alert Simulator request body.",
       "properties": {
@@ -1087,13 +1087,13 @@
       "description": "Name of the alert object",
       "x-ms-parameter-location": "method"
     },
-    "AlertSimulatorRequest": {
-      "name": "alertSimulatorRequest",
+    "AlertSimulatorRequestBody": {
+      "name": "alertSimulatorRequestBody",
       "in": "body",
       "required": true,
       "description": "Alert Simulator Request Properties",
       "schema": {
-        "$ref": "#/definitions/AlertSimulatorRequest"
+        "$ref": "#/definitions/AlertSimulatorRequestBody"
       },
       "x-ms-parameter-location": "method"
     }
