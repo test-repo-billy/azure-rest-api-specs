@@ -532,7 +532,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/{ascLocation}/alerts/default/simulate": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Security/locations/centralus/alerts/default/simulate": {
       "post": {
         "x-ms-examples": {
           "Simulate security alerts on a subscription": {
@@ -550,9 +550,6 @@
           },
           {
             "$ref": "../../../common/v1/types.json#/parameters/SubscriptionId"
-          },
-          {
-            "$ref": "../../../common/v1/types.json#/parameters/AscLocation"
           },
           {
             "$ref": "#/parameters/AlertSimulatorRequestBody"
@@ -1101,7 +1098,12 @@
       "schema": {
         "$ref": "#/definitions/AlertSimulatorRequestBody"
       },
-      "x-ms-parameter-location": "method"
+      "x-ms-parameter-location": "method",
+      "x-ms-examples": {
+          "AlertSimulatorRequestBody": {
+            "$ref": "./examples/Alerts/SimulateAlerts_AlertSimulatorRequestBody.json"
+          }
+        }
     }
   }
 }
