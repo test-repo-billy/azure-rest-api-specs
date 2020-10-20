@@ -1032,8 +1032,14 @@
       "type": "array",
       "description": "Simulate alerts according to this bundles.",
       "x-ms-discriminator-value": "Bundles",
-      "items": {
-        "$ref": "#/definitions/BundleType"
+      "properties": {
+        "bundles" : {
+          "type": "array",
+          "description": "Bundles list.",
+          "items": {
+            "$ref": "#/definitions/BundleType"
+          }
+        }
       },
       "allOf": [
         {
