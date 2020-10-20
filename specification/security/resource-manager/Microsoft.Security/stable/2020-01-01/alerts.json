@@ -1029,7 +1029,7 @@
       }
     },
     "AlertSimulatorBundlesRequestProperties": {
-      "type": "array",
+      "type": "object",
       "description": "Simulate alerts according to this bundles.",
       "x-ms-discriminator-value": "Bundles",
       "properties": {
