@@ -67,6 +67,7 @@ input-file:
 - Microsoft.Synapse/preview/2019-06-01-preview/sqlPools.json
 - Microsoft.Synapse/preview/2019-06-01-preview/bigDataPools.json
 - Microsoft.Synapse/preview/2019-06-01-preview/integrationRuntimes.json
+- Microsoft.Synapse/preview/2019-06-01-preview/library.json
 - Microsoft.Synapse/preview/2019-06-01-preview/entityTypes/DataFlow.json
 - Microsoft.Synapse/preview/2019-06-01-preview/entityTypes/Dataset.json
 - Microsoft.Synapse/preview/2019-06-01-preview/entityTypes/LinkedService.json
@@ -183,6 +184,7 @@ input-file:
   - $(this-folder)/Microsoft.Synapse/preview/2020-02-01-preview/roleAssignments.json
   - $(this-folder)/Microsoft.Synapse/preview/2019-06-01-preview/managedPrivateEndpoints.json
   - $(this-folder)/Microsoft.Synapse/preview/2019-11-01-preview/monitoring.json
+  - $(this-folder)/Microsoft.Synapse/preview/2019-06-01-preview/library.json
 
 ```
 
