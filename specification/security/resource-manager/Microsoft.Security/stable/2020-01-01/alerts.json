@@ -1001,6 +1001,15 @@
     },
     "AlertSimulatorRequestProperties": {
       "type": "object",
+      "description": "Describes properties of an alert simulation request",
+      "properties": {
+        "simulationDetails": {
+          "$ref": "#/definitions/SimulationDetails"
+        }
+      }
+    },
+    "SimulationDetails": {
+      "type": "object",
       "description": "Alert Simulation request properties.",
       "discriminator": "kind",
       "required": [
@@ -1018,7 +1027,8 @@
             "modelAsString": true,
             "values": [
               {
-                "value": "Bundles"
+                "value": "Bundles",
+                "description": "Simulate alerts according to bundles"
               }
             ]
           }
