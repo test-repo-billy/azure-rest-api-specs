@@ -1050,8 +1050,11 @@
       },
       "allOf": [
         {
-          "$ref": "#/definitions/AlertSimulatorRequestProperties"
+          "$ref": "#/definitions/SimulationDetails"
         }
+      ],
+      "required": [
+        "bundles"
       ]
     },
     "BundleType" : {
