@@ -1108,12 +1108,7 @@
       "schema": {
         "$ref": "#/definitions/AlertSimulatorRequestBody"
       },
-      "x-ms-parameter-location": "method",
-      "x-ms-examples": {
-          "AlertSimulatorRequestBody": {
-            "$ref": "./examples/Alerts/SimulateAlerts_AlertSimulatorRequestBody.json"
-          }
-        }
+      "x-ms-parameter-location": "method"
     }
   }
 }
