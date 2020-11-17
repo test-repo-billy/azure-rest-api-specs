@@ -1,3 +1,4 @@
+Create pr add label  select close old pr   move pr  reopen old pr  move pr
 # Azure REST API Specifications
 
 ## Description
