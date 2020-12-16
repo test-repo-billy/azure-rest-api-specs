@@ -341,14 +341,14 @@
             "name": "$top",
             "in": "query",
             "type": "integer",
-            "format": "int32",
+            "format": "int64",
             "description": "Maximum number of results to return."
           },
           {
-            "$ref": "#/parameters/ApiVersionParameter"
+            "$ref": "#/parameters/SubscriptionIdParameter"
           },
           {
-            "$ref": "#/parameters/SubscriptionIdParameter"
+            "$ref": "#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
