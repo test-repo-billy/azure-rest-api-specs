@@ -49,7 +49,7 @@
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "#/parameters/ExpandDetectorParameter"
+            "$ref": "#/parameters/ExpandDetector"
           }
         ],
         "responses": {
@@ -62,7 +62,7 @@
           "200": {
             "description": "Successful request to list Smart Detector alert rules.",
             "schema": {
-              "$ref": "#/definitions/AlertRulesList"
+              "$ref": "#/definitions/AlertRulesCollect"
             }
           }
         },
@@ -94,7 +94,7 @@
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "#/parameters/ExpandDetectorParameter"
+            "$ref": "#/parameters/ExpandDetector"
           }
         ],
         "responses": {
@@ -107,7 +107,7 @@
           "200": {
             "description": "Successful request to list Smart Detector alert rules.",
             "schema": {
-              "$ref": "#/definitions/AlertRulesList"
+              "$ref": "#/definitions/AlertRulesCollect"
             }
           }
         },
@@ -142,7 +142,7 @@
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
-            "$ref": "#/parameters/ExpandDetectorParameter"
+            "$ref": "#/parameters/ExpandDetector"
           }
         ],
         "responses": {
@@ -405,7 +405,7 @@
       },
       "description": "The alert rule information"
     },
-    "AlertRulesList": {
+    "AlertRulesCollect": {
       "description": "List of Smart Detector alert rules.",
       "properties": {
         "value": {
@@ -642,7 +642,7 @@
       "type": "string",
       "description": "Client Api Version."
     },
-    "ExpandDetectorParameter": {
+    "ExpandDetector": {
       "name": "expandDetector",
       "in": "query",
       "type": "boolean",
