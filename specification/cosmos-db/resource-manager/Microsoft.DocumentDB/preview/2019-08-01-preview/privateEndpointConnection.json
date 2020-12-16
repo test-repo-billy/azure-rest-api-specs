@@ -59,11 +59,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Successfully retrieved private endpoint connections.",
-            "schema": {
-              "$ref": "#/definitions/PrivateEndpointConnectionListResult"
-            }
+          "default": {
+            "description": "Successfully retrieved private endpoint connections."
           }
         },
         "x-ms-examples": {
@@ -82,7 +79,7 @@
         "operationId": "PrivateEndpointConnections_Get",
         "parameters": [
           {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionId"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
@@ -161,7 +158,7 @@
         },
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
-          "Approve or reject a private endpoint connection with a given name.": {
+          "Gets private endpoint connection.": {
             "$ref": "./examples/CosmosDBPrivateEndpointConnectionUpdate.json"
           }
         }
@@ -174,7 +171,7 @@
         "operationId": "PrivateEndpointConnections_Delete",
         "parameters": [
           {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+            "$ref": "#/parameters/SubscriptionId"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
@@ -326,6 +323,14 @@
       "type": "string",
       "x-ms-parameter-location": "method",
       "description": "The name of the private endpoint connection."
+    },
+     "SubscriptionId": {
+      "name": "subscriptionId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The ID of the target subscription.",
+      "minLength": 1
     }
   }
 }
