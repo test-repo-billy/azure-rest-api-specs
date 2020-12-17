@@ -1483,23 +1483,6 @@
         }
       }
     },
-    "eventsExceptionResult": {
-      "x-ms-discriminator-value": "exception",
-      "description": "An exception result",
-      "allOf": [
-        {
-          "$ref": "#/definitions/eventsResultData"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "exception": {
-              "$ref": "#/definitions/eventsExceptionInfo"
-            }
-          }
-        }
-      ]
-    },
     "eventsExceptionInfo": {
       "description": "The exception info",
       "type": "object",
