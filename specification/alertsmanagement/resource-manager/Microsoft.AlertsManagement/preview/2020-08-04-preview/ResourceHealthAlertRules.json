@@ -389,19 +389,42 @@
     },
     "HealthAlertResource": {
       "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ],
       "required": [
-        "properties"
+        "properties","location"
       ],
       "properties": {
         "properties": {
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/HealthAlertProperties",
           "description": "The alert rule properties of the resource."
+        },
+          "id": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Azure resource Id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Azure resource name"
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Azure resource type"
+        },
+        "location": {
+          "type": "string",
+          "description": "Resource location",
+          "x-ms-mutability": [
+            "create",
+            "read"
+          ]
+        },
+        "tags": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Resource tags"
         }
       },
       "description": "The health alert resource."
