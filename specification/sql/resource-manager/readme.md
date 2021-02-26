@@ -24,13 +24,123 @@ These are the global settings for the Sql API.
 title: SqlManagementClient
 description: 'The Azure SQL Database management API provides a RESTful set of web services that interact with Azure SQL Database services to manage your databases. The API enables you to create, retrieve, update, and delete databases.'
 openapi-type: arm
-tag: package-composite-v4
+tag: package-preview-2021-01
 ```
 
 ### Composite packages
 
 The following packages may be composed from multiple api-versions.
 
+
+### Tag: package-preview-2021-01
+
+These settings apply only when `--tag=package-preview-2021-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2021-01'
+input-file:
+  - Microsoft.Sql/preview/2021-01-01/BackupShortTermRetentionPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/BlobAuditing.json
+  - Microsoft.Sql/preview/2021-01-01/DataWarehouseUserActivities.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseAdvisors.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseAutomaticTuning.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseColumns.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseExtensions.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseOperations.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseRecommendedActions.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseSchemas.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseSecurityAlertPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseTables.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseUsages.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseVulnerabilityAssesmentRuleBaselines.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseVulnerabilityAssessmentScans.json
+  - Microsoft.Sql/preview/2021-01-01/DatabaseVulnerabilityAssessments.json
+  - Microsoft.Sql/preview/2021-01-01/Databases.json
+  - Microsoft.Sql/preview/2021-01-01/DeletedServers.json
+  - Microsoft.Sql/preview/2021-01-01/ElasticPoolOperations.json
+  - Microsoft.Sql/preview/2021-01-01/ElasticPools.json
+  - Microsoft.Sql/preview/2021-01-01/EncryptionProtectors.json
+  - Microsoft.Sql/preview/2021-01-01/FailoverGroups.json
+  - Microsoft.Sql/preview/2021-01-01/FirewallRules.json
+  - Microsoft.Sql/preview/2021-01-01/HybridLinks.json
+  - Microsoft.Sql/preview/2021-01-01/InstanceFailoverGroups.json
+  - Microsoft.Sql/preview/2021-01-01/InstancePools.json
+  - Microsoft.Sql/preview/2021-01-01/JobAgents.json
+  - Microsoft.Sql/preview/2021-01-01/JobCredentials.json
+  - Microsoft.Sql/preview/2021-01-01/JobExecutions.json
+  - Microsoft.Sql/preview/2021-01-01/JobStepExecutions.json
+  - Microsoft.Sql/preview/2021-01-01/JobSteps.json
+  - Microsoft.Sql/preview/2021-01-01/JobTargetExecutions.json
+  - Microsoft.Sql/preview/2021-01-01/JobTargetGroups.json
+  - Microsoft.Sql/preview/2021-01-01/JobVersions.json
+  - Microsoft.Sql/preview/2021-01-01/Jobs.json
+  - Microsoft.Sql/preview/2021-01-01/LocationCapabilities.json
+  - Microsoft.Sql/preview/2021-01-01/LongTermRetentionBackups.json
+  - Microsoft.Sql/preview/2021-01-01/LongTermRetentionManagedInstanceBackups.json
+  - Microsoft.Sql/preview/2021-01-01/LongTermRetentionPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/MaintenanceWindowOptions.json
+  - Microsoft.Sql/preview/2021-01-01/MaintenanceWindows.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedBackupShortTermRetentionPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseColumns.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseQueries.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseRestoreDetails.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseSchemas.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseSecurityAlertPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseSecurityEvents.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseSensitivityLabels.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseTables.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseTransparentDataEncryption.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseVulnerabilityAssessmentRuleBaselines.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseVulnerabilityAssessmentScans.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabaseVulnerabilityAssessments.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedDatabases.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceAdministrators.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceAzureADOnlyAuthentications.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceEncryptionProtectors.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceKeys.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceLongTermRetentionPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceOperations.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstancePrivateEndpointConnections.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstancePrivateLinkResources.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceTdeCertificates.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstanceVulnerabilityAssessments.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedInstances.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedRestorableDroppedDatabaseBackupShortTermRetentionPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/ManagedServerSecurityAlertPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/Operations.json
+  - Microsoft.Sql/preview/2021-01-01/OperationsHealth.json
+  - Microsoft.Sql/preview/2021-01-01/PrivateEndpointConnections.json
+  - Microsoft.Sql/preview/2021-01-01/PrivateLinkResources.json
+  - Microsoft.Sql/preview/2021-01-01/RecoverableManagedDatabases.json
+  - Microsoft.Sql/preview/2021-01-01/ReplicationLinks.json
+  - Microsoft.Sql/preview/2021-01-01/RestorableDroppedDatabases.json
+  - Microsoft.Sql/preview/2021-01-01/RestorableDroppedManagedDatabases.json
+  - Microsoft.Sql/preview/2021-01-01/RestorePoints.json
+  - Microsoft.Sql/preview/2021-01-01/SensitivityLabels.json
+  - Microsoft.Sql/preview/2021-01-01/ServerAdvisors.json
+  - Microsoft.Sql/preview/2021-01-01/ServerAutomaticTuning.json
+  - Microsoft.Sql/preview/2021-01-01/ServerAzureADAdministrators.json
+  - Microsoft.Sql/preview/2021-01-01/ServerAzureADOnlyAuthentications.json
+  - Microsoft.Sql/preview/2021-01-01/ServerDevOpsAudit.json
+  - Microsoft.Sql/preview/2021-01-01/ServerDnsAliases.json
+  - Microsoft.Sql/preview/2021-01-01/ServerKeys.json
+  - Microsoft.Sql/preview/2021-01-01/ServerOperations.json
+  - Microsoft.Sql/preview/2021-01-01/ServerSecurityAlertPolicies.json
+  - Microsoft.Sql/preview/2021-01-01/ServerTrustGroups.json
+  - Microsoft.Sql/preview/2021-01-01/ServerVulnerabilityAssessments.json
+  - Microsoft.Sql/preview/2021-01-01/Servers.json
+  - Microsoft.Sql/preview/2021-01-01/SqlAgent.json
+  - Microsoft.Sql/preview/2021-01-01/SubscriptionUsages.json
+  - Microsoft.Sql/preview/2021-01-01/SyncAgents.json
+  - Microsoft.Sql/preview/2021-01-01/SyncGroups.json
+  - Microsoft.Sql/preview/2021-01-01/SyncMembers.json
+  - Microsoft.Sql/preview/2021-01-01/TdeCertificates.json
+  - Microsoft.Sql/preview/2021-01-01/TimeZones.json
+  - Microsoft.Sql/preview/2021-01-01/TransparentDataEncryption.json
+  - Microsoft.Sql/preview/2021-01-01/VirtualClusters.json
+  - Microsoft.Sql/preview/2021-01-01/VirtualNetworkRules.json
+  - Microsoft.Sql/preview/2021-01-01/WorkloadClassifiers.json
+  - Microsoft.Sql/preview/2021-01-01/WorkloadGroups.json
+```
 ### Tag: package-composite-v4
 
 These settings apply only when `--tag=package-composite-v4` is specified on the command line.
@@ -701,7 +811,7 @@ input-file:
 # Needed when there is more than one input file
 override-info:
   title: SqlManagementClient
-  ```
+```
 
 ### Tag: package-pure-2020-02-preview
 
@@ -820,7 +930,7 @@ input-file:
 # Needed when there is more than one input file
 override-info:
   title: SqlManagementClient
-  ```
+```
 
 ### Tag: package-pure-2019-06-preview
 
@@ -1137,4 +1247,3 @@ directive:
 ## AzureResourceSchema
 
 See configuration in [readme.azureresourceschema.md](./readme.azureresourceschema.md)
-
