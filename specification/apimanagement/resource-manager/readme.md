@@ -28,15 +28,61 @@ These are the global settings for the ApiManagement API.
 title: ApiManagementClient
 description: ApiManagement Client
 openapi-type: arm
-tag: package-2020-12
+tag: package-2021-03
 ```
 
 
+### Tag: package-2021-03
+
+These settings apply only when `--tag=package-2021-03` is specified on the command line.
+
+```yaml $(tag) == 'package-2021-03'
+input-file:
+  - Microsoft.ApiManagement/stable/2021-03-04/apimanagement.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimapis.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimapisByTags.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimapiversionsets.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimauthorizationservers.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimbackends.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimcaches.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimcertificates.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimcontenttypes.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimdeletedservices.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimdeployment.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimdiagnostics.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimemailtemplates.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimgateways.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimgroups.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimidentityprovider.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimissues.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimloggers.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimnamedvalues.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimnetworkstatus.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimnotifications.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimopenidconnectproviders.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimpolicies.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimpolicydescriptions.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimportalrevisions.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimportalsettings.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimproducts.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimproductsByTags.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimquotas.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimregions.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimreports.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimsettings.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimskus.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimsubscriptions.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimtagresources.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimtags.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimtenant.json
+  - Microsoft.ApiManagement/stable/2021-03-04/apimusers.json
+  - Microsoft.ApiManagement/stable/2021-03-04/definitions.json
+```
 ### Tag: package-2020-12
 
 These settings apply only when `--tag=package-2020-12` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-12'
+``` yaml $(tag) == 'package-2020-12'
 input-file:
   - Microsoft.ApiManagement/stable/2020-12-01/apimanagement.json
   - Microsoft.ApiManagement/stable/2020-12-01/apimapis.json
@@ -78,6 +124,7 @@ input-file:
   - Microsoft.ApiManagement/stable/2020-12-01/apimusers.json
   - Microsoft.ApiManagement/stable/2020-12-01/definitions.json
 ```
+
 ### Tag: package-preview-2020-06
 
 These settings apply only when `--tag=package-preview-2020-06` is specified on the command line.
