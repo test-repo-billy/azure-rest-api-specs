@@ -42,7 +42,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Operations_List",
+        "operationId": "Operations_LisABCt",
         "x-ms-examples": {
           "Gets the operations": {
             "$ref": "./examples/listOperations.json"
