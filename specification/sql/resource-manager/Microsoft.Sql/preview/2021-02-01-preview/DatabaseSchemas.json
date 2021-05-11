@@ -75,7 +75,7 @@
           "DatabaseSchemas"
         ],
         "description": "Get database schema",
-        "operationId": "DatabaseSchemas_Get",
+        "operationId": "DatabaseSchemas_GetABCD",
         "parameters": [
           {
             "$ref": "../../../common/v1/types.json#/parameters/ResourceGroupParameter"
