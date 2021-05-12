@@ -47,12 +47,6 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK. The request has succeeded.",
-            "schema": {
-              "$ref": "#/definitions/OperationListResult"
-            }
-          },
           "default": {
             "description": "DefaultErrorResponse",
             "schema": {
