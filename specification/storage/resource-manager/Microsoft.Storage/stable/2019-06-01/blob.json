@@ -101,43 +101,6 @@
             }
           }
         }
-      },
-      "get": {
-        "tags": [
-          "BlobService"
-        ],
-        "operationId": "BlobServices_GetServiceProperties",
-        "x-ms-examples": {
-          "GetBlobServices": {
-            "$ref": "./examples/BlobServicesGet.json"
-          }
-        },
-        "description": "Gets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.",
-        "parameters": [
-          {
-            "$ref": "./storage.json#/parameters/ResourceGroupName"
-          },
-          {
-            "$ref": "./storage.json#/parameters/StorageAccountName"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/BlobServicesName"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK -- returned the properties of a storage account’s Blob service.",
-            "schema": {
-              "$ref": "#/definitions/BlobServiceProperties"
-            }
-          }
-        }
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/blobServices/default/containers": {

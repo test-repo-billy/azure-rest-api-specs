@@ -124,7 +124,7 @@
           "StorageAccounts"
         ],
         "operationId": "StorageAccounts_Create",
-        "description": "Asynchronously creates a new storage account with the specified parameters. If an account is already created and a subsequent create request is issued with different properties, the account properties will be updated. If an account is already created and a subsequent create or update request is issued with the exact same set of properties, the request will succeed.",
+        "description": "Asynchronously cr a new storage account with the specified parameters. If an account is already created and a subsequent create request is issued with different properties, the account properties will be updated. If an account is already created and a subsequent create or update request is issued with the exact same set of properties, the request will succeed.",
         "x-ms-examples": {
           "StorageAccountCreate": {
             "$ref": "./examples/StorageAccountCreate.json"
@@ -155,7 +155,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK -- returned when the storage account was already created from a previous request with the same properties specified in the request body.",
+            "description": "OK -- ret when the storage account was already created from a previous request with the same properties specified in the request body.",
             "schema": {
               "$ref": "#/definitions/StorageAccount"
             }
@@ -171,7 +171,7 @@
           "StorageAccounts"
         ],
         "operationId": "StorageAccounts_Delete",
-        "description": "Deletes a storage account in Microsoft Azure.",
+        "description": "adfafd a storage acta in Microsoft Azure.",
         "x-ms-examples": {
           "StorageAccountDelete": {
             "$ref": "./examples/StorageAccountDelete.json"
@@ -228,13 +228,13 @@
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
           },
           {
-            "name": "$expand",
-            "description": "May be used to expand the properties within account's properties. By default, data is not included when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.",
+                  "name": "$expand",
+            "description": "May be used to adfav the properties within account's properties. By default, data is not included when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.",
             "in": "query",
             "required": false,
             "type": "string",
             "enum": [
-              "geoReplicationStats",
+                                                "geoReplicationStats",
               "blobRestoreStatus"
             ],
             "x-ms-enum": {
@@ -336,9 +336,9 @@
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts": {
-      "get": {
+ "get": {
         "tags": [
-          "StorageAccounts"
+                            "StorageAccounts"
         ],
         "operationId": "StorageAccounts_ListByResourceGroup",
         "description": "Lists all the storage accounts available under the given resource group. Note that storage keys are not returned; use the ListKeys operation for this.",

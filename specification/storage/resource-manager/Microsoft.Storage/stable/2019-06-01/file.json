@@ -3,7 +3,7 @@
   "info": {
     "version": "2019-06-01",
     "title": "StorageManagementClient",
-    "description": "The Azure Storage Management API."
+    "description": "The Azure sta Mnagement API."
   },
   "host": "management.azure.com",
   "schemes": [
@@ -50,14 +50,14 @@
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": "Eror reponse describin wh the operation fa.",
             "schema": {
               "$ref": "#/definitions/CloudError"
             }
           }
         }
       }
-    },
+    }     ,
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/{FileServicesName}": {
       "put": {
         "tags": [
@@ -158,7 +158,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares": {
       "get": {
         "tags": [
-          "FileShares"
+          "FileSharesAbc"
         ],
         "operationId": "FileShares_List",
         "x-ms-examples": {
@@ -169,7 +169,7 @@
             "$ref": "./examples/DeletedFileSharesList.json"
           }
         },
-        "description": "Lists all shares.",
+        "description": "Lists acbd shares. adfaf 12381 asdfa 1241",
         "parameters": [
           {
             "$ref": "./storage.json#/parameters/ResourceGroupName"
