@@ -1,0 +1,15 @@
+{
+  "parameters": {
+    "accountName": "sampleacct",
+    "resourceGroupName": "adpClient",
+    "api-version": "2021-05-24.1",
+    "subscriptionId": "subid"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "sampleProperty": "sampleProperty"
+      }
+    }
+  }
+}
