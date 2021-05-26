@@ -133,12 +133,6 @@
               "$ref": "#/definitions/AnalysisServicesServer"
             }
           },
-          "201": {
-            "description": "InProgress. The operation is still completing.",
-            "schema": {
-              "$ref": "#/definitions/AnalysisServicesServer"
-            }
-          },
           "202": {
             "description": "Preparing. The operation is still completing.",
             "schema": {
