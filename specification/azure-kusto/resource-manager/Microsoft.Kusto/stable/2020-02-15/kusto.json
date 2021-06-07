@@ -20,7 +20,7 @@
         "tags": [
           "Clusters"
         ],
-        "operationId": "Clusters_Get",
+        "operationId": "Clusers_Get",
         "x-ms-examples": {
           "KustoClustersGet": {
             "$ref": "./examples/KustoClustersGet.json"
