@@ -39,7 +39,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Operations_List",
+        "operationId": "Opetions_List",
         "description": "List all available Microsoft.AzureStackHCI provider operations",
         "parameters": [
           {
