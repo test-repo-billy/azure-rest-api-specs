@@ -72,7 +72,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK. The operation was successful.",
+            "description": "OK. The operation .",
             "schema": {
               "$ref": "#/definitions/AnalysisServicesServer"
             }
