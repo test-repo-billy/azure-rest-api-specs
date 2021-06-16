@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure Addons Resource Provider",
+    "title": "Azure Addons Resource Provider test",
     "description": "The service for managing third party addons.",
     "version": "2017-05-15"
   },
