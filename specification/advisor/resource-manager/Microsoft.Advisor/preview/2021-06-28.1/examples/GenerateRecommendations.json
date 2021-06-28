@@ -1,0 +1,14 @@
+{
+  "parameters": {
+    "subscriptionId": "subscriptionId",
+    "api-version": "2021-06-28.1"
+  },
+  "responses": {
+    "202": {
+      "headers": {
+        "Location": "https://management.azure.com/subscriptions/subscriptionId/providers/Microsoft.Microsoft.Advisor/generateRecommendations/recGUID?api-version=2021-06-28.1",
+        "Retry-After": "60"
+      }
+    }
+  }
+}
