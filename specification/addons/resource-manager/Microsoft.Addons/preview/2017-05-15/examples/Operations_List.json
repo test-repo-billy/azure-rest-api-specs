@@ -6,7 +6,7 @@
     "200": {
       "body": [
         {
-          "name": "Microsoft.Addons/supportProviders/supportPlanTypes/read",
+          "name": "Microsoft.Addons/supportProviders/supportPlanTypes/readtest",
           "display": {
             "provider": "Microsoft Addons",
             "resource": "supportPlanTypes",
