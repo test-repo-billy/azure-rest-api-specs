@@ -91,7 +91,7 @@
         "operationId": "Workbooks_ListByResourceGroup",
         "parameters": [
           {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+            "$ref": "#/parameters/SubscriptionIdParameter"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ResourceGroupNameParameter"
@@ -420,6 +420,12 @@
             "modelAsString": true
           }
         },
+        "tags": {
+          "additionalProperties": {
+            "type": "object"
+          },
+          "description": "Resource tags"
+        },
         "properties": {
           "x-ms-client-flatten": true,
           "description": "Metadata describing a workbook for an Azure resource.",
@@ -668,6 +674,14 @@
       "collectionFormat": "csv",
       "description": "Tags presents on each workbook returned.",
       "x-ms-parameter-location": "method"
+    },
+    "SubscriptionIdParameter": {
+      "name": "subscriptionId",
+      "in": "path",
+      "description": "The subscription ID that identifies an azure subscription.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "client"
     }
   }
 }
