@@ -172,6 +172,9 @@
               "$ref": "#/definitions/IotHubDescription"
             }
           },
+           "404": {
+            "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state."
+          },
           "default": {
             "description": "DefaultErrorResponse",
             "schema": {
