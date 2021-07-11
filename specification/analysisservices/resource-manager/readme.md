@@ -25,8 +25,18 @@ To see additional help and options, run:
 These are the global settings for the AnalysisServices API.
 
 ``` yaml
-openapi-type: arm
+openapi-type: provideHub
 tag: package-2017-08
+```
+
+### ProviderHub
+
+```yaml
+
+providerHub-specifications:
+
+  - Microsoft.AnalysisServices/stable/2017-08-01/analysisservices.json
+
 ```
 
 
