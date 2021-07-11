@@ -45,6 +45,20 @@ directive:
     where: $.definitions.table.properties.rows.items.items.type
     transform: $ = "object"
 ```
+### Tag: v2
+
+These settings apply only when `--tag=v1` is specified on the command line.
+
+``` yaml $(tag) == 'v2'
+input-file:
+- Microsoft.Insights/preview/v2/AppInsights.json
+directive:
+  - reason: Don't expose the GET endpoint since it's behavior is more limited than POST
+    remove-operation: Query_Get
+  - from: swagger-document
+    where: $.definitions.table.properties.rows.items.items.type
+    transform: $ = "object"
+```
 
 ``` yaml $(tag) == '20180420'
 input-file:
