@@ -103,9 +103,6 @@
             "$ref": "#/parameters/TagsParameter"
           },
           {
-            "$ref": "#/parameters/SourceIdParameter"
-          },
-          {
             "$ref": "#/parameters/CanFetchWorkbookContentParameter"
           },
           {

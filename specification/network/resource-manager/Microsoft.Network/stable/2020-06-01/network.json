@@ -41,10 +41,6 @@
           "type": "string",
           "description": "Error code."
         },
-        "target": {
-          "type": "string",
-          "description": "Error target."
-        },
         "message": {
           "type": "string",
           "description": "Error message."
