@@ -725,6 +725,7 @@
   "definitions": {
     "operation": {
       "description": "Operation provided by provider",
+      "type":"object",
       "properties": {
         "name": {
           "type": "string",
