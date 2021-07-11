@@ -60,6 +60,11 @@ modelerfour:
 ```
 
 
+``` yaml
+providerHub-specifications:
+ - Microsoft.DocumentDB/stable/2021-04-15/rbac.json
+```
+
 ### Tag: package-2021-06
 
 These settings apply only when `--tag=package-2021-06` is specified on the command line.
