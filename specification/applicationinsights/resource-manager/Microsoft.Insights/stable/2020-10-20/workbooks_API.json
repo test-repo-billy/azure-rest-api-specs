@@ -159,7 +159,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A workbook definition.",
+            "description": "A workbook.",
             "schema": {
               "$ref": "#/definitions/Workbook"
             }
