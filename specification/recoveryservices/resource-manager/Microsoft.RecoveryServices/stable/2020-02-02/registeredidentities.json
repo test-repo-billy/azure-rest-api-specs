@@ -110,6 +110,7 @@
             "description": "NoContent"
           }
         },
+        "x-ms-long-running-operation":true,
         "deprecated": false,
         "x-ms-examples": {
           "Delete registered Identity": {
@@ -233,6 +234,10 @@
           "type": "string"
         },
         "globalAcsRPRealm": {
+          "description": "Global ACS namespace RP realm.",
+          "type": "string"
+        },
+        "testAddingProperty": {
           "description": "Global ACS namespace RP realm.",
           "type": "string"
         }
