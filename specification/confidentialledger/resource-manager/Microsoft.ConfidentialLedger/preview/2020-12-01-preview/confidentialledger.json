@@ -41,7 +41,7 @@
         ],
         "operationId": "Operations_List",
         "description": "Retrieves a list of available API operations",
-        "summary": "Retrieves a list of available API operations under this Resource Provider.",
+        "summary": "Retrieves a list of available API operations under this Resource .",
         "parameters": [
           {
             "$ref": "#/parameters/ApiVersionParameter"
