@@ -29,6 +29,15 @@ openapi-type: arm
 tag: package-2017-08
 ```
 
+### Tag: package-2017-08
+
+These settings apply only when `--tag=package-2017-08-02` is specified on the command line.
+
+``` yaml $(tag) == 'package-2017-08-02'
+input-file:
+- Microsoft.AnalysisServices/stable/2017-08-02/analysisservices.json
+```
+
 
 ### Tag: package-2017-08
 
