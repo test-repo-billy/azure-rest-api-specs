@@ -1096,7 +1096,8 @@
             "Pausing",
             "Resuming",
             "Preparing",
-            "Scaling"
+            "Scaling",
+            "Test"
           ],
           "x-ms-enum": {
             "name": "State",
