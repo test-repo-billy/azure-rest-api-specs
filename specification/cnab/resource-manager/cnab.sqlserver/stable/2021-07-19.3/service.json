@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2020-11-10-preview",
+    "version": "2021-07-19.3",
     "title": "CNABSQLServer",
     "description": "Use this API to manage SQL Server in Kubernetes in your Azure subscription."
   },
