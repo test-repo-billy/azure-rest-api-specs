@@ -1,0 +1,631 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2020-11-10-preview",
+    "title": "CNABSQLServer",
+    "description": "Use this API to manage SQL Server in Kubernetes in your Azure subscription."
+  },
+  "host": "management.azure.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "security": [
+    {
+      "azure_auth": [
+        "user_impersonation"
+      ]
+    }
+  ],
+  "securityDefinitions": {
+    "azure_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "flow": "implicit",
+      "description": "Azure Active Directory OAuth2 Flow",
+      "scopes": {
+        "user_impersonation": "impersonate your user account"
+      }
+    }
+  },
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/cnab.sqlserver/service/{resourceName}": {
+      "put": {
+        "summary": "Create or Update SQL Server on Kubernetes",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "CreateorUpdateSQLServeronKubernetes",
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {},
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "$ref": "#/parameters/subscriptionId"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/resourceName"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          },
+          "201": {
+            "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          },
+          "202": {
+            "description": "Accepted - Put request accepted; the operation will complete asynchronously."
+          },
+          "default": {
+            "description": "DefaultErrorResponse",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "summary": "Create or Update SQL Server on Kubernetes",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "PatchSQLServeronKubernetes",
+        "x-ms-examples": {},
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "$ref": "#/parameters/subscriptionId"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/resourceName"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PatchSQLServeronKubernetesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned from a PATCH request",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          },
+          "201": {
+            "description": "Returned from a PATCH request",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "summary": "Get SQL Server Service Instance",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "GetSQLServerServiceInstance",
+        "x-ms-examples": {},
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "$ref": "#/parameters/subscriptionId"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/resourceName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          },
+          "default": {
+            "description": "DefaultErrorResponse",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Delete SQL Server Service Instance",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "DeleteSQLServerServiceInstance",
+        "x-ms-examples": {},
+        "deprecated": false,
+        "x-ms-long-running-operation": true,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "$ref": "#/parameters/subscriptionId"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/resourceName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          },
+          "201": {
+            "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.",
+            "schema": {
+              "$ref": "#/definitions/Resource"
+            }
+          },
+          "204": {
+            "description": "Once the long running delete operation completes successfully, a 204 No Content status code is returned when the SQL Server Service is deleted from Kubernetes and the status of the delete operation is set to a completed state."
+          },
+          "default": {
+            "description": "DefaultErrorResponse",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/cnab.sqlserver/service/{resourceName}/testcreatedatabase": {
+      "post": {
+        "summary": "Create or Update SQL Server on Kubernetes",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "TestCreateDatabase",
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {},
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/api-version"
+          },
+          {
+            "$ref": "#/parameters/subscriptionId"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/resourceName"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "databasename": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+      "responses": {
+        "202": {
+          "description": "Accepted - Post; the operation will complete asynchronously."
+        },
+        "default": {
+          "description": "DefaultErrorResponse",
+          "schema": {
+            "$ref": "#/definitions/CloudError"
+          }
+        }
+      },
+      "security": []
+    }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/cnab.sqlserver/service": {
+    "get": {
+      "summary": "List SQL Server Service Instances",
+      "tags": [
+        "Misc"
+      ],
+      "operationId": "ListSQLServerServiceInstances",
+      "x-ms-examples": {},
+      "deprecated": false,
+      "produces": [
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "$ref": "#/parameters/api-version"
+        },
+        {
+          "$ref": "#/parameters/subscriptionId"
+        },
+        {
+          "$ref": "#/parameters/resourceGroupName"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.",
+          "schema": {
+            "$ref": "#/definitions/ListResult"
+          }
+        },
+        "default": {
+          "description": "DefaultErrorResponse",
+          "schema": {
+            "$ref": "#/definitions/CloudError"
+          }
+        }
+      },
+      "security": []
+    }
+  },
+  "/subscriptions/{subscriptionId}/providers/cnab.sqlserver/service": {
+    "get": {
+      "summary": "List SQL Server Service Instances in Subscription",
+      "tags": [
+        "Misc"
+      ],
+      "operationId": "ListSQLServerServiceInstancesInSub",
+      "x-ms-examples": {},
+      "deprecated": false,
+      "produces": [
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "$ref": "#/parameters/api-version"
+        },
+        {
+          "$ref": "#/parameters/subscriptionId"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.",
+          "schema": {
+            "$ref": "#/definitions/ListResult"
+          }
+        },
+        "default": {
+          "description": "DefaultErrorResponse",
+          "schema": {
+            "$ref": "#/definitions/CloudError"
+          }
+        }
+      },
+      "security": []
+    }
+  }
+},
+"definitions": {
+  "ListResult": {
+    "description": "A list of Sql Server services with a next link.",
+    "type": "object",
+    "properties": {
+      "nextLink": {
+        "description": "The link used to get the next page of Sql Server services.",
+        "type": "string"
+      },
+      "value": {
+        "description": "A list of Sql Server services.",
+        "type": "array",
+        "readOnly": true,
+        "items": {
+          "$ref": "#/definitions/Resource"
+        }
+      }
+    }
+  },
+  "PatchSQLServeronKubernetesRequest": {
+    "type": "object",
+    "properties": {
+      "tags": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Resource tags"
+      },
+      "properties": {
+        "$ref": "#/definitions/ServiceProperties"
+      }
+    },
+    "description": "The resource patch definition."
+  },
+  "ServiceProperties": {
+    "description": "The properties of a SQL Server Service application.",
+    "type": "object",
+    "properties": {
+      "installation": {
+        "description": "The Porter installation ID of the service.",
+        "type": "string",
+        "readOnly": true
+      },
+      "provisioningState": {
+        "description": "The provisioning state of the service.",
+        "type": "string",
+        "readOnly": true
+      },
+      "availabilitygroupname": {
+        "description": "The sql availability group name created in the service.",
+        "type": "string"
+      },
+      "error": {
+        "description": "Details of any errors during provisioning.",
+        "type": "string",
+        "readOnly": true
+      },
+      "namespace": {
+        "description": "The Kubernetes namespace that the service is created in.",
+        "type": "string",
+        "readOnly": true
+      },
+      "sql_ipaddress": {
+        "description": "The IP address of the service listener.",
+        "type": "string",
+        "readOnly": true
+      },
+      "credentials": {
+        "$ref": "#/definitions/Credentials"
+      },
+      "parameters": {
+        "$ref": "#/definitions/Params"
+      }
+    }
+  },
+  "Resource": {
+    "description": "The common properties of an ARM resource.",
+    "properties": {
+      "id": {
+        "readOnly": true,
+        "type": "string",
+        "description": "The ARM resource identifier."
+      },
+      "name": {
+        "readOnly": true,
+        "type": "string",
+        "description": "The ARM resource name.",
+        "pattern": "^(?![0-9]+$)(?!-)[a-zA-Z0-9-]{2,99}[a-zA-Z0-9]$",
+        "x-comment": "pattern must match #/parameters/resourceName"
+      },
+      "type": {
+        "readOnly": true,
+        "type": "string",
+        "description": "The resource type."
+      },
+      "location": {
+        "type": "string",
+        "description": "The resource location.",
+        "x-ms-mutability": [
+          "create",
+          "read"
+        ]
+      },
+      "tags": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "The resource tags."
+      },
+      "extendedLocation": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The extended location type."
+          },
+          "name": {
+            "type": "string",
+            "description": "The extended location name."
+          }
+        }
+      },
+      "properties": {
+        "$ref": "#/definitions/ServiceProperties"
+      }
+    },
+    "x-ms-azure-resource": true,
+    "required": [
+      "location"
+    ]
+  },
+  "Credentials": {
+    "title": "Credentials",
+    "example": {
+      "sql_masterkeypassword": "Password",
+      "sql_sapassword": "Password"
+    },
+    "type": "object",
+    "properties": {
+      "sql_masterkeypassword": {
+        "type": "string",
+        "x-ms-secret": true
+      },
+      "sql_sapassword": {
+        "type": "string",
+        "x-ms-secret": true
+      }
+    },
+    "required": [
+      "sql_masterkeypassword",
+      "sql_sapassword"
+    ]
+  },
+  "Params": {
+    "title": "Parameters",
+    "example": {
+      "availabilitygroupname": "ag12"
+    },
+    "type": "object",
+    "properties": {
+      "availabilitygroupname": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "availabilitygroupname"
+    ]
+  },
+  "CloudError": {
+    "description": "Error details.",
+    "x-ms-external": true,
+    "properties": {
+      "error": {
+        "description": "Error response body.",
+        "x-ms-client-flatten": true,
+        "$ref": "#/definitions/CloudErrorBody"
+      }
+    }
+  },
+  "CloudErrorBody": {
+    "description": "Details of error response.",
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "string",
+        "description": "The error code.",
+        "readOnly": true
+      },
+      "message": {
+        "type": "string",
+        "description": "The error message.",
+        "readOnly": true
+      },
+      "details": {
+        "type": "array",
+        "description": "A list of additional details about the error.",
+        "items": {
+          "$ref": "#/definitions/CloudErrorBody"
+        }
+      }
+    }
+  }
+},
+"parameters": {
+  "subscriptionId": {
+    "name": "subscriptionId",
+    "in": "path",
+    "description": "The subscription identifier.",
+    "required": true,
+    "type": "string"
+  },
+  "api-version": {
+    "name": "api-version",
+    "in": "query",
+    "description": "The version of the API.",
+    "required": true,
+    "type": "string"
+  },
+  "resourceGroupName": {
+    "name": "resourceGroupName",
+    "in": "path",
+    "description": "The name of the resource group that contains the service.",
+    "required": true,
+    "type": "string",
+    "x-ms-parameter-location": "method"
+  },
+  "resourceName": {
+    "name": "resourceName",
+    "in": "path",
+    "description": "The ARM resource name of the service.",
+    "required": true,
+    "type": "string",
+    "x-ms-parameter-location": "method",
+    "x-comment": "validation must match #/definitions/Resource"
+  }
+}
+}
