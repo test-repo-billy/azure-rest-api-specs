@@ -4,7 +4,7 @@
     "resourceGroupName": "udtest",
     "automationAccountName": "testaccount",
     "hybridRunbookWorkerGroupName": "TestWorkerGroup",
-    "api-version": "2020-01-13-preview"
+    "api-version": "2021-07-22.5"
   },
   "responses": {
     "200": {

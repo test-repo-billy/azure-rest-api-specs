@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "AutomationManagement",
-    "version": "2020-01-13-preview"
+    "version": "2021-07-22.5"
   },
   "host": "management.azure.com",
   "schemes": [

@@ -3,7 +3,7 @@
     "subscriptionId": "subid",
     "resourceGroupName": "rg",
     "automationAccountName": "myAutomationAccount33",
-    "api-version": "2020-01-13-preview",
+    "api-version": "2021-07-22.5",
     "jobId": "836d4e06-2d88-46b4-8500-7febd4906838"
   },
   "responses": {

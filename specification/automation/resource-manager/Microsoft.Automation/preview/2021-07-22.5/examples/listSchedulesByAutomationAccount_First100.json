@@ -3,7 +3,7 @@
     "subscriptionId": "subid",
     "resourceGroupName": "rg",
     "automationAccountName": "myAutomationAccount33",
-    "api-version": "2020-01-13-preview"
+    "api-version": "2021-07-22.5"
   },
   "responses": {
     "200": {
@@ -1911,7 +1911,7 @@
             }
           }
         ],
-        "nextLink": "https://management.azure.com:443/subscriptions/subid/resourceGroups/rg/providers/Microsoft.Automation/automationAccounts/myAutomationAccount33/schedules?api-version=2020-01-13-preview&$skip=100"
+        "nextLink": "https://management.azure.com:443/subscriptions/subid/resourceGroups/rg/providers/Microsoft.Automation/automationAccounts/myAutomationAccount33/schedules?api-version=2021-07-22.5&$skip=100"
       }
     }
   }
