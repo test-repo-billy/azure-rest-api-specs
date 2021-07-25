@@ -3,7 +3,7 @@
   "info": {
     "title": "ApplicationInsightsManagementClient",
     "description": "Azure Application Insights workbook template type.",
-    "version": "2020-11-20"
+    "version": "2021-07-26.6"
   },
   "host": "management.azure.com",
   "schemes": [

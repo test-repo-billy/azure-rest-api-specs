@@ -1,6 +1,6 @@
 {
   "parameters": {
-    "api-version": "2020-11-20",
+    "api-version": "2021-07-26.6",
     "resourceGroupName": "my-resource-group",
     "resourceName": "testtemplate2",
     "subscriptionId": "subid",
