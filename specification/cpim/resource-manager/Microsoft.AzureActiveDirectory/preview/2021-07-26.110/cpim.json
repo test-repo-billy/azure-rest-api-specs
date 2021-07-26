@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2020-05-01-preview",
+    "version": "2021-07-26.110",
     "title": "cpim",
     "description": "CPIM Service Client "
   },
