@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Azure Table",
-    "version": "2019-02-02",
+    "version": "2021-07-26.109",
     "x-ms-code-generation-settings": {
       "header": "MIT",
       "strictSpecAdherence": false
@@ -1747,7 +1747,7 @@
       "type": "string",
       "description": "Specifies the version of the operation to use for this request.",
       "enum": [
-        "2019-02-02"
+        "2021-07-26.109"
       ]
     },
     "ClientRequestId": {
