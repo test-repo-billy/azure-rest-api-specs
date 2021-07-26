@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2020-07-01",
+    "version": "2021-07-26.201",
     "title": "AppPlatformManagementClient",
     "description": "REST API for Azure Spring Cloud"
   },
@@ -4557,7 +4557,7 @@
       "required": true,
       "type": "string",
       "enum": [
-        "2020-07-01"
+        "2021-07-26.201"
       ]
     },
     "SubscriptionIdParameter": {
