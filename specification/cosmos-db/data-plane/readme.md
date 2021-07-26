@@ -4,10 +4,10 @@
 
 This is the AutoRest configuration file for Tables.
 
-
-
 ---
+
 ## Getting Started
+
 To build the SDK for Tables, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,21 +15,30 @@ To build the SDK for Tables, simply [Install AutoRest](https://aka.ms/autorest/i
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
-
 ### Basic Information
+
 These are the global settings for the Tables API.
 
 ``` yaml
 azure-validator: true
 openapi-type: data-plane
-tag: package-2019-02
+tag: package-preview-2021-07
 ```
 
+
+### Tag: package-preview-2021-07
+
+These settings apply only when `--tag=package-preview-2021-07` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2021-07'
+input-file:
+  - Microsoft.Tables/preview/2021-07-26.109/table.json
+```
 ### Tag: package-2019-02
 
 These settings apply only when `--tag=package-2019-02` is specified on the command line.
@@ -40,6 +49,7 @@ input-file:
 ```
 
 ---
+
 # Suppressions
 
 ``` yaml
@@ -179,8 +189,8 @@ directive:
 ```
 
 ---
-# Code Generation
 
+# Code Generation
 
 ## Swagger to SDK
 
@@ -199,7 +209,6 @@ csharp:
   output-folder: $(csharp-sdks-folder)/Storage/Tables/Generated
   clear-output-folder: true
 ```
-
 
 ## Python
 
@@ -222,7 +231,7 @@ java:
   output-folder: $(azure-libraries-for-java-folder)/azure-storage-tables
 ```
 
-## Multi-API/Profile support for AutoRest v3 generators 
+## Multi-API/Profile support for AutoRest v3 generators
 
 AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
 
@@ -238,11 +247,10 @@ input-file:
 
 ```
 
-If there are files that should not be in the `all-api-versions` set, 
+If there are files that should not be in the `all-api-versions` set,
 uncomment the  `exclude-file` section below and add the file paths.
 
 ``` yaml $(tag) == 'all-api-versions'
 #exclude-file: 
 #  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
 ```
-
