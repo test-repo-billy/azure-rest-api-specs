@@ -26,14 +26,23 @@ These are the global settings for the Batch API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2021-06
+tag: package-preview-2021-07
 ```
 
+
+### Tag: package-preview-2021-07
+
+These settings apply only when `--tag=package-preview-2021-07` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2021-07'
+input-file:
+  - Microsoft.Batch/preview/2021-07-27.102/BatchManagement.json
+```
 ### Tag: package-2021-06
 
 These settings apply only when `--tag=package-2021-06` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-06'
+``` yaml $(tag) == 'package-2021-06'
 input-file:
   - Microsoft.Batch/stable/2021-06-01/BatchManagement.json
 ```
@@ -42,7 +51,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-01'
+``` yaml $(tag) == 'package-2021-01'
 input-file:
   - Microsoft.Batch/stable/2021-01-01/BatchManagement.json
 ```
@@ -51,7 +60,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-09` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-09'
+``` yaml $(tag) == 'package-2020-09'
 input-file:
   - Microsoft.Batch/stable/2020-09-01/BatchManagement.json
 ```
@@ -60,7 +69,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-05` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-05'
+``` yaml $(tag) == 'package-2020-05'
 input-file:
   - Microsoft.Batch/stable/2020-05-01/BatchManagement.json
 ```
@@ -228,7 +237,7 @@ swagger-to-sdk:
   - repo: azure-resource-manager-schemas
 ```
 
-## C\#
+## C#
 
 These settings apply only when `--csharp` is specified on the command line.
 Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azure-sdk-for-net clone>`.
