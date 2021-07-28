@@ -28,15 +28,61 @@ These are the global settings for the ApiManagement API.
 title: ApiManagementClient
 description: ApiManagement Client
 openapi-type: arm
-tag: package-preview-2021-01
+tag: package-preview-2021-07
 ```
 
 
+### Tag: package-preview-2021-07
+
+These settings apply only when `--tag=package-preview-2021-07` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2021-07'
+input-file:
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimanagement.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimapis.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimapisByTags.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimapiversionsets.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimauthorizationservers.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimbackends.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimcaches.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimcertificates.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimcontenttypes.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimdeletedservices.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimdeployment.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimdiagnostics.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimemailtemplates.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimgateways.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimgroups.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimidentityprovider.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimissues.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimloggers.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimnamedvalues.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimnetworkstatus.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimnotifications.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimopenidconnectproviders.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimpolicies.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimpolicydescriptions.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimportalrevisions.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimportalsettings.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimproducts.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimproductsByTags.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimquotas.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimregions.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimreports.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimsettings.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimskus.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimsubscriptions.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimtagresources.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimtags.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimtenant.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/apimusers.json
+  - Microsoft.ApiManagement/preview/2021-07-28.102/definitions.json
+```
 ### Tag: package-preview-2021-01
 
 These settings apply only when `--tag=package-preview-2021-01` is specified on the command line.
 
-```yaml $(tag) == 'package-preview-2021-01'
+``` yaml $(tag) == 'package-preview-2021-01'
 input-file:
   - Microsoft.ApiManagement/preview/2021-01-01-preview/apimanagement.json
   - Microsoft.ApiManagement/preview/2021-01-01-preview/apimapis.json
@@ -78,6 +124,7 @@ input-file:
   - Microsoft.ApiManagement/preview/2021-01-01-preview/apimusers.json
   - Microsoft.ApiManagement/preview/2021-01-01-preview/definitions.json
 ```
+
 ### Tag: package-2020-12
 
 These settings apply only when `--tag=package-2020-12` is specified on the command line.
@@ -515,8 +562,6 @@ See configuration in [readme.go.md](./readme.go.md)
 ## Java
 
 See configuration in [readme.java.md](./readme.java.md)
-
-
 
 ## Suppression
 
