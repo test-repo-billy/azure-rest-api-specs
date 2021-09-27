@@ -1,7 +1,7 @@
 {
   "parameters": {
     "name": "types",
-    "api-version": "2020-10-28"
+    "api-version": "2021-09-27.001"
   },
   "responses": {
     "200": {
