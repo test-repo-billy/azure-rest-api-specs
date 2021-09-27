@@ -10,7 +10,7 @@
     "https"
   ],
   "consumes": [
-    "application/json"
+    "applicasdation/json"
   ],
   "produces": [
     "application/json"
