@@ -237,6 +237,7 @@ Baidu
 bangla
 baremetal
 baremetalinfrastructure
+bastionhosts
 BATCHAI
 batchmanaged
 batchresponse
@@ -1863,6 +1864,8 @@ shamir_share
 shapefile
 shapefiles
 sharded
+sharedgalleries
+sharedimages
 sharedkey
 sharename
 Sharepoint
