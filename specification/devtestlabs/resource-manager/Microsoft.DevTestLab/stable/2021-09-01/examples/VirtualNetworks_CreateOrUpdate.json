@@ -6,6 +6,7 @@
     "labName": "{labName}",
     "name": "{virtualNetworkName}",
     "virtualNetwork": {
+      "properties": {},
       "location": "{location}",
       "tags": {
         "tagName1": "tagValue1"
@@ -23,6 +24,7 @@
         "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
         "name": "{virtualNetworkName}",
         "type": "Microsoft.DevTestLab/labs/virtualNetworks",
+        "location": "{location}",
         "tags": {
           "tagName1": "tagValue1"
         }
@@ -38,10 +40,12 @@
         "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
         "name": "{virtualNetworkName}",
         "type": "Microsoft.DevTestLab/labs/virtualNetworks",
+        "location": "{location}",
         "tags": {
           "tagName1": "tagValue1"
         }
       }
-    }
+    },
+    "202": {}
   }
 }
