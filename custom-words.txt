@@ -237,6 +237,7 @@ Baidu
 bangla
 baremetal
 baremetalinfrastructure
+bastionhost
 bastionhosts
 BATCHAI
 batchmanaged
