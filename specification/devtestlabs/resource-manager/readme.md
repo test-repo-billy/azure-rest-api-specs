@@ -138,10 +138,10 @@ directive:
       - $.definitions.SharedImage.properties
       - $.definitions.User.properties
       - $.definitions.Disk.properties
-      - $.definitions.Environment.properties
+      - $.definitions.DtlEnvironment.properties
       - $.definitions.Secret.properties
       - $.definitions.ServiceFabric.properties
-      - $.definitions.VirtualMachine.properties
+      - $.definitions.LabVirtualMachine.properties
       - $.definitions.VirtualNetwork.properties
       - $.definitions.BastionHost.properties
       - $.definitions.ArmTemplate.properties
@@ -165,10 +165,10 @@ directive:
       - $.definitions.SharedImage
       - $.definitions.User
       - $.definitions.Disk
-      - $.definitions.Environment
+      - $.definitions.DtlEnvironment
       - $.definitions.Secret
       - $.definitions.ServiceFabric
-      - $.definitions.VirtualMachine
+      - $.definitions.LabVirtualMachine
       - $.definitions.VirtualNetwork
       - $.definitions.BastionHost
     reason: Tooling issue
@@ -189,12 +189,12 @@ directive:
       - $.definitions.SharedImage
       - $.definitions.User
       - $.definitions.Disk
-      - $.definitions.Environment
+      - $.definitions.DtlEnvironment
       - $.definitions.Secret
       - $.definitions.ServiceFabric
       - $.definitions.Schedule
       - $.definitions.LabCost
-      - $.definitions.VirtualMachine
+      - $.definitions.LabVirtualMachine
       - $.definitions.VirtualNetwork
       - $.definitions.BastionHost
     reason: These have never been supported.
@@ -246,10 +246,27 @@ directive:
       - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/policySets/{name}/evaluatePolicies"]
       - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/policysets/{name}/evaluatePolicies"].post.operationId
     reason: This action is also named this way in previous SDK versions. Changing it would be a breaking change.
+  - suppress: R4000 # SDKViolation
+    from: types.json
+    where:
+      - $.definitions.KeyVaultProperties
+      - $.definitions.ResourceModelWithAllowedPropertySet.properties.identity
+      - $.definitions.ResourceModelWithAllowedPropertySet.properties.plan
+      - $.definitions.ResourceModelWithAllowedPropertySet.properties.sku
+    reason: This is a copy of the common types from ARM.
   - suppress: R4014  # AllResourcesMustHaveGetOperation
     from: DTL.json
     where: $.definitions.PolicySet
     reason: This operation doesn't make sense in the context of policysets and has never been supported.
+  - suppress: R4015 # NestedResourcesMustHaveListOperation
+    from: types.json
+    where:
+      - $.definitions.KeyVaultProperties
+      - $.definitions.Operation.properties.isDataAction
+      - $.definitions.ResourceModelWithAllowedPropertySet.properties.identity
+      - $.definitions.ResourceModelWithAllowedPropertySet.properties.sku
+      - $.definitions.ResourceModelWithAllowedPropertySet.properties.plan
+    reason: This is a copy of the common types from ARM.
   - suppress: R4021 # DescriptionAndTitleMissing
     from: types.json
     where:
@@ -278,10 +295,5 @@ directive:
     from: types.json
     where: $
     reason: This is a copy of the common types from ARM.
-  - suppress: R4000 # SDKViolation
-    from: types.json
-    where:
-      - $.definitions.ResourceModelWithAllowedPropertySet.properties.identity
-      - $.definitions.ResourceModelWithAllowedPropertySet.properties.plan
-    reason: This is a copy of the common types from ARM.
+
 ```
