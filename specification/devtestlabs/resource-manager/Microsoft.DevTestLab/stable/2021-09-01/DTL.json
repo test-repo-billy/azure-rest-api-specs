@@ -9367,7 +9367,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Resource"
+          "$ref": "types.json#/definitions/Resource"
         }
       ],
       "properties": {
@@ -9917,7 +9917,7 @@
       ],
       "allOf": [
         {
-          "$ref": "#/definitions/Resource"
+          "$ref": "types.json#/definitions/Resource"
         }
       ]
     },
@@ -10703,7 +10703,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Resource"
+          "$ref": "types.json#/definitions/Resource"
         }
       ],
       "properties": {
@@ -11042,7 +11042,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Resource"
+          "$ref": "types.json#/definitions/Resource"
         }
       ],
       "properties": {
@@ -12675,7 +12675,7 @@
       ],
       "allOf": [
         {
-          "$ref": "#/definitions/Resource"
+          "$ref": "types.json#/definitions/Resource"
         }
       ]
     },
