@@ -3,7 +3,7 @@
   "info": {
     "title": "ApiManagementClient",
     "description": "Use these REST APIs for performing operations on Global Policies in Azure API Management deployment.",
-    "version": "2019-12-01"
+    "version": "2022-02-19"
   },
   "host": "management.azure.com",
   "schemes": [
