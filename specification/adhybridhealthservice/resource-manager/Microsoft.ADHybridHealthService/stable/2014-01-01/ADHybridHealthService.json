@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "2014-01-01",
-    "title": "ADHybridHealthService",
+    "title": "ADHybridHealthServicetest",
     "description": "REST APIs for Azure Active Directory Connect Health"
   },
   "host": "management.azure.com",
