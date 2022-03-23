@@ -1,0 +1,28 @@
+{
+  "parameters": {
+    "api-version": "2020-02-01-preview",
+    "subscriptionId": "subscriptionId",
+    "resourceGroupName": "rgName",
+    "profileName": "fpProfile1",
+    "experimentName": "fpExp1"
+  },
+  "responses": {
+    "200": {
+        "body":{
+            "id":"/subscriptions/fd3c3665-1729-4b7b-9a38-238e83b0f98b/resourceGroups/testrg/providers/Microsoft.VMware/VirtualNetworks/ProdNetwork",
+            "name":"ProdNetwork",
+            "type":"Microsoft.VMware/VirtualNetworks",
+            "location":"East US",
+            "tags":{
+               "tag1":"value1"
+            },
+            "properties":{
+               "vCenterId":"/subscriptions/fd3c3665-1729-4b7b-9a38-238e83b0f98b/resourceGroups/testrg/providers/Microsoft.VMware/VCenters/ContosoVCenter",
+               "moRefId":"aaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+               "arcZoneId": "/subscriptions/fd3c3665-1729-4b7b-9a38-238e83b0f98b/resourceGroups/testrg/providers/Microsoft.VMware/ArcZones/Seattle",
+               "provisioningState":"Succeeded"
+            }
+         }
+    }
+  }
+}
