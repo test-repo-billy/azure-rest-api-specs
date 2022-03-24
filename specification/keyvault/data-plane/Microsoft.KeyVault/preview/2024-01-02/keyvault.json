@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "KeyVaultClient",
+    "title": "KeyVaultClient2.0",
     "description": "Performs cryptographic key operations and vault operations against the Key Vault service.",
     "version": "2024-01-02"
   },
