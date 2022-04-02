@@ -1,7 +1,7 @@
 {
   "parameters": {
     "storage-account-name": "regenerateKey01",
-    "api-version": "2016-10-01",
+    "api-version": "2025-01-02",
     "parameters": {
       "keyName": "key2"
     }

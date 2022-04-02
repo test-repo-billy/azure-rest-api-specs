@@ -1,7 +1,7 @@
 {
   "parameters": {
     "storage-account-name": "listsas01",
-    "api-version": "2016-10-01"
+    "api-version": "2025-01-02"
   },
   "responses": {
     "200": {
@@ -27,7 +27,7 @@
             }
           }
         ],
-        "nextLink": "https://{BaseUri}/storage/listsas01/sas?api-version=2016-10-01&%24skiptoken=<token>"
+        "nextLink": "https://{BaseUri}/storage/listsas01/sas?api-version=2025-01-02&%24skiptoken=<token>"
       }
     }
   }
