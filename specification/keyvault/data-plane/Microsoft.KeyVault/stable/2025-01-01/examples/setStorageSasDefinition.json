@@ -2,7 +2,7 @@
   "parameters": {
     "storage-account-name": "setsas01",
     "sas-definition-name": "setStrgSasDef01",
-    "api-version": "2016-10-01",
+    "api-version": "2025-01-01",
     "parameters": {
       "parameters": {
         "sasType": "account",

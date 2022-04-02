@@ -3,7 +3,7 @@
   "info": {
     "title": "KeyVaultClient",
     "description": "The key vault client performs cryptographic key operations and vault operations against the Key Vault service.",
-    "version": "2016-10-01"
+    "version": "2025-01-01"
   },
   "x-ms-parameterized-host": {
     "hostTemplate": "{vaultBaseUrl}",

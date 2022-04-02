@@ -1,6 +1,6 @@
 {
   "parameters": {
-    "api-version": "2016-10-01"
+    "api-version": "2025-01-01"
   },
   "responses": {
     "200": {
@@ -34,7 +34,7 @@
             }
           }
         ],
-        "nextLink": "https://{BaseUri}/storage?api-version=2016-10-01&%24skiptoken=<token>"
+        "nextLink": "https://{BaseUri}/storage?api-version=2025-01-01&%24skiptoken=<token>"
       }
     }
   }
