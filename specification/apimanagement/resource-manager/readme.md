@@ -34,15 +34,57 @@ tag: package-2021-08
 ``` yaml
 modelerfour:
   lenient-model-deduplication: true
-tag: package-2021-08
+tag: package-preview-2022-02
 ```
 
 
+### Tag: package-preview-2022-02
+
+These settings apply only when `--tag=package-preview-2022-02` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-02'
+input-file:
+  - Microsoft.ApiManagement/preview/2022-02-19/apimanagement.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimapis.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimapisByTags.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimapiversionsets.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimauthorizationservers.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimbackends.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimcaches.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimcertificates.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimcontenttypes.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimdeployment.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimdiagnostics.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimemailtemplates.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimgateways.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimgroups.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimidentityprovider.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimissues.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimloggers.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimnamedvalues.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimnetworkstatus.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimnotifications.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimopenidconnectproviders.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimpolicies.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimpolicydescriptions.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimportalsettings.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimproducts.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimproductsByTags.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimquotas.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimregions.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimreports.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimsubscriptions.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimtagresources.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimtags.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimtenant.json
+  - Microsoft.ApiManagement/preview/2022-02-19/apimusers.json
+  - Microsoft.ApiManagement/preview/2022-02-19/definitions.json
+```
 ### Tag: package-2021-08
 
 These settings apply only when `--tag=package-2021-08` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-08'
+``` yaml $(tag) == 'package-2021-08'
 input-file:
   - Microsoft.ApiManagement/stable/2021-08-01/apimanagement.json
   - Microsoft.ApiManagement/stable/2021-08-01/apimapis.json
@@ -88,6 +130,7 @@ input-file:
   - Microsoft.ApiManagement/stable/2021-08-01/apimusers.json
   - Microsoft.ApiManagement/stable/2021-08-01/definitions.json
 ```
+
 ### Tag: package-preview-2021-04
 
 These settings apply only when `--tag=package-preview-2021-04` is specified on the command line.
