@@ -15,6 +15,7 @@ To build the SDK for Logic, simply [Install AutoRest](https://aka.ms/autorest/in
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
@@ -25,20 +26,27 @@ These are the global settings for the Logic API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2019-05
-
+tag: package-preview-2022-01
 directive:
   - where:
-      - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/runs/{runName}/actions/{actionName}/listExpressionTraces"].post.responses["200"].schema
+      - '$.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/runs/{runName}/actions/{actionName}/listExpressionTraces"].post.responses["200"].schema'
     suppress:
       - CollectionObjectPropertiesNaming
   - where:
-      - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/runs/{runName}/actions/{actionName}/repetitions/{repetitionName}/listExpressionTraces"].post.responses["200"].schema
+      - '$.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/runs/{runName}/actions/{actionName}/repetitions/{repetitionName}/listExpressionTraces"].post.responses["200"].schema'
     suppress:
       - CollectionObjectPropertiesNaming
-
 ```
 
+
+### Tag: package-preview-2022-01
+
+These settings apply only when `--tag=package-preview-2022-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-01'
+input-file:
+  - Microsoft.Logic/preview/2022-01-01/logic.json
+```
 ### Tag: package-2019-05
 
 These settings apply only when `--tag=package-2019-05` is specified on the command line.
@@ -184,6 +192,7 @@ batch:
   - tag: package-2018-07-preview
   - tag: package-2016-06
 ```
+
 ### Tag: package-2019-05 and java
 
 These settings apply only when `--tag=package-2019-05 --java` is specified on the command line.
@@ -196,6 +205,7 @@ java:
 regenerate-manager: true
 generate-interface: true
 ```
+
 ### Tag: package-2018-07-preview and java
 
 These settings apply only when `--tag=package-2018-07-preview --java` is specified on the command line.
@@ -221,8 +231,6 @@ java:
 regenerate-manager: true
 generate-interface: true
 ```
-
-
 
 ## Terraform
 
