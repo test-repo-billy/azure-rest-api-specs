@@ -26,18 +26,27 @@ These are the global settings for the Advisor API.
 
 ``` yaml
 openapi-type: arm
-tag: package-preview-2020-10
+tag: package-preview-2022-04
 ```
 
 
+### Tag: package-preview-2022-04
+
+These settings apply only when `--tag=package-preview-2022-04` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-04'
+input-file:
+  - Microsoft.Advisor/preview/2022-04-14/advisor.json
+```
 ### Tag: package-preview-2020-10
 
 These settings apply only when `--tag=package-preview-2020-10` is specified on the command line.
 
-```yaml $(tag) == 'package-preview-2020-10'
+``` yaml $(tag) == 'package-preview-2020-10'
 input-file:
   - Microsoft.Advisor/preview/2020-10-28/advisor.json
 ```
+
 ### Tag: package-2020-07-preview
 
 These settings apply only when `--tag=package-2020-07-preview` is specified on the command line.
@@ -130,6 +139,5 @@ csharp:
 ## Java
 
 See configuration in [readme.java.md](./readme.java.md)
-
 
 See configuration in [readme.azureresourceschema.md](./readme.azureresourceschema.md)
