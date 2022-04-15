@@ -1,13 +1,13 @@
 # API Management Direct Control Plane Client
-    
+
 > see https://aka.ms/autorest
 
 This is the AutoRest configuration file for Direct Control Plane SDK for API Management.
 
-
-
 ---
-## Getting Started 
+
+## Getting Started
+
 To build the SDK for API Management, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,20 +15,46 @@ To build the SDK for API Management, simply [Install AutoRest](https://aka.ms/au
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
+### Basic Information
 
-
-### Basic Information 
 These are the global settings for the API Management Direct Control Plane API.
 
 ``` yaml
 openapi-type: default
-tag: package-2017-03
+tag: package-preview-2022-04
 ```
 
+
+### Tag: package-preview-2022-04
+
+These settings apply only when `--tag=package-preview-2022-04` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-04'
+input-file:
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimanagement.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimapis.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimauthorizationservers.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimbackends.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimcertificates.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimemailtemplate.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimgroups.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimidentityprovider.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimloggers.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimopenidconnectproviders.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimportalsettings.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimproducts.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimproperties.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimquotas.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimreports.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimsubscriptions.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimtenant.json
+  - Microsoft.ApiManagement/preview/2022-04-15.10/apimusers.json
+```
 ### Tag: package-2017-03
 
 These settings apply only when `--tag=package-2017-03` is specified on the command line.
@@ -94,7 +120,7 @@ Please also specify `--go-sdk-folder=<path to the root directory of your azure-s
 output-folder: $(go-sdk-folder)/services/preview/$(namespace)/ctrl/2017-03-01/$(namespace)
 ```
 
-## Multi-API/Profile support for AutoRest v3 generators 
+## Multi-API/Profile support for AutoRest v3 generators
 
 AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
 
@@ -127,11 +153,10 @@ input-file:
 
 ```
 
-If there are files that should not be in the `all-api-versions` set, 
+If there are files that should not be in the `all-api-versions` set,
 uncomment the  `exclude-file` section below and add the file paths.
 
 ``` yaml $(tag) == 'all-api-versions'
 #exclude-file: 
 #  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
 ```
-
