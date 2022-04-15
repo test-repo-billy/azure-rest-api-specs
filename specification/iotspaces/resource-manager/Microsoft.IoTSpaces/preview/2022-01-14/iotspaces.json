@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2017-10-01-preview",
+    "version": "2022-01-14",
     "title": "IoTSpacesClient",
     "description": "Use this API to manage the IoTSpaces service instances in your Azure subscription.",
     "x-ms-code-generation-settings": {
@@ -50,7 +50,7 @@
     "api-version": {
       "name": "api-version",
       "enum": [
-        "2017-10-01-preview"
+        "2022-01-14"
       ],
       "in": "query",
       "description": "The version of the API.",
