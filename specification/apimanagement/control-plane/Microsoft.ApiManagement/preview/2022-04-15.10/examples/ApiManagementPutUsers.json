@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "uid": "5a58bac2a40f7ef2e05bc7d0",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "email": "5a58bac2a40f7ef2e05bc7d1@contoso.com",
       "password": "<password>",

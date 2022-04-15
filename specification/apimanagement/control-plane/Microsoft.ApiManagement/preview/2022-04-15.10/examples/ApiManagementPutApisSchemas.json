@@ -3,7 +3,7 @@
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "apiId": "5a58bdf5a40f7e104892acda",
     "schemaId": "5a58bdf5a40f7e104892ace0",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "contentType": "application/vnd.ms-azure-apim.xsd+xml",
       "document": {

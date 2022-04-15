@@ -3,7 +3,7 @@
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "productId": "5a58bd5aa40f7e104892a53c",
     "apiId": "5a58bd5aa40f7e104892a541",
-    "api-version": "2017-03-01"
+    "api-version": "2022-04-15.10"
   },
   "responses": {
     "204": {}

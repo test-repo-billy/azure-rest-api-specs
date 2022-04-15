@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "backendid": "5a58bb16a40f7ef2e05bd52d",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "description": "Service Fabric Test App: 5a58bb16a40f7ef2e05bd52d",
       "url": "fabric:/mytestapp/mytestservice",

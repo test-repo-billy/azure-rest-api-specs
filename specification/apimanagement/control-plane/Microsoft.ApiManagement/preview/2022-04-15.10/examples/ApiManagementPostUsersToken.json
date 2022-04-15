@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "uid": "1",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "keyType": "primary",
       "expiry": "2017-05-13T10:39:35Z"

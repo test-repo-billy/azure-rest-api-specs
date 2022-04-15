@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "sid": "5a58bd09a40f7e1048929de9",
-    "api-version": "2017-03-01"
+    "api-version": "2022-04-15.10"
   },
   "responses": {
     "204": {}

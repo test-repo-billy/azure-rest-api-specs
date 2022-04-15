@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "authsid": "5a58bb1ca40f7ef2e05bd557",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "name": "68d89b6f-a724-4035-bc3c-a7ab17d849d8",
       "description": "test server",

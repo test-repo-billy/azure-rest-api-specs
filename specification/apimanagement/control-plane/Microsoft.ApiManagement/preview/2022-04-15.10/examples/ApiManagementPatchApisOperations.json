@@ -3,7 +3,7 @@
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "apiId": "5a58bb25a40f7ef2e05bd5b2",
     "operationId": "5a58bb25a40f7ef2e05bd5c5",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "If-Match": "\"AAAAAAAADfY=\"",
     "parameters": {
       "method": "DELETE",

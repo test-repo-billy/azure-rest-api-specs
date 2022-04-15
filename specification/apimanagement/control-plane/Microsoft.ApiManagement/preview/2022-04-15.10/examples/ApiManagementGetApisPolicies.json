@@ -3,7 +3,7 @@
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "apiId": "5a58bf63a40f7e104892bdaf",
     "policyId": "policy",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "Accept": "application/json"
   },
   "responses": {

@@ -3,7 +3,7 @@
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "apiId": "5a58bab8a40f7ef2e05bc7a1",
     "operationId": "5a58bab8a40f7ef2e05bc7aa",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "name": "operation_5a58bab8a40f7ef2e05bc7a7",
       "method": "PATCH",

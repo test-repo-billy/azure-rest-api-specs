@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "productId": "5a58bab1a40f7ef2e05bc75f",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "name": "product_5a58bab1a40f7ef2e05bc760",
       "description": "product_description_5a58bab1a40f7ef2e05bc761",

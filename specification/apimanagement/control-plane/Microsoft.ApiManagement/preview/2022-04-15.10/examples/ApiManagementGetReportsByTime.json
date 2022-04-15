@@ -1,7 +1,7 @@
 {
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "$filter": "timestamp ge datetime'2017-06-01T00:00:00' and timestamp le datetime'2017-06-04T00:00:00'",
     "interval": "PT15M"
   },

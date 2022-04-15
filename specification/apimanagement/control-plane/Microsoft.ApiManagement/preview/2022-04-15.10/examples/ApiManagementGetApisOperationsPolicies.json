@@ -4,7 +4,7 @@
     "apiId": "5a58bfeea40f7e104892c5b6",
     "operationId": "5a58bfeea40f7e104892c5c9",
     "policyId": "policy",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "Accept": "application/json"
   },
   "responses": {

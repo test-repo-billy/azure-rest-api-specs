@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "certificateId": "5a58bad2a40f7ef2e05bcce2",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "data": "Based 64 Encoded Certificate string",
       "password": "<password>"

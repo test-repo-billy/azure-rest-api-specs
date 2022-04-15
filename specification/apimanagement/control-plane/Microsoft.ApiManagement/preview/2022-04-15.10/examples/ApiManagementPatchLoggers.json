@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "loggerid": "5a58bd45a40f7e104892a3aa",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "If-Match": "\"AAAAAAAAHDE=\"",
     "parameters": {
       "credentials": {

@@ -2,7 +2,7 @@
   "parameters": {
     "apimBaseUrl": "apimservice1.management.azure-api.net",
     "loggerid": "5a58bc28a40f7e10489292a3",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "parameters": {
       "loggerType": "azureEventHub",
       "description": "first eventhub logger",

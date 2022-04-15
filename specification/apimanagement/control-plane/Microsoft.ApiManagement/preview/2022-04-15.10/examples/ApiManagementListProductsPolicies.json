@@ -4,7 +4,7 @@
     "$skip": 0,
     "$top": 10000,
     "productId": "starter",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "Accept": "application/json"
   },
   "responses": {

@@ -4,7 +4,7 @@
     "apiId": "5a58bc94a40f7e10489299ac",
     "operationId": "5a58bc94a40f7e10489299bf",
     "policyId": "policy",
-    "api-version": "2017-03-01",
+    "api-version": "2022-04-15.10",
     "If-Match": "*",
     "parameters": {
       "policyContent": "<policies>\r\n  <inbound>\r\n    <base />\r\n    <rewrite-uri template=\"/resource\" />\r\n  </inbound>\r\n  <backend>\r\n    <base />\r\n  </backend>\r\n  <outbound>\r\n    <base />\r\n  </outbound>\r\n</policies>"
