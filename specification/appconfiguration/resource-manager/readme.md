@@ -26,27 +26,18 @@ These are the global settings for the AppConfiguration API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2011-01
+tag: package-preview-2022-01
 ```
 
 
-### Tag: package-2011-01
-
-These settings apply only when `--tag=package-2011-01` is specified on the command line.
-
-```yaml $(tag) == 'package-2011-01'
-input-file:
-  - Microsoft.AppConfiguration/stable/2011-01-01/appconfiguration.json
-```
 ### Tag: package-preview-2022-01
 
 These settings apply only when `--tag=package-preview-2022-01` is specified on the command line.
 
-``` yaml $(tag) == 'package-preview-2022-01'
+```yaml $(tag) == 'package-preview-2022-01'
 input-file:
   - Microsoft.AppConfiguration/preview/2022-01-11/appconfiguration.json
 ```
-
 ### Tag: package-2021-10-01-preview
 
 These settings apply only when `--tag=2021-10-01-preview` is specified on the command line.
@@ -126,6 +117,7 @@ swagger-to-sdk:
   - repo: azure-sdk-for-java
   - repo: azure-sdk-for-js
   - repo: azure-sdk-for-go
+  - repo: azure-sdk-for-go-track2
   - repo: azure-sdk-for-ruby
     after_scripts:
       - bundle install && rake arm:regen_all_profiles['azure_mgmt_app_configuration']
