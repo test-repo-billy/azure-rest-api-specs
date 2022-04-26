@@ -1,6 +1,6 @@
 {
   "parameters": {
-    "api-version": "2020-02-10-preview",
+    "api-version": "2022-03-10",
     "subscriptionId": "123subid",
     "resourceGroupName": "myresourcegroup",
     "webTestName": "my-test-name",
