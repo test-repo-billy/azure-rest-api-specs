@@ -1,0 +1,18 @@
+{
+  "parameters": {
+    "apimBaseUrl": "apimservice1.management.azure-api.net",
+    "api-version": "2022-04-15.10"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "enabled": true,
+        "termsOfService": {
+          "text": "Terms of service text.",
+          "enabled": true,
+          "consentRequired": true
+        }
+      }
+    }
+  }
+}

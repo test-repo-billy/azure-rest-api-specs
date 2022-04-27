@@ -1,0 +1,21 @@
+{
+  "parameters": {
+    "apimBaseUrl": "apimservice1.management.azure-api.net",
+    "api-version": "2022-04-15.10"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "value": [
+          {
+            "name": "West US",
+            "isMasterRegion": true,
+            "isDeleted": false
+          }
+        ],
+        "count": 1,
+        "nextLink": ""
+      }
+    }
+  }
+}

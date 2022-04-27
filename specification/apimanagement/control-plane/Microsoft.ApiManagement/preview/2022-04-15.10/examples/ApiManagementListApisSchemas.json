@@ -1,0 +1,16 @@
+{
+  "parameters": {
+    "apimBaseUrl": "apimservice1.management.azure-api.net",
+    "apiId": "5a58bde0a40f7e104892ac2c",
+    "api-version": "2022-04-15.10",
+    "Accept": "application/json"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "value": [],
+        "count": 0
+      }
+    }
+  }
+}

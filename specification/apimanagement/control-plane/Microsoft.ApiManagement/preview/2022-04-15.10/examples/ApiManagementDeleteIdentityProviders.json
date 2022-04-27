@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "apimBaseUrl": "apimservice1.management.azure-api.net",
+    "identityProviderName": "aadB2C",
+    "api-version": "2022-04-15.10",
+    "If-Match": "*"
+  },
+  "responses": {
+    "204": {}
+  }
+}

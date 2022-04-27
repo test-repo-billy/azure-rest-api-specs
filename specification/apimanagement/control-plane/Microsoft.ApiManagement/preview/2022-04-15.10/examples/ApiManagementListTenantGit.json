@@ -1,0 +1,17 @@
+{
+  "parameters": {
+    "apimBaseUrl": "apimservice1.management.azure-api.net",
+    "api-version": "2022-04-15.10",
+    "accessName": "access"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "id": "5600b59375ff190048030003",
+        "primaryKey": "<primaryKey>",
+        "secondaryKey": "<secondaryKey>",
+        "enabled": true
+      }
+    }
+  }
+}

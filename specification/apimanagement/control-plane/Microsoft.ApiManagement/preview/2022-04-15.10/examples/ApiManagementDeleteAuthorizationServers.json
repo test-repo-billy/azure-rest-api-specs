@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "apimBaseUrl": "apimservice1.management.azure-api.net",
+    "authsid": "5a58bebda40f7e104892b414",
+    "api-version": "2022-04-15.10",
+    "If-Match": "\"AAAAAAAAI0Q=\""
+  },
+  "responses": {
+    "204": {}
+  }
+}
