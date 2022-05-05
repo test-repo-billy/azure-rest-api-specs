@@ -1,13 +1,13 @@
 # Attestation
-    
+
 > see https://aka.ms/autorest
 
 This is the AutoRest configuration file for Attestation.
 
-
-
 ---
-## Getting Started 
+
+## Getting Started
+
 To build the SDK for Attestation, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,19 +15,31 @@ To build the SDK for Attestation, simply [Install AutoRest](https://aka.ms/autor
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
+
 Following are the settings for using this specification with [AutoRest](https://aka.ms/autorest) tool to validation and optionally generate SDK.
 
 ### Basic Information
+
 These are the global settings for the Attestation APIs.
 
 ``` yaml
 openapi-type: data-plane
-tag: package-2020-10-01
+tag: package-preview-2022-05
 ```
 
+
+### Tag: package-preview-2022-05
+
+These settings apply only when `--tag=package-preview-2022-05` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-05'
+input-file:
+  - Microsoft.Attestation/preview/2022-05-05.001/attestation.json
+```
 ### Tag: package-2018-09-01
 
 These settings apply only when `--tag=package-2018-09-01` is specified on the command line.
@@ -47,6 +59,7 @@ input-file:
 ```
 
 ---
+
 # Code Generation
 
 ## Swagger to SDK
@@ -67,7 +80,8 @@ swagger-to-sdk:
 See configuration in [readme.python.md](./readme.python.md)
 
 ---
-## C# 
+
+## C#
 
 These settings apply only when `--csharp` is specified on the command line.
 Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azure-sdk-for-net clone>`.
@@ -85,7 +99,7 @@ csharp:
 
 See configuration in [readme.go.md](./readme.go.md)
 
-## Multi-API/Profile support for AutoRest v3 generators 
+## Multi-API/Profile support for AutoRest v3 generators
 
 AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
 
@@ -101,7 +115,7 @@ input-file:
   - $(this-folder)/Microsoft.Attestation/stable/2020-10-01/attestation.json
 ```
 
-If there are files that should not be in the `all-api-versions` set, 
+If there are files that should not be in the `all-api-versions` set,
 uncomment the  `exclude-file` section below and add the file paths.
 
 ``` yaml $(tag) == 'all-api-versions'
@@ -110,6 +124,7 @@ uncomment the  `exclude-file` section below and add the file paths.
 ```
 
 ### Suppression
+
 ``` yaml
 directive:
   - suppress: DefinitionsPropertiesNamesCamelCase
@@ -129,4 +144,3 @@ directive:
     where: $.definitions.AttestationResult.properties.rp_data
     reason: Existing Clients use these definitions which must be maintained.
 ```
-
