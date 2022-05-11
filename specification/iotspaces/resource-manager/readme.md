@@ -13,6 +13,15 @@ batch:
   - tag: package-2017-10-preview
 ```
 
+
+### Tag: package-preview-2021-11
+
+These settings apply only when `--tag=package-preview-2021-11` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2021-11'
+input-file:
+  - Microsoft.IoTSpaces/preview/2021-11-06/iotspaces.json
+```
 ### Tag: package-2017-10-preview and java
 
 These settings apply only when `--tag=package-2017-10-preview --java` is specified on the command line.
@@ -26,8 +35,8 @@ regenerate-manager: true
 generate-interface: true
 ```
 
-
 ## Getting Started
+
 To build the SDK for IoTSpaces Service, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -35,20 +44,21 @@ To build the SDK for IoTSpaces Service, simply [Install AutoRest](https://aka.ms
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
+
 test
 
-
 ### Basic Information
+
 These are the global settings for the IoTSpaces Service.
 
 ``` yaml
 openapi-type: arm
-tag: package-2017-10-preview
+tag: package-preview-2021-11
 ```
-
 
 ### Tag: package-2017-10-preview
 
@@ -60,6 +70,7 @@ input-file:
 ```
 
 ---
+
 # Code Generation
 
 ## Swagger to SDK
@@ -94,6 +105,3 @@ csharp:
 ## Go
 
 See configuration in [readme.go.md](./readme.go.md)
-
-
-
