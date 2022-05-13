@@ -1,0 +1,17 @@
+{
+  "parameters": {
+    "api-version": "2022-02-02",
+    "subscriptionId": "11111111-2222-3333-4444-555555555555",
+    "body": {
+      "name": "newaccountname",
+      "type": "Microsoft.AgFoodPlatform/farmBeats"
+    }
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "nameAvailable": true
+      }
+    }
+  }
+}
