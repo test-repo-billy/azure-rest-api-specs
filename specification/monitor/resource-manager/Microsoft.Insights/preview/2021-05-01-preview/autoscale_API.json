@@ -570,8 +570,7 @@
       },
       "required": [
         "start",
-        "end",
-        "timeZone"
+        "end"
       ],
       "description": "A specific date-time for the profile."
     },
