@@ -4,8 +4,8 @@
 
 This is the AutoRest configuration file for SearchServiceClient and SearchIndexClient.
 
-
 ---
+
 ## Getting Started
 
 To build the SDK for SearchServiceClient and SearchIndexClient, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
@@ -15,161 +15,173 @@ To build the SDK for SearchServiceClient and SearchIndexClient, simply [Install 
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
 ### Basic Information
+
 These are the global settings for SearchServiceClient and SearchIndexClient.
 
 ``` yaml
 title: SearchClient
 opt-in-extensible-enums: true
 openapi-type: data-plane
-
 directive:
   - where:
-      -  $.definitions.AnalyzedTokenInfo.properties.endOffset
+      - $.definitions.AnalyzedTokenInfo.properties.endOffset
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.AnalyzedTokenInfo.properties.position
+      - $.definitions.AnalyzedTokenInfo.properties.position
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.AnalyzedTokenInfo.properties.startOffset
+      - $.definitions.AnalyzedTokenInfo.properties.startOffset
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.AnalyzedTokenInfo.properties.token
+      - $.definitions.AnalyzedTokenInfo.properties.token
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.AutocompleteItem.properties.queryPlusText
+      - $.definitions.AutocompleteItem.properties.queryPlusText
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.AutocompleteItem.properties.text
+      - $.definitions.AutocompleteItem.properties.text
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.AutocompleteResult.properties.value
+      - $.definitions.AutocompleteResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.GetIndexStatisticsResult.properties.documentCount
+      - $.definitions.GetIndexStatisticsResult.properties.documentCount
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.GetIndexStatisticsResult.properties.storageSize
+      - $.definitions.GetIndexStatisticsResult.properties.storageSize
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexDocumentsResult.properties.value
+      - $.definitions.IndexDocumentsResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexerExecutionResult.properties.errors
+      - $.definitions.IndexerExecutionResult.properties.errors
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexerExecutionResult.properties.itemsFailed
+      - $.definitions.IndexerExecutionResult.properties.itemsFailed
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexerExecutionResult.properties.itemsProcessed
+      - $.definitions.IndexerExecutionResult.properties.itemsProcessed
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexerExecutionResult.properties.status
+      - $.definitions.IndexerExecutionResult.properties.status
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexerExecutionResult.properties.warnings
+      - $.definitions.IndexerExecutionResult.properties.warnings
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexingResult.properties.key
+      - $.definitions.IndexingResult.properties.key
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexingResult.properties.status
+      - $.definitions.IndexingResult.properties.status
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.IndexingResult.properties.statusCode
+      - $.definitions.IndexingResult.properties.statusCode
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.ListDataSourcesResult.properties.value
+      - $.definitions.ListDataSourcesResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.ListIndexersResult.properties.value
+      - $.definitions.ListIndexersResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.ListIndexesResult.properties.value
+      - $.definitions.ListIndexesResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.ListAliasesResult.properties.value
+      - $.definitions.ListAliasesResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.ListSkillsetsResult.properties.value
+      - $.definitions.ListSkillsetsResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.ListSynonymMapsResult.properties.value
+      - $.definitions.ListSynonymMapsResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchDocumentsResult.properties.value
+      - $.definitions.SearchDocumentsResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchError.properties.message
+      - $.definitions.SearchError.properties.message
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchIndexerError.properties.errorMessage
+      - $.definitions.SearchIndexerError.properties.errorMessage
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchIndexerError.properties.statusCode
+      - $.definitions.SearchIndexerError.properties.statusCode
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchIndexerStatus.properties.executionHistory
+      - $.definitions.SearchIndexerStatus.properties.executionHistory
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchIndexerStatus.properties.limits
+      - $.definitions.SearchIndexerStatus.properties.limits
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchIndexerStatus.properties.status
+      - $.definitions.SearchIndexerStatus.properties.status
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchIndexerWarning.properties.message
+      - $.definitions.SearchIndexerWarning.properties.message
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SearchResult.properties["@search.score"]
+      - '$.definitions.SearchResult.properties["@search.score"]'
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SuggestDocumentsResult.properties.value
+      - $.definitions.SuggestDocumentsResult.properties.value
     suppress:
       - RequiredReadOnlyProperties
   - where:
-      -  $.definitions.SuggestResult.properties["@search.text"]
+      - '$.definitions.SuggestResult.properties["@search.text"]'
     suppress:
       - RequiredReadOnlyProperties
+tag: package-preview-2021-01
 ```
 
+
+### Tag: package-preview-2021-01
+
+These settings apply only when `--tag=package-preview-2021-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2021-01'
+input-file:
+  - preview/2021-01-01/searchindex.json
+  - preview/2021-01-01/searchservice.json
+```
 ### Tag: package-2021-04-searchservice-preview
 
 These settings apply only when `--tag=package-2021-04-searchservice-preview` is specified on the command line.
@@ -261,6 +273,7 @@ input-file:
 ```
 
 ---
+
 # Code Generation
 
 !!! READ THIS !!!
