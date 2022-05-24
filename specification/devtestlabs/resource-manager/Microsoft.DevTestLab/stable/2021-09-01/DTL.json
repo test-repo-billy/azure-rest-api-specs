@@ -1732,7 +1732,7 @@
             "name": "name",
             "in": "path",
             "description": "The name of the gallery image.",
-	    "required": true,
+            "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
           },
@@ -2433,7 +2433,7 @@
             "name": "name",
             "in": "path",
             "description": "The name of the policy.",
-	    "required": true,
+            "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
           },
@@ -2899,7 +2899,7 @@
             }
           }
         },
-	"x-ms-pageable": {
+        "x-ms-pageable": {
           "nextLinkName": "nextLink"
         },
         "x-ms-examples": {
@@ -3379,7 +3379,7 @@
             "$ref": "./examples/ServiceRunners_CreateOrUpdate.json"
           }
         },
-	"x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true
       },
       "delete": {
         "tags": [
@@ -4048,7 +4048,7 @@
             "name": "$filter",
             "in": "query",
             "description": "The filter to apply to the operation. Example: '$filter=contains(name,'myName')'",
-	    "type": "string"
+            "type": "string"
           },
           {
             "name": "$top",
@@ -6116,7 +6116,7 @@
             "type": "string",
             "x-ms-parameter-location": "method"
           },
-	  {
+          {
             "name": "schedule",
             "in": "body",
             "description": "Allows modifying tags of schedules. All other properties will be ignored.",
@@ -6973,7 +6973,7 @@
               "$ref": "#/definitions/ResizeLabVirtualMachineProperties"
             }
           },
-	  {
+          {
             "$ref": "#/parameters/api-version"
           }
         ],
@@ -7401,7 +7401,7 @@
             "type": "string",
             "x-ms-parameter-location": "method"
           },
-	        {
+          {
             "name": "schedule",
             "in": "body",
             "description": "A schedule.",
@@ -7410,7 +7410,7 @@
               "$ref": "#/definitions/Schedule"
             }
           },
-	        {
+          {
             "$ref": "#/parameters/api-version"
           }
         ],
@@ -8190,7 +8190,7 @@
               "$ref": "#/definitions/BastionHostFragment"
             }
           },
-	  {
+          {
             "$ref": "#/parameters/api-version"
           }
         ],
@@ -8553,7 +8553,7 @@
             "in": "path",
             "description": "The name of the lab.",
             "required": true,
-	    "type": "string",
+            "type": "string",
             "x-ms-parameter-location": "method"
           },
           {
@@ -9728,7 +9728,7 @@
       }
     },
     "BastionHostProperties": {
-     "description": "Properties of a BastionHost profile.",
+      "description": "Properties of a BastionHost profile.",
       "type": "object",
       "properties": {
         "externalBastionHostId": {
@@ -10149,7 +10149,7 @@
           "type": "string"
         },
         "windowsOsInfo": {
-         "$ref": "#/definitions/WindowsOsInfo",
+          "$ref": "#/definitions/WindowsOsInfo",
           "description": "The Windows OS information of the VM.",
           "x-ms-client-flatten": true
         },
@@ -11568,7 +11568,7 @@
         }
       }
     },
-   "LabVirtualMachine": {
+    "LabVirtualMachine": {
       "description": "A virtual machine.",
       "required": [
         "properties"
@@ -11860,15 +11860,15 @@
       }
     },
     "LabVirtualMachineFragment": {
-        "description": "Patch",
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/definitions/Tags"
-          }
-        ],
-        "properties": {}
-      },
+      "description": "Patch",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/Tags"
+        }
+      ],
+      "properties": {}
+    },
     "LabVirtualMachineList": {
       "description": "Contains a list of virtualMachines and their properties",
       "type": "object",
@@ -12058,7 +12058,7 @@
             "Premium",
             "StandardSSD"
           ],
-	  "type": "string",
+          "type": "string",
           "x-ms-enum": {
             "name": "StorageTypes",
             "modelAsString": true
