@@ -5,6 +5,7 @@
 This is the AutoRest configuration file for VMware Solution.
 
 ## Getting Started
+
 To build the SDK for VMware Solution, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -12,18 +13,29 @@ To build the SDK for VMware Solution, simply [Install AutoRest](https://aka.ms/a
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
 ### Basic Information
+
 These are the global settings for the VMware Solution API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2021-12-01
+tag: package-preview-2022-01
 ```
 
+
+### Tag: package-preview-2022-01
+
+These settings apply only when `--tag=package-preview-2022-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-01'
+input-file:
+  - Microsoft.AVS/preview/2022-01-01/vmware.json
+```
 ### Tag: package-2021-12-01
 
 These settings apply only when `--tag=package-2021-12-01` is specified on the command line.
@@ -211,6 +223,7 @@ directive:
 ```
 
 ---
+
 # Code Generation
 
 ## Swagger to SDK
@@ -231,7 +244,8 @@ swagger-to-sdk:
 ```
 
 ## Suppression
-```
+
+``` 
 directive:
   - suppress: SECRET_PROPERTY
     from:
@@ -265,6 +279,3 @@ See configuration in [readme.go.md](./readme.go.md)
 ## Java
 
 See configuration in [readme.java.md](./readme.java.md)
-
-
-
