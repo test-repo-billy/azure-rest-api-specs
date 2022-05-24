@@ -15,13 +15,6 @@
   "produces": [
     "application/json"
   ],
-  "security": [
-    {
-      "azure_auth": [
-        "https://management.azure.com/.default"
-      ]
-    }
-  ],
   "securityDefinitions": {
     "azure_auth": {
       "type": "oauth2",
