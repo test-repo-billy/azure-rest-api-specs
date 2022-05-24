@@ -75,6 +75,12 @@
             "$ref": "#/parameters/subscriptionId"
           },
           {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=defaultStorageAccount)'",
+            "type": "string"
+          },
+          {
             "name": "$filter",
             "in": "query",
             "description": "The filter to apply to the operation. Example: '$filter=contains(name,'myName')'",
@@ -182,6 +188,12 @@
             "$ref": "#/parameters/subscriptionId"
           },
           {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=status)'",
+            "type": "string"
+          },
+          {
             "name": "$filter",
             "in": "query",
             "description": "The filter to apply to the operation. Example: '$filter=contains(name,'myName')'",
@@ -242,6 +254,12 @@
           },
           {
             "$ref": "#/parameters/resourceGroupName"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=defaultStorageAccount)'",
+            "type": "string"
           },
           {
             "name": "$filter",
@@ -307,6 +325,12 @@
           },
           {
             "$ref": "#/parameters/labName"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=displayName)'",
+            "type": "string"
           },
           {
             "name": "$filter",
@@ -375,6 +399,12 @@
           },
           {
             "$ref": "#/parameters/artifactSourceName"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=displayName)'",
+            "type": "string"
           },
           {
             "name": "$filter",
@@ -451,6 +481,12 @@
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=displayName)'",
+            "type": "string"
           },
           {
             "$ref": "#/parameters/api-version"
