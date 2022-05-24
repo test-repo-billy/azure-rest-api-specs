@@ -9379,7 +9379,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "types.json#/definitions/Resource"
         }
       ],
       "properties": {
