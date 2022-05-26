@@ -3,7 +3,7 @@
   "info": {
     "title": "ProviderHub",
     "description": "Microsoft ProviderHub",
-    "version": "2020-11-20",
+    "version": "2022-09-06",
     "x-ms-code-generation-settings": {
       "name": "ProviderHubClient"
     }
