@@ -261,6 +261,7 @@ directive:
   - suppress: R4015 # NestedResourcesMustHaveListOperation
     from: types.json
     where:
+      - $.definitions.LabCost
       - $.definitions.KeyVaultProperties
       - $.definitions.Operation.properties.isDataAction
       - $.definitions.ResourceModelWithAllowedPropertySet.properties.identity
@@ -280,6 +281,7 @@ directive:
     from: DTL.json
     where:
        - $.definitions.ComputeVmProperties.properties.statuses
+       - $.definitions.SharedImageProperties.properties.versions
     reason: No natural id property
   - suppress: R4041 # XmsIdentifierValidation
     from: types.json
