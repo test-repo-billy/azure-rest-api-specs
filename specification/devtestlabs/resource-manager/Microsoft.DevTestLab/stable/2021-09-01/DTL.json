@@ -162,6 +162,12 @@
               "$ref": "#/definitions/OperationResult"
             }
           },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/OperationResult"
+            }
+          },
           "default": {
             "description": "BadRequest",
             "schema": {
@@ -928,77 +934,6 @@
         "x-ms-examples": {
           "ArtifactSources_Update": {
             "$ref": "./examples/ArtifactSources_Update.json"
-          }
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/costs": {
-      "get": {
-        "tags": [
-          "Costs"
-        ],
-        "description": "List costs in a given lab.",
-        "operationId": "Costs_List",
-        "parameters": [
-          {
-            "$ref": "#/parameters/subscriptionId"
-          },
-          {
-            "$ref": "#/parameters/resourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/labName"
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "description": "Specify the $expand query. Example: 'properties($expand=labCostDetails)'",
-            "type": "string"
-          },
-          {
-            "name": "$filter",
-            "in": "query",
-            "description": "The filter to apply to the operation. Example: '$filter=contains(name,'myName')'",
-            "type": "string"
-          },
-          {
-            "name": "$top",
-            "in": "query",
-            "description": "The maximum number of resources to return from the operation. Example: '$top=10'",
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "$orderby",
-            "in": "query",
-            "description": "The ordering expression for the results, using OData notation. Example: '$orderby=name desc'",
-            "type": "string"
-          },
-          {
-            "$ref": "#/parameters/api-version"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/LabCostList"
-            }
-          },
-          "default": {
-            "description": "BadRequest",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "x-ms-odata": "#/definitions/Cost",
-        "x-ms-examples": {
-          "Costs_List": {
-            "$ref": "./examples/Costs_List.json"
           }
         }
       }
@@ -4177,6 +4112,12 @@
             "$ref": "#/parameters/labName"
           },
           {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=identity)'",
+            "type": "string"
+          },
+          {
             "name": "$filter",
             "in": "query",
             "description": "The filter to apply to the operation. Example: '$filter=contains(name,'myName')'",
@@ -4250,6 +4191,12 @@
             "x-ms-parameter-location": "method"
           },
           {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=identity)'",
+            "type": "string"
+          },
+          {
             "$ref": "#/parameters/api-version"
           }
         ],
@@ -4298,9 +4245,6 @@
             "x-ms-parameter-location": "method"
           },
           {
-            "$ref": "#/parameters/api-version"
-          },
-          {
             "name": "user",
             "in": "body",
             "description": "Profile of a lab user.",
@@ -4308,6 +4252,9 @@
             "schema": {
               "$ref": "#/definitions/User"
             }
+          },
+          {
+            "$ref": "#/parameters/api-version"
           }
         ],
         "responses": {
@@ -4417,9 +4364,6 @@
             "x-ms-parameter-location": "method"
           },
           {
-            "$ref": "#/parameters/api-version"
-          },
-          {
             "name": "user",
             "in": "body",
             "description": "Allows modifying tags of user profiles. All other properties will be ignored.",
@@ -4427,6 +4371,9 @@
             "schema": {
               "$ref": "#/definitions/UserFragment"
             }
+          },
+          {
+            "$ref": "#/parameters/api-version"
           }
         ],
         "responses": {
@@ -4469,6 +4416,12 @@
           },
           {
             "$ref": "#/parameters/userName"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=diskType)'",
+            "type": "string"
           },
           {
             "name": "$filter",
@@ -4545,6 +4498,12 @@
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Specify the $expand query. Example: 'properties($select=diskType)'",
+            "type": "string"
           },
           {
             "$ref": "#/parameters/api-version"
@@ -9611,8 +9570,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/ArtifactParameterProperties"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "status": {
           "description": "The status of the artifact.",
@@ -9741,7 +9699,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -9903,7 +9861,7 @@
       "properties": {},
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ]
     },
@@ -10049,8 +10007,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/ComputeVmInstanceViewStatus"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "osType": {
           "description": "Gets the OS type of the virtual machine.",
@@ -10073,8 +10030,7 @@
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "dataDisks": {
           "description": "Gets all data disks attached to the virtual machine.",
@@ -10184,7 +10140,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -10248,8 +10204,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DataDiskStorageTypeInfo"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "customImagePlan": {
           "$ref": "#/definitions/CustomImagePropertiesFromPlan",
@@ -10468,7 +10423,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -10585,7 +10540,7 @@
       "properties": {},
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ]
     },
@@ -10642,8 +10597,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/ArmTemplateParameterProperties"
-          },
-          "x-ms-identifiers": []
+          }
         }
       }
     },
@@ -10713,8 +10667,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/EvaluatePoliciesProperties"
-          },
-          "x-ms-identifiers": []
+          }
         }
       }
     },
@@ -10727,8 +10680,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PolicySetResult"
-          },
-          "x-ms-identifiers": []
+          }
         }
       }
     },
@@ -10808,7 +10760,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -11008,8 +10960,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/ParameterInfo"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "location": {
           "description": "The location of the virtual machine.",
@@ -11317,8 +11268,7 @@
           "items": {
             "$ref": "#/definitions/LabCostDetailsProperties"
           },
-          "readOnly": true,
-          "x-ms-identifiers": []
+          "readOnly": true
         },
         "resourceCosts": {
           "description": "The resource cost component of the cost data.",
@@ -11326,8 +11276,7 @@
           "items": {
             "$ref": "#/definitions/LabResourceCostProperties"
           },
-          "readOnly": true,
-          "x-ms-identifiers": []
+          "readOnly": true
         },
         "currencyCode": {
           "description": "The currency code of the cost.",
@@ -11376,7 +11325,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -11446,16 +11395,14 @@
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "mandatoryArtifactsResourceIdsWindows": {
           "description": "The ordered list of artifact resource IDs that should be applied on all Windows VM creations by default, prior to the artifacts specified by the user.",
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "createdDate": {
           "format": "date-time",
@@ -11651,7 +11598,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -12024,16 +11971,14 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DataDiskProperties"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "scheduleParameters": {
           "description": "Virtual Machine schedules to be created",
           "type": "array",
           "items": {
             "$ref": "#/definitions/ScheduleCreationParameter"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "lastKnownPowerState": {
           "description": "Last known compute power state captured in DTL",
@@ -12062,7 +12007,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -12285,16 +12230,14 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DataDiskProperties"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "scheduleParameters": {
           "description": "Virtual Machine schedules to be created",
           "type": "array",
           "items": {
             "$ref": "#/definitions/ScheduleCreationParameter"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "lastKnownPowerState": {
           "description": "Last known compute power state captured in DTL",
@@ -12409,7 +12352,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -12457,8 +12400,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Event"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "createdDate": {
           "format": "date-time",
@@ -12745,7 +12687,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -12917,8 +12859,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PolicyViolation"
-          },
-          "x-ms-identifiers": []
+          }
         }
       }
     },
@@ -13136,7 +13077,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -13255,7 +13196,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -13327,7 +13268,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -13477,7 +13418,7 @@
       "properties": {},
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ]
     },
@@ -13561,7 +13502,7 @@
       "properties": {},
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ]
     },
@@ -13636,8 +13577,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/ImageVersionProperties"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "provisioningState": {
           "description": "The provisioning status of the resource.",
@@ -13660,8 +13600,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/InboundNatRule"
-          },
-          "x-ms-identifiers": []
+          }
         }
       }
     },
@@ -13750,25 +13689,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Port"
-          },
-          "x-ms-identifiers": []
-        }
-      }
-    },
-    "Tags": {
-      "description": "Resource tags",
-      "type": "object",
-      "properties": {
-        "tags": {
-          "description": "Resource tags",
-          "type": "object",
-          "x-ms-mutability": [
-            "read",
-            "create",
-            "update"
-          ],
-          "additionalProperties": {
-            "type": "string"
           }
         }
       }
@@ -13799,8 +13719,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/CostThresholdProperties"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "cycleStartDateTime": {
           "format": "date-time",
@@ -13826,6 +13745,24 @@
         }
       }
     },
+    "UpdateResource": {
+      "description": "Represents an update resource",
+      "type": "object",
+      "properties": {
+        "tags": {
+          "description": "The tags of the resource.",
+          "type": "object",
+          "x-ms-mutability": [
+            "read",
+            "create",
+            "update"
+          ],
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "User": {
       "description": "Profile of a lab user.",
       "required": [
@@ -13834,7 +13771,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "types.json#/definitions/TrackedResource"
+          "$ref": "types.json#/definitions/Resource"
         }
       ],
       "properties": {
@@ -13855,7 +13792,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -13958,7 +13895,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "types.json#/definitions/TrackedResource"
+          "$ref": "types.json#/definitions/Resource"
         }
       ],
       "properties": {
@@ -13979,7 +13916,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/Tags"
+          "$ref": "#/definitions/UpdateResource"
         }
       ],
       "properties": {}
@@ -14011,8 +13948,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Subnet"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "description": {
           "description": "The description of the virtual network.",
@@ -14028,16 +13964,14 @@
           "items": {
             "$ref": "#/definitions/ExternalSubnet"
           },
-          "readOnly": true,
-          "x-ms-identifiers": []
+          "readOnly": true
         },
         "subnetOverrides": {
           "description": "The subnet overrides of the virtual network.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/SubnetOverride"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "createdDate": {
           "format": "date-time",
@@ -14083,8 +14017,7 @@
           "type": "array",
           "items": {
             "type": "string"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "time": {
           "description": "The time of the day the schedule will occur.",
