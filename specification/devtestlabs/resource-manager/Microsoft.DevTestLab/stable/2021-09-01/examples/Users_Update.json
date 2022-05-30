@@ -5,11 +5,7 @@
     "resourceGroupName": "resourceGroupName",
     "labName": "{devtestlabName}",
     "name": "{userName}",
-    "user": {
-      "tags": {
-        "tagName1": "tagValue1"
-      }
-    }
+    "user": {}
   },
   "responses": {
     "200": {
@@ -32,11 +28,7 @@
         },
         "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/users/{userName}",
         "name": "{userName}",
-        "type": "Microsoft.DevTestLab/labs/users",
-        "location": "{location}",
-        "tags": {
-          "tagName1": "tagValue1"
-        }
+        "type": "Microsoft.DevTestLab/labs/users"
       }
     }
   }

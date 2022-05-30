@@ -5,7 +5,7 @@
     "resourceGroupName": "resourceGroupName",
     "labName": "{labName}",
     "name": "{vmName}",
-    "virtualMachine": {}
+    "labVirtualMachine": {}
   },
   "responses": {
     "200": {

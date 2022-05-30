@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "location": "{location}",
+    "locationName": "{locationName}",
     "name": "{operationName}"
   },
   "responses": {
@@ -12,6 +12,12 @@
         "status": "Running",
         "statusCode": "OK"
       }
+    },
+    "202": {
+      "body": {
+        "status": "Accepted",
+        "statusCode": "OK"
+      } 
     }
   }
 }

@@ -5,7 +5,7 @@
     "resourceGroupName": "resourceGroupName",
     "labName": "{labName}",
     "name": "{vmName}",
-    "virtualMachine": {
+    "labVirtualMachine": {
       "properties": {
         "size": "Standard_A2_v2",
         "userName": "{userName}",

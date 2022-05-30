@@ -6,11 +6,7 @@
     "labName": "{labName}",
     "name": "{virtualNetworkName}",
     "virtualNetwork": {
-      "properties": {},
-      "location": "{location}",
-      "tags": {
-        "tagName1": "tagValue1"
-      }
+      "properties": {}
     }
   },
   "responses": {
@@ -23,11 +19,7 @@
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
         "name": "{virtualNetworkName}",
-        "type": "Microsoft.DevTestLab/labs/virtualNetworks",
-        "location": "{location}",
-        "tags": {
-          "tagName1": "tagValue1"
-        }
+        "type": "Microsoft.DevTestLab/labs/virtualNetworks"
       }
     },
     "201": {
@@ -39,11 +31,7 @@
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
         "name": "{virtualNetworkName}",
-        "type": "Microsoft.DevTestLab/labs/virtualNetworks",
-        "location": "{location}",
-        "tags": {
-          "tagName1": "tagValue1"
-        }
+        "type": "Microsoft.DevTestLab/labs/virtualNetworks"
       }
     },
     "202": {}
