@@ -1,0 +1,22 @@
+{
+  "parameters": {
+    "subscriptionId": "subscription-id",
+    "api-version": "2022-01-21"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "value": [
+          {
+            "name": "samplename",
+            "type": "sampletype",
+            "id": "someid",
+            "properties": {
+              "provisioningState": "Succeeded"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
