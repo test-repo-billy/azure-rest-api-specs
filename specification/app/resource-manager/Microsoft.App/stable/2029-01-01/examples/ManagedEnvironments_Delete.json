@@ -1,0 +1,14 @@
+{
+  "parameters": {
+    "subscriptionId": "34adfa4f-cedf-4dc0-ba29-b6d1a69ab345",
+    "resourceGroupName": "examplerg",
+    "name": "examplekenv",
+    "api-version": "2029-01-01",
+    "location": "East US"
+  },
+  "responses": {
+    "200": {},
+    "202": {},
+    "204": {}
+  }
+}
