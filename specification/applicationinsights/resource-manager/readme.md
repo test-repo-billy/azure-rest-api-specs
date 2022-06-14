@@ -499,6 +499,15 @@ input-file:
 - Microsoft.Insights/stable/2020-02-02/components_API.json
 ```
 
+### Tag: package-2020-02-02-only
+
+These settings apply only when `--tag=package-2020-02-02-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-2020-02-02-only'
+input-file:
+- Microsoft.Insights/stable/2020-02-02/components_API.json
+```
+
 ### Tag: package-2019-10-17-preview
 
 These settings apply only when `--tag=package-2019-10-17-preview` is specified on the command line.
@@ -580,6 +589,7 @@ swagger-to-sdk:
   - repo: azure-sdk-for-js
   - repo: azure-sdk-for-node
   - repo: azure-resource-manager-schemas
+  - repo: azure-powershell
 ```
 
 ## Go
