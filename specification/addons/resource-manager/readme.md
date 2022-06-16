@@ -3,6 +3,7 @@
 > see https://aka.ms/autorest
 
 This is the AutoRest configuration file for Addons RP.
+For Test
 
 
 
