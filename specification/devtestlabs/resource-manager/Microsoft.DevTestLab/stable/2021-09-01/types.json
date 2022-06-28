@@ -25,33 +25,7 @@
           "readOnly": true,
           "type": "string",
           "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
-        }
-      },
-      "x-ms-azure-resource": true
-    },
-    "AzureEntityResource": {
-      "x-ms-client-name": "AzureEntityResource",
-      "title": "Entity Resource",
-      "description": "The resource model definition for an Azure Resource Manager resource with an etag.",
-      "type": "object",
-      "properties": {
-        "etag": {
-          "type": "string",
-          "readOnly": true,
-          "description": "Resource Etag."
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ]
-    },
-    "TrackedResource": {
-      "title": "Tracked Resource",
-      "description": "The resource model definition for an Azure Resource Manager tracked top level resource which has 'tags' and a 'location'",
-      "type": "object",
-      "properties": {
+        },
         "tags": {
           "type": "object",
           "additionalProperties": {
@@ -73,9 +47,20 @@
           "description": "The geo-location where the resource lives"
         }
       },
-      "required": [
-        "location"
-      ],
+      "x-ms-azure-resource": true
+    },
+    "AzureEntityResource": {
+      "x-ms-client-name": "AzureEntityResource",
+      "title": "Entity Resource",
+      "description": "The resource model definition for an Azure Resource Manager resource with an etag.",
+      "type": "object",
+      "properties": {
+        "etag": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Etag."
+        }
+      },
       "allOf": [
         {
           "$ref": "#/definitions/Resource"
