@@ -33,7 +33,6 @@
         "name": "{virtualNetworkName}",
         "type": "Microsoft.DevTestLab/labs/virtualNetworks"
       }
-    },
-    "202": {}
+    }
   }
 }

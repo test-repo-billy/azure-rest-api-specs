@@ -67,7 +67,6 @@
         "name": "{userName}",
         "type": "Microsoft.DevTestLab/labs/users"
       }
-    },
-    "202": {}
+    }
   }
 }
