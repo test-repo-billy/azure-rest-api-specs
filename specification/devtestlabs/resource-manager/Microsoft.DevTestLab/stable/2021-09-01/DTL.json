@@ -11308,7 +11308,8 @@
         },
         "artifactsStorageAccount": {
           "description": "The lab's artifact storage account.",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "premiumDataDiskStorageAccount": {
           "description": "The lab's premium data disk storage account.",
@@ -11390,7 +11391,8 @@
         },
         "vmCreationResourceGroup": {
           "description": "The resource group ID in which all new lab virtual machines will be created. Ex: /subscriptions/subId/resourceGroups/rgName To let DevTest Labs manage resource group creation, set this value to null.",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "publicIpId": {
           "description": "The public IP address for the lab's load balancer.",
@@ -12912,7 +12914,8 @@
         },
         "location": {
           "description": "The location of the new virtual machine or environment",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "tags": {
           "description": "The tags of the resource.",
