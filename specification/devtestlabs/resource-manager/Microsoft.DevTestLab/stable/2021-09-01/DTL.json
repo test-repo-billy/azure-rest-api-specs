@@ -11056,9 +11056,6 @@
     },
     "Lab": {
       "description": "A lab.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -11130,9 +11127,6 @@
     },
     "LabCost": {
       "description": "A cost item.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -11663,9 +11657,6 @@
     },
     "LabVirtualMachine": {
       "description": "A virtual machine.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -11687,9 +11678,6 @@
     },
     "LabVirtualMachineCreationParameter": {
       "description": "Properties for creating a virtual machine.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "properties": {
         "properties": {
@@ -12272,9 +12260,6 @@
     },
     "NotificationChannel": {
       "description": "A notification.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -12606,9 +12591,6 @@
     },
     "Policy": {
       "description": "A Policy.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -12748,9 +12730,6 @@
           "$ref": "types.json#/definitions/systemData"
         }
       },
-      "required": [
-        "properties"
-      ],
       "allOf": [
         {
           "$ref": "types.json#/definitions/Resource"
@@ -12900,9 +12879,6 @@
     "Schedule": {
       "type": "object",
       "description": "A schedule.",
-      "required": [
-        "properties"
-      ],
       "allOf": [
         {
           "$ref": "types.json#/definitions/Resource"
@@ -12922,9 +12898,6 @@
       }
     },
     "ScheduleCreationParameter": {
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "description": "Properties for creating a schedule.",
       "properties": {
@@ -13113,9 +13086,6 @@
     },
     "Secret": {
       "description": "A secret.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -13184,9 +13154,6 @@
     },
     "ServiceFabric": {
       "description": "A Service Fabric.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -13265,9 +13232,6 @@
     },
     "ServiceRunner": {
       "description": "A container for a managed identity to execute DevTest lab services.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -13344,9 +13308,6 @@
           "$ref": "types.json#/definitions/systemData"
         }
       },
-      "required": [
-        "properties"
-      ],
       "allOf": [
         {
           "$ref": "types.json#/definitions/Resource"
@@ -13427,9 +13388,6 @@
           "$ref": "types.json#/definitions/systemData"
         }
       },
-      "required": [
-        "properties"
-      ],
       "allOf": [
         {
           "$ref": "types.json#/definitions/Resource"
@@ -13704,9 +13662,6 @@
     },
     "User": {
       "description": "Profile of a lab user.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
@@ -13827,9 +13782,6 @@
     },
     "VirtualNetwork": {
       "description": "A virtual network.",
-      "required": [
-        "properties"
-      ],
       "type": "object",
       "allOf": [
         {
