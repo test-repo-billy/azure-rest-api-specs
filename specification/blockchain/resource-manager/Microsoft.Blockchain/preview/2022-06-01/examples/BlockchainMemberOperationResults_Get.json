@@ -3,7 +3,7 @@
     "subscriptionId": "51766542-3ed7-4a72-a187-0c8ab644ddab",
     "locationName": "southeastasia",
     "operationId": "12f4b309-01e3-4fcf-bc0b-1cc034ca03f8",
-    "api-version": "2018-06-01-preview"
+    "api-version": "2022-06-01"
   },
   "responses": {
     "200": {

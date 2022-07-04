@@ -4,7 +4,7 @@
     "resourceGroupName": "mygroup",
     "blockchainMemberName": "contosemember1",
     "transactionNodeName": "txNode2",
-    "api-version": "2018-06-01-preview"
+    "api-version": "2022-06-01"
   },
   "responses": {
     "202": {},
