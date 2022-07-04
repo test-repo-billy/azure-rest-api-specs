@@ -4,10 +4,10 @@
 
 This is the AutoRest configuration file for Blockchain.
 
-
-
 ---
+
 ## Getting Started
+
 To build the SDK for Blockchain, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,21 +15,29 @@ To build the SDK for Blockchain, simply [Install AutoRest](https://aka.ms/autore
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
-
 ### Basic Information
+
 These are the global settings for the Blockchain API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2018-06-01-preview
+tag: package-preview-2022-06
 ```
 
 
+### Tag: package-preview-2022-06
+
+These settings apply only when `--tag=package-preview-2022-06` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-06'
+input-file:
+  - Microsoft.Blockchain/preview/2022-06-01/blockchain.json
+```
 ### Tag: package-2018-06-01-preview
 
 These settings apply only when `--tag=package-2018-06-01-preview` is specified on the command line.
@@ -40,8 +48,8 @@ input-file:
 ```
 
 ---
-# Code Generation
 
+# Code Generation
 
 ## Swagger to SDK
 
@@ -64,7 +72,7 @@ swagger-to-sdk:
   - repo: azure-powershell
 ```
 
-## C# 
+## C#
 
 See configuration in [readme.csharp.md](./readme.csharp.md)
 
@@ -87,7 +95,3 @@ See configuration in [readme.node.md](./readme.node.md)
 ## Ruby
 
 See configuration in [readme.ruby.md](./readme.ruby.md)
-
-
-
-
