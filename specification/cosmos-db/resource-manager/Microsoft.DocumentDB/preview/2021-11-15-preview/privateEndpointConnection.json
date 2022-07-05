@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Cosmos DB",
-    "description": "Azure Cosmos DB Database Service Resource Provider REST API",
+    "description": " Azure Cosmos DB Database Service Resource Provider REST API",
     "version": "2021-11-15-preview"
   },
   "host": "management.azure.com",
@@ -27,7 +27,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Azure Active Directory OAuth2 Flow",
+      "description": " Azure Active Directory OAuth2 Flow",
       "scopes": {
         "user_impersonation": "Impersonate your user account"
       }
@@ -39,7 +39,7 @@
         "tags": [
           "PrivateEndpointConnections"
         ],
-        "description": "List all private endpoint connections on a Cosmos DB account.",
+        "description": " List all private endpoint connections on a Cosmos DB account.",
         "operationId": "PrivateEndpointConnections_ListByDatabaseAccount",
         "x-ms-pageable": {
           "nextLinkName": null
@@ -60,7 +60,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved private endpoint connections.",
+            "description": " Successfully retrieved private endpoint connections.",
             "schema": {
               "$ref": "#/definitions/PrivateEndpointConnectionListResult"
             }
@@ -78,7 +78,7 @@
         "tags": [
           "PrivateEndpointConnections"
         ],
-        "description": "Gets a private endpoint connection.",
+        "description": " Gets a private endpoint connection.",
         "operationId": "PrivateEndpointConnections_Get",
         "parameters": [
           {
@@ -99,7 +99,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved a specified private endpoint connection.",
+            "description": " Successfully retrieved a specified private endpoint connection.",
             "schema": {
               "$ref": "#/definitions/PrivateEndpointConnection"
             }
@@ -115,7 +115,7 @@
         "tags": [
           "PrivateEndpointConnections"
         ],
-        "description": "Approve or reject a private endpoint connection with a given name.",
+        "description": " Approve or reject a private endpoint connection with a given name.",
         "operationId": "PrivateEndpointConnections_CreateOrUpdate",
         "parameters": [
           {
@@ -144,16 +144,16 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully approved or rejected private endpoint connection.",
+            "description": " Successfully approved or rejected private endpoint connection.",
             "schema": {
               "$ref": "#/definitions/PrivateEndpointConnection"
             }
           },
           "202": {
-            "description": "Accepted. The private endpoint connection update will complete asynchronously."
+            "description": " Accepted. The private endpoint connection update will complete asynchronously."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -170,7 +170,7 @@
         "tags": [
           "PrivateEndpointConnections"
         ],
-        "description": "Deletes a private endpoint connection with a given name.",
+        "description": " Deletes a private endpoint connection with a given name.",
         "operationId": "PrivateEndpointConnections_Delete",
         "parameters": [
           {
@@ -191,13 +191,13 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted. The private endpoint connection delete will complete asynchronously."
+            "description": " Accepted. The private endpoint connection delete will complete asynchronously."
           },
           "204": {
-            "description": "Private endpoint connection does not exist."
+            "description": " Private endpoint connection does not exist."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -214,12 +214,12 @@
   },
   "definitions": {
     "PrivateEndpointConnectionListResult": {
-      "description": "A list of private endpoint connections",
+      "description": " A list of private endpoint connections",
       "type": "object",
       "properties": {
         "value": {
           "type": "array",
-          "description": "Array of private endpoint connections",
+          "description": " Array of private endpoint connections",
           "items": {
             "$ref": "#/definitions/PrivateEndpointConnection"
           }
@@ -227,12 +227,12 @@
       }
     },
     "PrivateEndpointConnection": {
-      "description": "A private endpoint connection",
+      "description": " A private endpoint connection",
       "type": "object",
       "properties": {
         "properties": {
           "$ref": "#/definitions/PrivateEndpointConnectionProperties",
-          "description": "Resource properties.",
+          "description": " Resource properties.",
           "x-ms-client-flatten": true
         }
       },
@@ -243,52 +243,52 @@
       ]
     },
     "PrivateEndpointConnectionProperties": {
-      "description": "Properties of a private endpoint connection.",
+      "description": " Properties of a private endpoint connection.",
       "type": "object",
       "properties": {
         "privateEndpoint": {
           "$ref": "#/definitions/PrivateEndpointProperty",
-          "description": "Private endpoint which the connection belongs to."
+          "description": " Private endpoint which the connection belongs to."
         },
         "privateLinkServiceConnectionState": {
           "$ref": "#/definitions/PrivateLinkServiceConnectionStateProperty",
-          "description": "Connection State of the Private Endpoint Connection."
+          "description": " Connection State of the Private Endpoint Connection."
         },
         "groupId": {
           "type": "string",
-          "description": "Group id of the private endpoint."
+          "description": " Group id of the private endpoint."
         },
         "provisioningState": {
           "type": "string",
-          "description": "Provisioning state of the private endpoint."
+          "description": " Provisioning state of the private endpoint."
         }
       }
     },
     "PrivateEndpointProperty": {
       "type": "object",
-      "description": "Private endpoint which the connection belongs to.",
+      "description": " Private endpoint which the connection belongs to.",
       "properties": {
         "id": {
           "type": "string",
-          "description": "Resource id of the private endpoint."
+          "description": " Resource id of the private endpoint."
         }
       }
     },
     "PrivateLinkServiceConnectionStateProperty": {
       "type": "object",
-      "description": "Connection State of the Private Endpoint Connection.",
+      "description": " Connection State of the Private Endpoint Connection.",
       "properties": {
         "status": {
           "type": "string",
-          "description": "The private link service connection status."
+          "description": " The private link service connection status."
         },
         "description": {
           "type": "string",
-          "description": "The private link service connection description."
+          "description": " The private link service connection description."
         },
         "actionsRequired": {
           "type": "string",
-          "description": "Any action that is required beyond basic workflow (approve/ reject/ disconnect)",
+          "description": " Any action that is required beyond basic workflow (approve/ reject/ disconnect)",
           "readOnly": true
         }
       }
@@ -301,7 +301,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "Cosmos DB database account name.",
+      "description": " Cosmos DB database account name.",
       "minLength": 3,
       "maxLength": 50,
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*"
@@ -312,7 +312,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "The name of the private endpoint connection."
+      "description": " The name of the private endpoint connection."
     }
   }
 }

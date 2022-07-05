@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Cosmos DB - Managed Cassandra",
-    "description": "Azure Cosmos DB Database Service Managed Cassandra REST API",
+    "description": " Azure Cosmos DB Database Service Managed Cassandra REST API",
     "version": "2021-11-15-preview"
   },
   "host": "management.azure.com",
@@ -27,7 +27,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Azure Active Directory OAuth2 Flow",
+      "description": " Azure Active Directory OAuth2 Flow",
       "scopes": {
         "user_impersonation": "Impersonate your user account"
       }
@@ -37,7 +37,7 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.DocumentDB/cassandraClusters": {
       "get": {
         "operationId": "CassandraClusters_ListBySubscription",
-        "description": "List all managed Cassandra clusters in this subscription.",
+        "description": " List all managed Cassandra clusters in this subscription.",
         "x-ms-pageable": {
           "nextLinkName": null
         },
@@ -56,13 +56,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved the list of managed Cassandra clusters.",
+            "description": " Successfully retrieved the list of managed Cassandra clusters.",
             "schema": {
               "$ref": "#/definitions/ListClusters"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -73,7 +73,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters": {
       "get": {
         "operationId": "CassandraClusters_ListByResourceGroup",
-        "description": "List all managed Cassandra clusters in this resource group.",
+        "description": " List all managed Cassandra clusters in this resource group.",
         "x-ms-pageable": {
           "nextLinkName": null
         },
@@ -95,13 +95,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved the list of managed Cassandra clusters.",
+            "description": " Successfully retrieved the list of managed Cassandra clusters.",
             "schema": {
               "$ref": "#/definitions/ListClusters"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -112,7 +112,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}": {
       "get": {
         "operationId": "CassandraClusters_Get",
-        "description": "Get the properties of a managed Cassandra cluster.",
+        "description": " Get the properties of a managed Cassandra cluster.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraClusterGet": {
             "$ref": "./examples/CosmosDBManagedCassandraClusterGet.json"
@@ -134,13 +134,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The properties of the managed Cassandra cluster were retrieved successfully.",
+            "description": " The properties of the managed Cassandra cluster were retrieved successfully.",
             "schema": {
               "$ref": "#/definitions/ClusterResource"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -149,7 +149,7 @@
       },
       "delete": {
         "operationId": "CassandraClusters_Delete",
-        "description": "Deletes a managed Cassandra cluster.",
+        "description": " Deletes a managed Cassandra cluster.",
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "CosmosDBManagedCassandraClusterDelete": {
@@ -172,13 +172,13 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted. The managed Cassandra cluster will be deleted asynchronously."
+            "description": " Accepted. The managed Cassandra cluster will be deleted asynchronously."
           },
           "204": {
-            "description": "No such cluster to delete."
+            "description": " No such cluster to delete."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -187,7 +187,7 @@
       },
       "put": {
         "operationId": "CassandraClusters_CreateUpdate",
-        "description": "Create or update a managed Cassandra cluster. When updating, you must specify all writable properties. To update only some properties, use PATCH.",
+        "description": " Create or update a managed Cassandra cluster. When updating, you must specify all writable properties. To update only some properties, use PATCH.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraClusterCreate": {
             "$ref": "./examples/CosmosDBManagedCassandraClusterCreate.json"
@@ -214,24 +214,24 @@
             "schema": {
               "$ref": "#/definitions/ClusterResource"
             },
-            "description": "The properties specifying the desired state of the managed Cassandra cluster."
+            "description": " The properties specifying the desired state of the managed Cassandra cluster."
           }
         ],
         "responses": {
           "200": {
-            "description": "The managed Cassandra cluster is being updated. Poll for provisioningState=Succeeded to find when creation completes.",
+            "description": " The managed Cassandra cluster is being updated. Poll for provisioningState=Succeeded to find when creation completes.",
             "schema": {
               "$ref": "#/definitions/ClusterResource"
             }
           },
           "201": {
-            "description": "The managed Cassandra cluster is being created. Poll for provisioningState=Succeeded to find when creation completes.",
+            "description": " The managed Cassandra cluster is being created. Poll for provisioningState=Succeeded to find when creation completes.",
             "schema": {
               "$ref": "#/definitions/ClusterResource"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -240,7 +240,7 @@
       },
       "patch": {
         "operationId": "CassandraClusters_Update",
-        "description": "Updates some of the properties of a managed Cassandra cluster.",
+        "description": " Updates some of the properties of a managed Cassandra cluster.",
         "x-ms-long-running-operation": true,
         "x-ms-examples": {
           "CosmosDBManagedCassandraClusterPatch": {
@@ -267,24 +267,24 @@
             "schema": {
               "$ref": "#/definitions/ClusterResource"
             },
-            "description": "Parameters to provide for specifying the managed Cassandra cluster."
+            "description": " Parameters to provide for specifying the managed Cassandra cluster."
           }
         ],
         "responses": {
           "202": {
-            "description": "The managed Cassandra cluster is being updated. Poll the provided operation for completion.",
+            "description": " The managed Cassandra cluster is being updated. Poll the provided operation for completion.",
             "schema": {
               "$ref": "#/definitions/ClusterResource"
             }
           },
           "200": {
-            "description": "Completed synchronously. This will only happen if the fields changed by patch require no changes to the actual Cassandra data center.",
+            "description": " Completed synchronously. This will only happen if the fields changed by patch require no changes to the actual Cassandra data center.",
             "schema": {
               "$ref": "#/definitions/ClusterResource"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -295,7 +295,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/invokeCommand": {
       "post": {
         "operationId": "CassandraClusters_InvokeCommand",
-        "description": "Invoke a command like nodetool for cassandra maintenance ",
+        "description": " Invoke a command like nodetool for cassandra maintenance ",
         "x-ms-examples": {
           "CosmosDBManagedCassandraCommand": {
             "$ref": "./examples/CosmosDBManagedCassandraCommand.json"
@@ -322,18 +322,18 @@
             "schema": {
               "$ref": "#/definitions/CommandPostBody"
             },
-            "description": "Specification which command to run where"
+            "description": " Specification which command to run where"
           }
         ],
         "responses": {
           "202": {
-            "description": "Success. The command operation will begin as soon as possible.",
+            "description": " Success. The command operation will begin as soon as possible.",
             "schema": {
               "$ref": "#/definitions/CommandOutput"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -344,7 +344,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/backups": {
       "get": {
         "operationId": "CassandraClusters_ListBackups",
-        "description": "List the backups of this cluster that are available to restore.",
+        "description": " List the backups of this cluster that are available to restore.",
         "x-ms-pageable": {
           "nextLinkName": null
         },
@@ -369,13 +369,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved the list of restorable backups for this Cassandra cluster.",
+            "description": " Successfully retrieved the list of restorable backups for this Cassandra cluster.",
             "schema": {
               "$ref": "#/definitions/ListBackups"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -386,7 +386,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/backups/{backupId}": {
       "get": {
         "operationId": "CassandraClusters_GetBackup",
-        "description": "Get the properties of an individual backup of this cluster that is available to restore.",
+        "description": " Get the properties of an individual backup of this cluster that is available to restore.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraBackup": {
             "$ref": "./examples/CosmosDBManagedCassandraBackup.json"
@@ -411,13 +411,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved the properties of the backup.",
+            "description": " Successfully retrieved the properties of the backup.",
             "schema": {
               "$ref": "#/definitions/BackupResource"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -428,7 +428,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/dataCenters": {
       "get": {
         "operationId": "CassandraDataCenters_List",
-        "description": "List all data centers in a particular managed Cassandra cluster.",
+        "description": " List all data centers in a particular managed Cassandra cluster.",
         "x-ms-pageable": {
           "nextLinkName": null
         },
@@ -453,13 +453,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved the list of managed Cassandra data centers.",
+            "description": " Successfully retrieved the list of managed Cassandra data centers.",
             "schema": {
               "$ref": "#/definitions/ListDataCenters"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -470,7 +470,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/dataCenters/{dataCenterName}": {
       "get": {
         "operationId": "CassandraDataCenters_Get",
-        "description": "Get the properties of a managed Cassandra data center.",
+        "description": " Get the properties of a managed Cassandra data center.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraDataCenterGet": {
             "$ref": "./examples/CosmosDBManagedCassandraDataCenterGet.json"
@@ -495,13 +495,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The properties of the managed Cassandra data center were retrieved successfully.",
+            "description": " The properties of the managed Cassandra data center were retrieved successfully.",
             "schema": {
               "$ref": "#/definitions/DataCenterResource"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -510,7 +510,7 @@
       },
       "delete": {
         "operationId": "CassandraDataCenters_Delete",
-        "description": "Delete a managed Cassandra data center.",
+        "description": " Delete a managed Cassandra data center.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraDataCenterDelete": {
             "$ref": "./examples/CosmosDBManagedCassandraDataCenterDelete.json"
@@ -536,13 +536,13 @@
         ],
         "responses": {
           "202": {
-            "description": "Accepted. Deletion will complete asynchronously."
+            "description": " Accepted. Deletion will complete asynchronously."
           },
           "204": {
-            "description": "Cassandra cluster with the specified name does not exist."
+            "description": " Cassandra cluster with the specified name does not exist."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -551,7 +551,7 @@
       },
       "put": {
         "operationId": "CassandraDataCenters_CreateUpdate",
-        "description": "Create or update a managed Cassandra data center. When updating, overwrite all properties. To update only some properties, use PATCH.",
+        "description": " Create or update a managed Cassandra data center. When updating, overwrite all properties. To update only some properties, use PATCH.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraDataCenterCreate": {
             "$ref": "./examples/CosmosDBManagedCassandraDataCenterCreate.json"
@@ -581,24 +581,24 @@
             "schema": {
               "$ref": "#/definitions/DataCenterResource"
             },
-            "description": "Parameters specifying the managed Cassandra data center."
+            "description": " Parameters specifying the managed Cassandra data center."
           }
         ],
         "responses": {
           "201": {
-            "description": "Accepted. The data center will be created asynchronously.",
+            "description": " Accepted. The data center will be created asynchronously.",
             "schema": {
               "$ref": "#/definitions/DataCenterResource"
             }
           },
           "200": {
-            "description": "Accepted. The data center will be updated asynchronously.",
+            "description": " Accepted. The data center will be updated asynchronously.",
             "schema": {
               "$ref": "#/definitions/DataCenterResource"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -607,7 +607,7 @@
       },
       "patch": {
         "operationId": "CassandraDataCenters_Update",
-        "description": "Update some of the properties of a managed Cassandra data center.",
+        "description": " Update some of the properties of a managed Cassandra data center.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraDataCenterUpdate": {
             "$ref": "./examples/CosmosDBManagedCassandraDataCenterPatch.json"
@@ -637,24 +637,24 @@
             "schema": {
               "$ref": "#/definitions/DataCenterResource"
             },
-            "description": "Parameters to provide for specifying the managed Cassandra data center."
+            "description": " Parameters to provide for specifying the managed Cassandra data center."
           }
         ],
         "responses": {
           "202": {
-            "description": "Accepted. Update will proceed asynchronously.",
+            "description": " Accepted. Update will proceed asynchronously.",
             "schema": {
               "$ref": "#/definitions/DataCenterResource"
             }
           },
           "200": {
-            "description": "Completed synchronously. This will only happen if the fields changed by patch require no changes to the actual Cassandra cluster, such as editing the tags.",
+            "description": " Completed synchronously. This will only happen if the fields changed by patch require no changes to the actual Cassandra cluster, such as editing the tags.",
             "schema": {
               "$ref": "#/definitions/DataCenterResource"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -665,7 +665,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/deallocate": {
       "post": {
         "operationId": "CassandraClusters_Deallocate",
-        "description": "Deallocate the Managed Cassandra Cluster and Associated Data Centers. Deallocation will deallocate the host virtual machine of this cluster, and reserved the data disk. This won't do anything on an already deallocated cluster. Use Start to restart the cluster.",
+        "description": " Deallocate the Managed Cassandra Cluster and Associated Data Centers. Deallocation will deallocate the host virtual machine of this cluster, and reserved the data disk. This won't do anything on an already deallocated cluster. Use Start to restart the cluster.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraClusterDeallocate": {
             "$ref": "./examples/CosmosDBManagedCassandraClusterDeallocate.json"
@@ -688,10 +688,10 @@
         ],
         "responses": {
           "202": {
-            "description": "Cluster deallocated."
+            "description": " Cluster deallocated."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -702,7 +702,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/start": {
       "post": {
         "operationId": "CassandraClusters_Start",
-        "description": "Start the Managed Cassandra Cluster and Associated Data Centers. Start will start the host virtual machine of this cluster with reserved data disk. This won't do anything on an already running cluster. Use Deallocate to deallocate the cluster.",
+        "description": " Start the Managed Cassandra Cluster and Associated Data Centers. Start will start the host virtual machine of this cluster with reserved data disk. This won't do anything on an already running cluster. Use Deallocate to deallocate the cluster.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraClusterStart": {
             "$ref": "./examples/CosmosDBManagedCassandraClusterStart.json"
@@ -725,10 +725,10 @@
         ],
         "responses": {
           "202": {
-            "description": "Enqueued Operation to start the cluster."
+            "description": " Enqueued Operation to start the cluster."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -739,7 +739,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/cassandraClusters/{clusterName}/status": {
       "get": {
         "operationId": "CassandraClusters_Status",
-        "description": "Gets the CPU, memory, and disk usage statistics for each Cassandra node in a cluster.",
+        "description": " Gets the CPU, memory, and disk usage statistics for each Cassandra node in a cluster.",
         "x-ms-examples": {
           "CosmosDBManagedCassandraStatus": {
             "$ref": "./examples/CosmosDBManagedCassandraStatus.json"
@@ -761,13 +761,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully fetched the usage statistics of all nodes in the cluster.",
+            "description": " Successfully fetched the usage statistics of all nodes in the cluster.",
             "schema": {
               "$ref": "#/definitions/CassandraClusterPublicStatus"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -783,7 +783,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "Managed Cassandra cluster name.",
+      "description": " Managed Cassandra cluster name.",
       "minLength": 1,
       "maxLength": 100,
       "pattern": "^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$"
@@ -794,7 +794,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "Data center name in a managed Cassandra cluster.",
+      "description": " Data center name in a managed Cassandra cluster.",
       "minLength": 1,
       "maxLength": 100,
       "pattern": "^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*$"
@@ -805,7 +805,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "Id of a restorable backup of a Cassandra cluster.",
+      "description": " Id of a restorable backup of a Cassandra cluster.",
       "minLength": 1,
       "maxLength": 15,
       "pattern": "^[0-9]+$"
@@ -813,12 +813,12 @@
   },
   "definitions": {
     "ListClusters": {
-      "description": "List of managed Cassandra clusters.",
+      "description": " List of managed Cassandra clusters.",
       "readOnly": true,
       "type": "object",
       "properties": {
         "value": {
-          "description": "Container for the array of clusters.",
+          "description": " Container for the array of clusters.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/ClusterResource"
@@ -828,26 +828,26 @@
     },
     "ManagedCassandraARMResourceProperties": {
       "type": "object",
-      "description": "The core properties of ARM resources.",
+      "description": " The core properties of ARM resources.",
       "properties": {
         "id": {
           "readOnly": true,
           "type": "string",
-          "description": "The unique resource identifier of the ARM resource."
+          "description": " The unique resource identifier of the ARM resource."
         },
         "name": {
           "readOnly": true,
           "type": "string",
-          "description": "The name of the ARM resource."
+          "description": " The name of the ARM resource."
         },
         "type": {
           "readOnly": true,
           "type": "string",
-          "description": "The type of Azure resource."
+          "description": " The type of Azure resource."
         },
         "location": {
           "type": "string",
-          "description": "The location of the resource group to which the resource belongs."
+          "description": " The location of the resource group to which the resource belongs."
         },
         "tags": {
           "$ref": "cosmos-db.json#/definitions/Tags"
@@ -859,22 +859,22 @@
       "x-ms-azure-resource": true
     },
     "ManagedCassandraManagedServiceIdentity": {
-      "description": "Identity for the resource.",
+      "description": " Identity for the resource.",
       "type": "object",
       "properties": {
         "principalId": {
           "readOnly": true,
           "type": "string",
-          "description": "The object id of the identity resource."
+          "description": " The object id of the identity resource."
         },
         "tenantId": {
           "readOnly": true,
           "type": "string",
-          "description": "The tenant id of the resource."
+          "description": " The tenant id of the resource."
         },
         "type": {
           "type": "string",
-          "description": "The type of the resource.",
+          "description": " The type of the resource.",
           "enum": [
             "SystemAssigned",
             "None"
@@ -887,7 +887,7 @@
       }
     },
     "ManagedCassandraProvisioningState": {
-      "description": "The status of the resource at the time the operation was called.",
+      "description": " The status of the resource at the time the operation was called.",
       "type": "string",
       "enum": [
         "Creating",
@@ -903,7 +903,7 @@
       }
     },
     "ClusterResource": {
-      "description": "Representation of a managed Cassandra cluster.",
+      "description": " Representation of a managed Cassandra cluster.",
       "type": "object",
       "allOf": [
         {
@@ -913,7 +913,7 @@
       "properties": {
         "properties": {
           "type": "object",
-          "description": "Properties of a managed Cassandra cluster.",
+          "description": " Properties of a managed Cassandra cluster.",
           "properties": {
             "provisioningState": {
               "$ref": "#/definitions/ManagedCassandraProvisioningState"
@@ -923,7 +923,7 @@
               "x-ms-mutability": [
                 "create"
               ],
-              "description": "To create an empty cluster, omit this field or set it to null. To restore a backup into a new cluster, set this field to the resource id of the backup."
+              "description": " To create an empty cluster, omit this field or set it to null. To restore a backup into a new cluster, set this field to the resource id of the backup."
             },
             "delegatedManagementSubnetId": {
               "type": "string",
@@ -931,11 +931,11 @@
                 "create",
                 "read"
               ],
-              "description": "Resource id of a subnet that this cluster's management service should have its network interface attached to. The subnet must be routable to all subnets that will be delegated to data centers. The resource id must be of the form '/subscriptions/<subscription id>/resourceGroups/<resource group>/providers/Microsoft.Network/virtualNetworks/<virtual network>/subnets/<subnet>'"
+              "description": " Resource id of a subnet that this cluster's management service should have its network interface attached to. The subnet must be routable to all subnets that will be delegated to data centers. The resource id must be of the form '/subscriptions/<subscription id>/resourceGroups/<resource group>/providers/Microsoft.Network/virtualNetworks/<virtual network>/subnets/<subnet>'"
             },
             "cassandraVersion": {
               "type": "string",
-              "description": "Which version of Cassandra should this cluster converge to running (e.g., 3.11). When updated, the cluster may take some time to migrate to the new version."
+              "description": " Which version of Cassandra should this cluster converge to running (e.g., 3.11). When updated, the cluster may take some time to migrate to the new version."
             },
             "clusterNameOverride": {
               "type": "string",
@@ -943,11 +943,11 @@
                 "create",
                 "read"
               ],
-              "description": "If you need to set the clusterName property in cassandra.yaml to something besides the resource name of the cluster, set the value to use on this property."
+              "description": " If you need to set the clusterName property in cassandra.yaml to something besides the resource name of the cluster, set the value to use on this property."
             },
             "authenticationMethod": {
               "type": "string",
-              "description": "Which authentication method Cassandra should use to authenticate clients. 'None' turns off authentication, so should not be used except in emergencies. 'Cassandra' is the default password based authentication. The default is 'Cassandra'. 'Ldap' is in preview.",
+              "description": " Which authentication method Cassandra should use to authenticate clients. 'None' turns off authentication, so should not be used except in emergencies. 'Cassandra' is the default password based authentication. The default is 'Cassandra'. 'Ldap' is in preview.",
               "enum": [
                 "None",
                 "Cassandra",
@@ -963,26 +963,26 @@
                 "create"
               ],
               "x-ms-secret": true,
-              "description": "Initial password for clients connecting as admin to the cluster. Should be changed after cluster creation. Returns null on GET. This field only applies when the authenticationMethod field is 'Cassandra'.",
+              "description": " Initial password for clients connecting as admin to the cluster. Should be changed after cluster creation. Returns null on GET. This field only applies when the authenticationMethod field is 'Cassandra'.",
               "type": "string"
             },
             "prometheusEndpoint": {
               "$ref": "#/definitions/SeedNode",
-              "description": "Hostname or IP address where the Prometheus endpoint containing data about the managed Cassandra nodes can be reached."
+              "description": " Hostname or IP address where the Prometheus endpoint containing data about the managed Cassandra nodes can be reached."
             },
             "repairEnabled": {
               "type": "boolean",
-              "description": "Should automatic repairs run on this cluster? If omitted, this is true, and should stay true unless you are running a hybrid cluster where you are already doing your own repairs."
+              "description": " Should automatic repairs run on this cluster? If omitted, this is true, and should stay true unless you are running a hybrid cluster where you are already doing your own repairs."
             },
             "clientCertificates": {
-              "description": "List of TLS certificates used to authorize clients connecting to the cluster. All connections are TLS encrypted whether clientCertificates is set or not, but if clientCertificates is set, the managed Cassandra cluster will reject all connections not bearing a TLS client certificate that can be validated from one or more of the public certificates in this property.",
+              "description": " List of TLS certificates used to authorize clients connecting to the cluster. All connections are TLS encrypted whether clientCertificates is set or not, but if clientCertificates is set, the managed Cassandra cluster will reject all connections not bearing a TLS client certificate that can be validated from one or more of the public certificates in this property.",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Certificate"
               }
             },
             "externalGossipCertificates": {
-              "description": "List of TLS certificates used to authorize gossip from unmanaged data centers. The TLS certificates of all nodes in unmanaged data centers must be verifiable using one of the certificates provided in this property.",
+              "description": " List of TLS certificates used to authorize gossip from unmanaged data centers. The TLS certificates of all nodes in unmanaged data centers must be verifiable using one of the certificates provided in this property.",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Certificate"
@@ -993,7 +993,7 @@
               "x-ms-mutability": [
                 "read"
               ],
-              "description": "List of TLS certificates that unmanaged nodes must trust for gossip with managed nodes. All managed nodes will present TLS client certificates that are verifiable using one of the certificates provided in this property.",
+              "description": " List of TLS certificates that unmanaged nodes must trust for gossip with managed nodes. All managed nodes will present TLS client certificates that are verifiable using one of the certificates provided in this property.",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Certificate"
@@ -1001,7 +1001,7 @@
             },
             "externalSeedNodes": {
               "type": "array",
-              "description": "List of IP addresses of seed nodes in unmanaged data centers. These will be added to the seed node lists of all managed nodes.",
+              "description": " List of IP addresses of seed nodes in unmanaged data centers. These will be added to the seed node lists of all managed nodes.",
               "items": {
                 "$ref": "#/definitions/SeedNode"
               }
@@ -1012,20 +1012,20 @@
               "items": {
                 "$ref": "#/definitions/SeedNode"
               },
-              "description": "List of IP addresses of seed nodes in the managed data centers. These should be added to the seed node lists of all unmanaged nodes."
+              "description": " List of IP addresses of seed nodes in the managed data centers. These should be added to the seed node lists of all unmanaged nodes."
             },
             "hoursBetweenBackups": {
               "type": "integer",
               "format": "int32",
-              "description": "Number of hours to wait between taking a backup of the cluster."
+              "description": " Number of hours to wait between taking a backup of the cluster."
             },
             "deallocated": {
               "type": "boolean",
-              "description": "Whether the cluster and associated data centers has been deallocated."
+              "description": " Whether the cluster and associated data centers has been deallocated."
             },
             "cassandraAuditLoggingEnabled": {
               "type": "boolean",
-              "description": "Whether Cassandra audit logging is enabled"
+              "description": " Whether Cassandra audit logging is enabled"
             }
           }
         }
@@ -1033,7 +1033,7 @@
     },
     "ManagedCassandraNodeStatus": {
       "type": "string",
-      "description": "Indicates whether the node is functioning or not.",
+      "description": " Indicates whether the node is functioning or not.",
       "enum": [
         "Up",
         "Down"
@@ -1045,7 +1045,7 @@
     },
     "ManagedCassandraNodeState": {
       "type": "string",
-      "description": "The state of the node in Cassandra ring.",
+      "description": " The state of the node in Cassandra ring.",
       "enum": [
         "Normal",
         "Leaving",
@@ -1060,7 +1060,7 @@
     },
     "CassandraClusterPublicStatus": {
       "type": "object",
-      "description": "Properties of a managed Cassandra cluster public status.",
+      "description": " Properties of a managed Cassandra cluster public status.",
       "properties": {
         "eTag": {
           "type": "string"
@@ -1070,24 +1070,24 @@
         },
         "connectionErrors": {
           "type": "array",
-          "description": "List relevant information about any connection errors to the Datacenters.",
+          "description": " List relevant information about any connection errors to the Datacenters.",
           "items": {
             "$ref": "#/definitions/ConnectionError"
           }
         },
         "dataCenters": {
           "type": "array",
-          "description": "List of the status of each datacenter in this cluster.",
+          "description": " List of the status of each datacenter in this cluster.",
           "items": {
             "type": "object",
             "properties": {
               "name": {
                 "type": "string",
-                "description": "The name of this Datacenter."
+                "description": " The name of this Datacenter."
               },
               "seedNodes": {
                 "type": "array",
-                "description": "A list of all seed nodes in the cluster, managed and unmanaged.",
+                "description": " A list of all seed nodes in the cluster, managed and unmanaged.",
                 "items": {
                   "type": "string"
                 }
@@ -1099,7 +1099,7 @@
                   "properties": {
                     "address": {
                       "type": "string",
-                      "description": "The node's IP address."
+                      "description": " The node's IP address."
                     },
                     "state": {
                       "$ref": "#/definitions/ManagedCassandraNodeState"
@@ -1109,11 +1109,11 @@
                     },
                     "load": {
                       "type": "string",
-                      "description": "The amount of file system data in the data directory (e.g., 47.66 kB), excluding all content in the snapshots subdirectories. Because all SSTable data files are included, any data that is not cleaned up (such as TTL-expired cells or tombstones) is counted."
+                      "description": " The amount of file system data in the data directory (e.g., 47.66 kB), excluding all content in the snapshots subdirectories. Because all SSTable data files are included, any data that is not cleaned up (such as TTL-expired cells or tombstones) is counted."
                     },
                     "tokens": {
                       "type": "array",
-                      "description": "List of tokens this node covers.",
+                      "description": " List of tokens this node covers.",
                       "items": {
                         "type": "string"
                       }
@@ -1123,49 +1123,49 @@
                       "format": "int32"
                     },
                     "hostID": {
-                      "description": "The network ID of the node.",
+                      "description": " The network ID of the node.",
                       "type": "string"
                     },
                     "rack": {
-                      "description": "The rack this node is part of.",
+                      "description": " The rack this node is part of.",
                       "type": "string"
                     },
                     "timestamp": {
-                      "description": "The timestamp at which that snapshot of these usage statistics were taken.",
+                      "description": " The timestamp at which that snapshot of these usage statistics were taken.",
                       "type": "string"
                     },
                     "diskUsedKB": {
-                      "description": "The amount of disk used, in kB, of the directory /var/lib/cassandra.",
+                      "description": " The amount of disk used, in kB, of the directory /var/lib/cassandra.",
                       "type": "integer",
                       "format": "int64"
                     },
                     "diskFreeKB": {
-                      "description": "The amount of disk free, in kB, of the directory /var/lib/cassandra.",
+                      "description": " The amount of disk free, in kB, of the directory /var/lib/cassandra.",
                       "type": "integer",
                       "format": "int64"
                     },
                     "memoryUsedKB": {
-                      "description": "Used memory (calculated as total - free - buffers - cache), in kB.",
+                      "description": " Used memory (calculated as total - free - buffers - cache), in kB.",
                       "type": "integer",
                       "format": "int64"
                     },
                     "memoryBuffersAndCachedKB": {
-                      "description": "Memory used by kernel buffers (Buffers in /proc/meminfo) and page cache and slabs (Cached and SReclaimable in /proc/meminfo), in kB.",
+                      "description": " Memory used by kernel buffers (Buffers in /proc/meminfo) and page cache and slabs (Cached and SReclaimable in /proc/meminfo), in kB.",
                       "type": "integer",
                       "format": "int64"
                     },
                     "memoryFreeKB": {
-                      "description": "Unused memory (MemFree and SwapFree in /proc/meminfo), in kB.",
+                      "description": " Unused memory (MemFree and SwapFree in /proc/meminfo), in kB.",
                       "type": "integer",
                       "format": "int64"
                     },
                     "memoryTotalKB": {
-                      "description": "Total installed memory (MemTotal and SwapTotal in /proc/meminfo), in kB.",
+                      "description": " Total installed memory (MemTotal and SwapTotal in /proc/meminfo), in kB.",
                       "type": "integer",
                       "format": "int64"
                     },
                     "cpuUsage": {
-                      "description": "A float representing the current system-wide CPU utilization as a percentage.",
+                      "description": " A float representing the current system-wide CPU utilization as a percentage.",
                       "type": "number",
                       "format": "double"
                     }
@@ -1201,7 +1201,7 @@
       "type": "object",
       "properties": {
         "connectionState": {
-          "description": "The kind of connection error that occurred.",
+          "description": " The kind of connection error that occurred.",
           "type": "string",
           "enum": [
             "Unknown",
@@ -1217,26 +1217,26 @@
           }
         },
         "iPFrom": {
-          "description": "The IP of host that originated the failed connection.",
+          "description": " The IP of host that originated the failed connection.",
           "type": "string"
         },
         "iPTo": {
-          "description": "The IP that the connection attempted to reach.",
+          "description": " The IP that the connection attempted to reach.",
           "type": "string"
         },
         "port": {
-          "description": "The TCP port the connection was attempted on.",
+          "description": " The TCP port the connection was attempted on.",
           "type": "integer",
           "format": "int32"
         },
         "exception": {
-          "description": "Detailed error message about the failed connection.",
+          "description": " Detailed error message about the failed connection.",
           "type": "string"
         }
       }
     },
     "CommandPostBody": {
-      "description": "Specification of which command to run where",
+      "description": " Specification of which command to run where",
       "type": "object",
       "required": [
         "command",
@@ -1245,41 +1245,41 @@
       "properties": {
         "command": {
           "type": "string",
-          "description": "The command which should be run"
+          "description": " The command which should be run"
         },
         "arguments": {
           "type": "object",
-          "description": "The arguments for the command to be run",
+          "description": " The arguments for the command to be run",
           "additionalProperties": {
             "type": "string"
           }
         },
         "host": {
           "type": "string",
-          "description": "IP address of the cassandra host to run the command on"
+          "description": " IP address of the cassandra host to run the command on"
         },
         "cassandra-stop-start": {
           "type": "boolean",
-          "description": "If true, stops cassandra before executing the command and then start it again"
+          "description": " If true, stops cassandra before executing the command and then start it again"
         },
         "readwrite": {
           "type": "boolean",
-          "description": "If true, allows the command to *write* to the cassandra directory, otherwise read-only."
+          "description": " If true, allows the command to *write* to the cassandra directory, otherwise read-only."
         }
       }
     },
     "CommandOutput": {
-      "description": "Response of /command api",
+      "description": " Response of /command api",
       "type": "object",
       "properties": {
         "commandOutput": {
           "type": "string",
-          "description": "Output of the command."
+          "description": " Output of the command."
         }
       }
     },
     "BackupResource": {
-      "description": "A restorable backup of a Cassandra cluster.",
+      "description": " A restorable backup of a Cassandra cluster.",
       "type": "object",
       "allOf": [
         {
@@ -1293,18 +1293,18 @@
             "timestamp": {
               "type": "string",
               "format": "date-time",
-              "description": "The time this backup was taken, formatted like 2021-01-21T17:35:21"
+              "description": " The time this backup was taken, formatted like 2021-01-21T17:35:21"
             }
           }
         }
       }
     },
     "ListBackups": {
-      "description": "List of restorable backups for a Cassandra cluster.",
+      "description": " List of restorable backups for a Cassandra cluster.",
       "type": "object",
       "properties": {
         "value": {
-          "description": "Container for array of backups.",
+          "description": " Container for array of backups.",
           "type": "array",
           "readOnly": true,
           "items": {
@@ -1314,11 +1314,11 @@
       }
     },
     "ListDataCenters": {
-      "description": "List of managed Cassandra data centers and their properties.",
+      "description": " List of managed Cassandra data centers and their properties.",
       "type": "object",
       "properties": {
         "value": {
-          "description": "Container for array of data centers.",
+          "description": " Container for array of data centers.",
           "type": "array",
           "readOnly": true,
           "items": {
@@ -1331,7 +1331,7 @@
       "type": "object",
       "properties": {
         "ipAddress": {
-          "description": "IP address of this seed node.",
+          "description": " IP address of this seed node.",
           "type": "string"
         }
       }
@@ -1340,13 +1340,13 @@
       "type": "object",
       "properties": {
         "pem": {
-          "description": "PEM formatted public key.",
+          "description": " PEM formatted public key.",
           "type": "string"
         }
       }
     },
     "DataCenterResource": {
-      "description": "A managed Cassandra data center.",
+      "description": " A managed Cassandra data center.",
       "type": "object",
       "allOf": [
         {
@@ -1355,7 +1355,7 @@
       ],
       "properties": {
         "properties": {
-          "description": "Properties of a managed Cassandra data center.",
+          "description": " Properties of a managed Cassandra data center.",
           "type": "object",
           "properties": {
             "provisioningState": {
@@ -1367,7 +1367,7 @@
                 "create",
                 "read"
               ],
-              "description": "The region this data center should be created in."
+              "description": " The region this data center should be created in."
             },
             "delegatedSubnetId": {
               "type": "string",
@@ -1375,49 +1375,49 @@
                 "create",
                 "read"
               ],
-              "description": "Resource id of a subnet the nodes in this data center should have their network interfaces connected to. The subnet must be in the same region specified in 'dataCenterLocation' and must be able to route to the subnet specified in the cluster's 'delegatedManagementSubnetId' property. This resource id will be of the form '/subscriptions/<subscription id>/resourceGroups/<resource group>/providers/Microsoft.Network/virtualNetworks/<virtual network>/subnets/<subnet>'."
+              "description": " Resource id of a subnet the nodes in this data center should have their network interfaces connected to. The subnet must be in the same region specified in 'dataCenterLocation' and must be able to route to the subnet specified in the cluster's 'delegatedManagementSubnetId' property. This resource id will be of the form '/subscriptions/<subscription id>/resourceGroups/<resource group>/providers/Microsoft.Network/virtualNetworks/<virtual network>/subnets/<subnet>'."
             },
             "nodeCount": {
               "type": "integer",
               "format": "int32",
-              "description": "The number of nodes the data center should have. This is the desired number. After it is set, it may take some time for the data center to be scaled to match. To monitor the number of nodes and their status, use the fetchNodeStatus method on the cluster."
+              "description": " The number of nodes the data center should have. This is the desired number. After it is set, it may take some time for the data center to be scaled to match. To monitor the number of nodes and their status, use the fetchNodeStatus method on the cluster."
             },
             "seedNodes": {
               "readOnly": true,
               "type": "array",
-              "description": "IP addresses for seed nodes in this data center. This is for reference. Generally you will want to use the seedNodes property on the cluster, which aggregates the seed nodes from all data centers in the cluster.",
+              "description": " IP addresses for seed nodes in this data center. This is for reference. Generally you will want to use the seedNodes property on the cluster, which aggregates the seed nodes from all data centers in the cluster.",
               "items": {
                 "$ref": "#/definitions/SeedNode"
               }
             },
             "base64EncodedCassandraYamlFragment": {
               "type": "string",
-              "description": "A fragment of a cassandra.yaml configuration file to be included in the cassandra.yaml for all nodes in this data center. The fragment should be Base64 encoded, and only a subset of keys are allowed."
+              "description": " A fragment of a cassandra.yaml configuration file to be included in the cassandra.yaml for all nodes in this data center. The fragment should be Base64 encoded, and only a subset of keys are allowed."
             },
             "managedDiskCustomerKeyUri": {
               "type": "string",
-              "description": "Key uri to use for encryption of managed disks. Ensure the system assigned identity of the cluster has been assigned appropriate permissions(key get/wrap/unwrap permissions) on the key."
+              "description": " Key uri to use for encryption of managed disks. Ensure the system assigned identity of the cluster has been assigned appropriate permissions(key get/wrap/unwrap permissions) on the key."
             },
             "backupStorageCustomerKeyUri": {
               "type": "string",
-              "description": "Indicates the Key Uri of the customer key to use for encryption of the backup storage account."
+              "description": " Indicates the Key Uri of the customer key to use for encryption of the backup storage account."
             },
             "sku": {
               "type": "string",
-              "description": "Virtual Machine SKU used for data centers. Default value is Standard_DS14_v2"
+              "description": " Virtual Machine SKU used for data centers. Default value is Standard_DS14_v2"
             },
             "diskSku": {
               "type": "string",
-              "description": "Disk SKU used for data centers. Default value is P30."
+              "description": " Disk SKU used for data centers. Default value is P30."
             },
             "diskCapacity": {
               "type": "integer",
               "format": "int32",
-              "description": "Number of disk used for data centers. Default value is 4."
+              "description": " Number of disk used for data centers. Default value is 4."
             },
             "availabilityZone": {
               "type": "boolean",
-              "description": "If the data center has Availability Zone feature, apply it to the Virtual Machine ScaleSet that host the cassandra data center virtual machines."
+              "description": " If the data center has Availability Zone feature, apply it to the Virtual Machine ScaleSet that host the cassandra data center virtual machines."
             },
             "authenticationMethodLdapProperties": {
               "$ref": "#/definitions/AuthenticationMethodLdapProperties"
@@ -1428,31 +1428,31 @@
     },
     "AuthenticationMethodLdapProperties": {
       "type": "object",
-      "description": "Ldap authentication method properties. This feature is in preview.",
+      "description": " Ldap authentication method properties. This feature is in preview.",
       "properties": {
         "serverHostname": {
-          "description": "Hostname of the LDAP server.",
+          "description": " Hostname of the LDAP server.",
           "type": "string"
         },
         "serverPort": {
-          "description": "Port of the LDAP server.",
+          "description": " Port of the LDAP server.",
           "type": "integer",
           "format": "int32"
         },
         "serviceUserDistinguishedName": {
-          "description": "Distinguished name of the look up user account, who can look up user details on authentication.",
+          "description": " Distinguished name of the look up user account, who can look up user details on authentication.",
           "type": "string"
         },
         "serviceUserPassword": {
-          "description": "Password of the look up user.",
+          "description": " Password of the look up user.",
           "type": "string"
         },
         "searchBaseDistinguishedName": {
-          "description": "Distinguished name of the object to start the recursive search of users from.",
+          "description": " Distinguished name of the object to start the recursive search of users from.",
           "type": "string"
         },
         "searchFilterTemplate": {
-          "description": "Template to use for searching. Defaults to (cn=%s) where %s will be replaced by the username used to login.",
+          "description": " Template to use for searching. Defaults to (cn=%s) where %s will be replaced by the username used to login.",
           "type": "string"
         },
         "serverCertificates": {
