@@ -17,7 +17,7 @@
       "x-ms-external": true
     },
     "CloudErrorBody": {
-      "description": "An error response from Key Vault resource provider",
+      "description": "An error response from Key Vault  resource provider",
       "properties": {
         "code": {
           "type": "string",
