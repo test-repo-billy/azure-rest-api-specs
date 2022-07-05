@@ -31,13 +31,6 @@ openapi-type: arm
 tag: package-2021-08
 ```
 
-### Tag: package-2022-04-preview-test
-These settings apply only when `--tag=2022-04-preview-test` is specified on the command line.
-
-``` yaml $(tag) == 'package-2022-04-preview-test'
-input-file:
-  - Microsoft.Network/stable/2021-08-01/vmssNetworkInterface.json
-
 ### Tag: package-2022-04-preview
 
 These settings apply only when `--tag=2022-04-preview` is specified on the command line.
