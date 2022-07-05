@@ -28,6 +28,9 @@ These are the global settings for the Cosmos-DB API.
 title: CosmosDBManagementClient
 openapi-type: arm
 tag: package-preview-2022-02
+list-exception:
+- /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/readonlykeys
+
 ```
 
 
@@ -48,6 +51,8 @@ input-file:
   - Microsoft.DocumentDB/preview/2022-02-15-preview/restorable.json
   - Microsoft.DocumentDB/preview/2022-02-15-preview/services.json
 ```
+
+
 ### Tag: package-preview-2021-11
 
 These settings apply only when `--tag=package-preview-2021-11` is specified on the command line.
