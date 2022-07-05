@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Cosmos DB",
-    "description": "Azure Cosmos DB Database Service Resource Provider REST API",
+    "description": " Azure Cosmos DB Database Service Resource Provider REST API",
     "version": "2021-11-15-preview"
   },
   "host": "management.azure.com",
@@ -27,7 +27,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Azure Active Directory OAuth2 Flow",
+      "description": " Azure Active Directory OAuth2 Flow",
       "scopes": {
         "user_impersonation": "Impersonate your user account"
       }
@@ -39,7 +39,7 @@
         "tags": [
           "NotebookWorkspacesResource"
         ],
-        "description": "Gets the notebook workspace resources of an existing Cosmos DB account.",
+        "description": " Gets the notebook workspace resources of an existing Cosmos DB account.",
         "operationId": "NotebookWorkspaces_ListByDatabaseAccount",
         "x-ms-pageable": {
           "nextLinkName": null
@@ -60,13 +60,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved notebook workspace resources.",
+            "description": " Successfully retrieved notebook workspace resources.",
             "schema": {
               "$ref": "#/definitions/NotebookWorkspaceListResult"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -84,7 +84,7 @@
         "tags": [
           "NotebookWorkspacesResource"
         ],
-        "description": "Gets the notebook workspace for a Cosmos DB account.",
+        "description": " Gets the notebook workspace for a Cosmos DB account.",
         "operationId": "NotebookWorkspaces_Get",
         "parameters": [
           {
@@ -105,13 +105,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved a specified notebook workspace resource.",
+            "description": " Successfully retrieved a specified notebook workspace resource.",
             "schema": {
               "$ref": "#/definitions/NotebookWorkspace"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -127,7 +127,7 @@
         "tags": [
           "NotebookWorkspacesResource"
         ],
-        "description": "Creates the notebook workspace for a Cosmos DB account.",
+        "description": " Creates the notebook workspace for a Cosmos DB account.",
         "operationId": "NotebookWorkspaces_CreateOrUpdate",
         "x-ms-long-running-operation": true,
         "parameters": [
@@ -153,18 +153,18 @@
             "schema": {
               "$ref": "#/definitions/NotebookWorkspaceCreateUpdateParameters"
             },
-            "description": "The notebook workspace to create for the current database account."
+            "description": " The notebook workspace to create for the current database account."
           }
         ],
         "responses": {
           "200": {
-            "description": "Creation of notebook workspace will complete asynchronously.",
+            "description": " Creation of notebook workspace will complete asynchronously.",
             "schema": {
               "$ref": "#/definitions/NotebookWorkspace"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -180,7 +180,7 @@
         "tags": [
           "NotebookWorkspacesResource"
         ],
-        "description": "Deletes the notebook workspace for a Cosmos DB account.",
+        "description": " Deletes the notebook workspace for a Cosmos DB account.",
         "operationId": "NotebookWorkspaces_Delete",
         "x-ms-long-running-operation": true,
         "parameters": [
@@ -202,13 +202,13 @@
         ],
         "responses": {
           "202": {
-            "description": "The notebook workspace delete operation will complete asynchronously."
+            "description": " The notebook workspace delete operation will complete asynchronously."
           },
           "204": {
-            "description": "The specified notebook workspace does not exist in the database account."
+            "description": " The specified notebook workspace does not exist in the database account."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -232,7 +232,7 @@
             "$ref": "./examples/CosmosDBNotebookWorkspaceListConnectionInfo.json"
           }
         },
-        "description": "Retrieves the connection info for the notebook workspace",
+        "description": " Retrieves the connection info for the notebook workspace",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
@@ -252,13 +252,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The operation completed successfully.",
+            "description": " The operation completed successfully.",
             "schema": {
               "$ref": "#/definitions/NotebookWorkspaceConnectionInfoResult"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -278,7 +278,7 @@
             "$ref": "./examples/CosmosDBNotebookWorkspaceRegenerateAuthToken.json"
           }
         },
-        "description": "Regenerates the auth token for the notebook workspace",
+        "description": " Regenerates the auth token for the notebook workspace",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
@@ -298,13 +298,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": " OK"
           },
           "202": {
-            "description": "Accepted. The regenerate auth token operation will complete asynchronously."
+            "description": " Accepted. The regenerate auth token operation will complete asynchronously."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -324,7 +324,7 @@
             "$ref": "./examples/CosmosDBNotebookWorkspaceStart.json"
           }
         },
-        "description": "Starts the notebook workspace",
+        "description": " Starts the notebook workspace",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
@@ -344,13 +344,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": " OK"
           },
           "202": {
-            "description": "Accepted. The start operation will complete asynchronously."
+            "description": " Accepted. The start operation will complete asynchronously."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "../../preview/2021-11-15-preview/cosmos-db.json#/definitions/ErrorResponse"
             }
@@ -361,7 +361,7 @@
   },
   "definitions": {
     "NotebookWorkspaceCreateUpdateParameters": {
-      "description": "Parameters to create a notebook workspace resource",
+      "description": " Parameters to create a notebook workspace resource",
       "type": "object",
       "allOf": [
         {
@@ -370,12 +370,12 @@
       ]
     },
     "NotebookWorkspaceListResult": {
-      "description": "A list of notebook workspace resources",
+      "description": " A list of notebook workspace resources",
       "type": "object",
       "properties": {
         "value": {
           "type": "array",
-          "description": "Array of notebook workspace resources",
+          "description": " Array of notebook workspace resources",
           "items": {
             "$ref": "#/definitions/NotebookWorkspace"
           }
@@ -383,12 +383,12 @@
       }
     },
     "NotebookWorkspace": {
-      "description": "A notebook workspace resource",
+      "description": " A notebook workspace resource",
       "type": "object",
       "properties": {
         "properties": {
           "$ref": "#/definitions/NotebookWorkspaceProperties",
-          "description": "Resource properties.",
+          "description": " Resource properties.",
           "x-ms-client-flatten": true
         }
       },
@@ -399,32 +399,32 @@
       ]
     },
     "NotebookWorkspaceProperties": {
-      "description": "Properties of a notebook workspace resource.",
+      "description": " Properties of a notebook workspace resource.",
       "type": "object",
       "properties": {
         "notebookServerEndpoint": {
-          "description": "Specifies the endpoint of Notebook server.",
+          "description": " Specifies the endpoint of Notebook server.",
           "type": "string",
           "readOnly": true
         },
         "status": {
-          "description": "Status of the notebook workspace. Possible values are: Creating, Online, Deleting, Failed, Updating.",
+          "description": " Status of the notebook workspace. Possible values are: Creating, Online, Deleting, Failed, Updating.",
           "type": "string",
           "readOnly": true
         }
       }
     },
     "NotebookWorkspaceConnectionInfoResult": {
-      "description": "The connection info for the given notebook workspace",
+      "description": " The connection info for the given notebook workspace",
       "properties": {
         "authToken": {
           "type": "string",
-          "description": "Specifies auth token used for connecting to Notebook server (uses token-based auth).",
+          "description": " Specifies auth token used for connecting to Notebook server (uses token-based auth).",
           "readOnly": true
         },
         "notebookServerEndpoint": {
           "type": "string",
-          "description": "Specifies the endpoint of Notebook server.",
+          "description": " Specifies the endpoint of Notebook server.",
           "readOnly": true
         }
       }
@@ -437,7 +437,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "Cosmos DB database account name.",
+      "description": " Cosmos DB database account name.",
       "minLength": 3,
       "maxLength": 50,
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*"
@@ -445,7 +445,7 @@
     "NotebookWorkspaceNameParameter": {
       "name": "notebookWorkspaceName",
       "in": "path",
-      "description": "The name of the notebook workspace resource.",
+      "description": " The name of the notebook workspace resource.",
       "required": true,
       "x-ms-parameter-location": "method",
       "type": "string",

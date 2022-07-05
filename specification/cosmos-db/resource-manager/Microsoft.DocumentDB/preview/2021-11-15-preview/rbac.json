@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Cosmos DB",
-    "description": "Azure Cosmos DB Role Based Access Control Resource Provider REST API",
+    "description": " Azure Cosmos DB Role Based Access Control Resource Provider REST API",
     "version": "2021-11-15-preview"
   },
   "host": "management.azure.com",
@@ -27,7 +27,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Azure Active Directory OAuth2 Flow",
+      "description": " Azure Active Directory OAuth2 Flow",
       "scopes": {
         "user_impersonation": "Impersonate your user account"
       }
@@ -42,7 +42,7 @@
             "$ref": "./examples/CosmosDBSqlRoleDefinitionGet.json"
           }
         },
-        "description": "Retrieves the properties of an existing Azure Cosmos DB SQL Role Definition with the given Id.",
+        "description": " Retrieves the properties of an existing Azure Cosmos DB SQL Role Definition with the given Id.",
         "parameters": [
           {
             "$ref": "#/parameters/roleDefinitionIdParameter"
@@ -62,13 +62,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The Role Definition was successfully retrieved.",
+            "description": " The Role Definition was successfully retrieved.",
             "schema": {
               "$ref": "#/definitions/SqlRoleDefinitionGetResults"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -83,7 +83,7 @@
           }
         },
         "x-ms-long-running-operation": true,
-        "description": "Creates or updates an Azure Cosmos DB SQL Role Definition.",
+        "description": " Creates or updates an Azure Cosmos DB SQL Role Definition.",
         "parameters": [
           {
             "$ref": "#/parameters/roleDefinitionIdParameter"
@@ -104,7 +104,7 @@
             "name": "createUpdateSqlRoleDefinitionParameters",
             "in": "body",
             "required": true,
-            "description": "The properties required to create or update a Role Definition.",
+            "description": " The properties required to create or update a Role Definition.",
             "schema": {
               "$ref": "#/definitions/SqlRoleDefinitionCreateUpdateParameters"
             }
@@ -112,16 +112,16 @@
         ],
         "responses": {
           "200": {
-            "description": "The Role Definition create or update operation was completed successfully.",
+            "description": " The Role Definition create or update operation was completed successfully.",
             "schema": {
               "$ref": "#/definitions/SqlRoleDefinitionGetResults"
             }
           },
           "202": {
-            "description": "The Role Definition create or update request was accepted and will complete asynchronously."
+            "description": " The Role Definition create or update request was accepted and will complete asynchronously."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -136,7 +136,7 @@
           }
         },
         "x-ms-long-running-operation": true,
-        "description": "Deletes an existing Azure Cosmos DB SQL Role Definition.",
+        "description": " Deletes an existing Azure Cosmos DB SQL Role Definition.",
         "parameters": [
           {
             "$ref": "#/parameters/roleDefinitionIdParameter"
@@ -156,16 +156,16 @@
         ],
         "responses": {
           "200": {
-            "description": "The Role Definition delete operation was completed successfully."
+            "description": " The Role Definition delete operation was completed successfully."
           },
           "202": {
-            "description": "The Role Definition delete request was accepted and will complete asynchronously."
+            "description": " The Role Definition delete request was accepted and will complete asynchronously."
           },
           "204": {
-            "description": "The requested Role Definition does not exist."
+            "description": " The requested Role Definition does not exist."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -184,7 +184,7 @@
         "x-ms-pageable": {
           "nextLinkName": null
         },
-        "description": "Retrieves the list of all Azure Cosmos DB SQL Role Definitions.",
+        "description": " Retrieves the list of all Azure Cosmos DB SQL Role Definitions.",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
@@ -201,13 +201,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The list operation completed successfully.",
+            "description": " The list operation completed successfully.",
             "schema": {
               "$ref": "#/definitions/SqlRoleDefinitionListResult"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -223,7 +223,7 @@
             "$ref": "./examples/CosmosDBSqlRoleAssignmentGet.json"
           }
         },
-        "description": "Retrieves the properties of an existing Azure Cosmos DB SQL Role Assignment with the given Id.",
+        "description": " Retrieves the properties of an existing Azure Cosmos DB SQL Role Assignment with the given Id.",
         "parameters": [
           {
             "$ref": "#/parameters/roleAssignmentIdParameter"
@@ -243,13 +243,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The Role Assignment was successfully retrieved.",
+            "description": " The Role Assignment was successfully retrieved.",
             "schema": {
               "$ref": "#/definitions/SqlRoleAssignmentGetResults"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -264,7 +264,7 @@
           }
         },
         "x-ms-long-running-operation": true,
-        "description": "Creates or updates an Azure Cosmos DB SQL Role Assignment.",
+        "description": " Creates or updates an Azure Cosmos DB SQL Role Assignment.",
         "parameters": [
           {
             "$ref": "#/parameters/roleAssignmentIdParameter"
@@ -285,7 +285,7 @@
             "name": "createUpdateSqlRoleAssignmentParameters",
             "in": "body",
             "required": true,
-            "description": "The properties required to create or update a Role Assignment.",
+            "description": " The properties required to create or update a Role Assignment.",
             "schema": {
               "$ref": "#/definitions/SqlRoleAssignmentCreateUpdateParameters"
             }
@@ -293,16 +293,16 @@
         ],
         "responses": {
           "200": {
-            "description": "The Role Assignment create or update operation was completed successfully.",
+            "description": " The Role Assignment create or update operation was completed successfully.",
             "schema": {
               "$ref": "#/definitions/SqlRoleAssignmentGetResults"
             }
           },
           "202": {
-            "description": "The Role Assignment create or update request was accepted and will complete asynchronously."
+            "description": " The Role Assignment create or update request was accepted and will complete asynchronously."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -317,7 +317,7 @@
           }
         },
         "x-ms-long-running-operation": true,
-        "description": "Deletes an existing Azure Cosmos DB SQL Role Assignment.",
+        "description": " Deletes an existing Azure Cosmos DB SQL Role Assignment.",
         "parameters": [
           {
             "$ref": "#/parameters/roleAssignmentIdParameter"
@@ -337,16 +337,16 @@
         ],
         "responses": {
           "200": {
-            "description": "The Role Assignment delete operation was completed successfully."
+            "description": " The Role Assignment delete operation was completed successfully."
           },
           "202": {
-            "description": "The Role Assignment delete request was accepted and will complete asynchronously."
+            "description": " The Role Assignment delete request was accepted and will complete asynchronously."
           },
           "204": {
-            "description": "The requested Role Assignment does not exist."
+            "description": " The requested Role Assignment does not exist."
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -365,7 +365,7 @@
         "x-ms-pageable": {
           "nextLinkName": null
         },
-        "description": "Retrieves the list of all Azure Cosmos DB SQL Role Assignments.",
+        "description": " Retrieves the list of all Azure Cosmos DB SQL Role Assignments.",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
@@ -382,13 +382,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The list operation completed successfully.",
+            "description": " The list operation completed successfully.",
             "schema": {
               "$ref": "#/definitions/SqlRoleAssignmentListResult"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -402,7 +402,7 @@
       "properties": {
         "roleName": {
           "type": "string",
-          "description": "A user-friendly name for the Role Definition. Must be unique for the database account."
+          "description": " A user-friendly name for the Role Definition. Must be unique for the database account."
         },
         "type": {
           "type": "string",
@@ -410,7 +410,7 @@
             "BuiltInRole",
             "CustomRole"
           ],
-          "description": "Indicates whether the Role Definition was built-in or user created.",
+          "description": " Indicates whether the Role Definition was built-in or user created.",
           "x-ms-enum": {
             "name": "RoleDefinitionType",
             "modelAsString": false
@@ -421,25 +421,25 @@
           "items": {
             "type": "string"
           },
-          "description": "A set of fully qualified Scopes at or below which Role Assignments may be created using this Role Definition. This will allow application of this Role Definition on the entire database account or any underlying Database / Collection. Must have at least one element. Scopes higher than Database account are not enforceable as assignable Scopes. Note that resources referenced in assignable Scopes need not exist."
+          "description": " A set of fully qualified Scopes at or below which Role Assignments may be created using this Role Definition. This will allow application of this Role Definition on the entire database account or any underlying Database / Collection. Must have at least one element. Scopes higher than Database account are not enforceable as assignable Scopes. Note that resources referenced in assignable Scopes need not exist."
         },
         "permissions": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Permission"
           },
-          "description": "The set of operations allowed through this Role Definition."
+          "description": " The set of operations allowed through this Role Definition."
         }
       },
-      "description": "Azure Cosmos DB SQL Role Definition resource object."
+      "description": " Azure Cosmos DB SQL Role Definition resource object."
     },
     "SqlRoleDefinitionCreateUpdateParameters": {
-      "description": "Parameters to create and update an Azure Cosmos DB SQL Role Definition.",
+      "description": " Parameters to create and update an Azure Cosmos DB SQL Role Definition.",
       "type": "object",
       "properties": {
         "properties": {
           "x-ms-client-flatten": true,
-          "description": "Properties to create and update an Azure Cosmos DB SQL Role Definition.",
+          "description": " Properties to create and update an Azure Cosmos DB SQL Role Definition.",
           "$ref": "#/definitions/SqlRoleDefinitionResource"
         }
       }
@@ -450,7 +450,7 @@
         "properties": {
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/SqlRoleDefinitionResource",
-          "description": "Properties related to the Role Definition."
+          "description": " Properties related to the Role Definition."
         }
       },
       "allOf": [
@@ -458,7 +458,7 @@
           "$ref": "cosmos-db.json#/definitions/ARMProxyResource"
         }
       ],
-      "description": "An Azure Cosmos DB SQL Role Definition."
+      "description": " An Azure Cosmos DB SQL Role Definition."
     },
     "Permission": {
       "type": "object",
@@ -468,17 +468,17 @@
           "items": {
             "type": "string"
           },
-          "description": "An array of data actions that are allowed."
+          "description": " An array of data actions that are allowed."
         },
         "notDataActions": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "description": "An array of data actions that are denied."
+          "description": " An array of data actions that are denied."
         }
       },
-      "description": "The set of data plane operations permitted through this Role Definition."
+      "description": " The set of data plane operations permitted through this Role Definition."
     },
     "SqlRoleDefinitionListResult": {
       "properties": {
@@ -488,36 +488,36 @@
           "items": {
             "$ref": "#/definitions/SqlRoleDefinitionGetResults"
           },
-          "description": "List of Role Definitions and their properties."
+          "description": " List of Role Definitions and their properties."
         }
       },
-      "description": "The relevant Role Definitions."
+      "description": " The relevant Role Definitions."
     },
     "SqlRoleAssignmentResource": {
       "type": "object",
       "properties": {
         "roleDefinitionId": {
           "type": "string",
-          "description": "The unique identifier for the associated Role Definition."
+          "description": " The unique identifier for the associated Role Definition."
         },
         "scope": {
           "type": "string",
-          "description": "The data plane resource path for which access is being granted through this Role Assignment."
+          "description": " The data plane resource path for which access is being granted through this Role Assignment."
         },
         "principalId": {
           "type": "string",
-          "description": "The unique identifier for the associated AAD principal in the AAD graph to which access is being granted through this Role Assignment. Tenant ID for the principal is inferred using the tenant associated with the subscription."
+          "description": " The unique identifier for the associated AAD principal in the AAD graph to which access is being granted through this Role Assignment. Tenant ID for the principal is inferred using the tenant associated with the subscription."
         }
       },
-      "description": "Azure Cosmos DB SQL Role Assignment resource object."
+      "description": " Azure Cosmos DB SQL Role Assignment resource object."
     },
     "SqlRoleAssignmentCreateUpdateParameters": {
-      "description": "Parameters to create and update an Azure Cosmos DB SQL Role Assignment.",
+      "description": " Parameters to create and update an Azure Cosmos DB SQL Role Assignment.",
       "type": "object",
       "properties": {
         "properties": {
           "x-ms-client-flatten": true,
-          "description": "Properties to create and update an Azure Cosmos DB SQL Role Assignment.",
+          "description": " Properties to create and update an Azure Cosmos DB SQL Role Assignment.",
           "$ref": "#/definitions/SqlRoleAssignmentResource"
         }
       }
@@ -528,7 +528,7 @@
         "properties": {
           "x-ms-client-flatten": true,
           "$ref": "#/definitions/SqlRoleAssignmentResource",
-          "description": "Properties related to the Role Assignment."
+          "description": " Properties related to the Role Assignment."
         }
       },
       "allOf": [
@@ -536,7 +536,7 @@
           "$ref": "cosmos-db.json#/definitions/ARMProxyResource"
         }
       ],
-      "description": "An Azure Cosmos DB Role Assignment"
+      "description": " An Azure Cosmos DB Role Assignment"
     },
     "SqlRoleAssignmentListResult": {
       "properties": {
@@ -546,10 +546,10 @@
           "items": {
             "$ref": "#/definitions/SqlRoleAssignmentGetResults"
           },
-          "description": "List of Role Assignments and their properties"
+          "description": " List of Role Assignments and their properties"
         }
       },
-      "description": "The relevant Role Assignments."
+      "description": " The relevant Role Assignments."
     }
   },
   "parameters": {
@@ -559,7 +559,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "The GUID for the Role Definition."
+      "description": " The GUID for the Role Definition."
     },
     "roleAssignmentIdParameter": {
       "name": "roleAssignmentId",
@@ -567,7 +567,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "The GUID for the Role Assignment."
+      "description": " The GUID for the Role Assignment."
     }
   }
 }
