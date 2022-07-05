@@ -23,7 +23,7 @@
         "tags": [
           "BackupVaults"
         ],
-        "description": "Returns resource collection belonging to a subscription.",
+        "description": "Returns resource collection belonging to a  subscription.",
         "operationId": "BackupVaults_GetInSubscription",
         "produces": [
           "application/json"
