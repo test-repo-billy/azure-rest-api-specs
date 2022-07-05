@@ -28,7 +28,7 @@ These are the global settings for the Network API.
 title: NetworkManagementClient
 description: Network Client
 openapi-type: arm
-tag: 2022-04-preview-test
+tag: package-2021-08
 ```
 
 ### Tag: package-2022-04-preview-test
@@ -37,7 +37,6 @@ These settings apply only when `--tag=2022-04-preview-test` is specified on the 
 ``` yaml $(tag) == 'package-2022-04-preview-test'
 input-file:
   - Microsoft.Network/stable/2021-08-01/vmssNetworkInterface.json
-```
 
 ### Tag: package-2022-04-preview
 
