@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Cosmos DB",
-    "description": "Azure Cosmos DB Database Data Transfer Service Resource Provider REST API",
+    "description": " Azure Cosmos DB Database Data Transfer Service Resource Provider REST API",
     "version": "2021-11-15-preview"
   },
   "host": "management.azure.com",
@@ -27,7 +27,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Azure Active Directory OAuth2 Flow",
+      "description": " Azure Active Directory OAuth2 Flow",
       "scopes": {
         "user_impersonation": "Impersonate your user account"
       }
@@ -37,7 +37,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/dataTransferJobs/{jobName}": {
       "put": {
         "operationId": "DataTransferJobs_Create",
-        "description": "Creates a Data Transfer Job.",
+        "description": " Creates a Data Transfer Job.",
         "x-ms-examples": {
           "CosmosDBDataTransferJobCreate": {
             "$ref": "./examples/data-transfer-service/CosmosDBDataTransferJobCreate.json"
@@ -70,13 +70,13 @@
         ],
         "responses": {
           "201": {
-            "description": "Successful CreateJob response",
+            "description": " Successful CreateJob response",
             "schema": {
               "$ref": "#/definitions/DataTransferJobGetResults"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -85,7 +85,7 @@
       },
       "get": {
         "operationId": "DataTransferJobs_Get",
-        "description": "Get a Data Transfer Job.",
+        "description": " Get a Data Transfer Job.",
         "x-ms-examples": {
           "CosmosDBDataTransferJobGet": {
             "$ref": "./examples/data-transfer-service/CosmosDBDataTransferJobGet.json"
@@ -110,13 +110,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The Data Transfer Job Properties retrieved successfully",
+            "description": " The Data Transfer Job Properties retrieved successfully",
             "schema": {
               "$ref": "#/definitions/DataTransferJobGetResults"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -127,7 +127,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/dataTransferJobs": {
       "get": {
         "operationId": "DataTransferJobs_ListByDatabaseAccount",
-        "description": "Get a list of Data Transfer jobs.",
+        "description": " Get a list of Data Transfer jobs.",
         "x-ms-examples": {
           "CosmosDBDataTransferJobFeed": {
             "$ref": "./examples/data-transfer-service/CosmosDBDataTransferJobFeed.json"
@@ -152,13 +152,13 @@
         ],
         "responses": {
           "200": {
-            "description": "All Data Transfer Jobs retrieved successfully",
+            "description": " All Data Transfer Jobs retrieved successfully",
             "schema": {
               "$ref": "#/definitions/DataTransferJobFeedResults"
             }
           },
           "default": {
-            "description": "Error response describing why the operation failed.",
+            "description": " Error response describing why the operation failed.",
             "schema": {
               "$ref": "cosmos-db.json#/definitions/CloudError"
             }
@@ -170,7 +170,7 @@
   "definitions": {
     "DataTransferDataSourceSink": {
       "type": "object",
-      "description": "Base class for all DataTransfer source/sink",
+      "description": " Base class for all DataTransfer source/sink",
       "properties": {
         "component": {
           "type": "string",
@@ -193,7 +193,7 @@
     },
     "CosmosCassandraDataTransferDataSourceSink": {
       "type": "object",
-      "description": "A CosmosDB Cassandra API data source/sink",
+      "description": " A CosmosDB Cassandra API data source/sink",
       "properties": {
         "keyspaceName": {
           "type": "string"
@@ -215,7 +215,7 @@
     },
     "CosmosSqlDataTransferDataSourceSink": {
       "type": "object",
-      "description": "A CosmosDB Cassandra API data source/sink",
+      "description": " A CosmosDB Cassandra API data source/sink",
       "properties": {
         "databaseName": {
           "type": "string"
@@ -237,7 +237,7 @@
     },
     "AzureBlobDataTransferDataSourceSink": {
       "type": "object",
-      "description": "An Azure Blob Storage data source/sink",
+      "description": " An Azure Blob Storage data source/sink",
       "allOf": [
         {
           "$ref": "#/definitions/DataTransferDataSourceSink"
@@ -257,40 +257,40 @@
       "x-ms-discriminator-value": "AzureBlobStorage"
     },
     "DataTransferJobProperties": {
-      "description": "The properties of a DataTransfer Job",
+      "description": " The properties of a DataTransfer Job",
       "type": "object",
       "properties": {
         "jobName": {
           "readOnly": true,
           "type": "string",
-          "description": "Job Name"
+          "description": " Job Name"
         },
         "source": {
           "$ref": "#/definitions/DataTransferDataSourceSink",
-          "description": "Source DataStore details"
+          "description": " Source DataStore details"
         },
         "destination": {
           "$ref": "#/definitions/DataTransferDataSourceSink",
-          "description": "Destination DataStore details"
+          "description": " Destination DataStore details"
         },
         "status": {
           "readOnly": true,
           "type": "string",
-          "description": "Job Status"
+          "description": " Job Status"
         },
         "percentageComplete": {
           "readOnly": true,
           "type": "number",
-          "description": "Percentage of completion."
+          "description": " Percentage of completion."
         },
         "lastUpdatedUtcTime": {
           "readOnly": true,
           "type": "string",
           "format": "date-time",
-          "description": "Last Updated Time (ISO-8601 format)."
+          "description": " Last Updated Time (ISO-8601 format)."
         },
         "workerCount": {
-          "description": "Worker count",
+          "description": " Worker count",
           "type": "integer",
           "minimum": 0,
           "format": "int32"
@@ -298,7 +298,7 @@
         "error": {
           "readOnly": true,
           "$ref": "./cosmos-db.json#/definitions/ErrorResponse",
-          "description": "Error response for Faulted job"
+          "description": " Error response for Faulted job"
         }
       },
       "required": [
@@ -307,12 +307,12 @@
       ]
     },
     "CreateJobRequest": {
-      "description": "Parameters to create Data Transfer Job",
+      "description": " Parameters to create Data Transfer Job",
       "type": "object",
       "properties": {
         "properties": {
           "$ref": "#/definitions/DataTransferJobProperties",
-          "description": "Data Transfer Create Job Properties"
+          "description": " Data Transfer Create Job Properties"
         }
       },
       "required": [
@@ -325,7 +325,7 @@
       ]
     },
     "DataTransferJobGetResults": {
-      "description": "A Cosmos DB Data Transfer Job",
+      "description": " A Cosmos DB Data Transfer Job",
       "type": "object",
       "properties": {
         "properties": {
@@ -341,7 +341,7 @@
       ]
     },
     "DataTransferJobFeedResults": {
-      "description": "The List operation response, that contains the Data Transfer jobs and their properties.",
+      "description": " The List operation response, that contains the Data Transfer jobs and their properties.",
       "type": "object",
       "properties": {
         "value": {
@@ -350,12 +350,12 @@
           "items": {
             "$ref": "#/definitions/DataTransferJobGetResults"
           },
-          "description": "List of Data Transfer jobs and their properties."
+          "description": " List of Data Transfer jobs and their properties."
         },
         "nextLink": {
           "readOnly": true,
           "type": "string",
-          "description": "URL to get the next set of Data Transfer job list results if there are any."
+          "description": " URL to get the next set of Data Transfer job list results if there are any."
         }
       }
     }
@@ -367,7 +367,7 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method",
-      "description": "Name of the Data Transfer Job"
+      "description": " Name of the Data Transfer Job"
     }
   }
 }
