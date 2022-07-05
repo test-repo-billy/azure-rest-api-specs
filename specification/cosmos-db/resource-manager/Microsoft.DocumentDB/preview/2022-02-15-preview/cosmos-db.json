@@ -599,7 +599,7 @@
         "tags": [
           "Operations"
         ],
-        "description": "Lists all of the available Cosmos DB Resource  Provider operations.",
+        "description": "Lists all of the available Cosmos DB Resource Provider operations.",
         "operationId": "Operations_List",
         "x-ms-examples": {
           "CosmosDBOperationsList": {
@@ -5708,7 +5708,7 @@
             "$ref": "./examples/CosmosDBLocationList.json"
           }
         },
-        "description": "List Cosmos DB locations and their  properties",
+        "description": "List Cosmos DB locations and their properties",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
