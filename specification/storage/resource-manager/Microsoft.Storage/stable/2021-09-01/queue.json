@@ -27,7 +27,7 @@
             "$ref": "./examples/QueueServicesList.json"
           }
         },
-        "description": "List all queue services for the storage account",
+        "description": " List all queue services for the storage account",
         "parameters": [
           {
             "$ref": "./storage.json#/parameters/ResourceGroupName"
