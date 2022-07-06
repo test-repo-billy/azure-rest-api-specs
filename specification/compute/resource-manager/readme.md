@@ -34,7 +34,7 @@ These are the global settings for the Compute API.
 title: ComputeManagementClient
 description: Compute Client
 openapi-type: arm
-tag: package-2022-03-02-only
+tag: package-2022-03-02
 
 directive:
   - where:
