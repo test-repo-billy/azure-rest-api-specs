@@ -495,8 +495,8 @@
       "post": {
         "operationId": "DatabaseAccounts_ListReadOnlyKeys",
         "x-ms-examples": {
-          "CosmosDBDatabaseAccountListReadOnlyKeys": {
-            "$ref": "./examples/CosmosDBDatabaseAccountListReadOnlyKeys.json"
+          "CosmosDBDatabaseAccountGetReadOnlyKeys": {
+            "$ref": "./examples/CosmosDBDatabaseAccountGetReadOnlyKeys.json"
           }
         },
         "description": " Lists the read-only access keys for the specified Azure Cosmos DB database account.",
