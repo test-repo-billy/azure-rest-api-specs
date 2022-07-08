@@ -26,7 +26,7 @@ These are the global settings for the Authorization API.
 
 ``` yaml
 openapi-type: arm
-tag: package-preview-2021-01
+tag: package-preview-2022-06
 ```
 
 ### Suppression
@@ -83,14 +83,24 @@ directive:
 ```
 
 
+### Tag: package-preview-2022-06
+
+These settings apply only when `--tag=package-preview-2022-06` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-06'
+input-file:
+  - Microsoft.Authorization/preview/2022-06-02/RoleAssignmentScheduleRequest.json
+  - Microsoft.Authorization/preview/2022-06-02/RoleEligibilityScheduleRequest.json
+```
 ### Tag: package-preview-2021-01
 
 These settings apply only when `--tag=package-preview-2021-01` is specified on the command line.
 
-```yaml $(tag) == 'package-preview-2021-01'
+``` yaml $(tag) == 'package-preview-2021-01'
 input-file:
   - Microsoft.Authorization/preview/2021-01-03/authorization-RoleAssignmentsCalls.json
 ```
+
 ### Tag: package-2020-10-01
 
 These settings apply only when `--tag=package-2020-10-01` is specified on the command line.
