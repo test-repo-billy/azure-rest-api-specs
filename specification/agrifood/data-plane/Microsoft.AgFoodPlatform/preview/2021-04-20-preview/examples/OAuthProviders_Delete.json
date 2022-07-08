@@ -1,0 +1,10 @@
+{
+  "parameters": {
+    "Endpoint": "{Endpoint}",
+    "oauthProviderId": "JOHNDEERE",
+    "api-version": "2021-04-20-preview"
+  },
+  "responses": {
+    "204": {}
+  }
+}
