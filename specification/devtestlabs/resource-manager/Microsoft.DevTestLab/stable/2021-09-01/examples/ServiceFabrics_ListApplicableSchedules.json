@@ -41,7 +41,7 @@
               },
               "createdDate": "2018-10-01T18:40:48.1739018-07:00",
               "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
-              "provisioningState": "Creating",
+              "provisioningState": "Succeeded",
               "uniqueIdentifier": "{uniqueIdentifier}"
             },
             "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/{scheduleName}",
@@ -77,7 +77,7 @@
               },
               "createdDate": "2018-10-01T18:40:48.1739018-07:00",
               "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
-              "provisioningState": "Creating",
+              "provisioningState": "Succeeded",
               "uniqueIdentifier": "{uniqueIdentifier}"
             },
             "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/{scheduleName}",
