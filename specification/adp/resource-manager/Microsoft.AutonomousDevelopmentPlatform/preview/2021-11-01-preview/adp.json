@@ -76,7 +76,7 @@
           "Accounts"
         ],
         "operationId": "Accounts_CheckNameAvailability",
-        "description": "Checks that the account name is valid and is not already in use",
+        "description": "Checks  that the account name is valid and is not already in use",
         "x-ms-examples": {
           "AccountCheckNameAvailability": {
             "$ref": "./examples/AdpAccountCheckNameAvailability.json"
