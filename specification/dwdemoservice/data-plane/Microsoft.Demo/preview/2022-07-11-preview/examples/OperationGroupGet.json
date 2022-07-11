@@ -1,0 +1,15 @@
+{
+  "parameters": {
+    "accountName": "sampleacct",
+    "resourceGroupName": "dwdemoserviceClient",
+    "api-version": "2022-07-11-preview",
+    "subscriptionId": "subid"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "sampleProperty": "sampleProperty"
+      }
+    }
+  }
+}
