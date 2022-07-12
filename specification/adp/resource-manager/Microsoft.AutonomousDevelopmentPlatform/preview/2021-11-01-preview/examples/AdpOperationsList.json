@@ -12,7 +12,7 @@
               "provider": "Microsoft Autonomous Development Platform",
               "resource": "Account",
               "operation": "Read accounts",
-              "description": "Read accounts"
+              "description": "Read  accounts"
             }
           },
           {
