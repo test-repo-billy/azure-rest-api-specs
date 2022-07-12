@@ -96,7 +96,7 @@
             "schema": {
               "$ref": "#/definitions/AccountCheckNameAvailabilityParameters"
             },
-            "description": "The checkNameAvailability parameters."
+            "description": "The  checkNameAvailability parameters."
           }
         ],
         "responses": {
