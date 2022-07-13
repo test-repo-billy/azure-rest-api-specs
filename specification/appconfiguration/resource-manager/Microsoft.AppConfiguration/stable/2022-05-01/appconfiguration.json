@@ -817,7 +817,7 @@
         "tags": [
           "KeyValues"
         ],
-        "description": "Lists the key-values for a given configuration store.",
+        "description": "Lists the key-values for a given configuration store. ",
         "operationId": "KeyValues_ListByConfigurationStore",
         "parameters": [
           {
