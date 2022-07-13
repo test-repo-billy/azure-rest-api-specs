@@ -647,7 +647,7 @@
         "deprecated": false,
         "x-ms-examples": {
           "Put ExtendedInfo of Resource": {
-            "$ref": "./examples/UpdateVaultExtendedInfo.json"
+            "$ref": "./examples/PUTVaultExtendedInfo.json"
           }
         }
       },
