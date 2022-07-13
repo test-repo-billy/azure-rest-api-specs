@@ -21,7 +21,7 @@
               "provider": "Microsoft Autonomous Development Platform",
               "resource": "Account",
               "operation": "Update accounts",
-              "description": "Update accounts"
+              "description": "Update  accounts"
             }
           },
           {
