@@ -10,6 +10,7 @@ variables:
   keyValueName:
     type: string
     prefix: keyvaluena
+  groupName: configurationStores
 
 prepareSteps:
   - step: createVirtualNetwork
@@ -75,44 +76,43 @@ scenarios:
           - replace: /regenerateKeyParameters/id
             value: $(keyId)
 
-      # - step: createPrivateEndpoints
-      #   operationId: PrivateEndpoints_CreateOrUpdate
-      #   readmeTag: ../../../../../../network/resource-manager/readme.md
-      #   parameters:
-      #     privateEndpointName: $(privateEndpointConnectionName)
-      #     parameters:
-      #       location: $(location)
-      #       properties:
-      #         privateLinkServiceConnections:
-      #           - properties:
-      #               privateLinkServiceId: $(privateLinkServiceId)
-      #               groupIds:
-      #                 - groupIdFromResource
+      - step: createPrivateEndpoints
+        operationId: PrivateEndpoints_CreateOrUpdate
+        readmeTag: ../../../../../../network/resource-manager/readme.md
+        parameters:
+          privateEndpointName: $(privateEndpointConnectionName)-endpoint
+          parameters:
+            location: $(location)
+            properties:
+              subnet:
+                id: $(subnetId)
+              privateLinkServiceConnections:
+                - name: $(privateEndpointConnectionName)
+                  properties:
+                    privateLinkServiceId: $(configurationStoreId)
+                    groupIds:
+                      - $(groupName)
 
-      # - step: PrivateEndpointConnections_CreateOrUpdate
-      #   exampleFile: ../examples/ConfigurationStoresCreatePrivateEndpointConnection.json
-      # - step: PrivateEndpointConnections_ListByConfigurationStore
-      #   exampleFile: ../examples/ConfigurationStoresListPrivateEndpointConnections.json
-      # - step: PrivateEndpointConnections_Get
-      #   exampleFile: ../examples/ConfigurationStoresGetPrivateEndpointConnection.json
-      - step: KeyValues_CreateOrUpdate
-        exampleFile: ../examples/ConfigurationStoresCreateKeyValue.json
-      - step: KeyValues_ListByConfigurationStore
-        exampleFile: ../examples/ConfigurationStoresListKeyValues.json
-      - step: KeyValues_Get
-        exampleFile: ../examples/ConfigurationStoresGetKeyValue.json
-      # - step: PrivateLinkResources_ListByConfigurationStore
-      #   exampleFile: ../examples/PrivateLinkResourcesListByConfigurationStore.json
-      # - variables:
-      #     groupName:
-      #       type: string
-      #       prefix: groupname
-      #   step: PrivateLinkResources_Get
-      #   exampleFile: ../examples/PrivateLinkResourceGet.json
-      - step: KeyValues_Delete
-        exampleFile: ../examples/ConfigurationStoresDeleteKeyValue.json
-      # - step: PrivateEndpointConnections_Delete
-      #   exampleFile: ../examples/ConfigurationStoresDeletePrivateEndpointConnection.json
+      - step: PrivateEndpointConnections_CreateOrUpdate
+        exampleFile: ../examples/ConfigurationStoresCreatePrivateEndpointConnection.json
+      - step: PrivateEndpointConnections_ListByConfigurationStore
+        exampleFile: ../examples/ConfigurationStoresListPrivateEndpointConnections.json
+      - step: PrivateEndpointConnections_Get
+        exampleFile: ../examples/ConfigurationStoresGetPrivateEndpointConnection.json
+      # - step: KeyValues_CreateOrUpdate
+      #   exampleFile: ../examples/ConfigurationStoresCreateKeyValue.json
+      # - step: KeyValues_ListByConfigurationStore
+      #   exampleFile: ../examples/ConfigurationStoresListKeyValues.json
+      # - step: KeyValues_Get
+      #   exampleFile: ../examples/ConfigurationStoresGetKeyValue.json
+      - step: PrivateLinkResources_ListByConfigurationStore
+        exampleFile: ../examples/PrivateLinkResourcesListByConfigurationStore.json
+      - step: PrivateLinkResources_Get
+        exampleFile: ../examples/PrivateLinkResourceGet.json
+      # - step: KeyValues_Delete
+      #   exampleFile: ../examples/ConfigurationStoresDeleteKeyValue.json
+      - step: PrivateEndpointConnections_Delete
+        exampleFile: ../examples/ConfigurationStoresDeletePrivateEndpointConnection.json
       - step: ConfigurationStores_Delete
         exampleFile: ../examples/ConfigurationStoresDelete.json
       - step: ConfigurationStores_GetDeleted
