@@ -75,19 +75,19 @@ scenarios:
           - replace: /regenerateKeyParameters/id
             value: $(keyId)
 
-      - step: createPrivateEndpoints
-        operationId: PrivateEndpoints_CreateOrUpdate
-        readmeTag: ../../../../../../network/resource-manager/readme.md
-        parameters:
-          privateEndpointName: $(privateEndpointConnectionName)
-          parameters:
-            location: $(location)
-            properties:
-              privateLinkServiceConnections:
-                - properties:
-                    privateLinkServiceId: $(privateLinkServiceId)
-                    groupIds:
-                      - groupIdFromResource
+      # - step: createPrivateEndpoints
+      #   operationId: PrivateEndpoints_CreateOrUpdate
+      #   readmeTag: ../../../../../../network/resource-manager/readme.md
+      #   parameters:
+      #     privateEndpointName: $(privateEndpointConnectionName)
+      #     parameters:
+      #       location: $(location)
+      #       properties:
+      #         privateLinkServiceConnections:
+      #           - properties:
+      #               privateLinkServiceId: $(privateLinkServiceId)
+      #               groupIds:
+      #                 - groupIdFromResource
 
       # - step: PrivateEndpointConnections_CreateOrUpdate
       #   exampleFile: ../examples/ConfigurationStoresCreatePrivateEndpointConnection.json

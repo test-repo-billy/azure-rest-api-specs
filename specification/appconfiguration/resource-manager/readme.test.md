@@ -4,6 +4,6 @@ These settings apply only when `--tag=package-2022-05` is specified on the comma
 
 ``` yaml $(tag) == 'package-2022-05'
 test-resources:
-- Microsoft.AppConfiguration/stable/2022-05-01/scenarios/basic.yaml
+  - Microsoft.AppConfiguration/stable/2022-05-01/scenarios/basic.yaml
 
 ```
