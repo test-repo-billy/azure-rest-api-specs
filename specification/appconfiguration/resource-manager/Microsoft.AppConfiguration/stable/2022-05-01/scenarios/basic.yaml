@@ -44,7 +44,7 @@ prepareSteps:
 scenarios:
   - steps:
       - step: Operations_List
-        operationId: Operations_List
+        exampleFile: ../examples/OperationsList.json
       - step: Operations_CheckNameAvailability
         exampleFile: ../examples/CheckNameAvailable.json
       - step: Operations_RegionalCheckNameAvailability
@@ -77,9 +77,6 @@ scenarios:
             value: $(keyId)
       - step: KeyValues_CreateOrUpdate
         exampleFile: ../examples/ConfigurationStoresCreateKeyValue.json
-      # Known issue: KeyValues_ListByConfigurationStore is not implemented
-      # - step: KeyValues_ListByConfigurationStore
-      #   exampleFile: ../examples/ConfigurationStoresListKeyValues.json
       - step: KeyValues_Get
         exampleFile: ../examples/ConfigurationStoresGetKeyValue.json
       - step: createPrivateEndpoints
@@ -98,8 +95,8 @@ scenarios:
                     privateLinkServiceId: $(configurationStoreId)
                     groupIds:
                       - $(groupName)
-      - step: PrivateEndpointConnections_CreateOrUpdate
-        exampleFile: ../examples/ConfigurationStoresCreatePrivateEndpointConnection.json
+      - step: PrivateEndpointConnections_Update
+        exampleFile: ../examples/ConfigurationStoresUpdatePrivateEndpointConnection.json
       - step: PrivateEndpointConnections_ListByConfigurationStore
         exampleFile: ../examples/ConfigurationStoresListPrivateEndpointConnections.json
       - step: PrivateEndpointConnections_Get
