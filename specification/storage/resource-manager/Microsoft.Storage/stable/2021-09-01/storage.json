@@ -35,7 +35,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK. The request has succeeded.",
+            "description": "OK. The request has  succeeded.",
             "schema": {
               "$ref": "#/definitions/OperationListResult"
             }
