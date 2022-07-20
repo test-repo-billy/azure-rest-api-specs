@@ -118,23 +118,56 @@ scenarios:
     variables:
       accountName: $(storageAccountName)
       containerName: $(blobContainerName)
+      policyName:
+        type: string
+        prefix: policyName
     steps:
       - step: BlobContainers_CreateOrUpdateImmutabilityPolicy
         exampleFile: ../examples/BlobContainersPutImmutabilityPolicy.json 
         requestUpdate:
           - remove: /parameters/properties/allowProtectedAppendWrites
-      - step: BlobContainers_GetImmutabilityPolicy
-        exampleFile: ../examples/BlobContainersGetImmutabilityPolicy.json
+        outputVariables:
+          policy_etag:
+            fromResponse: /etag
       - step: BlobContainers_DeleteImmutabilityPolicy
         exampleFile: ../examples/BlobContainersDeleteImmutabilityPolicy.json
+        requestUpdate:
+          - replace: /If-Match 
+            value: $(policy_etag)
+      - step: BlobContainers_CreateOrUpdateImmutabilityPolicy_v2
+        exampleFile: ../examples/BlobContainersPutImmutabilityPolicy.json 
+        requestUpdate:
+          - remove: /parameters/properties/allowProtectedAppendWrites
+        outputVariables:
+          policy_etag:
+            fromResponse: /etag
       - step: BlobContainers_ObjectLevelWorm
         exampleFile: ../examples/ObjectLevelWormContainerMigration.json
+      - step: BlobContainers_GetImmutabilityPolicy
+        exampleFile: ../examples/BlobContainersGetImmutabilityPolicy.json
+      - step: BlobContainers_LockImmutabilityPolicy
+        exampleFile: ../examples/BlobContainersLockImmutabilityPolicy.json
+        requestUpdate:
+          - replace: /If-Match 
+            value: $(policy_etag)
+        outputVariables:
+          policy_etag:
+            fromResponse: /etag
+      - step: BlobContainers_ExtendImmutabilityPolicy
+        exampleFile: ../examples/BlobContainersExtendImmutabilityPolicy.json
+        requestUpdate:
+          - replace: /If-Match 
+            value: $(policy_etag)
+        outputVariables:
+          policy_etag:
+            fromResponse: /etag
+
 
   - scenario: ObjectReplicationTest
     variables:
       sourceAccountName:
         type: string
-        prefix: sourceacount
+        prefix: sourceaccount
       targetAccountName:
         type: string
         prefix: targetaccount
@@ -238,7 +271,6 @@ scenarios:
         requestUpdate:
           - replace: /accountName
             value: $(sourceAccountName)
-        
       - step: ObjectReplicationPolicies_Delete
         exampleFile: ../examples/StorageAccountDeleteObjectReplicationPolicy.json
         variables:
