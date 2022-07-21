@@ -48,6 +48,9 @@ variables:
   tableServiceName:
     type: string
     prefix: tableservi
+
+
+
 scenarios:
   - steps:
       - step: StorageAccounts_CheckNameAvailability
@@ -56,9 +59,25 @@ scenarios:
         operationId: StorageAccounts_Create
         parameters:
           parameters:
+            location: $(location)
             sku:
               name: Standard_GRS
             kind: StorageV2
+            properties:
+              changeFeed:
+                enabled: false
+              dnsEndpointType: Standard
+              defaultToOAuthAuthentication: false
+              publicNetworkAccess: Enabled
+              immutableStorageWithVersioning:
+                enabled: false
+              allowCrossTenantReplication: false
+              allowBlobPublicAccess: true
+              allowSharedKeyAccess: true
+              networkAcls:
+                bypass: AzureServices
+                defaultAction: Allow
+              supportsHttpsTrafficOnly: true
       - step: StorageAccounts_List
         exampleFile: ../examples/StorageAccountList.json
       - step: StorageAccounts_ListByResourceGroup
@@ -66,29 +85,24 @@ scenarios:
       - step: StorageAccounts_GetProperties
         exampleFile: ../examples/StorageAccountGetProperties.json
       - step: StorageAccounts_Update
-        exampleFile: ../examples/StorageAccountUpdate.json
-        requestUpdate:
-          - remove: /parameters/extendedLocation
-          - remove: /parameters/properties/routingPreference
-          - remove: /parameters/properties/encryption
-          - replace: /parameters/properties/isHnsEnabled
-            value: false
-          - replace: /parameters/properties/isSftpEnabled
-            value: false
-          - copy: /parameters/properties/immutableStorageWithVersioning
-            from: /parameters/properties/keyPolicy
-          - add: /parameters/properties/immutableStorageWithVersioning/enabled
-            value: true
-          - remove: /parameters/properties/immutableStorageWithVersioning/keyExpirationPeriodInDays
+        operationId: StorageAccounts_Update
+        parameters:
+          parameters:
+            properties:
+              allowSharedKeyAccess: true
       - step: StorageAccounts_RestoreBlobRanges
         exampleFile: ../examples/BlobRangesRestore.json
-
-      - step: StorageAccounts_RevokeUserDelegationKeys
-        exampleFile: ../examples/StorageAccountRevokeUserDelegationKeys.json
+      - step: StorageAccounts_HierarchicalNamespaceMigration
+        exampleFile: ../examples/StorageAccountHierarchicalNamespaceMigration.json
       - step: StorageAccounts_AbortHierarchicalNamespaceMigration
         exampleFile: ../examples/StorageAccountAbortHierarchicalNamespaceMigration.json
+      - step: StorageAccounts_RevokeUserDelegationKeys
+        exampleFile: ../examples/StorageAccountRevokeUserDelegationKeys.json
       - step: StorageAccounts_ListServiceSAS
         exampleFile: ../examples/StorageAccountListServiceSAS.json
+        requestUpdate:
+          - replace: /parameters/signedExpiry
+            value: "2030-05-24T11:32:48.8457197Z"
       - step: StorageAccounts_ListKeys
         exampleFile: ../examples/StorageAccountListKeys.json
       - step: StorageAccounts_RegenerateKey
@@ -97,8 +111,11 @@ scenarios:
         exampleFile: ../examples/StorageAccountFailover.json
       - step: StorageAccounts_ListAccountSAS
         exampleFile: ../examples/StorageAccountListAccountSAS.json
-      - step: StorageAccounts_HierarchicalNamespaceMigration
-        exampleFile: ../examples/StorageAccountHierarchicalNamespaceMigration.json
+        requestUpdate:
+          - replace: /parameters/signedExpiry
+            value: "2030-05-24T11:32:48.8457197Z"
+          - replace: /parameters/signedStart
+            value: "2022-05-24T11:32:48.8457197Z"
       - step: BlobContainers_Create
         exampleFile: ../examples/BlobContainersPut.json
       - step: BlobContainers_List
@@ -107,16 +124,42 @@ scenarios:
         exampleFile: ../examples/BlobContainersGet.json
       - step: BlobContainers_Update
         exampleFile: ../examples/BlobContainersPatch.json
+      - step: BlobContainers_CreateOrUpdateImmutabilityPolicy
+        exampleFile: ../examples/BlobContainersPutImmutabilityPolicy.json
+        requestUpdate:
+          - remove: /parameters/properties/allowProtectedAppendWrites
+        outputVariables:
+          policy_etag:
+            fromResponse: /etag
+      - step: BlobContainers_GetImmutabilityPolicy
+        exampleFile: ../examples/BlobContainersGetImmutabilityPolicy.json
       - step: BlobContainers_LockImmutabilityPolicy
         exampleFile: ../examples/BlobContainersLockImmutabilityPolicy.json
+        requestUpdate:
+          - replace: /If-Match 
+            value: $(policy_etag)
+        outputVariables:
+          policy_etag:
+            fromResponse: /etag
+      - step: BlobContainers_ExtendImmutabilityPolicy
+        exampleFile: ../examples/BlobContainersExtendImmutabilityPolicy.json
+        requestUpdate:
+          - replace: /If-Match 
+            value: $(policy_etag)
+        outputVariables:
+          policy_etag:
+            fromResponse: /etag
       - step: BlobContainers_ObjectLevelWorm
         exampleFile: ../examples/ObjectLevelWormContainerMigration.json
+      - step: BlobContainers_DeleteImmutabilityPolicy
+        exampleFile: ../examples/BlobContainersDeleteImmutabilityPolicy.json
+        requestUpdate:
+          - replace: /If-Match 
+            value: $(policy_etag)
       - step: BlobContainers_Lease
         exampleFile: ../examples/BlobContainersLease_Acquire.json
       - step: BlobContainers_ClearLegalHold
         exampleFile: ../examples/BlobContainersClearLegalHold.json
-      - step: BlobContainers_ExtendImmutabilityPolicy
-        exampleFile: ../examples/BlobContainersExtendImmutabilityPolicy.json
       - step: BlobContainers_SetLegalHold
         exampleFile: ../examples/BlobContainersSetLegalHold.json
       - step: FileShares_Create
@@ -157,10 +200,6 @@ scenarios:
         exampleFile: ../examples/QueueOperationGet.json
       - step: Queue_Update
         exampleFile: ../examples/QueueOperationPatch.json
-      - step: BlobContainers_CreateOrUpdateImmutabilityPolicy
-        exampleFile: ../examples/BlobContainersPutImmutabilityPolicy.json
-      - step: BlobContainers_GetImmutabilityPolicy
-        exampleFile: ../examples/BlobContainersGetImmutabilityPolicy.json
       - step: EncryptionScopes_Put
         exampleFile: ../examples/StorageAccountPutEncryptionScope.json
       - step: EncryptionScopes_List
@@ -168,13 +207,20 @@ scenarios:
       - step: EncryptionScopes_Get
         exampleFile: ../examples/StorageAccountGetEncryptionScope.json
       - step: EncryptionScopes_Patch
-        exampleFile: ../examples/StorageAccountPatchEncryptionScope.json
+        operationId: EncryptionScopes_Patch
+        parameters:
+          encryptionScope:
+            properties:
+              source: Microsoft.Storage
+              enabled: true
+      # Create virtual network and private endpoint for testing - postponed
       - step: PrivateEndpointConnections_Put
         exampleFile: ../examples/StorageAccountPutPrivateEndpointConnection.json
       - step: PrivateEndpointConnections_List
         exampleFile: ../examples/StorageAccountListPrivateEndpointConnections.json
       - step: PrivateEndpointConnections_Get
         exampleFile: ../examples/StorageAccountGetPrivateEndpointConnection.json
+
       - step: BlobInventoryPolicies_CreateOrUpdate
         exampleFile: ../examples/StorageAccountSetBlobInventoryPolicy.json
       - step: BlobInventoryPolicies_List
@@ -240,8 +286,6 @@ scenarios:
         exampleFile: ../examples/StorageAccountDeleteBlobInventoryPolicy.json
       - step: PrivateEndpointConnections_Delete
         exampleFile: ../examples/StorageAccountDeletePrivateEndpointConnection.json
-      - step: BlobContainers_DeleteImmutabilityPolicy
-        exampleFile: ../examples/BlobContainersDeleteImmutabilityPolicy.json
       - step: Queue_Delete
         exampleFile: ../examples/QueueOperationDelete.json
       - step: Table_Delete
