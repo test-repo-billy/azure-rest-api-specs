@@ -1,8 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/documentation/api-scenario/references/v1.2/schema.json
+
 scope: ResourceGroup
 variables:
   accountName:
     type: string
     prefix: accountnam
+  account2Name:
+    type: string
+    prefix: account2nam
   containerName:
     type: string
     prefix: containern
@@ -33,9 +38,9 @@ variables:
   encryptionScopeName:
     type: string
     prefix: encryption
-  immutabilityPolicyName:
-    type: string
-    prefix: immutabili
+  # immutabilityPolicyName:
+  #   type: string
+  #   prefix: immutabili
   BlobServicesName:
     type: string
     prefix: blobservic
@@ -107,8 +112,8 @@ scenarios:
         exampleFile: ../examples/StorageAccountListKeys.json
       - step: StorageAccounts_RegenerateKey
         exampleFile: ../examples/StorageAccountRegenerateKey.json
-      - step: StorageAccounts_Failover
-        exampleFile: ../examples/StorageAccountFailover.json
+      # - step: StorageAccounts_Failover
+      #   exampleFile: ../examples/StorageAccountFailover.json
       - step: StorageAccounts_ListAccountSAS
         exampleFile: ../examples/StorageAccountListAccountSAS.json
         requestUpdate:
@@ -124,25 +129,74 @@ scenarios:
         exampleFile: ../examples/BlobContainersGet.json
       - step: BlobContainers_Update
         exampleFile: ../examples/BlobContainersPatch.json
+      # Create Storage account 2 for immutability policy test..
+      - step: StorageAccounts_Create_V2
+        operationId: StorageAccounts_Create
+        variables:
+          accountName: $(account2Name)
+        parameters:
+          accountName: $(account2Name)
+          parameters:
+            location: $(location)
+            sku:
+              name: Standard_GRS
+            kind: StorageV2
+            properties:
+              changeFeed:
+                enabled: false
+              dnsEndpointType: Standard
+              defaultToOAuthAuthentication: false
+              publicNetworkAccess: Enabled
+              immutableStorageWithVersioning:
+                enabled: true
+              allowCrossTenantReplication: true
+              allowBlobPublicAccess: true
+              allowSharedKeyAccess: true
+              networkAcls:
+                bypass: AzureServices
+                defaultAction: Allow
+              supportsHttpsTrafficOnly: true
+      - step: BlobContainers_Create_V2
+        exampleFile: ../examples/BlobContainersPut.json
+        variables:
+          accountName: $(account2Name)
+        requestUpdate:
+          - replace: /accountName
+            value: $(account2Name)
       - step: BlobContainers_CreateOrUpdateImmutabilityPolicy
         exampleFile: ../examples/BlobContainersPutImmutabilityPolicy.json
+        variables:
+          accountName: $(account2Name)
         requestUpdate:
+          - replace: /accountName
+            value: $(account2Name)
           - remove: /parameters/properties/allowProtectedAppendWrites
         outputVariables:
           policy_etag:
             fromResponse: /etag
       - step: BlobContainers_GetImmutabilityPolicy
         exampleFile: ../examples/BlobContainersGetImmutabilityPolicy.json
+        variables:
+          accountName: $(account2Name)
+        requestUpdate:
+          - replace: /accountName
+            value: $(account2Name)
       - step: BlobContainers_LockImmutabilityPolicy
         exampleFile: ../examples/BlobContainersLockImmutabilityPolicy.json
+        variables:
+          accountName: $(account2Name)
         requestUpdate:
           - replace: /If-Match 
             value: $(policy_etag)
+          - replace: /accountName
+            value: $(account2Name)
         outputVariables:
           policy_etag:
             fromResponse: /etag
       - step: BlobContainers_ExtendImmutabilityPolicy
         exampleFile: ../examples/BlobContainersExtendImmutabilityPolicy.json
+        variables:
+          accountName: $(account2Name)
         requestUpdate:
           - replace: /If-Match 
             value: $(policy_etag)
@@ -151,17 +205,23 @@ scenarios:
             fromResponse: /etag
       - step: BlobContainers_ObjectLevelWorm
         exampleFile: ../examples/ObjectLevelWormContainerMigration.json
+        variables:
+          accountName: $(account2Name)
       - step: BlobContainers_DeleteImmutabilityPolicy
         exampleFile: ../examples/BlobContainersDeleteImmutabilityPolicy.json
+        variables:
+          accountName: $(account2Name)
         requestUpdate:
+          - replace: /accountName
+            value: $(account2Name)
           - replace: /If-Match 
             value: $(policy_etag)
       - step: BlobContainers_Lease
         exampleFile: ../examples/BlobContainersLease_Acquire.json
-      - step: BlobContainers_ClearLegalHold
-        exampleFile: ../examples/BlobContainersClearLegalHold.json
       - step: BlobContainers_SetLegalHold
         exampleFile: ../examples/BlobContainersSetLegalHold.json
+      - step: BlobContainers_ClearLegalHold
+        exampleFile: ../examples/BlobContainersClearLegalHold.json
       - step: FileShares_Create
         exampleFile: ../examples/FileSharesPut.json
       - step: FileShares_List
