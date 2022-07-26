@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "2021-09-01",
-    "title": "StorageManagementClient",
+    "title": "StorageManagementsClient",
     "description": "The Azure Storage Management API."
   },
   "host": "management.azure.com",
