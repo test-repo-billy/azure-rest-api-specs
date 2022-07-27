@@ -8,6 +8,8 @@ variables:
   containerName:
     type: string
     prefix: containern
+  account2Name: $(accountN)2
+  container2Name: $(containerN)2
   shareName:
     type: string
     prefix: sharename
@@ -20,36 +22,12 @@ variables:
   tableName:
     type: string
     prefix: tablename
-  # managementPolicyName:
-  #   type: string
-  #   prefix: management
-  # blobInventoryPolicyName:
-  #   type: string
-  #   prefix: blobinvent
   privateEndpointConnectionName:
     type: string
     prefix: privateend
-  objectReplicationPolicyId:
-    type: string
-    prefix: objectrepl
   encryptionScopeName:
     type: string
     prefix: encryption
-  # immutabilityPolicyName:
-  #   type: string
-  #   prefix: immutabili
-  # BlobServicesName:
-  #   type: string
-  #   prefix: blobservic
-  # FileServicesName:
-  #   type: string
-  #   prefix: fileservic
-  # queueServiceName:
-  #   type: string
-  #   prefix: queueservi
-  # tableServiceName:
-  #   type: string
-  #   prefix: tableservi
   privateEndpointName:
     type: string
     prefix: privateEndpoint
@@ -63,7 +41,6 @@ variables:
     /subscriptions/$(subscriptionId)/resourceGroups/$(resourceGroupName)/providers/Microsoft.Storage/storageAccounts/$(accountName)
   privateLinkServiceConnection_FCDN: $(accountName).blob.core.windows.net
   deletedAccountName: $(accountName)
-
 scenarios:
   - steps:
     - step: StorageAccounts_CheckNameAvailability
@@ -78,25 +55,79 @@ scenarios:
           kind: StorageV2
           properties:
             changeFeed:
-              enabled: false
+              enabled: true
             dnsEndpointType: Standard
             defaultToOAuthAuthentication: false
             publicNetworkAccess: Enabled
             immutableStorageWithVersioning:
               enabled: false
-            allowCrossTenantReplication: false
+            allowCrossTenantReplication: true
             allowBlobPublicAccess: true
             allowSharedKeyAccess: true
             networkAcls:
               bypass: AzureServices
               defaultAction: Allow
             supportsHttpsTrafficOnly: true
+    - step: BlobContainers_Create
+      exampleFile: ../examples/BlobContainersPut.json
+    - step: BlobContainers_List
+      exampleFile: ../examples/BlobContainersList.json
+    - step: BlobContainers_Get
+      exampleFile: ../examples/BlobContainersGet.json
+    - step: BlobContainers_Update
+      exampleFile: ../examples/BlobContainersPatch.json
+    - step: BlobContainers_SetLegalHold
+      exampleFile: ../examples/BlobContainersSetLegalHold.json
+    - step: BlobContainers_ClearLegalHold
+      exampleFile: ../examples/BlobContainersClearLegalHold.json
     - step: StorageAccounts_List
       exampleFile: ../examples/StorageAccountList.json
     - step: StorageAccounts_ListByResourceGroup
       exampleFile: ../examples/StorageAccountListByResourceGroup.json
     - step: StorageAccounts_GetProperties
       exampleFile: ../examples/StorageAccountGetProperties.json
+    - step: BlobServices_SetServiceProperties
+      exampleFile: ../examples/BlobServicesPut.json
+      requestUpdate:
+        - remove: /parameters/properties/cors
+        - remove: /parameters/properties/defaultServiceVersion
+        - copy: /parameters/properties/restorePolicy
+          from: /parameters/properties/deleteRetentionPolicy
+        - replace: /parameters/properties/restorePolicy/days
+          value: 5
+        - replace: /parameters/properties/deleteRetentionPolicy/days
+          value: 6
+    - step: BlobServices_List
+      exampleFile: ../examples/BlobServicesList.json
+    - step: BlobServices_GetServiceProperties
+      exampleFile: ../examples/BlobServicesGet.json
+    - step: TableServices_SetServiceProperties
+      exampleFile: ../examples/TableServicesPut.json
+      requestUpdate:
+        - remove: /parameters/properties/cors
+    - step: TableServices_List
+      exampleFile: ../examples/TableServicesList.json
+    - step: TableServices_GetServiceProperties
+      exampleFile: ../examples/TableServicesGet.json
+    - step: QueueServices_SetServiceProperties
+      exampleFile: ../examples/QueueServicesPut.json
+      requestUpdate:
+        - remove: /parameters/properties/cors
+    - step: QueueServices_List
+      exampleFile: ../examples/QueueServicesList.json
+    - step: QueueServices_GetServiceProperties
+      exampleFile: ../examples/QueueServicesGet.json
+    - step: FileServices_SetServiceProperties
+      exampleFile: ../examples/FileServicesPut.json
+      requestUpdate:
+        - remove: /parameters/properties/cors
+    - step: FileServices_List
+      exampleFile: ../examples/FileServicesList.json
+    - step: FileServices_GetServiceProperties
+      exampleFile: ../examples/FileServicesGet.json
+    # require UTC time generator
+    # - step: StorageAccounts_RestoreBlobRanges
+    #   exampleFile: ../examples/BlobRangesRestore.json
     - step: StorageAccounts_Update
       operationId: StorageAccounts_Update
       parameters:
@@ -110,6 +141,8 @@ scenarios:
             containerDeleteRetentionPolicy:
               - enabled: true
               - days: 7
+            changeFeed:
+              enabled: false
     - step: StorageAccounts_RevokeUserDelegationKeys
       exampleFile: ../examples/StorageAccountRevokeUserDelegationKeys.json
     - step: StorageAccounts_ListServiceSAS
@@ -128,14 +161,6 @@ scenarios:
           value: "2030-05-24T11:32:48.8457197Z"
         - replace: /parameters/signedStart
           value: "2022-05-24T11:32:48.8457197Z"
-    - step: BlobContainers_Create
-      exampleFile: ../examples/BlobContainersPut.json
-    - step: BlobContainers_List
-      exampleFile: ../examples/BlobContainersList.json
-    - step: BlobContainers_Get
-      exampleFile: ../examples/BlobContainersGet.json
-    - step: BlobContainers_Update
-      exampleFile: ../examples/BlobContainersPatch.json
     - step: BlobInventoryPolicies_CreateOrUpdate
       exampleFile: ../examples/StorageAccountSetBlobInventoryPolicy.json
       requestUpdate:
@@ -148,127 +173,50 @@ scenarios:
       exampleFile: ../examples/StorageAccountGetBlobInventoryPolicy.json
     - step: BlobInventoryPolicies_Delete
       exampleFile: ../examples/StorageAccountDeleteBlobInventoryPolicy.json
-    - step: StorageAccounts_RestoreBlobRanges
-      exampleFile: ../examples/BlobRangesRestore.json
-    - step: StorageAccounts_HierarchicalNamespaceMigration
-      exampleFile: ../examples/StorageAccountHierarchicalNamespaceMigration.json
-    - step: StorageAccounts_AbortHierarchicalNamespaceMigration
-      exampleFile: ../examples/StorageAccountAbortHierarchicalNamespaceMigration.json
-    # Create Storage account 2 for immutability policy test..
-    - step: StorageAccounts_Create_V2
-      operationId: StorageAccounts_Create
-      variables:
-        accountName: $(accountName)2
-      parameters:
-        accountName: $(accountName)2
-        parameters:
-          location: $(location)
-          sku:
-            name: Standard_GRS
-          kind: StorageV2
-          properties:
-            changeFeed:
-              enabled: false
-            dnsEndpointType: Standard
-            defaultToOAuthAuthentication: false
-            publicNetworkAccess: Enabled
-            immutableStorageWithVersioning:
-              enabled: true
-            allowCrossTenantReplication: true
-            allowBlobPublicAccess: true
-            allowSharedKeyAccess: true
-            networkAcls:
-              bypass: AzureServices
-              defaultAction: Allow
-            supportsHttpsTrafficOnly: true
-    - step: BlobContainers_Create_V2
-      exampleFile: ../examples/BlobContainersPut.json
-      variables:
-        accountName: $(accountName)2
-      requestUpdate:
-        - replace: /accountName
-          value: $(accountName)2
     - step: BlobContainers_CreateOrUpdateImmutabilityPolicy
       exampleFile: ../examples/BlobContainersPutImmutabilityPolicy.json
-      variables:
-        accountName: $(accountName)2
       requestUpdate:
-        - replace: /accountName
-          value: $(accountName)2
         - remove: /parameters/properties/allowProtectedAppendWrites
       outputVariables:
         policy_etag:
           fromResponse: /etag
     - step: BlobContainers_GetImmutabilityPolicy
       exampleFile: ../examples/BlobContainersGetImmutabilityPolicy.json
-      variables:
-        accountName: $(accountName)2
-      requestUpdate:
-        - replace: /accountName
-          value: $(accountName)2
     - step: BlobContainers_DeleteImmutabilityPolicy
       exampleFile: ../examples/BlobContainersDeleteImmutabilityPolicy.json
-      variables:
-        accountName: $(accountName)2
       requestUpdate:
-        - replace: /accountName
-          value: $(accountName)2
         - replace: /If-Match
           value: $(policy_etag)
     - step: BlobContainers_CreateOrUpdateImmutabilityPolicy_V2
       exampleFile: ../examples/BlobContainersPutImmutabilityPolicy.json
-      variables:
-        accountName: $(accountName)2
       requestUpdate:
-        - replace: /accountName
-          value: $(accountName)2
         - remove: /parameters/properties/allowProtectedAppendWrites
       outputVariables:
         policy_etag:
           fromResponse: /etag
-    # Use with caution, storage account can't be deleted in 4 days
     - step: BlobContainers_LockImmutabilityPolicy
       exampleFile: ../examples/BlobContainersLockImmutabilityPolicy.json
-      variables:
-        accountName: $(accountName)2
       requestUpdate:
         - replace: /If-Match
           value: $(policy_etag)
-        - replace: /accountName
-          value: $(accountName)2
       outputVariables:
         policy_etag:
           fromResponse: /etag
     - step: BlobContainers_ExtendImmutabilityPolicy
       exampleFile: ../examples/BlobContainersExtendImmutabilityPolicy.json
-      variables:
-        accountName: $(accountName)2
       requestUpdate:
         - replace: /If-Match
           value: $(policy_etag)
         - replace: /parameters/properties/immutabilityPeriodSinceCreationInDays
           value: 4
-      outputVariables:
-        policy_etag:
-          fromResponse: /etag
     - step: BlobContainers_ObjectLevelWorm
       exampleFile: ../examples/ObjectLevelWormContainerMigration.json
-      variables:
-        accountName: $(accountName)2
     - step: BlobContainers_Lease
       exampleFile: ../examples/BlobContainersLease_Acquire.json
-    - step: BlobContainers_SetLegalHold
-      exampleFile: ../examples/BlobContainersSetLegalHold.json
-    - step: BlobContainers_ClearLegalHold
-      exampleFile: ../examples/BlobContainersClearLegalHold.json
+    - step: BlobContainers_Lease_Break
+      exampleFile: ../examples/BlobContainersLease_Break.json
     - step: FileShares_Create
       exampleFile: ../examples/FileSharesPut.json
-    - step: FileShares_Restore
-      exampleFile: ../examples/FileSharesRestore.json
-      requestUpdate:
-        - replace: /deletedShare/deletedShareName
-          value: $(shareName)
-        - remove: /deletedShare/deletedShareVersion
     - step: FileShares_List
       exampleFile: ../examples/FileSharesList.json
     - step: FileShares_Get
@@ -281,6 +229,14 @@ scenarios:
       exampleFile: ../examples/FileSharesLease_Break.json
     - step: FileShares_Delete
       exampleFile: ../examples/FileSharesDelete.json
+    # 500 Internal Server Error
+    # - step: FileShares_Restore
+    #   exampleFile: ../examples/FileSharesRestore.json
+    #   requestUpdate:
+    #     - replace: /deletedShare/deletedShareName
+    #       value: $(shareName)
+    #     - replace: /deletedShare/deletedShareVersion
+    #       value: 1
     - step: LocalUsers_CreateOrUpdate
       exampleFile: ../examples/LocalUserCreate.json
     - step: LocalUsers_List
@@ -341,49 +297,12 @@ scenarios:
       exampleFile: ../examples/StorageAccountGetPrivateEndpointConnection.json
     - step: PrivateEndpointConnections_Delete
       exampleFile: ../examples/StorageAccountDeletePrivateEndpointConnection.json
-# -----------------------------------------------------------------------------------------------------------------------------------------------
-    # Create Storage account 2 for immutability policy test..
-    - step: ObjectReplicationPolicies_CreateOrUpdate
-      exampleFile: >-
-        ../examples/StorageAccountCreateObjectReplicationPolicyOnDestination.json
-    - step: ObjectReplicationPolicies_List
-      exampleFile: ../examples/StorageAccountListObjectReplicationPolicies.json
-    - step: ObjectReplicationPolicies_Get
-      exampleFile: ../examples/StorageAccountGetObjectReplicationPolicy.json
-    - step: ObjectReplicationPolicies_Delete
-      exampleFile: ../examples/StorageAccountDeleteObjectReplicationPolicy.json
-    - step: TableServices_SetServiceProperties
-      exampleFile: ../examples/TableServicesPut.json
-    - step: TableServices_List
-      exampleFile: ../examples/TableServicesList.json
-    - step: TableServices_GetServiceProperties
-      exampleFile: ../examples/TableServicesGet.json
-    - step: BlobServices_SetServiceProperties
-      exampleFile: ../examples/BlobServicesPut.json
-    - step: BlobServices_List
-      exampleFile: ../examples/BlobServicesList.json
-    - step: BlobServices_GetServiceProperties
-      exampleFile: ../examples/BlobServicesGet.json
-    - step: QueueServices_SetServiceProperties
-      exampleFile: ../examples/QueueServicesPut.json
-    - step: QueueServices_List
-      exampleFile: ../examples/QueueServicesList.json
-    - step: QueueServices_GetServiceProperties
-      exampleFile: ../examples/QueueServicesGet.json
-    - step: FileServices_SetServiceProperties
-      exampleFile: ../examples/FileServicesPut.json
-    - step: FileServices_List
-      exampleFile: ../examples/FileServicesList.json
-    - step: FileServices_GetServiceProperties
-      exampleFile: ../examples/FileServicesGet.json
     - step: ManagementPolicies_CreateOrUpdate
       exampleFile: ../examples/StorageAccountSetManagementPolicy.json
     - step: ManagementPolicies_Get
       exampleFile: ../examples/StorageAccountGetManagementPolicy.json
     - step: ManagementPolicies_Delete
       exampleFile: ../examples/StorageAccountDeleteManagementPolicy.json
-    - step: StorageAccounts_Failover
-      exampleFile: ../examples/StorageAccountFailover.json
     - step: Operations_List
       exampleFile: ../examples/OperationsList.json
     - step: Usages_ListByLocation
@@ -392,6 +311,98 @@ scenarios:
       exampleFile: ../examples/SKUList.json
     - step: PrivateLinkResources_ListByStorageAccount
       exampleFile: ../examples/StorageAccountListPrivateLinkResources.json
+    - step: StorageAccounts_Create_V2
+      operationId: StorageAccounts_Create
+      parameters:
+        accountName: $(account2Name)
+        parameters:
+          location: $(location)
+          sku:
+            name: Standard_GRS
+          kind: StorageV2
+          properties:
+            changeFeed:
+              enabled: true
+            dnsEndpointType: Standard
+            defaultToOAuthAuthentication: false
+            publicNetworkAccess: Enabled
+            immutableStorageWithVersioning:
+              enabled: false
+            allowCrossTenantReplication: true
+            allowBlobPublicAccess: true
+            allowSharedKeyAccess: true
+            networkAcls:
+              bypass: AzureServices
+              defaultAction: Allow
+            supportsHttpsTrafficOnly: true
+    - step: BlobContainers_Create_v2
+      operationId: BlobContainers_Create
+      parameters:
+        accountName: $(account2Name)
+        containerName: $(container2Name)
+        blobContainer:
+          properties:
+            publicAccess: Container
+            metadata:
+              metadata: "true"
+    - step: StorageAccounts_HierarchicalNamespaceMigration
+      operationId: StorageAccounts_HierarchicalNamespaceMigration
+      parameters:
+        accountName: $(account2Name)
+        requestType: HnsOnValidationRequest
+    # - step: StorageAccounts_AbortHierarchicalNamespaceMigration
+    #   exampleFile: ../examples/StorageAccountAbortHierarchicalNamespaceMigration.json
+    - step: EnableChangeFeedAndVersion_Source
+      operationId: BlobServices_SetServiceProperties
+      parameters:
+        accountName: $(accountName)
+        BlobServicesName: default
+        parameters:
+          properties:
+            isVersioningEnabled: true
+            changeFeed:
+              enabled: true
+              retentionInDays: 5
+    - step: EnableChangeFeedAndVersion_Target
+      operationId: BlobServices_SetServiceProperties
+      parameters:
+        accountName: $(account2Name)
+        BlobServicesName: default
+        parameters:
+          properties:
+            isVersioningEnabled: true
+            changeFeed:
+              enabled: true
+              retentionInDays: 5
+    - step: ObjectReplicationPolicies_CreateOrUpdate
+      exampleFile: >-
+        ../examples/StorageAccountCreateObjectReplicationPolicyOnDestination.json
+      requestUpdate:
+        - replace: /properties/properties/sourceAccount
+          value: /subscriptions/$(subscription-id)/resourceGroups/$(resourceGroupName)/providers/Microsoft.Storage/storageAccounts/$(account2Name)
+        - replace: /properties/properties/destinationAccount
+          value: /subscriptions/$(subscription-id)/resourceGroups/$(resourceGroupName)/providers/Microsoft.Storage/storageAccounts/$(accountName)
+        - replace: /properties/properties/rules/0/sourceContainer
+          value: $(container2Name)
+        - replace: /properties/properties/rules/0/destinationContainer
+          value: $(containerName)
+    - step: ObjectReplicationPolicies_List
+      exampleFile: ../examples/StorageAccountListObjectReplicationPolicies.json
+      outputVariables:
+        policyId:
+          fromResponse: /value/0/name
+    - step: ObjectReplicationPolicies_Get
+      operationId: ObjectReplicationPolicies_Get
+      parameters:
+        objectReplicationPolicyId: $(policyId)
+    - step: ObjectReplicationPolicies_Delete
+      operationId: ObjectReplicationPolicies_Delete
+      parameters:
+        objectReplicationPolicyId: $(policyId)
+    # - step: StorageAccounts_Failover
+    #   operationId: StorageAccounts_Failover
+    #   parameters:
+    #     accountName: $(accountName)
     - step: Table_Delete
       exampleFile: ../examples/TableOperationDelete.json
     - step: LocalUsers_Delete
@@ -404,3 +415,4 @@ scenarios:
       exampleFile: ../examples/DeletedAccountList.json
     - step: DeletedAccounts_Get
       exampleFile: ../examples/DeletedAccountGet.json
+    
