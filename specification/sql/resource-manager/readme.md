@@ -395,6 +395,7 @@ input-file:
 - ./Microsoft.Sql/preview/2021-02-01-preview/DatabaseOperations.json
 - ./Microsoft.Sql/preview/2021-02-01-preview/DatabaseUsages.json
 - ./Microsoft.Sql/preview/2021-02-01-preview/LedgerDigestUploads.json
+- ./Microsoft.Sql/preview/2021-02-01-preview/ManagedDatabaseMoveOperations.json
 - ./Microsoft.Sql/preview/2021-02-01-preview/OutboundFirewallRules.json
 - ./Microsoft.Sql/preview/2021-02-01-preview/Servers.json
 - ./Microsoft.Sql/preview/2021-02-01-preview/Usages.json
@@ -1266,6 +1267,7 @@ input-file:
  - ./Microsoft.Sql/preview/2021-02-01-preview/MaintenanceWindows.json
  - ./Microsoft.Sql/preview/2021-02-01-preview/ManagedBackupShortTermRetentionPolicies.json
  - ./Microsoft.Sql/preview/2021-02-01-preview/ManagedDatabaseColumns.json
+ - ./Microsoft.Sql/preview/2021-02-01-preview/ManagedDatabaseMoveOperations.json
  - ./Microsoft.Sql/preview/2021-02-01-preview/ManagedDatabaseQueries.json
  - ./Microsoft.Sql/preview/2021-02-01-preview/ManagedDatabaseRestoreDetails.json
  - ./Microsoft.Sql/preview/2021-02-01-preview/ManagedDatabases.json
