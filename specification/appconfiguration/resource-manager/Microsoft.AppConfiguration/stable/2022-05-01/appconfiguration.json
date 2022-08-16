@@ -308,7 +308,7 @@
         },
         "x-ms-examples": {
           "ConfigurationStores_Update": {
-            "$ref": "./examples/ConfigurationStoresUpdate.json"
+            "$ref": "./examples/ConfigurationStoresCreate.json"
           },
           "ConfigurationStores_Update_With_Identity": {
             "$ref": "./examples/ConfigurationStoresUpdateWithIdentity.json"
