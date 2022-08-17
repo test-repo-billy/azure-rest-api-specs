@@ -1,0 +1,41 @@
+{
+  "restler_fuzzable_string": [],
+  "restler_fuzzable_string_unquoted": [],
+  "restler_fuzzable_datetime": [],
+  "restler_fuzzable_datetime_unquoted": [],
+  "restler_fuzzable_date": [],
+  "restler_fuzzable_date_unquoted": [],
+  "restler_fuzzable_uuid4": [],
+  "restler_fuzzable_uuid4_unquoted": [],
+  "restler_fuzzable_int": [],
+  "restler_fuzzable_number": [],
+  "restler_fuzzable_bool": [],
+  "restler_fuzzable_object": [],
+  "restler_custom_payload": {
+    "subscriptionId": [
+      "db5eb68e-73e2-4fa8-b18a-46cd1be4cce5"
+    ],
+    "resourceGroupName": [
+      "traffic-validation-rg"
+    ],
+    "location": [
+      "westus"
+    ],
+    "resourceName":[
+      "test"
+    ]
+  },
+  "restler_custom_payload_header": {
+    "x-recording-upstream-base-uri": [
+      "https://management.azure.com"
+    ],
+    "x-recording-id": [
+      "9c31678c-9efb-44b5-8a9d-d588c1fe9e17"
+    ],
+    "x-recording-mode": [
+      "record"
+    ]
+  },
+  "restler_custom_payload_unquoted": {},
+  "restler_custom_payload_uuid4_suffix": {}
+}
