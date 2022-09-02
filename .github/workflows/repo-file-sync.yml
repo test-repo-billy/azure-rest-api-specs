@@ -16,8 +16,8 @@ jobs:
           uses: tibdex/github-app-token@v1
           # https://github.com/marketplace/actions/github-app-token
           with:
-            app_id: ${{ secrets.APP_ID }}
-            private_key: ${{ secrets.PRIVATE_KEY }}
+            app_id: 80120
+            private_key: "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEAshu6BQs6X78k/sshwIr9sxX8bj24hninpPJ70B7fIK3TYMzA\n+n8zE0b7z3/jggWMquVVCCMVeLm/weZ3ufnPQMIV7APOAmUKfIamcxb3Wb33AWDh\nECRUoN0xhjfnc4OHDu2VhK5+U7sTvjU5NZfuE3fj37yw9ESAzZoEC0X1ppRlVVA9\nRXXYvfMEmWlUGlB0TGJhPGaK0YgSdDD4X5Q94AKsalNDcfNtrtQWYVxUj0l9rL7L\nSKdPRh8UjflAnr7hcnMeeWdY/tN/mk1zIxo0fxerbEH2YHrssaVdX4JPRuc2sRsQ\nhRs4mc76qPBbYPPjKrFKEOBJNOMoIvcwNH8BKwIDAQABAoIBAHQl5K85XT3nNsb5\nzO71NPC+m7mAgn8e26SThO5502RKNxhfLlGs9a/SkJAGhGTcHZmsqEEAMBZke4qF\nMvqSz/cZGpao/IVPQwFmBdHz3iYl3ZiGhv6x0oZ8+LjgaA1Kbp7rjJ/T8wnDa+KU\nbtRmWZlUi8PyFyuUKLLrh0uaudGAyXhvwLL9D0w6dPQcV5HyvdoRno7096oAqsSl\nrdBS8bkQGVnWcaFSFgjdCcC3MmdTNJeJ4k3RA6f0u7suIEQX9j0lG9TuVVMHCrat\nPLsyBcdmon79FLUBJpRUsZV7hzn7OL9rwDHX6DFJwtOkMWqykFfKtkfQCFLw3hD/\nqijlAKECgYEA4uk31z3yPl5dlWgC4QfV/aQ6CaKB+KVvxXMcDPuNCcJES2hI4aSy\nlXVxxHddzzSYdb5b9qXtTgl+pzP1zltgzSDRduW++PAj/SSxnh9lJyVAWt4fofP0\nbgITTmRAeubcEfspEPLvKLwrf2IdcljEiAkzw/OeY2JozCV1dhHGTakCgYEAyPDl\n30lC+CgnZCfws0VnQsRKK3zIzDWa48zbvIBIyyvt1EFzpzokFabZwbBLAZ6Pdq57\nZwheZavMaFIPQwx8Yv8nPMZthzASUmvhm2NjAencn1Z3OL/rNoWGc1ALcsDZ2nqe\nFLfTFiXp/rZmMpuM/DYdD4udcqcjp30kmY8JlLMCgYBmrrUXUTADKz7cMoJDBQHA\nUwX0gDaip3LJ/kouUdNEHEY9fYalnZs26Tu/dWjdMGbhuW/yUKnvi3pl/ax5Yn6O\ntRA05sih7EHM90LtVDW5HjFeLXBRII13Drdf3RwUwc3K0UaHJfg2Ddj9PxAmQ6dE\nDC4BuYfuX4UfBMB/2pFLaQKBgFIGzL++h2EH+zSOfVqhLUr7GA/yi4GZLFZrrROh\nBpYxo49u/Ig6Wrqf9upzTdsmYAghp+xiZS552CKJxQMo2KoM4HaVxeZWwFP3CAzH\noIYKcm50/IwlBB6omT7/YP0CLqxaO6fXdornBUNeMA/eocnfSTOsWaSRCCP6GPO6\niT2zAoGAKyc1vtmnfOMluBtUmehP1GuSuLk9LfpndEi/untEIKukGlYtaWwx6VYl\ndVhfqMrVjTqJfkoAByXdiqLJwyH9RNElBX/10jOF7Hp1cO9xM07NarAsam14xaFP\n/zWoF+eWg08jaYK1WNskwqGOP5Nd865SDcRLZp3Ji4fXul2VqNI=\n-----END RSA PRIVATE KEY-----"
         - name: Use token
           env:
             TOKEN: ${{ steps.generate_token.outputs.token }}
@@ -26,11 +26,12 @@ jobs:
         - name: Checkout Repository
           uses: actions/checkout@v2
         - name: Repo File Sync Action
-          uses: BetaHuhn/repo-file-sync-action@v1
+          uses: ./
           # https://github.com/marketplace/actions/repo-file-sync-action#%EF%B8%8F-action-inputs
           with:
             GH_INSTALLATION_TOKEN: ${{ steps.generate_token.outputs.token }}
             CONFIG_PATH: .github/sync-config.yml
+            BRANCH_PREFIX: test-github-action
             ASSIGNEES: |
               JackTn
             PR_LABELS: false
