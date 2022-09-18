@@ -114,6 +114,7 @@ warnings.txt
 .apitest
 
 *.js
+!.github/*.js
 *.d.ts
 *.js.map
 *.d.ts.map

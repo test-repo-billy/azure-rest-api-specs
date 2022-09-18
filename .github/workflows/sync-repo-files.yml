@@ -1,0 +1,21 @@
+ name: sync-common-types-files
+ on: 
+   push:
+     branches:
+       - test-github-action
+     paths: 
+       - 'specification/common-types/**'
+ jobs:
+   Explore-GitHub-Actions34:
+     name: sync-common-types-files-1
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2
+       - name: sync-common-types-files
+         uses: ./
+         with:
+            OWNER: test-repo-billy
+            REPO: azure-rest-api-specs-pr
+            BRANCH: RPSaaSMaster
+            FILE_PATH: specification/common-types
+            GITHUB_TOKEN: ${{ secrets.GH_PAT }}
