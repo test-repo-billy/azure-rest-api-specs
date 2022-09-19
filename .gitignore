@@ -114,7 +114,7 @@ warnings.txt
 .apitest
 
 *.js
-!.github/*.js
+!.github/syncRepoFile/*.js
 *.d.ts
 *.js.map
 *.d.ts.map

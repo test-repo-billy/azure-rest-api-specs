@@ -65,7 +65,7 @@ inputs:
 
 runs:
   using: 'node12'
-  main: '.github/syncRepoFile.js'
+  main: '.github/syncRepoFile/index.js'
 
 branding:
   icon: 'git-merge'
