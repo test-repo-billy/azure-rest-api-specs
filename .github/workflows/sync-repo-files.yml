@@ -5,6 +5,7 @@
        - test-github-action
      paths: 
        - 'specification/common-types/**'
+   workflow_dispatch:
  jobs:
    Explore-GitHub-Actions34:
      name: sync-common-types-files-1
