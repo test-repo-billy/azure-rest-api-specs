@@ -5,7 +5,9 @@
 This is the AutoRest configuration file for Compute Admin.
 
 ---
+
 ## Getting Started
+
 To build the SDK for Compute Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -13,28 +15,38 @@ To build the SDK for Compute Admin, simply [Install AutoRest](https://aka.ms/aut
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
 
-
 ### Basic Information
+
 These are the global settings for the Compute API.
 
 ``` yaml
 title: ComputeAdminClient
 description: Compute Admin Client
 openapi-type: arm
-tag: package-2021-09-01
-
+tag: package-preview-2022-01
 directive:
   - where:
       - $.definitions.ScaleUnit
     suppress:
       - NestedResourcesMustHaveListOperation
-    reason: 'CRP cannot support the list API for scale units due to the undesired load that would inflict on the system'
+    reason: CRP cannot support the list API for scale units due to the undesired load that would inflict on the system
 ```
 
+
+### Tag: package-preview-2022-01
+
+These settings apply only when `--tag=package-preview-2022-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-01'
+input-file:
+  - Microsoft.Compute.Admin/preview/2022-01-01-preview/DiskMigrationJobs.json
+  - Microsoft.Compute.Admin/preview/2022-01-01-preview/Disks.json
+```
 ### Tag: package-2021-09-01
 
 These settings apply only when `--tag=package-2021-09-01` is specified on the command line.
@@ -52,6 +64,7 @@ input-file:
 ```
 
 ---
+
 # Code Generation
 
 ## C#
@@ -82,7 +95,7 @@ input-file:
      - Microsoft.Compute.Admin/stable/2021-09-01/DiskMigrationJobs.json
 ```
 
-## Multi-API/Profile support for AutoRest v3 generators 
+## Multi-API/Profile support for AutoRest v3 generators
 
 AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
 
@@ -109,11 +122,10 @@ input-file:
    - $(this-folder)/Microsoft.Compute.Admin/stable/2021-09-01/DiskMigrationJobs.json
 ```
 
-If there are files that should not be in the `all-api-versions` set, 
+If there are files that should not be in the `all-api-versions` set,
 uncomment the  `exclude-file` section below and add the file paths.
 
 ``` yaml $(tag) == 'all-api-versions'
 #exclude-file: 
 #  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
 ```
-
