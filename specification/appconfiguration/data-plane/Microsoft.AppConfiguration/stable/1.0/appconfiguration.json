@@ -132,7 +132,7 @@
         }
       }
     },
-    "/kv": {
+    "/kvss": {
       "get": {
         "tags": [
           "KeyValues"
