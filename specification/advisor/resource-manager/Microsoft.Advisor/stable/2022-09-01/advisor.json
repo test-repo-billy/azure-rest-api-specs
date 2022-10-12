@@ -68,8 +68,8 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Gets the list of metadata entities.",
-        "operationId": "xxxxRecommendationMetadata_List",
+        "summary": "Gets all the list of metadata entities.",
+        "operationId": "RecommendationMetadata_List",
         "parameters": [
           {
             "$ref": "#/parameters/apiVersionParameter"
@@ -91,7 +91,7 @@
         },
         "x-ms-examples": {
           "GetMetadata": {
-            "$ref": "./examples/ListRecommendationMetadata1.json"
+            "$ref": "./examples/ListRecommendationMetadata.json"
           }
         },
         "x-ms-pageable": {
