@@ -31,7 +31,7 @@ prepareSteps:
             name: standard
           accessPolicies:
             - tenantId: $(tenantId)
-              objectId: $(client_id)
+              objectId: $(object_id)
               permissions:
                 keys:
                   - encrypt
