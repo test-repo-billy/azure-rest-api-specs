@@ -31,7 +31,7 @@ prepareSteps:
             name: standard
           accessPolicies:
             - tenantId: $(tenantId)
-              objectId: 48f6cf37-24cb-4143-8663-b9fad7c24025
+              objectId: $(client_id)
               permissions:
                 keys:
                   - encrypt
