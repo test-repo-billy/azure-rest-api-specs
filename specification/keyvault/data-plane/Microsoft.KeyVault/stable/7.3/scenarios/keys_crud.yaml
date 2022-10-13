@@ -1,0 +1,127 @@
+# yaml-language-server: $schema=https://github.com/Azure/azure-rest-api-specs/raw/main/documentation/api-scenario/references/v1.2/schema.json
+scope: ResourceGroup
+variables:
+  vaultName:
+    type: string
+    prefix: vaultname
+  vaultBaseUrl: https://$(vaultName).vault.azure.net
+  key-name:
+    type: string
+    prefix: keyname
+  key-version:
+    type: string
+    prefix: keyversion
+
+prepareSteps:
+  - operationId: Vaults_CheckNameAvailability
+    readmeTag: ../../../../../resource-manager/readme.md
+    parameters:
+      vaultName:
+        name: $(vaultName)
+        type: Microsoft.KeyVault/vaults
+  - operationId: Vaults_CreateOrUpdate
+    readmeTag: ../../../../../resource-manager/readme.md
+    parameters:
+      parameters:
+        location: $(location)
+        properties:
+          tenantId: $(tenantId)
+          sku:
+            family: A
+            name: standard
+          accessPolicies:
+            - tenantId: $(tenantId)
+              objectId: 48f6cf37-24cb-4143-8663-b9fad7c24025
+              permissions:
+                keys:
+                  - encrypt
+                  - decrypt
+                  - wrapKey
+                  - unwrapKey
+                  - sign
+                  - verify
+                  - get
+                  - list
+                  - create
+                  - update
+                  - import
+                  - delete
+                  - backup
+                  - restore
+                  - recover
+                  - purge
+          enabledForDeployment: true
+          enabledForDiskEncryption: true
+          enabledForTemplateDeployment: true
+          publicNetworkAccess: Enabled
+
+scenarios:
+  - scenario: SimpleScenario
+    authentication:
+      type: AADToken
+      scope: https://vault.azure.net/.default
+    steps:
+      - step: GetKeys
+        exampleFile: ../examples/GetKeys-example.json
+
+  - scenario: GeneratedScenario
+    authentication:
+      type: AADToken
+      scope: https://vault.azure.net/.default
+    steps:
+      - step: ImportKey
+        exampleFile: ../examples/ImportKey-example.json
+      - step: UpdateKeyRotationPolicy
+        exampleFile: ../examples/UpdateKeyRotationPolicy-example.json
+      - step: GetDeletedKeys
+        exampleFile: ../examples/GetDeletedKeys-example.json
+      - step: PurgeDeletedKey
+        exampleFile: ../examples/PurgeDeletedKey-example.json
+      - step: GetDeletedKey
+        exampleFile: ../examples/GetDeletedKey-example.json
+      - step: RecoverDeletedKey
+        exampleFile: ../examples/RecoverDeletedKey-example.json
+      - step: GetKeys
+        exampleFile: ../examples/GetKeys-example.json
+      - step: RestoreKey
+        exampleFile: ../examples/RestoreKey-example.json
+      - step: DeleteKey
+        exampleFile: ../examples/DeleteKey-example.json
+      - step: BackupKey
+        exampleFile: ../examples/BackupKey-example.json
+      - step: CreateKey
+        exampleFile: ../examples/CreateKey-example.json
+      - step: RotateKey
+        exampleFile: ../examples/RotateKey-example.json
+      - step: GetKeyRotationPolicy
+        exampleFile: ../examples/GetKeyRotationPolicy-example.json
+      - step: GetKeyVersions
+        exampleFile: ../examples/GetKeyVersions-example.json
+      - step: GetKey
+        exampleFile: ../examples/GetKey-example.json
+      - step: UpdateKey
+        exampleFile: ../examples/UpdateKey-example.json
+      - step: decrypt
+        exampleFile: ../examples/decrypt-example.json
+      - step: encrypt
+        exampleFile: ../examples/encrypt-example.json
+      - step: release
+        exampleFile: ../examples/release-example.json
+      - step: sign
+        exampleFile: ../examples/sign-example.json
+      - step: unwrapKey
+        exampleFile: ../examples/unwrapKey-example.json
+      - step: verify
+        exampleFile: ../examples/verify-example.json
+      - step: wrapKey
+        exampleFile: ../examples/wrapKey-example.json
+      - step: GetRandomBytes
+        exampleFile: ../examples/GetRandomBytes-example.json
+
+cleanUpSteps:
+  - operationId: Vaults_Delete
+    readmeTag: ../../../../../resource-manager/readme.md
+  - operationId: Vaults_GetDeleted
+    readmeTag: ../../../../../resource-manager/readme.md
+  - operationId: Vaults_PurgeDeleted
+    readmeTag: ../../../../../resource-manager/readme.md
