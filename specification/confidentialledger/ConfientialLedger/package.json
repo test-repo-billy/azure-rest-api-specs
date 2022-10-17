@@ -4,13 +4,14 @@
     "@azure-tools/cadl-autorest": "^0.20.0",
     "@azure-tools/cadl-azure-core": "^0.7.0",
     "@azure-tools/cadl-csharp": "^0.1.4",
+    "@azure-tools/cadl-java": "0.1.0-dev.9",
     "@azure-tools/cadl-python": "^0.2.5",
+    "@azure-tools/cadl-typescript": "^1.0.0-beta.1",
     "@cadl-lang/compiler": "latest",
     "@cadl-lang/openapi": "^0.12.0",
     "@cadl-lang/openapi3": "^0.15.0",
     "@cadl-lang/rest": "^0.17.0",
-    "@cadl-lang/versioning": "^0.8.0",
-    "dwtest-ts-gen": "0.0.1"
+    "@cadl-lang/versioning": "^0.8.0"
   },
   "private": true,
   "version": "1.0.0",
