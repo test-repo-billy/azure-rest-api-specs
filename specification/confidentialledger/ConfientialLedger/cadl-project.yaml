@@ -8,7 +8,7 @@ emitters:
     generateMetadata: true
     includeShortcuts: true
     packageDetails:
-      name: "@msinternal/cadl-test"
+      name: "azure-rest/confidentialledger-test"
       description: "Cadl Test Service"
       version: "1.0.0-beta.1"
   "@azure-tools/cadl-java":
