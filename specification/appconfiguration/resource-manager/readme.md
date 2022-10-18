@@ -39,6 +39,15 @@ input-file:
 - Microsoft.AppConfiguration/stable/2022-05-01/appconfiguration.json
 ```
 
+### Tag: package-2022-05-01-preview
+
+These settings apply only when `--tag=2022-05-01` is specified on the command line.
+
+``` yaml $(tag) == 'package-2022-05-01'
+input-file:
+- Microsoft.AppConfiguration/preview/2022-05-01-preview/appconfiguration.json
+```
+
 ### Tag: package-2022-03-01-preview
 
 These settings apply only when `--tag=2022-03-01-preview` is specified on the command line.
