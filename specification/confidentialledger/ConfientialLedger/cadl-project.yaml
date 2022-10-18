@@ -1,6 +1,9 @@
 emitters:
   "@azure-tools/cadl-python":
-    "sdk-folder": sdk/confidentialledger/azure-confidentialledger
+    "sdk-folder": sdk/confidentialledger/azure-security-confidentialledger
+    "package-version": "1.0.0b1"
+    "basic-setup-py": true
+    "package-name": "azure-security-confidentialledger"
   "@azure-tools/cadl-csharp":
     "sdk-folder": sdk/confidentialledger/Azure.Security.ConfidentialLedger
   "@azure-tools/cadl-typescript":
