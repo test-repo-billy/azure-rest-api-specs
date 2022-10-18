@@ -6,12 +6,12 @@ emitters:
     "package-name": "azure-security-confidentialledger"
   "@azure-tools/cadl-csharp":
     "sdk-folder": sdk/confidentialledger/Azure.Security.ConfidentialLedger
-  "@azure-tools/cadl-typescript":
+  "dw-cadl-typescript":
     "sdk-folder": sdk/confidentialledger/azure-confidentialledger-rest
     generateMetadata: true
     includeShortcuts: true
     packageDetails:
-      name: "azure-rest/confidentialledger-test"
+      name: "@azure-rest/confidentialledger-test"
       description: "Cadl Test Service"
       version: "1.0.0-beta.1"
   "@azure-tools/cadl-java":
