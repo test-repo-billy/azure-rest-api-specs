@@ -4,7 +4,7 @@
     "@azure-tools/cadl-autorest": "^0.20.0",
     "@azure-tools/cadl-azure-core": "^0.7.0",
     "@azure-tools/cadl-csharp": "^0.1.4",
-    "@azure-tools/cadl-java": "0.1.0-dev.9",
+    "@azure-tools/cadl-java": "0.1.0-dev.10",
     "@azure-tools/cadl-python": "^0.2.5",
     "@azure-tools/cadl-typescript": "^1.0.0-beta.1",
     "@cadl-lang/compiler": "0.35.0",
