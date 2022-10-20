@@ -6,7 +6,7 @@ emitters:
     "package-name": "azure-security-confidentialledger"
   "@azure-tools/cadl-csharp":
     "sdk-folder": sdk/confidentialledger/Azure.Security.ConfidentialLedger
-  "dw-cadl-typescript":
+  "@azure-tools/cadl-typescript":
     "sdk-folder": sdk/confidentialledger/azure-confidentialledger-rest
     generateMetadata: true
     includeShortcuts: true
