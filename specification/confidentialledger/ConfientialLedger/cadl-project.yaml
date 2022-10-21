@@ -1,5 +1,5 @@
 emitters:
-  "yyc-cadl-python":
+  "@azure-tools/cadl-python":
     "sdk-folder": sdk/confidentialledger/azure-security-confidentialledger
     "package-version": "1.0.0b1"
     "basic-setup-py": true
