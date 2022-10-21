@@ -11,7 +11,7 @@
     "200": {
       "body": {
         "nameAvailable": true,
-        "message": "The specified name is available.",
+        "message": "The sspecified name is available.",
         "reason": null
       }
     }
