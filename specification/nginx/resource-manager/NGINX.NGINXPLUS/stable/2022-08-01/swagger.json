@@ -31,7 +31,7 @@
         "tags": [
           "NginxCertificate"
         ],
-        "summary": "Get a certificate of given Nginx deployment",
+        "summary": "Get a certificate of s given Nginx deployment",
         "operationId": "Certificates_Get",
         "produces": [
           "application/json"
