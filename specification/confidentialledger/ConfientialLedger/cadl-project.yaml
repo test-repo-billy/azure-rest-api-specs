@@ -9,6 +9,7 @@ emitters:
   "@azure-tools/cadl-typescript":
     "sdk-folder": sdk/confidentialledger/azure-confidentialledger-rest
     generateMetadata: true
+    generateTest: true
     includeShortcuts: true
     packageDetails:
       name: "@azure-rest/confidentialledger-test"
