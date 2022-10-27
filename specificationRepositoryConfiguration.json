@@ -104,7 +104,6 @@
       }
     }
   },
-  ,
   "cadlEmitterToSdkRepositoryMapping": {
     "@azure-tools/cadl-python": "azure-sdk-for-python",
     "@azure-tools/cadl-java": "azure-sdk-for-java",
