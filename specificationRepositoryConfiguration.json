@@ -81,6 +81,36 @@
           "mainRepository": "Azure/azure-powershell-pr"
         }
       }
+    },
+    "test-repo-billy/azure-rest-api-specs": {
+        "azure-sdk-for-net-track2": {
+          "mainRepository": "openapi-env-test/azure-sdk-for-net",
+          "mainBranch": "yc/cadl",
+          "configFilePath": "eng/swagger_to_sdk_config.json"
+        },
+        "azure-sdk-for-python": {
+          "mainRepository": "openapi-env-test/azure-sdk-for-python",
+          "mainBranch": "dw-dpg-test"
+        },
+        "azure-sdk-for-js": {
+          "mainRepository": "openapi-env-test/azure-sdk-for-js",
+          "mainBranch": "main"
+        },
+        "azure-sdk-for-java": {
+          "mainRepository": "openapi-env-test/azure-sdk-for-java",
+          "mainBranch": "feature/java-cadl",
+          "configFilePath": "eng/mgmt/automation/swagger_to_sdk_config.json"
+        }
+      }
     }
+  },
+  ,
+  "cadlEmitterToSdkRepositoryMapping": {
+    "@azure-tools/cadl-python": "azure-sdk-for-python",
+    "@azure-tools/cadl-java": "azure-sdk-for-java",
+    "@azure-tools/cadl-csharp": "azure-sdk-for-net-track2",
+    "@azure-tools/cadl-typescript": "azure-sdk-for-js",
+    "dw-cadl-typescript": "azure-sdk-for-js",
+    "yyc-cadl-python": "azure-sdk-for-python"
   }
 }
