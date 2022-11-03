@@ -229,6 +229,201 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/accessConnectors/{connectorName}/new": {
+      "get": {
+        "tags": [
+          "AccessConnector"
+        ],
+        "operationId": "AccessConnectors_Get",
+        "description": "Gets an azure databricks accessConnector.",
+        "x-ms-examples": {
+          "Get an azure databricks accessConnector": {
+            "$ref": "./examples/AccessConnectorGet.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/ConnectorName"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - Returns the accessConnector.",
+            "schema": {
+              "$ref": "#/definitions/AccessConnector"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "databricks.json#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AccessConnector"
+        ],
+        "operationId": "AccessConnectors_Delete",
+        "description": "Deletes the azure databricks accessConnector.",
+        "x-ms-examples": {
+          "Delete an azure databricks accessConnector": {
+            "$ref": "./examples/AccessConnectorDelete.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/ConnectorName"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted - Returns this status until the asynchronous operation has completed."
+          },
+          "204": {
+            "description": "NoContent"
+          },
+          "200": {
+            "description": "OK. The request has succeeded."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "databricks.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true
+      },
+      "put": {
+        "tags": [
+          "AccessConnector"
+        ],
+        "operationId": "AccessConnectors_CreateOrUpdate",
+        "description": "Creates or updates azure databricks accessConnector.",
+        "x-ms-examples": {
+          "Create an azure databricks accessConnector": {
+            "$ref": "./examples/AccessConnectorCreateOrUpdate.json"
+          }
+        },
+        "parameters": [
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccessConnector"
+            },
+            "description": "Parameters supplied to the create or update an azure databricks accessConnector."
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/ConnectorName"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated - Returns information about the azure databricks accessConnector.",
+            "schema": {
+              "$ref": "#/definitions/AccessConnector"
+            }
+          },
+          "201": {
+            "description": "Created - Returns information about the azure databricks accessConnector.",
+            "schema": {
+              "$ref": "#/definitions/AccessConnector"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "databricks.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true
+      },
+      "patch": {
+        "tags": [
+          "AccessConnector"
+        ],
+        "operationId": "AccessConnectors_Update",
+        "description": "Updates an azure databricks accessConnector.",
+        "x-ms-examples": {
+          "Update an azure databricks accessConnector": {
+            "$ref": "./examples/AccessConnectorPatchUpdate.json"
+          }
+        },
+        "parameters": [
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccessConnectorUpdate"
+            },
+            "description": "The update to the azure databricks accessConnector."
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "#/parameters/ConnectorName"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted - Returns this status until the asynchronous operation has completed."
+          },
+          "200": {
+            "description": "Successfully updated the azure databricks accessConnector.",
+            "schema": {
+              "$ref": "#/definitions/AccessConnector"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "databricks.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/accessConnectors": {
       "get": {
         "tags": [
@@ -321,6 +516,9 @@
         "properties": {
           "description": "Azure Databricks accessConnector properties",
           "$ref": "#/definitions/AccessConnectorProperties"
+        },
+        "sku": {
+          "type": "string"
         }
       },
       "allOf": [
@@ -353,6 +551,12 @@
       "type": "object",
       "properties": {
         "principalId": {
+          "readOnly": true,
+          "format": "uuid",
+          "type": "string",
+          "description": "The principal ID of resource identity."
+        },
+        "uuid": {
           "readOnly": true,
           "format": "uuid",
           "type": "string",
