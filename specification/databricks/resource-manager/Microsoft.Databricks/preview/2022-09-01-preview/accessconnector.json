@@ -3,7 +3,7 @@
   "info": {
     "title": "DatabricksAccessConnectorClient",
     "version": "2022-09-01-preview",
-    "description": "These APIs allow end users to operate on Azure Databricks Access Connector resources."
+    "description": "These APIs sss allow end users to operate on Azure Databricks Access Connector resources."
   },
   "host": "management.azure.com",
   "schemes": [
