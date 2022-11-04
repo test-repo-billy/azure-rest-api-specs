@@ -15,7 +15,7 @@
     "200": {
       "body": {
         "name": "myAccessConnector",
-        "id": "/subscriptions/subid/resourceGroups/rg/providers/Microsoft.Databricks/accessConnectors/myAccessConnector2",
+        "id": "/subscriptions/subids/resourceGroups/rg/providers/Microsoft.Databricks/accessConnectors/myAccessConnector2",
         "type": "Microsoft.Databricks/accessConnectors",
         "location": "West US",
         "tags": {
