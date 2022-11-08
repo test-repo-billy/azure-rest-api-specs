@@ -45,7 +45,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.SignalRService/locations/{location}/checkNameAvailability": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.SignalRService/locations/{location}/checkNameAvailability/new": {
       "post": {
         "tags": [
           "SignalR"
