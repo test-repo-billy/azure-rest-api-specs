@@ -263,6 +263,235 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/applicationGateways/{applicationGatewayName}/new": {
+      "delete": {
+        "tags": [
+          "ApplicationGateways"
+        ],
+        "operationId": "ApplicationGateways_Delete",
+        "x-ms-examples": {
+          "Delete ApplicationGateway": {
+            "$ref": "./examples/ApplicationGatewayDelete.json"
+          }
+        },
+        "description": "Deletes the specified application gateway.",
+        "parameters": [
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the resource group."
+          },
+          {
+            "name": "applicationGatewayName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the application gateway."
+          },
+          {
+            "$ref": "./network.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted and the operation will complete asynchronously."
+          },
+          "204": {
+            "description": "Request successful. Resource with the specified name does not exist."
+          },
+          "200": {
+            "description": "Delete successful."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
+      },
+      "get": {
+        "tags": [
+          "ApplicationGateways"
+        ],
+        "operationId": "ApplicationGateways_Get",
+        "x-ms-examples": {
+          "Get ApplicationGateway": {
+            "$ref": "./examples/ApplicationGatewayGet.json"
+          }
+        },
+        "description": "Gets the specified application gateway.",
+        "parameters": [
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the resource group."
+          },
+          {
+            "name": "applicationGatewayName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the application gateway."
+          },
+          {
+            "$ref": "./network.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The operation returns an ApplicationGateway resource.",
+            "schema": {
+              "$ref": "#/definitions/ApplicationGateway"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ApplicationGateways"
+        ],
+        "operationId": "ApplicationGateways_CreateOrUpdate",
+        "description": "Creates or updates the specified application gateway.",
+        "parameters": [
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the resource group."
+          },
+          {
+            "name": "applicationGatewayName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the application gateway."
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ApplicationGateway"
+            },
+            "description": "Parameters supplied to the create or update application gateway operation."
+          },
+          {
+            "$ref": "./network.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Create successful. The operation returns the resulting ApplicationGateway resource.",
+            "schema": {
+              "$ref": "#/definitions/ApplicationGateway"
+            }
+          },
+          "200": {
+            "description": "Update successful. The operation returns the resulting ApplicationGateway resource.",
+            "schema": {
+              "$ref": "#/definitions/ApplicationGateway"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Application Gateway": {
+            "$ref": "./examples/ApplicationGatewayCreate.json"
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation"
+        }
+      },
+      "patch": {
+        "tags": [
+          "ApplicationGateways"
+        ],
+        "operationId": "ApplicationGateways_UpdateTags",
+        "x-ms-examples": {
+          "Update Application Gateway tags": {
+            "$ref": "./examples/ApplicationGatewayUpdateTags.json"
+          }
+        },
+        "description": "Updates the specified application gateway tags.",
+        "parameters": [
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the resource group."
+          },
+          {
+            "name": "applicationGatewayName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the application gateway."
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "./network.json#/definitions/TagsObject"
+            },
+            "description": "Parameters supplied to update application gateway tags."
+          },
+          {
+            "$ref": "./network.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update successful. The operation returns the resulting ApplicationGateway resource.",
+            "schema": {
+              "$ref": "#/definitions/ApplicationGateway"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/applicationGateways": {
       "get": {
         "tags": [
