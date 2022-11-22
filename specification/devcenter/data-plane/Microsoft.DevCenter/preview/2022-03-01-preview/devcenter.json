@@ -88,7 +88,7 @@
         }
       }
     },
-    "/projects/{projectName}": {
+    "/projects/{projectName}/new": {
       "get": {
         "tags": [
           "Projects"
