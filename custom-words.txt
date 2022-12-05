@@ -2774,6 +2774,7 @@ Sami
 Santali
 Sirmauri
 Skolt
+Gondor
 Thangmi
 Tuvan
 Uyghur
