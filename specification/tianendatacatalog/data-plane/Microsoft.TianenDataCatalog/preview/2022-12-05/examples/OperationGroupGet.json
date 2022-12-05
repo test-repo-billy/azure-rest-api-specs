@@ -1,0 +1,15 @@
+{
+  "parameters": {
+    "accountName": "sampleacct",
+    "resourceGroupName": "tianendatacatalogClient",
+    "api-version": "2022-12-05",
+    "subscriptionId": "subid"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "sampleProperty": "sampleProperty"
+      }
+    }
+  }
+}
