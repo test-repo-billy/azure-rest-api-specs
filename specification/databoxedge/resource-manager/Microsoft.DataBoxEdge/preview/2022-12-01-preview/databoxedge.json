@@ -2108,6 +2108,11 @@
             "description": "GetSASToken is working fine",
             "schema": {
               "$ref": "#/definitions/MarketplaceSasToken"
+            },
+            "headers": {
+              "Location": {
+                "type": "string"
+              }
             }
           },
           "default": {
@@ -2118,6 +2123,9 @@
           }
         },
         "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
         "x-ms-examples": {
           "OrderGet": {
             "$ref": "./examples/GetSASToken.json"
@@ -9414,6 +9422,24 @@
         }
       }
     },
+    "SkuMapping": {
+      "type": "object",
+      "properties": {
+        "catalogPlanId": {
+          "type": "string"
+        },
+        "marketplaceSkuId": {
+          "type": "string"
+        },
+        "marketplaceSkuVersions": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "StorageAccount": {
       "description": "Represents a Storage Account on the  Data Box Edge/Gateway device.",
       "required": [
@@ -10402,51 +10428,6 @@
       "description": "The subscription ID.",
       "required": true,
       "type": "string"
-    },
-    "deviceNameParameter": {
-      "name": "deviceName",
-      "in": "path",
-      "description": "The device ID.",
-      "required": true,
-      "type": "string",
-      "pattern": "[0-9a-zA-Z]",
-      "x-ms-parameter-location": "method"
-    },
-    "publisherNameParameter": {
-      "name": "publisherName",
-      "in": "path",
-      "description": "The publisher ID.",
-      "required": true,
-      "type": "string",
-      "pattern": "[0-9a-zA-Z]",
-      "x-ms-parameter-location": "method"
-    },
-    "offerNameParameter": {
-      "name": "offerName",
-      "in": "path",
-      "description": "The offer ID.",
-      "required": true,
-      "type": "string",
-      "pattern": "[0-9a-zA-Z]",
-      "x-ms-parameter-location": "method"
-    },
-    "skuNameParameter": {
-      "name": "skuName",
-      "in": "path",
-      "description": "The sku ID.",
-      "required": true,
-      "type": "string",
-      "pattern": "[0-9a-zA-Z]",
-      "x-ms-parameter-location": "method"
-    },
-    "versionNameParameter": {
-      "name": "versionName",
-      "in": "path",
-      "description": "The version ID.",
-      "required": true,
-      "type": "string",
-      "pattern": "[0-9a-zA-Z]",
-      "x-ms-parameter-location": "method"
     }
   },
   "securityDefinitions": {
