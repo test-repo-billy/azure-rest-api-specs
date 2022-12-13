@@ -1735,7 +1735,7 @@
           {
             "name": "deviceName",
             "in": "path",
-            "description": "",
+            "description": "The device name.",
             "required": true,
             "type": "string"
           },
