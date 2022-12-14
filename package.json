@@ -6,7 +6,7 @@
     "email": "azsdkteam@microsoft.com",
     "url": "https://github.com/azure/azure-rest-api-specs"
   },
-  "version": "0.1.01",
+  "version": "0.1.03",
   "description": "Tests for Azure REST API Specifications",
   "license": "MIT",
   "devDependencies": {
