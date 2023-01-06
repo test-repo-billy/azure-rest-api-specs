@@ -11,5 +11,5 @@ csharp:
   clear-output-folder: true
   client-side-validation: false
   namespace: Microsoft.Azure.Management.AgriFood
-  output-folder: $(csharp-sdks-folder)/agrifood/Microsoft.Azure.Management.AgriFood/src/Generated
+  output-folder: $(csharp-sdks-folder)/releaseplannertest/Microsoft.Azure.Management.AgriFood/src/Generated
 ```
