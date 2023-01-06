@@ -13,6 +13,8 @@ model CollectionIdParameter {
   collectionId: string;
 }
 
+
+
 enum ConfidentialLedgerQueryStateKnownValues {
   "Loading",
   "Ready",
