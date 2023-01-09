@@ -12,7 +12,7 @@ To build the SDK for DataBox Edge, simply [Install AutoRest](https://aka.ms/auto
 
 > `autorest`
 
-To see additional help and options, run:
+To see additional help and options, run :
 
 > `autorest --help`
 ---
