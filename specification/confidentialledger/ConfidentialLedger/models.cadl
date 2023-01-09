@@ -24,6 +24,7 @@ model ConfidentialLedgerQueryState is string;
 enum TransactionStateKnownValues {
   "Committed",
   "Pending",
+  "Doing",
 }
 
 @knownValues(TransactionStateKnownValues)
