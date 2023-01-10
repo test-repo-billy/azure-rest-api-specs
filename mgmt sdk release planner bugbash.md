@@ -2,7 +2,7 @@ Welcome to Azure Mgmt SDK Release Planner App.The App targets to provide a smoot
 - App Link: https://aka.ms/ppe-sdk-workflow
 - Please provide feedbacks by [creating github issue](https://github.com/Azure/azure-sdk-tools/issues/new) with label `Engagement Experience`.
 
-_As the app is still in Pre-preduction, the app doesn't block you from going to next step when you haven't meet the requirements in some pages._
+_As the app is still in Pre-production, the app doesn't block you from going to next step when you haven't met the requirements in some pages._
 
 ## Instructions
 
