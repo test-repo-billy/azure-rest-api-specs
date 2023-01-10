@@ -21,7 +21,7 @@ __Step 2:__ Create a Release Plan for Mgmt Release.
 
   <img src="https://user-images.githubusercontent.com/40835867/211483974-ea54bef0-7007-458f-8164-a1624c7707c2.png" width="500" />
   
-__Step 3:__ When the release plan is created, you can find you release plan is the latest one. Please open it.
+__Step 3:__ When the release plan is created, you can find your release plan is the latest one. Please open it.
 
   <img src="https://user-images.githubusercontent.com/40835867/211484416-5126b51a-705c-4e56-9884-3e7dd702fb71.png" width="500" />
   
