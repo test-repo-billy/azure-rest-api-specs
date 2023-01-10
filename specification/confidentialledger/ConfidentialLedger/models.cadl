@@ -25,6 +25,7 @@ enum TransactionStateKnownValues {
   "Committed",
   "Pending",
   "Doing",
+  "Start", 
 }
 
 @knownValues(TransactionStateKnownValues)
