@@ -13,7 +13,7 @@ When trying the app, please pay attention to the following steps.
 
 ### The following are details:
 
-__Step 1:__ When opening the app, please bind you service to `Release Planner Test Service`. If you are binding to other service, please change it.
+__Step 1:__ When opening the app, please bind you service to `Release Planner Test Service`. Feel free to change it to other services.
 
   <img src="https://user-images.githubusercontent.com/40835867/211483596-80f69518-dae1-426f-a9e8-a354a2eaa636.png" width="500" />
   
