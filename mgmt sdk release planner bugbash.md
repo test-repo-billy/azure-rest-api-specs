@@ -29,7 +29,7 @@ __Step 4:__ You can go to the `Management-plane API Readiness` App and `Managenm
 
   <img src="https://user-images.githubusercontent.com/40835867/211484942-fc7137fa-63e7-4fcf-aec5-9da605826768.png" width="500" />
   
-__Step 5:__ In `Release Planner Test Service`, it asks you to associate to a spec PR. Here, we have prepared a PR and you can used it: `https://github.com/Azure/azure-rest-api-specs/pull/22119`.
+__Step 5:__ In `Management Plane API Readiness` App, it requires you to associate to a spec PR. We have prepared a PR for you: `https://github.com/Azure/azure-rest-api-specs/pull/22119`.
 
   <img src="https://user-images.githubusercontent.com/40835867/211486201-ea883c75-53b4-422d-b8ba-ec9e589ea0f6.png" width="500" />
   
