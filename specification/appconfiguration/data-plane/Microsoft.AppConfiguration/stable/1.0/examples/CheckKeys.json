@@ -1,5 +1,5 @@
 {
-  "parameters": {
+  "parameters": { 
     "endpoint": "https://{exampleAppConfigurationName}.azconfig.io",
     "api-version": "1.0"
   },
