@@ -4,5 +4,5 @@ These settings apply only when `--tag=package-1-0` is specified on the command l
 
 ``` yaml $(tag) == 'package-1-0'
 test-resources:
-  - Microsoft.AppConfiguration/stable/1.0/scenarios/basic.yaml
+  - Microsoft.AppConfiguration/stable/1.0/scenarios/basic.yaml 
 ```
