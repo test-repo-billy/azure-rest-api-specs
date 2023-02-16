@@ -860,7 +860,7 @@
           {
             "name": "label",
             "in": "query",
-            "description": "The label, if any, of the key-value to unlock.",
+            "description": "The label, if any, of the key-value to unlock. ",
             "type": "string"
           },
           {
