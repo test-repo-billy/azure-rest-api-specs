@@ -853,7 +853,7 @@
           {
             "name": "key",
             "in": "path",
-            "description": "The key of the key-value to unlock.",
+            "description": "The key of the key-value to unlock.", 
             "required": true,
             "type": "string"
           },
