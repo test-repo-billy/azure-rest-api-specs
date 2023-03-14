@@ -6,8 +6,8 @@
     "labName": "{labName}",
     "name": "{vmName}",
     "virtualNetworkName": "{virtualNetworkName}",
-    "username":"{username}",
-    "password":"{password}",
+    "username": "{username}",
+    "password": "{password}",
     "labVirtualMachine": {
       "properties": {
         "size": "Standard_A2_v2",
