@@ -11,6 +11,11 @@
   },
   "responses": {
     "200": {},
-    "202": {}
+    "202": {
+      "headers": {
+        "Location": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.DevTestLab/locations/{locations}/operations/20230314-97daf4c5-2bec-425f-88a8-782e0fdd21ab?api-version=2021-09-01",
+        "Azure-AsyncOperation": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.DevTestLab/locations/{locations}/operations/20230314-97daf4c5-2bec-425f-88a8-782e0fdd21ab?api-version=2021-09-01"
+      }
+    }
   }
 }
