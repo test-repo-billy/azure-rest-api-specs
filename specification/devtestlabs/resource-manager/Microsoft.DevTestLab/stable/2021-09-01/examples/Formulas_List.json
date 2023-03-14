@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}"
+    "labName": "myLabName"
   },
   "responses": {
     "200": {
@@ -21,8 +21,8 @@
                   "size": "Standard_B1ms",
                   "userName": "user",
                   "isAuthenticationWithSshKey": false,
-                  "labSubnetName": "Dtl{labName}Subnet",
-                  "labVirtualNetworkId": "/virtualnetworks/dtl{labName}",
+                  "labSubnetName": "DtlmyLabNameSubnet",
+                  "labVirtualNetworkId": "/virtualnetworks/dtlmyLabName",
                   "disallowPublicIpAddress": true,
                   "galleryImageReference": {
                     "offer": "0001-com-ubuntu-server-groovy",
@@ -33,7 +33,7 @@
                   },
                   "artifacts": [
                     {
-                      "artifactId": "/artifactsources/{artifactSourceName}/artifacts/linux-install-nodejs",
+                      "artifactId": "/artifactsources/myArtifactSource/artifacts/linux-install-nodejs",
                       "parameters": []
                     }
                   ],
@@ -55,7 +55,7 @@
               "provisioningState": "Succeeded",
               "uniqueIdentifier": "7a7d20ab-8a50-46fb-8dc6-7c6c1443a01b"
             },
-            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/formulas/{formulaName}",
+            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/formulas/{formulaName}",
             "name": "{formulaName}",
             "type": "Microsoft.DevTestLab/labs/formulas",
             "location": "{location}",

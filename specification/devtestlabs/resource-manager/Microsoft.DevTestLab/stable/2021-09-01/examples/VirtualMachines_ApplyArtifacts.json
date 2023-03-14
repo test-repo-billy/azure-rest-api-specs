@@ -3,12 +3,12 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{vmName}",
     "applyArtifactsRequest": {
       "artifacts": [
         {
-          "artifactId": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/artifactSources/public repo/artifacts/windows-restart"
+          "artifactId": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/artifactSources/public repo/artifacts/windows-restart"
         }
       ]
     }

@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}"
+    "labName": "myLabName"
   },
   "responses": {
     "200": {
@@ -11,7 +11,7 @@
         "value": [
           {
             "properties": {},
-            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/policysets/default",
+            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/policysets/default",
             "name": "default",
             "type": "Microsoft.DevTestLab/labs/policySets"
           }

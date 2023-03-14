@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{notificationChannelName}",
     "notificationChannel": {
       "properties": {
@@ -37,7 +37,7 @@
           "provisioningState": "Succeeded",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/notificationChannels/{notificationChannelName}",
+        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/notificationChannels/{notificationChannelName}",
         "name": "{notificationChannelName}",
         "type": "Microsoft.DevTestLab/labs/notificationChannels",
         "location": "{location}",
@@ -66,7 +66,7 @@
           "provisioningState": "Creating",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/notificationChannels/{notificationChannelName}",
+        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/notificationChannels/{notificationChannelName}",
         "name": "{notificationChannelName}",
         "type": "Microsoft.DevTestLab/labs/notificationChannels",
         "location": "{location}",

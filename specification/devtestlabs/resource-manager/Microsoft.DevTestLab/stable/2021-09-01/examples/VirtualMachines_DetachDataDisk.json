@@ -3,10 +3,10 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{virtualMachineName}",
     "detachDataDiskProperties": {
-      "existingLabDiskId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualmachines/{virtualMachineName}"
+      "existingLabDiskId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualmachines/{virtualMachineName}"
     }
   },
   "responses": {

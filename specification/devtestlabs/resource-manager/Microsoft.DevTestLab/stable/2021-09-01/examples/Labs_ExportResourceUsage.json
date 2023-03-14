@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "name": "{labName}",
+    "name": "myLabName",
     "exportResourceUsageParameters": {
       "blobStorageAbsoluteSasUri": "https://invalid.blob.core.windows.net/export.blob?sv=2015-07-08&sig={sas}&sp=rcw",
       "usageStartDate": "2020-12-01T00:00:00Z"

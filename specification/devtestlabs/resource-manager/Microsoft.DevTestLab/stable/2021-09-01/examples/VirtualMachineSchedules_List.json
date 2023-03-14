@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "virtualMachineName": "{vmName}"
   },
   "responses": {
@@ -41,7 +41,7 @@
               "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/labName}/virtualMachines/{vmName}"
             },
             "location": "{location}",
-            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualMachines/{vmName}/schedules/mySchedule",
+            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualMachines/{vmName}/schedules/mySchedule",
             "type": "Microsoft.DevTestLab/labs/virtualMachines/schedules",
             "name": "LabVmsShutdown",
             "tags": {

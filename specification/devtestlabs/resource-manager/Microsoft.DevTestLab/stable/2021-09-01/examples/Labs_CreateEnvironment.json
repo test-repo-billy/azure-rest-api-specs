@@ -3,14 +3,14 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "name": "{labName}",
+    "name": "myLabName",
     "labVirtualMachineCreationParameter": {
       "properties": {
         "size": "Standard_A2_v2",
         "userName": "{userName}",
         "password": "{userPassword}",
         "labSubnetName": "{virtualnetwork-subnet-name}",
-        "labVirtualNetworkId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
+        "labVirtualNetworkId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualnetworks/{virtualNetworkName}",
         "disallowPublicIpAddress": true,
         "galleryImageReference": {
           "offer": "UbuntuServer",

@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{formulaName}",
     "formula": {
       "tags": {
@@ -14,7 +14,7 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/formulas/{formulaName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/formulas/{formulaName}",
         "name": "{formulaName}",
         "type": "Microsoft.DevTestLab/labs/formulas",
         "location": "{location}",
@@ -28,12 +28,12 @@
               "size": "Standard_B1ms",
               "userName": "user",
               "isAuthenticationWithSshKey": false,
-              "labSubnetName": "Dtl{labName}Subnet",
-              "labVirtualNetworkId": "/virtualnetworks/dtl{labName}",
+              "labSubnetName": "DtlmyLabNameSubnet",
+              "labVirtualNetworkId": "/virtualnetworks/dtlmyLabName",
               "disallowPublicIpAddress": true,
               "artifacts": [
                 {
-                  "artifactId": "/artifactsources/{artifactSourceName}/artifacts/linux-install-nodejs",
+                  "artifactId": "/artifactsources/myArtifactSource/artifacts/linux-install-nodejs",
                   "parameters": []
                 }
               ],

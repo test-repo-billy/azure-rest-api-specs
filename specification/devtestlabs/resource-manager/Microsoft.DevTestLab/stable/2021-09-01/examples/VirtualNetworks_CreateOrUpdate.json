@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{virtualNetworkName}",
     "virtualNetwork": {
       "properties": {}
@@ -17,7 +17,7 @@
           "provisioningState": "Creating",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualnetworks/{virtualNetworkName}",
         "name": "{virtualNetworkName}",
         "type": "Microsoft.DevTestLab/labs/virtualNetworks"
       }
@@ -33,7 +33,7 @@
           "provisioningState": "Creating",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualnetworks/{virtualNetworkName}",
         "name": "{virtualNetworkName}",
         "type": "Microsoft.DevTestLab/labs/virtualNetworks"
       }

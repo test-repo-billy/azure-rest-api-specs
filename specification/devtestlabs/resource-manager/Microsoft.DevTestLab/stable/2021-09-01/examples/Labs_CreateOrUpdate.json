@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "{resourceGroupName}",
-    "name": "{labName}",
+    "name": "myLabName",
     "lab": {
       "properties": {
         "labStorageType": "Premium"
@@ -37,8 +37,8 @@
           "provisioningState": "Creating",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.devtestlab/labs/{labName}",
-        "name": "{labName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.devtestlab/labs/myLabName",
+        "name": "myLabName",
         "type": "Microsoft.DevTestLab/labs",
         "location": "{location}",
         "tags": {
@@ -72,8 +72,8 @@
           "provisioningState": "Creating",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
-        "name": "{labName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName",
+        "name": "myLabName",
         "type": "Microsoft.DevTestLab/labs",
         "location": "{location}",
         "tags": {

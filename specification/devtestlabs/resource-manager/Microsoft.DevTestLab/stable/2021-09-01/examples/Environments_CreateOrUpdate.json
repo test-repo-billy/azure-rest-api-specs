@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "userName": "@me",
     "name": "{environmentName}",
     "dtlEnvironment": {
@@ -11,7 +11,7 @@
       "properties": {
         "deploymentProperties": {
           "parameters": [],
-          "armTemplateId": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/artifactSources/{artifactSourceName}/armTemplates/{armTemplateName}"
+          "armTemplateId": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/artifactSources/myArtifactSource/armTemplates/{armTemplateName}"
         }
       }
     }
@@ -19,13 +19,13 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/users/{uniqueIdentifier}/environments/{environmentName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/users/{uniqueIdentifier}/environments/{environmentName}",
         "name": "{environmentName}",
         "type": "Microsoft.DevTestLab/labs/users/environments",
         "location": "southeastasia",
         "properties": {
           "deploymentProperties": {
-            "armTemplateId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/artifactSources/{artifactSourceName}/armTemplates/{armTemplateName}"
+            "armTemplateId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/artifactSources/myArtifactSource/armTemplates/{armTemplateName}"
           },
           "createdByUser": "user@contoso.com",
           "provisioningState": "Succeeded",
@@ -42,13 +42,13 @@
         "Azure-AsyncOperation": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.DevTestLab/locations/{locations}/operations/20230314-97daf4c5-2bec-425f-88a8-782e0fdd21ab?api-version=2021-09-01"
       },
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/users/{uniqueIdentifier}/environments/{environmentName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/users/{uniqueIdentifier}/environments/{environmentName}",
         "name": "{environmentName}",
         "type": "Microsoft.DevTestLab/labs/users/environments",
         "location": "southeastasia",
         "properties": {
           "deploymentProperties": {
-            "armTemplateId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/artifactSources/{artifactSourceName}/armTemplates/{armTemplateName}"
+            "armTemplateId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/artifactSources/myArtifactSource/armTemplates/{armTemplateName}"
           },
           "createdByUser": "user@contoso.com",
           "provisioningState": "Creating",

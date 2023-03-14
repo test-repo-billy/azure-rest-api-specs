@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{formulaName}",
     "formula": {
       "location": "{location}",
@@ -15,8 +15,8 @@
             "size": "Standard_B1ms",
             "userName": "user",
             "isAuthenticationWithSshKey": false,
-            "labSubnetName": "Dtl{labName}Subnet",
-            "labVirtualNetworkId": "/virtualnetworks/dtl{labName}",
+            "labSubnetName": "DtlmyLabNameSubnet",
+            "labVirtualNetworkId": "/virtualnetworks/dtlmyLabName",
             "disallowPublicIpAddress": true,
             "galleryImageReference": {
               "offer": "0001-com-ubuntu-server-groovy",
@@ -27,7 +27,7 @@
             },
             "artifacts": [
               {
-                "artifactId": "/artifactsources/{artifactSourceName}/artifacts/linux-install-nodejs",
+                "artifactId": "/artifactsources/myArtifactSource/artifacts/linux-install-nodejs",
                 "parameters": []
               }
             ],
@@ -62,12 +62,12 @@
               "size": "Standard_B1ms",
               "userName": "user",
               "isAuthenticationWithSshKey": false,
-              "labSubnetName": "Dtl{labName}Subnet",
-              "labVirtualNetworkId": "/virtualnetworks/dtl{labName}",
+              "labSubnetName": "DtlmyLabNameSubnet",
+              "labVirtualNetworkId": "/virtualnetworks/dtlmyLabName",
               "disallowPublicIpAddress": true,
               "artifacts": [
                 {
-                  "artifactId": "/artifactsources/{artifactSourceName}/artifacts/linux-install-nodejs",
+                  "artifactId": "/artifactsources/myArtifactSource/artifacts/linux-install-nodejs",
                   "parameters": []
                 }
               ],
@@ -96,7 +96,7 @@
           "provisioningState": "Succeeded",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/formulas/{formulaName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/formulas/{formulaName}",
         "name": "{formulaName}",
         "type": "Microsoft.DevTestLab/labs/formulas",
         "location": "{location}",
@@ -121,12 +121,12 @@
               "size": "Standard_B1ms",
               "userName": "user",
               "isAuthenticationWithSshKey": false,
-              "labSubnetName": "Dtl{labName}Subnet",
-              "labVirtualNetworkId": "/virtualnetworks/dtl{labName}",
+              "labSubnetName": "DtlmyLabNameSubnet",
+              "labVirtualNetworkId": "/virtualnetworks/dtlmyLabName",
               "disallowPublicIpAddress": true,
               "artifacts": [
                 {
-                  "artifactId": "/artifactsources/{artifactSourceName}/artifacts/linux-install-nodejs",
+                  "artifactId": "/artifactsources/myArtifactSource/artifacts/linux-install-nodejs",
                   "parameters": []
                 }
               ],
@@ -155,7 +155,7 @@
           "provisioningState": "Creating",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/formulas/{formulaName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/formulas/{formulaName}",
         "name": "{formulaName}",
         "type": "Microsoft.DevTestLab/labs/formulas",
         "location": "{location}",

@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "policySetName": "{policySetName}",
     "name": "{policyName}",
     "policy": {
@@ -24,8 +24,8 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/policysets/{policySetName}/policies/{policyName}",
-        "name": "{labName}",
+        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/policysets/{policySetName}/policies/{policyName}",
+        "name": "myLabName",
         "type": "Microsoft.DevTestLab/labs/policies",
         "location": "{location}",
         "properties": {
@@ -50,8 +50,8 @@
         "Azure-AsyncOperation": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.DevTestLab/locations/{locations}/operations/20230314-97daf4c5-2bec-425f-88a8-782e0fdd21ab?api-version=2021-09-01"
       },
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/policysets/{policySetName}/policies/{policyName}",
-        "name": "{labName}",
+        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/policysets/{policySetName}/policies/{policyName}",
+        "name": "myLabName",
         "type": "Microsoft.DevTestLab/labs/policySets/policies",
         "location": "{location}",
         "properties": {

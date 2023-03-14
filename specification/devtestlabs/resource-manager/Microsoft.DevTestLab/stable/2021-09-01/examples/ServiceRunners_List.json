@@ -19,7 +19,7 @@
             "properties": {
               "identityUsageType": "environment"
             },
-            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/servicerunners/{serviceRunnerName}",
+            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/servicerunners/{serviceRunnerName}",
             "name": "{serviceRunnerName}",
             "type": "Microsoft.DevTestLab/labs/serviceRunners",
             "location": "{location}",

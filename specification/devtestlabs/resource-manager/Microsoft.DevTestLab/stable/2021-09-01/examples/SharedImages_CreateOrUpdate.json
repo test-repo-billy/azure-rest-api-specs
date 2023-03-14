@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "sharedGalleryName": "{sharedGalleryName}",
     "name": "{name}",
     "sharedImage": {
@@ -23,7 +23,7 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/sharedgalleries/{sharedGalleryName}/sharedimages/{name}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/sharedgalleries/{sharedGalleryName}/sharedimages/{name}",
         "name": "{name}",
         "type": "Microsoft.DevTestLab/labs/sharedGalleries/sharedImages",
         "properties": {
@@ -44,7 +44,7 @@
         "Azure-AsyncOperation": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.DevTestLab/locations/{locations}/operations/20230314-97daf4c5-2bec-425f-88a8-782e0fdd21ab?api-version=2021-09-01"
       },
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/sharedgalleries/{sharedGalleryName}/sharedimages/{name}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/sharedgalleries/{sharedGalleryName}/sharedimages/{name}",
         "name": "{name}",
         "type": "Microsoft.DevTestLab/labs/sharedGalleries/sharedImages",
         "properties": {

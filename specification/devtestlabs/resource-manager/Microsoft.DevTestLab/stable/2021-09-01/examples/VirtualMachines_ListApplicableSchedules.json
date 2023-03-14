@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{vmName}"
   },
   "responses": {
@@ -37,11 +37,11 @@
                 "notificationLocale": "EN"
               },
               "createdDate": "2020-12-29T21:48:14.1369355+00:00",
-              "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/virtualmachines/{vmName}",
+              "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/virtualmachines/{vmName}",
               "provisioningState": "Succeeded",
               "uniqueIdentifier": "4acf0408-1c10-49cb-96b7-28ce655c8320"
             },
-            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/schedules/myAutoShutdownSchedule",
+            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/schedules/myAutoShutdownSchedule",
             "name": "LabVmsShutdown",
             "type": "Microsoft.DevTestLab/labs/virtualMachines/schedules",
             "location": "{location}"
@@ -73,10 +73,10 @@
                 "notificationLocale": "EN"
               },
               "createdDate": "2020-12-29T21:46:37.0473976+00:00",
-              "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/virtualmachines/{vmName}",
+              "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/virtualmachines/{vmName}",
               "provisioningState": "Succeeded"
             },
-            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/schedules/myAutoStartSchedule",
+            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/schedules/myAutoStartSchedule",
             "name": "LabVmAutoStart",
             "type": "Microsoft.DevTestLab/labs/virtualMachines/schedules",
             "location": "{location}"

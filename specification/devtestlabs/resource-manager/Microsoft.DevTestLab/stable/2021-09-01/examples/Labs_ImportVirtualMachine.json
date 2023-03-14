@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "name": "{labName}",
+    "name": "myLabName",
     "importLabVirtualMachineRequest": {
       "sourceVirtualMachineResourceId": "/subscriptions/{subscriptionId}/resourceGroups/{otherResourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}",
       "destinationVirtualMachineName": "{vmName}"

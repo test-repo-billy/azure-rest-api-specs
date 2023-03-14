@@ -3,8 +3,8 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
-    "artifactSourceName": "{artifactSourceName}",
+    "labName": "myLabName",
+    "artifactSourceName": "myArtifactSource",
     "name": "{artifactName}"
   },
   "responses": {
@@ -25,7 +25,7 @@
             }
           }
         },
-        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/artifactSources/{artifactSourceName}/artifacts/{artifactName}",
+        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/artifactSources/myArtifactSource/artifacts/{artifactName}",
         "name": "{artifactName}",
         "type": "Microsoft.DevTestLab/labs/artifactSources/artifacts"
       }

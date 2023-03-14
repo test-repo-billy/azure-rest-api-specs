@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "userName": "@me",
     "name": "{environmentName}",
     "dtlEnvironment": {
@@ -15,13 +15,13 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/users/{uniqueIdentifier}/environments/{environmentName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/users/{uniqueIdentifier}/environments/{environmentName}",
         "name": "{environmentName}",
         "type": "Microsoft.DevTestLab/labs/users/environments",
         "location": "{location}",
         "properties": {
           "deploymentProperties": {
-            "armTemplateId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/artifactSources/{artifactSourceName}/armTemplates/{armTemplateName}"
+            "armTemplateId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/artifactSources/myArtifactSource/armTemplates/{armTemplateName}"
           },
           "createdByUser": "user@contoso.com",
           "provisioningState": "Succeeded",

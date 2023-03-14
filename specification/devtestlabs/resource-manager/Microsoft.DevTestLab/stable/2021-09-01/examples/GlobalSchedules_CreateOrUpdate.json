@@ -49,7 +49,7 @@
           "provisioningState": "Succeeded",
           "uniqueIdentifier": "{id}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/labvmautostart",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/schedules/labvmautostart",
         "name": "LabVmAutoStart",
         "type": "microsoft.devtestlab/labs/schedules",
         "location": "southeastasia",
@@ -86,7 +86,7 @@
           "provisioningState": "Succeeded",
           "uniqueIdentifier": "{id}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/labvmautostart",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/schedules/labvmautostart",
         "name": "LabVmAutoStart",
         "type": "microsoft.devtestlab/labs/schedules",
         "location": "southeastasia",

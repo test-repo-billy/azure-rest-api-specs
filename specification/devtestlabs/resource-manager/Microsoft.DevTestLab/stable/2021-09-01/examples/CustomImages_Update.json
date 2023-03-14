@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{customImageName}",
     "customImage": {
       "tags": {
@@ -14,7 +14,7 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/customimages/{customImageName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/customimages/{customImageName}",
         "name": "{customImageName}",
         "type": "Microsoft.DevTestLab/labs/customImages",
         "location": "{location}",
@@ -23,7 +23,7 @@
             "linuxOsInfo": {
               "linuxOsState": "NonDeprovisioned"
             },
-            "sourceVmId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualmachines/{vmName}"
+            "sourceVmId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualmachines/{vmName}"
           },
           "description": "My Custom Image",
           "author": "{authorName}",

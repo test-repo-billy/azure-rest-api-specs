@@ -3,8 +3,8 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
-    "artifactSourceName": "{artifactSourceName}"
+    "labName": "myLabName",
+    "artifactSourceName": "myArtifactSource"
   },
   "responses": {
     "200": {
@@ -28,7 +28,7 @@
               "parametersValueFilesInfo": [],
               "enabled": true
             },
-            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/artifactSources/{artifactSourceName}/armTemplates/{armTemplateName}",
+            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/artifactSources/myArtifactSource/armTemplates/{armTemplateName}",
             "name": "Template1",
             "type": "Microsoft.DevTestLab/labs/artifactSources/armTemplates"
           }

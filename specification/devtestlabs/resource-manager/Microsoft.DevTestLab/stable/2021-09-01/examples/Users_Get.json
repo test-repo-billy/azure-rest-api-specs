@@ -25,7 +25,7 @@
           "provisioningState": "Succeeded",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/users/{userName}",
+        "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/users/{userName}",
         "name": "{userName}",
         "type": "Microsoft.DevTestLab/labs/users"
       }

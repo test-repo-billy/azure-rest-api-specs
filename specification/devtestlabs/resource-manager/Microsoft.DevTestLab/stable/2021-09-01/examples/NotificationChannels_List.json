@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}"
+    "labName": "myLabName"
   },
   "responses": {
     "200": {
@@ -24,7 +24,7 @@
               "provisioningState": "Succeeded",
               "uniqueIdentifier": "{uniqueIdentifier}"
             },
-            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/notificationChannels/{notificationChannelName}",
+            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/notificationChannels/{notificationChannelName}",
             "name": "autoshutdown",
             "type": "Microsoft.DevTestLab/labs/notificationChannels",
             "location": "{location}",
@@ -46,7 +46,7 @@
               "provisioningState": "Succeeded",
               "uniqueIdentifier": "{uniqueIdentifier}"
             },
-            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/notificationChannels/{notificationChannelName}",
+            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/notificationChannels/{notificationChannelName}",
             "name": "costThreshold",
             "type": "Microsoft.DevTestLab/labs/notificationChannels",
             "location": "{location}",

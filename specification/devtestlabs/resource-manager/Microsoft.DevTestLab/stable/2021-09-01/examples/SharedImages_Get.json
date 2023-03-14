@@ -3,14 +3,14 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "sharedGalleryName": "{sharedGalleryName}",
     "name": "{name}"
   },
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/sharedgalleries/{sharedGalleryName}/sharedimages/{name}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/sharedgalleries/{sharedGalleryName}/sharedimages/{name}",
         "name": "{name}",
         "type": "Microsoft.DevTestLab/labs/sharedGalleries/sharedImages",
         "properties": {

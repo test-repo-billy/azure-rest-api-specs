@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "userName": "{userName}",
     "name": "{serviceFabricName}",
     "serviceFabric": {
@@ -20,13 +20,13 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/users/{userName}/servicefabrics/{serviceFabricName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/users/{userName}/servicefabrics/{serviceFabricName}",
         "name": "{serviceFabricName}",
         "type": "Microsoft.DevTestLab/labs/users/serviceFabrics",
         "location": "{location}",
         "properties": {
           "applicableSchedule": {
-            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/schedules/{scheduleName}",
+            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/schedules/{scheduleName}",
             "name": "{scheduleName}",
             "properties": {
               "labVmsShutdown": {
@@ -56,11 +56,11 @@
                     "notificationLocale": "EN"
                   },
                   "createdDate": "2018-10-01T18:40:48.1739018-07:00",
-                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
+                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName",
                   "provisioningState": "Creating",
                   "uniqueIdentifier": "{uniqueIdentifier}"
                 },
-                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/{scheduleName}",
+                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/schedules/{scheduleName}",
                 "name": "{scheduleName}",
                 "type": "Microsoft.DevTestLab/labs/schedules",
                 "location": "{location}"
@@ -92,11 +92,11 @@
                     "notificationLocale": "EN"
                   },
                   "createdDate": "2018-10-01T18:40:48.1739018-07:00",
-                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
+                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName",
                   "provisioningState": "Creating",
                   "uniqueIdentifier": "{uniqueIdentifier}"
                 },
-                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/{scheduleName}",
+                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/schedules/{scheduleName}",
                 "name": "{scheduleName}",
                 "type": "Microsoft.DevTestLab/labs/schedules",
                 "location": "{location}"
@@ -120,13 +120,13 @@
         "Azure-AsyncOperation": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.DevTestLab/locations/{locations}/operations/20230314-97daf4c5-2bec-425f-88a8-782e0fdd21ab?api-version=2021-09-01"
       },
       "body": {
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/users/{userName}/servicefabrics/{serviceFabricName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/users/{userName}/servicefabrics/{serviceFabricName}",
         "name": "{serviceFabricName}",
         "type": "Microsoft.DevTestLab/labs/users/serviceFabrics",
         "location": "{location}",
         "properties": {
           "applicableSchedule": {
-            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/{labName}/schedules/{scheduleName}",
+            "id": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.DevTestLab/labs/myLabName/schedules/{scheduleName}",
             "name": "{scheduleName}",
             "properties": {
               "labVmsShutdown": {
@@ -156,11 +156,11 @@
                     "notificationLocale": "EN"
                   },
                   "createdDate": "2018-10-01T18:40:48.1739018-07:00",
-                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
+                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName",
                   "provisioningState": "Creating",
                   "uniqueIdentifier": "{uniqueIdentifier}"
                 },
-                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/{scheduleName}",
+                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/schedules/{scheduleName}",
                 "name": "{scheduleName}",
                 "location": "{location}",
                 "type": "Microsoft.DevTestLab/labs/schedules"
@@ -192,11 +192,11 @@
                     "notificationLocale": "EN"
                   },
                   "createdDate": "2018-10-01T18:40:48.1739018-07:00",
-                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
+                  "targetResourceId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName",
                   "provisioningState": "Creating",
                   "uniqueIdentifier": "{uniqueIdentifier}"
                 },
-                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/schedules/{scheduleName}",
+                "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/schedules/{scheduleName}",
                 "name": "{scheduleName}",
                 "location": "{location}",
                 "type": "Microsoft.DevTestLab/labs/schedules"

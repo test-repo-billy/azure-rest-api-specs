@@ -30,8 +30,8 @@
               "provisioningState": "Succeeded",
               "uniqueIdentifier": "{uniqueIdentifier}"
             },
-            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}",
-            "name": "{labName}",
+            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName",
+            "name": "myLabName",
             "type": "Microsoft.DevTestLab/labs",
             "location": "{location}",
             "tags": {

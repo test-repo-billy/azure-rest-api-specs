@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "virtualNetworkName": "{virtualNetworkName}"
   },
   "responses": {
@@ -15,7 +15,7 @@
               "ipAddressId": "/subscriptions/{subscriptionId}/resourceGroups/resourceGroupName/providers/Microsoft.Network/publicIpAddresses/{ipName}",
               "provisioningState": "Succeeded"
             },
-            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}/bastionhosts/{bastionHostName}",
+            "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualnetworks/{virtualNetworkName}/bastionhosts/{bastionHostName}",
             "name": "{bastionHostName}",
             "type": "Microsoft.DevTestLab/labs/virtualNetworks/bastionHosts",
             "location": "{location}",

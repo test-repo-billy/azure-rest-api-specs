@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "labName": "{labName}",
+    "labName": "myLabName",
     "name": "{vmName}"
   },
   "responses": {
@@ -15,12 +15,12 @@
           "createdByUserId": "",
           "createdByUser": "",
           "createdDate": "2018-10-01T16:53:02.4830866-07:00",
-          "computeId": "/subscriptions/{subscriptionId}/resourceGroups/{labName}-{vmName}-{randomSuffix}/providers/Microsoft.Compute/virtualMachines/{vmName}",
+          "computeId": "/subscriptions/{subscriptionId}/resourceGroups/myLabName-{vmName}-{randomSuffix}/providers/Microsoft.Compute/virtualMachines/{vmName}",
           "osType": "Linux",
           "size": "Standard_A2_v2",
           "userName": "{userName}",
           "labSubnetName": "{virtualNetworkName}Subnet",
-          "labVirtualNetworkId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualnetworks/{virtualNetworkName}",
+          "labVirtualNetworkId": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualnetworks/{virtualNetworkName}",
           "disallowPublicIpAddress": true,
           "artifactDeploymentStatus": {
             "artifactsApplied": 0,
@@ -41,7 +41,7 @@
           "provisioningState": "Succeeded",
           "uniqueIdentifier": "{uniqueIdentifier}"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/{labName}/virtualmachines/{vmName}",
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualmachines/{vmName}",
         "name": "{vmName}",
         "type": "Microsoft.DevTestLab/labs/virtualMachines",
         "location": "{location}",
