@@ -1952,6 +1952,7 @@ shapefiles
 sharded
 sharedgalleries
 sharedkey
+sharedimages
 Sharepoint
 sharesnapshot
 Shoebox
