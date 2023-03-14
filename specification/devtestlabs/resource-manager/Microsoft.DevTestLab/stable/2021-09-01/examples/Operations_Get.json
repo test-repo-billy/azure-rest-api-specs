@@ -3,7 +3,7 @@
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
-    "locationName": "{locationName}",
+    "locationName": "locationName",
     "name": "{operationName}"
   },
   "responses": {

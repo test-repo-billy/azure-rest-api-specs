@@ -44,7 +44,7 @@
               "uniqueIdentifier": "{uniqueIdentifier}"
             },
             "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName/virtualnetworks/{virtualNetworkName}",
-            "name": "{virtualNetworkName}",
+            "name": "labVirtualNetwork",
             "type": "Microsoft.DevTestLab/labs/virtualNetworks"
           }
         ]

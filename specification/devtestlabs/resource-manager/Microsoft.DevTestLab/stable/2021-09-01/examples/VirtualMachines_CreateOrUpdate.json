@@ -5,7 +5,7 @@
     "resourceGroupName": "resourceGroupName",
     "labName": "myLabName",
     "name": "{vmName}",
-    "virtualNetworkName": "{virtualNetworkName}",
+    "virtualNetworkName": "labVirtualNetwork",
     "username": "{username}",
     "password": "{password}",
     "labVirtualMachine": {

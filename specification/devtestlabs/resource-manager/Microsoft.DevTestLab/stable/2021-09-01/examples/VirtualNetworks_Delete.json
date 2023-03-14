@@ -4,7 +4,7 @@
     "subscriptionId": "{subscriptionId}",
     "resourceGroupName": "resourceGroupName",
     "labName": "myLabName",
-    "name": "{virtualNetworkName}"
+    "name": "labVirtualNetwork"
   },
   "responses": {
     "200": {},
