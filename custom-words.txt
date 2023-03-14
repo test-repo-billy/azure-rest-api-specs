@@ -255,6 +255,8 @@ Baidu
 bangla
 baremetal
 baremetalinfrastructure
+bastionhost
+bastionhosts
 batchmanaged
 batchresponse
 BAYESIANOPTIMIZATION
@@ -1948,6 +1950,7 @@ sfpkg
 shapefile
 shapefiles
 sharded
+sharedgalleries
 sharedkey
 Sharepoint
 sharesnapshot
