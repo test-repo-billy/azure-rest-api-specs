@@ -26,38 +26,6 @@
           "type": "string",
           "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
         },
-        "systemData": {
-          "readOnly": true,
-          "type": "object",
-          "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information.",
-          "$ref": "#/definitions/systemData"
-        }
-      },
-      "x-ms-azure-resource": true
-    },
-    "AzureEntityResource": {
-      "x-ms-client-name": "AzureEntityResource",
-      "title": "Entity Resource",
-      "description": "The resource model definition for an Azure Resource Manager resource with an etag.",
-      "type": "object",
-      "properties": {
-        "etag": {
-          "type": "string",
-          "readOnly": true,
-          "description": "Resource Etag."
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ]
-    },
-    "TrackedResource": {
-      "title": "Tracked Resource",
-      "description": "The resource model definition for an Azure Resource Manager tracked top level resource which has 'tags' and a 'location'",
-      "type": "object",
-      "properties": {
         "tags": {
           "type": "object",
           "additionalProperties": {
@@ -77,11 +45,31 @@
             "create"
           ],
           "description": "The geo-location where the resource lives"
+        },
+        "systemData": {
+          "readOnly": true,
+          "type": "object",
+          "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information.",
+          "$ref": "#/definitions/systemData"
         }
       },
       "required": [
         "location"
       ],
+      "x-ms-azure-resource": true
+    },
+    "AzureEntityResource": {
+      "x-ms-client-name": "AzureEntityResource",
+      "title": "Entity Resource",
+      "description": "The resource model definition for an Azure Resource Manager resource with an etag.",
+      "type": "object",
+      "properties": {
+        "etag": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Resource Etag."
+        }
+      },
       "allOf": [
         {
           "$ref": "#/definitions/Resource"
@@ -149,7 +137,7 @@
       },
       "allOf": [
         {
-          "$ref": "#/definitions/TrackedResource"
+          "$ref": "#/definitions/Resource"
         }
       ],
       "x-ms-azure-resource": true
