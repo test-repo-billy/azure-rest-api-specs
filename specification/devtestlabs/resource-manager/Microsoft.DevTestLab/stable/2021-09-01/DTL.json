@@ -8859,15 +8859,6 @@
             }
           },
           {
-            "name": "identity",
-            "in": "body",
-            "description": "Allows modifying the identity.",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/IdentityProperties"
-            }
-          },
-          {
             "$ref": "#/parameters/api-version"
           }
         ],
@@ -11747,7 +11738,15 @@
           "$ref": "#/definitions/UpdateResource"
         }
       ],
-      "properties": {}
+      "properties": {
+        "identity": {
+          "description": "Allows modifying the identity.",
+          "schema": {
+            "$ref": "#/definitions/IdentityProperties"
+          },
+          "required": false
+        }
+      }
     },
     "LabList": {
       "description": "Contains a list of labs and their properties",
