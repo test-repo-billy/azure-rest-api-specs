@@ -300,8 +300,5 @@ directive:
     reason: This is a copy of the common types from ARM.
   - suppress: ResourceNameRestriction
     from: DTL.json
-    where:
-      - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/sharedgalleries/{sharedGalleryName}/sharedimages/{name}"].get.name
-      - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/sharedgalleries/{sharedGalleryName}/sharedimages/{name}"].put.name
     reason: Maintain backwards compatability. Historically, the service hasn't been enforcing naming rules for most resources.
 ```

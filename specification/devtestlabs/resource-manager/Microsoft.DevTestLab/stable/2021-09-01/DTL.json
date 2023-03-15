@@ -14151,7 +14151,10 @@
       "description": "The name of the virtual machine.",
       "type": "string",
       "x-ms-parameter-location": "method",
-      "required": true
+      "required": true,
+      "pattern": "^[a-zA-Z0-9\\-]+$",
+      "minLength": 1,
+      "maxLength": 62
     },
     "virtualNetworkName": {
       "name": "virtualNetworkName",
