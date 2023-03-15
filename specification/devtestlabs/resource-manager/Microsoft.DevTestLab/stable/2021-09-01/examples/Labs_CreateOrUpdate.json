@@ -21,29 +21,37 @@
           "labStorageType": "Standard",
           "mandatoryArtifactsResourceIdsLinux": [],
           "mandatoryArtifactsResourceIdsWindows": [],
-          "createdDate": "2018-10-01T18:40:48.1739018-07:00",
+          "createdDate": "2023-03-14T13:41:42.9751615+00:00",
           "premiumDataDisks": "Disabled",
           "environmentPermission": "Reader",
           "announcement": {
-            "title": "",
-            "markdown": "",
-            "enabled": "Disabled",
-            "expired": false
+              "title": "",
+              "markdown": "",
+              "enabled": "Disabled",
+              "expired": false
           },
           "support": {
-            "enabled": "Disabled",
-            "markdown": ""
+              "enabled": "Disabled",
+              "markdown": ""
           },
-          "provisioningState": "Creating",
-          "uniqueIdentifier": "{uniqueIdentifier}"
+          "browserConnect": "Disabled",
+          "disableAutoUpgradeCseMinorVersion": false,
+          "isolateLabResources": "Disabled",
+          "provisioningState": "Succeeded",
+          "uniqueIdentifier": "e1494eba-c23e-4eb7-b052-78a9b442bd24"
+        },
+        "identity": {
+            "type": "None",
+            "principalId": "",
+            "tenantId": ""
+        },
+        "location": "swedensouth",
+        "tags": {
+            "tagName1": "tagValue1"
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.devtestlab/labs/myLabName",
         "name": "myLabName",
-        "type": "Microsoft.DevTestLab/labs",
-        "location": "{location}",
-        "tags": {
-          "tagName1": "tagValue1"
-        }
+        "type": "Microsoft.DevTestLab/labs"
       }
     },
     "201": {
@@ -56,29 +64,37 @@
           "labStorageType": "Standard",
           "mandatoryArtifactsResourceIdsLinux": [],
           "mandatoryArtifactsResourceIdsWindows": [],
-          "createdDate": "2018-10-01T18:40:48.1739018-07:00",
+          "createdDate": "2023-03-14T13:41:42.9751615+00:00",
           "premiumDataDisks": "Disabled",
           "environmentPermission": "Reader",
           "announcement": {
-            "title": "",
-            "markdown": "",
-            "enabled": "Disabled",
-            "expired": false
+              "title": "",
+              "markdown": "",
+              "enabled": "Disabled",
+              "expired": false
           },
           "support": {
-            "enabled": "Disabled",
-            "markdown": ""
+              "enabled": "Disabled",
+              "markdown": ""
           },
+          "browserConnect": "Disabled",
+          "disableAutoUpgradeCseMinorVersion": false,
+          "isolateLabResources": "Disabled",
           "provisioningState": "Creating",
-          "uniqueIdentifier": "{uniqueIdentifier}"
+          "uniqueIdentifier": "e1494eba-c23e-4eb7-b052-78a9b442bd24"
         },
-        "id": "/subscriptions/{subscriptionId}/resourcegroups/resourceGroupName/providers/microsoft.devtestlab/labs/myLabName",
-        "name": "myLabName",
-        "type": "Microsoft.DevTestLab/labs",
-        "location": "{location}",
+        "identity": {
+            "type": "None",
+            "principalId": "",
+            "tenantId": ""
+        },
+        "location": "swedensouth",
         "tags": {
-          "tagName1": "tagValue1"
-        }
+            "tagName1": "tagValue1"
+        },
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.devtestlab/labs/myLabName",
+        "name": "myLabName",
+        "type": "Microsoft.DevTestLab/labs"
       }
     }
   }
