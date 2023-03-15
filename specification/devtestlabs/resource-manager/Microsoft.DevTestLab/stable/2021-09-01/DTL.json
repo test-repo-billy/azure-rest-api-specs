@@ -166,6 +166,14 @@
             "description": "Accepted",
             "schema": {
               "$ref": "#/definitions/OperationResult"
+            },
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
             }
           },
           "default": {
@@ -1280,7 +1288,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -2888,7 +2904,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -3164,7 +3188,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -3452,7 +3484,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -4299,7 +4339,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -4611,7 +4659,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -4737,7 +4793,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -4800,7 +4864,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -5052,7 +5124,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -5678,7 +5758,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -5848,7 +5936,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -5902,7 +5998,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -6284,7 +6388,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -6524,7 +6636,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -6644,7 +6764,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -6704,7 +6832,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -6755,7 +6891,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -6862,7 +7006,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7013,7 +7165,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7073,7 +7233,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7124,7 +7292,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7175,7 +7351,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7226,7 +7410,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7277,7 +7469,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7328,7 +7528,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7692,7 +7900,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -7932,7 +8148,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -8232,7 +8456,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -8455,7 +8687,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "204": {
             "description": "NoContent"
@@ -8560,7 +8800,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -8617,7 +8865,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -8718,7 +8974,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -8831,7 +9095,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -9209,7 +9481,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -9266,7 +9546,15 @@
             "description": "OK"
           },
           "202": {
-            "description": "Accepted"
+            "description": "OK",
+            "headers": {
+              "Location": {
+                "type": "string"
+              },
+              "Azure-AsyncOperation": {
+                "type": "string"
+              }
+            }
           },
           "default": {
             "description": "BadRequest",
@@ -12230,7 +12518,10 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DataDiskProperties"
-          }
+          },
+          "x-ms-identifiers": [
+            "existingLabDiskId"
+          ]
         },
         "scheduleParameters": {
           "description": "Virtual Machine schedules to be created",

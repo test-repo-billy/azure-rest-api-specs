@@ -290,9 +290,8 @@ directive:
         - $.definitions.ErrorDetail.properties.details
         - $.definitions.ErrorDetail.properties.additionalInfo
         - $.definitions.OperationListResult.properties.value
-        - $.definitions.ErrorDetail.properties.details
-        - $.definitions.ErrorDetail.properties.additionalInfo
-        - $.definitions.OperationListResult.properties.value
+        - $.definitions.EvaluatePoliciesResponse.properties.results
+        - $.definitions.CustomImageProperties.properties.dataDiskStorageInfo
     reason: This is a copy of the common types from ARM.
   - suppress: R2054 # SecurityDefinitionsStructure
     from: types.json
