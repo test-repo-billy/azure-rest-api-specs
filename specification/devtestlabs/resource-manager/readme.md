@@ -297,6 +297,11 @@ directive:
     from: types.json
     where: $
     reason: This is a copy of the common types from ARM.
+  - suppress: R2007 # LongRunningOperationsWithLongRunningExtension
+    from: DTL.json
+    where:
+        - $.paths["/subscriptions/{subscriptionId}/providers/Microsoft.DevTestLab/locations/{locationName}/operations/{name}"].get
+    reason: This returns the statuscode based on the current operation. Thus, it can return both 200, 202, 400 and 5xx. And will not contain a location header with the uri of itself.
   - suppress: ResourceNameRestriction
     from: DTL.json
     reason: Maintain backwards compatability. Historically, the service hasn't been enforcing naming rules for most resources.
