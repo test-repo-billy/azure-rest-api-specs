@@ -14188,11 +14188,13 @@
           "additionalProperties": {
             "type": "string"
           }
-        },
-        "identity": {
-          "$ref": "#/definitions/IdentityProperties"
         }
-      }
+      },
+      "identity": {
+        "description": "The identity of the resource.",
+        "x-ms-client-flatten": true,
+        "$ref": "#/definitions/IdentityProperties"
+      },
     },
     "User": {
       "description": "Profile of a lab user.",
