@@ -2,7 +2,7 @@
   "parameters": {
     "api-version": "2021-09-01",
     "subscriptionId": "{subscriptionId}",
-    "resourceGroupName": "{resourceGroupName}",
+    "resourceGroupName": "resourceGroupName",
     "name": "myLabName",
     "lab": {
       "properties": {
@@ -25,14 +25,14 @@
           "premiumDataDisks": "Disabled",
           "environmentPermission": "Reader",
           "announcement": {
-              "title": "",
-              "markdown": "",
-              "enabled": "Disabled",
-              "expired": false
+            "title": "",
+            "markdown": "",
+            "enabled": "Disabled",
+            "expired": false
           },
           "support": {
-              "enabled": "Disabled",
-              "markdown": ""
+            "enabled": "Disabled",
+            "markdown": ""
           },
           "browserConnect": "Disabled",
           "disableAutoUpgradeCseMinorVersion": false,
@@ -41,13 +41,13 @@
           "uniqueIdentifier": "e1494eba-c23e-4eb7-b052-78a9b442bd24"
         },
         "identity": {
-            "type": "None",
-            "principalId": "",
-            "tenantId": ""
+          "type": "None",
+          "principalId": "",
+          "tenantId": ""
         },
         "location": "swedensouth",
         "tags": {
-            "tagName1": "tagValue1"
+          "tagName1": "tagValue1"
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.devtestlab/labs/myLabName",
         "name": "myLabName",
@@ -68,14 +68,14 @@
           "premiumDataDisks": "Disabled",
           "environmentPermission": "Reader",
           "announcement": {
-              "title": "",
-              "markdown": "",
-              "enabled": "Disabled",
-              "expired": false
+            "title": "",
+            "markdown": "",
+            "enabled": "Disabled",
+            "expired": false
           },
           "support": {
-              "enabled": "Disabled",
-              "markdown": ""
+            "enabled": "Disabled",
+            "markdown": ""
           },
           "browserConnect": "Disabled",
           "disableAutoUpgradeCseMinorVersion": false,
@@ -84,13 +84,13 @@
           "uniqueIdentifier": "e1494eba-c23e-4eb7-b052-78a9b442bd24"
         },
         "identity": {
-            "type": "None",
-            "principalId": "",
-            "tenantId": ""
+          "type": "None",
+          "principalId": "",
+          "tenantId": ""
         },
         "location": "swedensouth",
         "tags": {
-            "tagName1": "tagValue1"
+          "tagName1": "tagValue1"
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.devtestlab/labs/myLabName",
         "name": "myLabName",

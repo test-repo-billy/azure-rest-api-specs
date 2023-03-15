@@ -11,6 +11,8 @@
       "body": {
         "properties": {
           "targetCost": {
+            "status": "Enabled",
+            "target": 100,
             "costThresholds": [
               {
                 "thresholdId": "00000000-0000-0000-0000-000000000001",
@@ -22,7 +24,7 @@
                 "notificationSent": "0001-01-01T00:00:00.0000000"
               },
               {
-                "thresholdId": "00000000-0000-0000-0000-000000000001",
+                "thresholdId": "00000000-0000-0000-0000-000000000002",
                 "percentageThreshold": {
                   "thresholdValue": 50.0
                 },
@@ -31,7 +33,7 @@
                 "notificationSent": "0001-01-01T00:00:00.0000000"
               },
               {
-                "thresholdId": "00000000-0000-0000-0000-000000000001",
+                "thresholdId": "00000000-0000-0000-0000-000000000003",
                 "percentageThreshold": {
                   "thresholdValue": 75.0
                 },
@@ -40,7 +42,7 @@
                 "notificationSent": "0001-01-01T00:00:00.0000000"
               },
               {
-                "thresholdId": "00000000-0000-0000-0000-000000000001",
+                "thresholdId": "00000000-0000-0000-0000-000000000004",
                 "percentageThreshold": {
                   "thresholdValue": 100.0
                 },
@@ -49,7 +51,7 @@
                 "notificationSent": "0001-01-01T00:00:00.0000000"
               },
               {
-                "thresholdId": "00000000-0000-0000-0000-000000000001",
+                "thresholdId": "00000000-0000-0000-0000-000000000005",
                 "percentageThreshold": {
                   "thresholdValue": 125.0
                 },
@@ -58,19 +60,20 @@
                 "notificationSent": "0001-01-01T00:00:00.0000000"
               }
             ],
-            "status": "Enabled",
-            "target": 100,
-            "cycleStartDateTime": "2020-12-01T00:00:00+00:00",
-            "cycleEndDateTime": "2020-12-31T23:59:59+00:00",
+            "cycleStartDateTime": "2023-03-01T00:00:00+00:00",
+            "cycleEndDateTime": "2023-03-31T23:59:59+00:00",
             "cycleType": "CalendarMonth"
           },
           "currencyCode": "USD",
-          "startDateTime": "2020-12-01T00:00:00Z",
-          "endDateTime": "2020-12-31T23:59:59Z",
-          "createdDate": "2020-12-23T22:43:54.7253204+00:00",
+          "startDateTime": "2023-03-01T00:00:00+00:00",
+          "endDateTime": "2023-03-31T23:59:59+00:00",
+          "createdDate": "2023-03-15T08:56:03.9686861+00:00",
           "provisioningState": "Succeeded",
-          "uniqueIdentifier": "{uniqueIdentifier}"
-        }
+          "uniqueIdentifier": "a3caf955-5e61-48ab-8882-64ff4ead69d5"
+        },
+        "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.devtestlab/labs/{labName}/costs/{name}",
+        "name": "targetCost",
+        "type": "Microsoft.DevTestLab/labs/costs"
       }
     }
   }
