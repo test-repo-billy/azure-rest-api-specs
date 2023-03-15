@@ -306,6 +306,7 @@ directive:
     from: DTL.json
     reason: Maintain backwards compatability. Historically, the service hasn't been enforcing naming rules for most resources.
   - suppress: OBJECT_MISSING_REQUIRED_PROPERTY
+    from: DTL.json
     where:
         - $.definitions.VirtualNetworks
         - $.definitions.ArmTemplates
@@ -315,4 +316,7 @@ directive:
         - $.definitions.PolicySets
         - $.definitions.Users
     reason: DTL has not distinguished properly between tracked and non-tracked resources. For backwards compatability we cannot remove the property, but it's not being used.
+  - suppress: GuidUsage
+    from: types.json
+    reason: This is a copy of the common types from ARM.
 ```

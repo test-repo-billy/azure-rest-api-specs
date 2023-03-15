@@ -11738,15 +11738,7 @@
           "$ref": "#/definitions/UpdateResource"
         }
       ],
-      "properties": {
-        "identity": {
-          "description": "Allows modifying the identity.",
-          "schema": {
-            "$ref": "#/definitions/IdentityProperties"
-          },
-          "required": false
-        }
-      }
+      "properties": {}
     },
     "LabList": {
       "description": "Contains a list of labs and their properties",
@@ -14196,6 +14188,9 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "identity": {
+          "$ref": "#/definitions/IdentityProperties"
         }
       }
     },
