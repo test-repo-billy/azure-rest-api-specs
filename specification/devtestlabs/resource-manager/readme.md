@@ -358,4 +358,27 @@ directive:
     where:
       - $.definition.Artifact
     reason: Artifacts are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
+  - suppress: SchemaDescriptionOrTitle
+    from: types.json
+    where:
+      - $.definition.KeyVaultProperties
+    reason: This is a copy of the common types from ARM.
+  - suppress: EnumInsteadOfBoolean
+    from: types.json
+    where:
+      - $.definition.Operation
+    reason: This is a copy of the common types from ARM.
+  - suppress: EnumInsteadOfBoolean
+    from: DTL.json
+    where:
+      - $.definition.LabProperties.properties.disableAutoUpgradeCseMinorVersion
+      - $.definition.LabVirtualMachineCreationParameterProperties.properties.canApplyArtifacts
+    reason: Would be a breaking change at this point to change.
+  - suppress: EnumInsteadOfBoolean
+    from: DTL.json
+    where:
+      - $.definition.LabSecretProperties
+    reason: These are actual boolean values.
+
+     
 ```
