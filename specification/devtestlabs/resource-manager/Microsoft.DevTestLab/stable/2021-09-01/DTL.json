@@ -3478,6 +3478,9 @@
         "description": "Delete service runner. This operation can take a while to complete.",
         "operationId": "ServiceRunners_Delete",
         "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
         "parameters": [
           {
             "$ref": "#/parameters/subscriptionId"
@@ -11087,7 +11090,10 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PolicySetResult"
-          }
+          },
+          "x-ms-identifiers": [
+            "code"
+          ]
         }
       }
     },
@@ -13768,7 +13774,6 @@
         },
         "identity": {
           "description": "The identity of the resource.",
-          "x-ms-client-flatten": true,
           "$ref": "#/definitions/IdentityProperties"
         },
         "systemData": {
@@ -14198,7 +14203,6 @@
       },
       "identity": {
         "description": "The identity of the resource.",
-        "x-ms-client-flatten": true,
         "$ref": "#/definitions/IdentityProperties"
       }
     },

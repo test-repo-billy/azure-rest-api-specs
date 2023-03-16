@@ -319,4 +319,43 @@ directive:
   - suppress: GuidUsage
     from: types.json
     reason: This is a copy of the common types from ARM.
+  - suppress: ParameterNotUsingCommonTypes
+    from: DTL.json
+    where: $
+    reason: Changing to common types is a breaking change, due to name changes.
+  - suppress: TrackedResourcesMustHavePut
+    from: DTL.json
+    where:
+      - $.definition.GalleryImage
+    reason: gallery images are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
+  - suppress: TrackedResourcePatchOperation
+    from: DTL.json
+    where:
+      - $.definition.GalleryImage
+    reason: gallery images are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
+  - suppress: AllTrackedResourcesMustHaveDelete
+    from: DTL.json
+    where:
+      - $.definition.Cost
+    reason: Cost is not actually a tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
+  - suppress: NestedResourcesMustHaveListOperation
+    from: DTL.json
+    where:
+      - $.definition.Cost
+    reason: Cost is not actually a tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
+  - suppress: TrackedResourcesMustHavePut
+    from: DTL.json
+    where:
+      - $.definition.Artifact
+    reason: Artifacts are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
+  - suppress: TrackedResourcePatchOperation
+    from: DTL.json
+    where:
+      - $.definition.Artifact
+    reason: Artifacts are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
+  - suppress: AllTrackedResourcesMustHaveDelete
+    from: DTL.json
+    where:
+      - $.definition.Artifact
+    reason: Artifacts are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
 ```
