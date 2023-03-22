@@ -139,7 +139,7 @@
       "get": {
         "operationId": "KustoPools_ListByWorkspace",
         "summary": "List Kusto pools",
-        "description": "List all Kusto pools",
+        "description": "List all Kusto pools 1",
         "tags": [
           "KustoPools"
         ],
