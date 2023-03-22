@@ -42,7 +42,7 @@ service user can provide labels for each detection result, these labels will be
 used for retuning or regenerating detection models. Inconsistency detection is
 a kind of group based detection, this detection will find inconsistency ones in
 a set of time series. By using anomaly detector service, business customers can
-discover incidents and establish a logic flow for root cause analysis.
+discover incidents and establish a logic flow for root cause analysis.Test.
 """)
 namespace AnomalyDetector;
 
