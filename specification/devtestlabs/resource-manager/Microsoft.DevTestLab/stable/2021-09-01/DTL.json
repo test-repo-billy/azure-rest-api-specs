@@ -13690,8 +13690,16 @@
       "type": "object",
       "properties": {
         "securityType": {
-          "description": "The security type of a virtual machine.",
-          "type": "string"
+          "type": "string",
+          "description": "Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings. <br><br> Default: UefiSettings will not be enabled unless this property is set.",
+          "enum": [
+            "TrustedLaunch",
+            "ConfidentialVM"
+          ],
+          "x-ms-enum": {
+            "name": "SecurityTypes",
+            "modelAsString": true
+          }
         },
         "uefiSettings": {
           "description": "Security settings like secure boot and vTPM. Structure must be null if SecurityType string is null.",
