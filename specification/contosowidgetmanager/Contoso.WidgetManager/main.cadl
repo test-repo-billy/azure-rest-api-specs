@@ -27,7 +27,7 @@ model Widget {
   @visibility("read")
   name: string;
 
-  @doc("The ID of the widget's manufacturer.")
+  @doc("The ID of the widget's manufacturer.Test")
   manufacturerId: string;
 
   @doc("The faked shared model.")

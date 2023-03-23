@@ -31,7 +31,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The request has succeeded. Test change.",
+            "description": "The request has succeeded.",
             "schema": {
               "type": "object",
               "properties": {
