@@ -14199,11 +14199,11 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "identity": {
+          "description": "The identity of the resource.",
+          "$ref": "#/definitions/IdentityProperties"
         }
-      },
-      "identity": {
-        "description": "The identity of the resource.",
-        "$ref": "#/definitions/IdentityProperties"
       }
     },
     "User": {
