@@ -10,7 +10,7 @@ variables:
 prepareSteps: 
   - step: Create_a_lab
     operationId: Labs_CreateOrUpdate
-    exampleFile: ..\examples\Labs_CreateOrUpdate.json
+    exampleFile: ../examples/Labs_CreateOrUpdate.json
     variables:
       name:
         type: string
@@ -18,7 +18,7 @@ prepareSteps:
 cleanUpSteps:
   - step: Delete_Lab
     operationId: Labs_Delete
-    exampleFile: ..\examples\Labs_Delete.json
+    exampleFile: ../examples/Labs_Delete.json
     variables:
       name:
         type: string
