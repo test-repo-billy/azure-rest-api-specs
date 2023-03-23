@@ -373,4 +373,7 @@ directive:
     where:
       - $.definition.LabSecretProperties
     reason: These are actual boolean values.
+  - suppress: GetCollectionResponseSchema
+    from: DTL.json
+    reason: DTL has not distinguished properly between tracked and non-tracked resources. For backwards compatability we cannot remove properties, while they aren't being used.
 ```
