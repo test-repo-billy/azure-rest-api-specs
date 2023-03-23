@@ -376,4 +376,13 @@ directive:
   - suppress: GetCollectionResponseSchema
     from: types.json
     reason: DTL has not distinguished properly between tracked and non-tracked resources. For backwards compatability we cannot remove properties, while they aren't being used.
+  - suppress: LroErrorContent
+    from: DTL.json
+    reason: Would be a breaking change to change the error model.
+  - suppress: ConsistentPatchProperties
+    from: DTL.json
+    reason: UpdateResource already contains identity.
+  - suppress: ProvisioningStateSpecified
+    from: DTL.json
+    reason: LabSecretProperties contains provisioningstate.
 ```

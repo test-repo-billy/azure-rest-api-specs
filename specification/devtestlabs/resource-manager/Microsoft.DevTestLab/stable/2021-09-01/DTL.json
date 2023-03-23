@@ -11091,9 +11091,7 @@
           "items": {
             "$ref": "#/definitions/PolicySetResult"
           },
-          "x-ms-identifiers": [
-            "code"
-          ]
+          "x-ms-identifiers": []
         }
       }
     },
