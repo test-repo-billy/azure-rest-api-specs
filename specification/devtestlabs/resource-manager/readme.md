@@ -320,12 +320,12 @@ directive:
   - suppress: TrackedResourcesMustHavePut
     from: DTL.json
     where:
-      - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/galleryimages/{name}"]
+      - $.definitions.GalleryImage
     reason: gallery images are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
   - suppress: TrackedResourcePatchOperation
     from: DTL.json
     where:
-      - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/galleryimages/{name}"]
+      - $.definitions.GalleryImage
     reason: gallery images are not actually tracked resources; but they have been misrepresented in previous versions of the SDK. Changing this, is a breaking change.
   - suppress: AllTrackedResourcesMustHaveDelete
     from: DTL.json
