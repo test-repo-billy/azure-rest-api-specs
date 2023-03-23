@@ -12429,6 +12429,10 @@
           "description": "The unique immutable identifier of a resource (Guid).",
           "type": "string",
           "readOnly": true
+        },
+        "securityProfile": {
+          "description": "Option to apply more security protection for VMs.",
+          "$ref": "#/definitions/SecurityProfile"
         }
       }
     },
@@ -12686,6 +12690,10 @@
           "description": "Flag to determine if apply artifacts can be triggered at the time of fetching the document.",
           "type": "boolean",
           "readOnly": true
+        },
+        "securityProfile": {
+          "description": "Option to apply more security protection for VMs.",
+          "$ref": "#/definitions/SecurityProfile"
         },
         "provisioningState": {
           "description": "The provisioning status of the resource.",
@@ -13677,6 +13685,20 @@
         }
       }
     },
+    "SecurityProfile": {
+      "description": "The security profile settings for a virtual machine.",
+      "type": "object",
+      "properties": {
+        "securityType": {
+          "description": "The security type of a virtual machine.",
+          "type": "string"
+        },
+        "uefiSettings": {
+          "description": "Security settings like secure boot and vTPM. Structure must be null if SecurityType string is null.",
+          "$ref": "#/definitions/UefiSettings"
+        }
+      }
+    },
     "ServiceFabric": {
       "description": "A Service Fabric.",
       "type": "object",
@@ -14181,6 +14203,20 @@
             "name": "ReportingCycleType",
             "modelAsString": true
           }
+        }
+      }
+    },
+    "UefiSettings": {
+      "description": "Security settings like secure boot and vTPM.",
+      "type": "object",
+      "properties": {
+        "secureBootEnabled": {
+          "description": "Flag to enable or disable secure boot.",
+          "type": "boolean"
+        },
+        "vTpmEnabled": {
+          "description": "Flag to enable or disable vTPM (virtual Trusted Platform Module).",
+          "type": "boolean"
         }
       }
     },
