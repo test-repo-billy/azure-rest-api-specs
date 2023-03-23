@@ -221,6 +221,8 @@ directive:
       - $.definitions.LabVirtualMachineProperties.properties.allowClaim
       - $.definitions.LabVirtualMachineProperties.properties.canApplyArtifacts
       - $.definitions.PolicySetResult.properties.hasError
+      - $.definitions.UefiSettings.properties.secureBootEnabled
+      - $.definitions.UefiSettings.properties.vTpmEnabled
     reason: Booleans are used to indicate binary states of the property, enum is not appropriate.
   - suppress: R3018  # EnumInsteadOfBoolean
     from: types.json
@@ -371,8 +373,4 @@ directive:
     where:
       - $.definition.LabSecretProperties
     reason: These are actual boolean values.
-  - suppress: GetCollectionResponseSchema
-    from: types.json
-    where:
-    reason: 
 ```
