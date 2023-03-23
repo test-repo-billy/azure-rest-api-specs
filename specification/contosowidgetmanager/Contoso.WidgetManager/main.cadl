@@ -49,7 +49,6 @@ interface Widgets {
   @pollingOperation(Widgets.getWidgetOperationStatus)
   deleteWidget is LongRunningResourceDelete<Widget>;
 
-  @doc("List Widget resources")
   listWidgets is ResourceList<
     Widget,
     {
