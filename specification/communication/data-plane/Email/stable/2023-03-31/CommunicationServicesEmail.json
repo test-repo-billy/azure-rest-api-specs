@@ -11,7 +11,7 @@
         "tags": [
           "EmailGetSendResult"
         ],
-        "summary": "Gets the status of the email send operation.",
+        "summary": "Gets the status of the email send operation. Test",
         "operationId": "Email_GetSendResult",
         "produces": [
           "application/json"
@@ -42,7 +42,7 @@
             }
           },
           "200": {
-            "description": "Message status was successfully retrieved.",
+            "description": "Message status was successfully retrieved. Test.",
             "headers": {
               "retry-after": {
                 "description": "This header will only be present when the status is a non-terminal status. It indicates the minimum amount of time in seconds to wait before polling for operation status again.",
