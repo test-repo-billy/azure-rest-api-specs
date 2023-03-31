@@ -33,7 +33,7 @@ model Deployment {
   @visibility("read")
   id: string;
 
-  @doc("The OpenAI model to deploy. Can be a base model or a fine tune. Test change.")
+  @doc("The OpenAI model to deploy. Can be a base model or a fine tune.")
   "model": string;
 
   @doc("""
