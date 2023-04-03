@@ -15,6 +15,7 @@ enum FillNAMethod {
   "Linear",
   "Zero",
   "Fixed",
+  "Created",
 }
 
 @fixed
