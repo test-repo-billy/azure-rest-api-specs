@@ -12,7 +12,7 @@
           "Extensions"
         ],
         "description": "Install or Update extension. AdditionalApiProperties are merged patch and if the extension is updated to a new version then the obsolete entries will be auto deleted from AdditionalApiProperties.",
-        "operationId": "Extensions_CreateOrUpdate",
+        "operationId": "Extensions_CreateOrUpdate2",
         "consumes": [
           "application/json"
         ],
