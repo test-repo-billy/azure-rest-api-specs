@@ -12,7 +12,7 @@
           "Extensions"
         ],
         "description": "Install extension.",
-        "operationId": "Extensions_CreateTest",
+        "operationId": "Extensions_CreateTest2",
         "produces": [
           "application/json"
         ],
