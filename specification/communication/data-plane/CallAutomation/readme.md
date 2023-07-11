@@ -32,7 +32,7 @@ tag: package-2023-03-06
 
 ### Tag: package-preview-2023-06
 
-These settings apply only when `--tag=package-preview-2023-06` is specified on the command line.
+These settings apply only when `--tag=package-preview-2023-06` is specified on the command line1.
 
 ```yaml $(tag) == 'package-preview-2023-06'
 input-file:
