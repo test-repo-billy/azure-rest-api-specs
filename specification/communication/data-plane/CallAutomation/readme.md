@@ -30,14 +30,7 @@ tag: package-2023-03-06
 ```
 
 
-### Tag: package-preview-2023-06
 
-These settings apply only when `--tag=package-preview-2023-06` is specified on the command line1.
-
-```yaml $(tag) == 'package-preview-2023-06'
-input-file:
-  - preview/2023-06-01-preview/communicationservicescallautomation.json
-```
 ### Tag: package-2022-04-07-preview
 
 These settings apply only when `--tag=package-2022-04-07-preview` is specified on the command line.
