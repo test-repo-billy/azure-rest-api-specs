@@ -1,0 +1,127 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "255d595e-9ce0-56d8-4902-c5c855712119"
+    },
+    "method": "GET",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics?api-version=2022-08-08",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:17 GMT",
+      "Expires": "-1",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "200 OK",
+      "Server": "Microsoft-HTTPAPI/2.0",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "Vary": "Accept-Encoding",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "255d595e-9ce0-56d8-4902-c5c855712119",
+      "X-Ms-Ratelimit-Remaining-Subscription-Reads": "11994",
+      "X-Ms-Request-Id": "1503c4d2-8612-41b5-a02a-e0e28b869652",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082618Z:e59465b3-e407-46f0-8517-54690b364d61"
+    },
+    "body": {
+      "value": [
+        {
+          "counterProperty": "New",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/New",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Activating",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Activating",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Running",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Running",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Completed",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Completed",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Failed",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Failed",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Stopped",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Stopped",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Blocked",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Blocked",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Suspended",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Suspended",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Disconnected",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Disconnected",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Suspending",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Suspending",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Stopping",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Stopping",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Resuming",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Resuming",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        },
+        {
+          "counterProperty": "Removing",
+          "counterValue": 0,
+          "endTime": "2023-06-13T08:26:18.0266348+00:00",
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/statistics/Removing",
+          "startTime": "2023-06-06T08:26:18.0266348+00:00"
+        }
+      ]
+    }
+  }
+}

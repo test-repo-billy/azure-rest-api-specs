@@ -1,0 +1,38 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d"
+    },
+    "method": "GET",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa?api-version=2020-06-01",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "404",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Length": "103",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:25:54 GMT",
+      "Expires": "-1",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "404 Not Found",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d",
+      "X-Ms-Failure-Cause": "gateway",
+      "X-Ms-Ratelimit-Remaining-Subscription-Reads": "11999",
+      "X-Ms-Request-Id": "1b1a0c58-582e-4550-8277-eb02bc8fc039",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082554Z:1b1a0c58-582e-4550-8277-eb02bc8fc039"
+    },
+    "body": {
+      "error": {
+        "code": "ResourceGroupNotFound",
+        "message": "Resource group 'henglu612aa' could not be found."
+      }
+    }
+  }
+}

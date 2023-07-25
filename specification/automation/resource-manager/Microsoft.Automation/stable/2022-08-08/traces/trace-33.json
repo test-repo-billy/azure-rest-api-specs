@@ -1,0 +1,34 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "3d00f6fa-b77e-eee1-278a-86a1398e5c7e"
+    },
+    "method": "GET",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/operationresults/eyJqb2JJZCI6IlJFU09VUkNFR1JPVVBERUxFVElPTkpPQi1IRU5HTFU2MTJBQS1XRVNURVVST1BFIiwiam9iTG9jYXRpb24iOiJ3ZXN0ZXVyb3BlIn0?api-version=2020-06-01",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "202",
+    "headers": {
+      "Authorization": "REDACTED",
+      "Cache-Control": "no-cache",
+      "Content-Length": "0",
+      "Date": "Tue, 13 Jun 2023 08:27:06 GMT",
+      "Expires": "-1",
+      "Location": "https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/operationresults/eyJqb2JJZCI6IlJFU09VUkNFR1JPVVBERUxFVElPTkpPQi1IRU5HTFU2MTJBQS1XRVNURVVST1BFIiwiam9iTG9jYXRpb24iOiJ3ZXN0ZXVyb3BlIn0?api-version=2020-06-01",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "202 Accepted",
+      "Retry-After": "15",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "3d00f6fa-b77e-eee1-278a-86a1398e5c7e",
+      "X-Ms-Ratelimit-Remaining-Subscription-Reads": "11998",
+      "X-Ms-Request-Id": "c1b40b44-b91a-4ad7-a015-76254002598c",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082707Z:c1b40b44-b91a-4ad7-a015-76254002598c"
+    },
+    "body": null
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "255d595e-9ce0-56d8-4902-c5c855712119"
+    },
+    "method": "POST",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa/listKeys?api-version=2022-08-08",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:17 GMT",
+      "Expires": "-1",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "200 OK",
+      "Server": "Microsoft-HTTPAPI/2.0",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "Vary": "Accept-Encoding",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "255d595e-9ce0-56d8-4902-c5c855712119",
+      "X-Ms-Ratelimit-Remaining-Subscription-Writes": "1199",
+      "X-Ms-Request-Id": "4b9828cb-c6a2-4f86-9550-41fab9523c17",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082618Z:07ea3c24-4303-4626-9bd1-9a735b871a6d"
+    },
+    "body": {
+      "keys": [
+        {
+          "KeyName": "Primary",
+          "Permissions": "Full",
+          "Value": "HXJoLabXhR4h0tOfm2uOo7bR/WJ5pVFRs2f3Gq1f9sPIsiX+GrA4QVVjKX3cstnv9eGWtHBHR9v+AzW0l3INjQ=="
+        },
+        {
+          "KeyName": "Secondary",
+          "Permissions": "Full",
+          "Value": "v+zueiDeQ/MyOyx0SAocRLZ35Jsv7dQbOhnkWGa1BawD4cn7N7hCvnkeuw5B7KSDLJAxXSQplQXZmV6zkmxL2w=="
+        }
+      ]
+    }
+  }
+}

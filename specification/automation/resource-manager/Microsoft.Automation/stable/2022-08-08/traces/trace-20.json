@@ -1,0 +1,40 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "255d595e-9ce0-56d8-4902-c5c855712119"
+    },
+    "method": "GET",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa?api-version=2020-06-01",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:15 GMT",
+      "Expires": "-1",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "200 OK",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "Vary": "Accept-Encoding",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "255d595e-9ce0-56d8-4902-c5c855712119",
+      "X-Ms-Ratelimit-Remaining-Subscription-Reads": "11999",
+      "X-Ms-Request-Id": "f8271356-5f2b-498c-be1a-2de2e0b22b99",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082616Z:f8271356-5f2b-498c-be1a-2de2e0b22b99"
+    },
+    "body": {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa",
+      "location": "westeurope",
+      "name": "henglu612aa",
+      "properties": {
+        "provisioningState": "Succeeded"
+      },
+      "type": "Microsoft.Resources/resourceGroups"
+    }
+  }
+}

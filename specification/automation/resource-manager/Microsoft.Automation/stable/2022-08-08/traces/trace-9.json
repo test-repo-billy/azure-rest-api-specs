@@ -1,0 +1,78 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d"
+    },
+    "method": "GET",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa?api-version=2022-08-08",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:06 GMT",
+      "Expires": "-1",
+      "Ocp-Automation-Accountid": "df2b86ee-38b8-42d2-87fb-8d76aed1798d",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "200 OK",
+      "Server": "Microsoft-HTTPAPI/2.0",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "Vary": "Accept-Encoding",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d",
+      "X-Ms-Ratelimit-Remaining-Subscription-Reads": "11996",
+      "X-Ms-Request-Id": "d76985ff-4817-4d1b-9850-4e9efe914e7a",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082606Z:70af2d8a-ca66-4589-81ad-f6e739169cce"
+    },
+    "body": {
+      "etag": null,
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa",
+      "location": "westeurope",
+      "name": "henglu612aa",
+      "properties": {
+        "RegistrationUrl": "https://df2b86ee-38b8-42d2-87fb-8d76aed1798d.agentsvc.we.azure-automation.net/accounts/df2b86ee-38b8-42d2-87fb-8d76aed1798d",
+        "RuntimeConfiguration": {
+          "powershell": {
+            "builtinModules": {
+              "Az": "8.0.0"
+            }
+          },
+          "powershell7": {
+            "builtinModules": {
+              "Az": "8.0.0"
+            }
+          }
+        },
+        "automationHybridServiceUrl": "https://df2b86ee-38b8-42d2-87fb-8d76aed1798d.jrds.we.azure-automation.net/automationAccounts/df2b86ee-38b8-42d2-87fb-8d76aed1798d",
+        "creationTime": "2023-06-13T08:26:03.647+00:00",
+        "disableLocalAuth": false,
+        "encryption": {
+          "identity": {
+            "userAssignedIdentity": null
+          },
+          "keySource": "Microsoft.Automation"
+        },
+        "lastModifiedBy": null,
+        "lastModifiedTime": "2023-06-13T08:26:03.647+00:00",
+        "privateEndpointConnections": [],
+        "publicNetworkAccess": true,
+        "sku": {
+          "capacity": null,
+          "family": null,
+          "name": "Basic"
+        },
+        "state": "Ok"
+      },
+      "systemData": {
+        "createdAt": "2023-06-13T08:26:03.647+00:00",
+        "lastModifiedAt": "2023-06-13T08:26:03.647+00:00"
+      },
+      "tags": {},
+      "type": "Microsoft.Automation/AutomationAccounts"
+    }
+  }
+}

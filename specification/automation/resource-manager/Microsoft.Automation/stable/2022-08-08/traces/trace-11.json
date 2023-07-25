@@ -1,0 +1,153 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d"
+    },
+    "method": "GET",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Automation/automationAccounts?api-version=2022-08-08",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:08 GMT",
+      "Expires": "-1",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "200 OK",
+      "Server": "Microsoft-HTTPAPI/2.0",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "Vary": "Accept-Encoding",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d",
+      "X-Ms-Ratelimit-Remaining-Subscription-Reads": "11991",
+      "X-Ms-Request-Id": "1445d12c-2e21-42a9-b0dc-aefafd26c021",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082608Z:3d775c06-7e3f-4d88-89c3-7d2d14694cf6"
+    },
+    "body": {
+      "value": [
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230612124625595882/providers/Microsoft.Automation/automationAccounts/acctest-230612124625595882",
+          "location": "westeurope",
+          "name": "acctest-230612124625595882",
+          "properties": {
+            "creationTime": "2023-06-12T04:46:44.513+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-12T04:46:44.513+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230612125020617153/providers/Microsoft.Automation/automationAccounts/acctest-230612125020617153",
+          "location": "westeurope",
+          "name": "acctest-230612125020617153",
+          "properties": {
+            "creationTime": "2023-06-12T04:50:38.427+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-12T04:50:38.427+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230612125956994624/providers/Microsoft.Automation/automationAccounts/acctest-230612125956994624",
+          "location": "westeurope",
+          "name": "acctest-230612125956994624",
+          "properties": {
+            "creationTime": "2023-06-12T05:00:14.623+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-12T05:00:14.623+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230612155015055225/providers/Microsoft.Automation/automationAccounts/acctest-230612155015055225",
+          "location": "westeurope",
+          "name": "acctest-230612155015055225",
+          "properties": {
+            "creationTime": "2023-06-12T07:50:33.963+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-12T07:50:33.963+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230612155425352899/providers/Microsoft.Automation/automationAccounts/acctest-230612155425352899",
+          "location": "westeurope",
+          "name": "acctest-230612155425352899",
+          "properties": {
+            "creationTime": "2023-06-12T07:54:44.65+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-12T07:54:44.65+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230612160308093420/providers/Microsoft.Automation/automationAccounts/acctest-230612160308093420",
+          "location": "westeurope",
+          "name": "acctest-230612160308093420",
+          "properties": {
+            "creationTime": "2023-06-12T08:03:28.763+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-12T08:03:28.763+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230613103051356120/providers/Microsoft.Automation/automationAccounts/acctest-230613103051356120",
+          "location": "westeurope",
+          "name": "acctest-230613103051356120",
+          "properties": {
+            "creationTime": "2023-06-13T02:34:12.003+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-13T02:34:12.003+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/acctestRG-auto-230610232130162976/providers/Microsoft.Automation/automationAccounts/acctestAutoAcct-230610232130162976",
+          "location": "westeurope",
+          "name": "acctestAutoAcct-230610232130162976",
+          "properties": {
+            "creationTime": "2023-06-10T15:23:32.373+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-10T15:23:32.373+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        },
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa",
+          "location": "westeurope",
+          "name": "henglu612aa",
+          "properties": {
+            "creationTime": "2023-06-13T08:26:03.647+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-13T08:26:03.647+00:00",
+            "publicNetworkAccess": true
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        }
+      ]
+    }
+  }
+}

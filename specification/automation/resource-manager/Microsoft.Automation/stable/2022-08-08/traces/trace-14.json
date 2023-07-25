@@ -1,0 +1,50 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d"
+    },
+    "method": "GET",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts?api-version=2022-08-08",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:08 GMT",
+      "Expires": "-1",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "200 OK",
+      "Server": "Microsoft-HTTPAPI/2.0",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "Vary": "Accept-Encoding",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d",
+      "X-Ms-Ratelimit-Remaining-Subscription-Reads": "11991",
+      "X-Ms-Request-Id": "bbd3cb61-28d0-4fac-a8a9-68e2ab2bfd84",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082608Z:10e6f42d-c6f5-40aa-85f5-f49113e39e3c"
+    },
+    "body": {
+      "value": [
+        {
+          "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa/providers/Microsoft.Automation/automationAccounts/henglu612aa",
+          "location": "westeurope",
+          "name": "henglu612aa",
+          "properties": {
+            "creationTime": "2023-06-13T08:26:03.647+00:00",
+            "disableLocalAuth": false,
+            "lastModifiedTime": "2023-06-13T08:26:03.647+00:00",
+            "publicNetworkAccess": true,
+            "state": "Ok"
+          },
+          "tags": {},
+          "type": "Microsoft.Automation/AutomationAccounts"
+        }
+      ]
+    }
+  }
+}

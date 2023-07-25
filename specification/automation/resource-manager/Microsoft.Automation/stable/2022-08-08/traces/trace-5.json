@@ -1,0 +1,45 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED",
+      "Content-Length": "46",
+      "Content-Type": "application/json",
+      "User-Agent": "HashiCorp Terraform/1.4.5 (+https://www.terraform.io) Terraform Plugin SDK/2.8.0 terraform-provider-azapi/dev pid-222c6c49-1b0a-5959-a213-6608f9eb8820",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d"
+    },
+    "method": "PUT",
+    "url": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa?api-version=2020-06-01",
+    "body": {
+      "location": "westeurope",
+      "name": "henglu612aa"
+    }
+  },
+  "liveResponse": {
+    "statusCode": "201",
+    "headers": {
+      "Cache-Control": "no-cache",
+      "Content-Length": "223",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:25:57 GMT",
+      "Expires": "-1",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "201 Created",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Content-Type-Options": "nosniff",
+      "X-Ms-Correlation-Request-Id": "fee78e7d-ceca-7587-faba-85232d33b47d",
+      "X-Ms-Ratelimit-Remaining-Subscription-Writes": "1199",
+      "X-Ms-Request-Id": "96aaa7ed-49d5-4139-984b-001d76f6b7d4",
+      "X-Ms-Routing-Request-Id": "SOUTHEASTASIA:20230613T082558Z:96aaa7ed-49d5-4139-984b-001d76f6b7d4"
+    },
+    "body": {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/henglu612aa",
+      "location": "westeurope",
+      "name": "henglu612aa",
+      "properties": {
+        "provisioningState": "Succeeded"
+      },
+      "type": "Microsoft.Resources/resourceGroups"
+    }
+  }
+}

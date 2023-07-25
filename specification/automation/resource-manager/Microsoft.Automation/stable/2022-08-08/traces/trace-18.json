@@ -1,0 +1,32 @@
+{
+  "liveRequest": {
+    "headers": {
+      "User-Agent": "azsdk-go-azidentity/v1.3.0 (go1.19.3; darwin)"
+    },
+    "method": "GET",
+    "url": "/00000000-0000-0000-0000-000000000000/v2.0/.well-known/openid-configuration?",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Access-Control-Allow-Methods": "REDACTED",
+      "Access-Control-Allow-Origin": "REDACTED",
+      "Cache-Control": "max-age=86400, private",
+      "Content-Length": "1753",
+      "Content-Security-Policy-Report-Only": "REDACTED",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:15 GMT",
+      "P3p": "REDACTED",
+      "RESPONSE Status": "200 OK",
+      "Set-Cookie": "REDACTED",
+      "Strict-Transport-Security": "REDACTED",
+      "User-Agent": "azsdk-go-azidentity/v1.3.0 (go1.19.3; darwin)",
+      "X-Content-Type-Options": "REDACTED",
+      "X-Ms-Ests-Server": "REDACTED",
+      "X-Ms-Request-Id": "8c1b1274-e715-4120-8017-75083e7d0600",
+      "X-Xss-Protection": "REDACTED"
+    },
+    "body": null
+  }
+}

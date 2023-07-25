@@ -1,0 +1,34 @@
+{
+  "liveRequest": {
+    "headers": {
+      "Content-Length": "223",
+      "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+      "User-Agent": "azsdk-go-azidentity/v1.3.0 (go1.19.3; darwin)"
+    },
+    "method": "POST",
+    "url": "/00000000-0000-0000-0000-000000000000/oauth2/v2.0/token?",
+    "body": null
+  },
+  "liveResponse": {
+    "statusCode": "200",
+    "headers": {
+      "Cache-Control": "no-store, no-cache",
+      "Content-Length": "1413",
+      "Content-Security-Policy-Report-Only": "REDACTED",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 13 Jun 2023 08:26:20 GMT",
+      "Expires": "-1",
+      "P3p": "REDACTED",
+      "Pragma": "no-cache",
+      "RESPONSE Status": "200 OK",
+      "Set-Cookie": "REDACTED",
+      "Strict-Transport-Security": "REDACTED",
+      "User-Agent": "azsdk-go-azidentity/v1.3.0 (go1.19.3; darwin)",
+      "X-Content-Type-Options": "REDACTED",
+      "X-Ms-Ests-Server": "REDACTED",
+      "X-Ms-Request-Id": "bee5a439-d70c-4860-9617-2b5bc0b70600",
+      "X-Xss-Protection": "REDACTED"
+    },
+    "body": null
+  }
+}
