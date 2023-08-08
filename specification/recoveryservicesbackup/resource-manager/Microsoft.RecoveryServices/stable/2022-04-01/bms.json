@@ -12461,7 +12461,8 @@
       "type": "object",
       "properties": {
         "resourceGuardResourceId": {
-          "type": "string"
+          "type": "string",
+          "required": true
         },
         "resourceGuardOperationDetails": {
           "type": "array",
