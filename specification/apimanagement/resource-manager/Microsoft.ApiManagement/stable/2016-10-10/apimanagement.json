@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "ApiManagementClient",
-    "description": "Use these REST APIs for performing operations on entities like API, Product, and Subscription associated with your Azure API Management deployment.",
+    "description": "Use these REST APIs for performing operations on entities like API, Product, and Subscription associated.",
     "version": "2016-10-10"
   },
   "host": "management.azure.com",
@@ -40,7 +40,7 @@
           "PolicySnippets"
         ],
         "operationId": "PolicySnippets_ListByService",
-        "description": "Lists all policy snippets.",
+        "description": "Lists",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupNameParameter"
