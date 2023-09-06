@@ -15,7 +15,8 @@
   "produces": [
     "application/json"
   ],
-  "consumes": [
+  "consumes": 
+  [
     "application/json"
   ],
   "security": [
