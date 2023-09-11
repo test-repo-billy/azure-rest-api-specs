@@ -1,7 +1,7 @@
 trigger: none
 
 jobs:
-- job: Prettier
+- job:
   pool:
     name: azsdk-pool-mms-ubuntu-2204-general
     vmImage: ubuntu-22.04
@@ -10,5 +10,5 @@ jobs:
   - template: /eng/pipelines/templates/steps/npm-install.yml
 
   - pwsh: |
-      $(Build.SourcesDirectory)/eng/scripts/Swagger-Prettier.ps1 -Verbose
-    displayName: Swagger Prettier Check
+      $(Build.SourcesDirectory)/eng/scripts/OpenAPI-Prettier-Check.ps1 -Verbose
+    displayName: OpenAPI Prettier Check

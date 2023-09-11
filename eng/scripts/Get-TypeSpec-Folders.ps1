@@ -13,7 +13,7 @@ if ($CheckAll) {
   $changedFiles = $checkAllPath
 }
 else {
-  $changedFiles = Get-ChangedFiles
+  $changedFiles = @(Get-ChangedFiles -diffFilter "")
   $engOrRootChangedFiles = Get-ChangedEngOrRootFiles $changedFiles
 
   if ($Env:BUILD_REPOSITORY_NAME -eq 'azure/azure-rest-api-specs' -and $engOrRootChangedFiles) {

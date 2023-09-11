@@ -20,7 +20,7 @@ if ($CheckAll) {
 }
 else 
 {
-  $filesToCheck = Get-ChangedSwaggerFiles
+  $filesToCheck = @(Get-ChangedSwaggerFiles)
   if (!$filesToCheck) {
     Write-Host "No specification files found to check."
   }
