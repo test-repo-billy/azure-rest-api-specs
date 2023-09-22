@@ -1,0 +1,18 @@
+{
+  "suppressionList":[
+    {
+      "rule": "SWAGGER_NOT_TEST",
+      "file": "hybridRunbookWorker.json"
+    },
+    {
+      "rule": "OPERATION_NOT_TEST",
+      "file": "account.json",
+      "operation": "AutomationAccount_List"
+    },
+    {
+      "rule": "OBJECT_ADDITIONAL_PROPERTIES",
+      "file": "account.json",
+      "operation": "AutomationAccount_Get"
+    }
+  ]
+}
