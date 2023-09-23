@@ -1376,7 +1376,7 @@
         "Premium_LRS"
       ],
       "x-ms-enum": {
-        "name": "SharedImageStorageAccountType",
+        "name": "SharedImageStorageAccountTypeBROKEN",
         "modelAsString": true
       },
       "description": "Specifies the storage account type to be used to store the Azure Compute Gallery image version in."
