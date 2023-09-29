@@ -7,7 +7,7 @@
   },
   "paths": {
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AgFoodPlatform/farmBeats/{farmBeatsResourceName}/extensions/{extensionId}": {
-      "put": {
+      "put":
         "tags": [
           "Extensions"
         ],
