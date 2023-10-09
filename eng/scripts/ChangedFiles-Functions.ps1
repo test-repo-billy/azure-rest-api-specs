@@ -38,19 +38,22 @@ function Get-ChangedFilesUnderSpecification($changedFiles = (Get-ChangedFiles))
     return $changedFilesUnderSpecification
 }
 
-function Get-ChangedEngOrRootFiles($changedFiles = (Get-ChangedFiles))
-{
-    $engFiles = $changedFiles | Where-Object { $_.StartsWith('eng') }
 
-    $rootFilesImpactingTypeSpec = @(
-    ".gitattributes",
-    ".prettierrc.json",
-    "package-lock.json",
-    "package.json",
-    "tsconfig.json"
+function Get-ChangedCoreFiles($changedFiles = (Get-ChangedFiles))
+{
+    $rootFiles = @(
+        ".gitattributes",
+        ".prettierrc.json",
+        "package-lock.json",
+        "package.json",
+        "tsconfig.json"
     )
 
-    $repoRootFiles = $changedFiles | Where-Object { $_ -in $rootFilesImpactingTypeSpec }
+    $coreFiles = $changedFiles | Where-Object { 
+        $_.StartsWith("eng/") -or
+        $_.StartsWith("specification/common-types/") -or
+        $_ -in $rootFiles
+    }
 
-    return $engFiles + $repoRootFiles
+    return $coreFiles
 }

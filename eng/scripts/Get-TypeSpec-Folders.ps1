@@ -14,9 +14,9 @@ if ($CheckAll) {
 }
 else {
   $changedFiles = @(Get-ChangedFiles -diffFilter "")
-  $engOrRootChangedFiles = Get-ChangedEngOrRootFiles $changedFiles
+  $coreChangedFiles = Get-ChangedCoreFiles $changedFiles
 
-  if ($Env:BUILD_REPOSITORY_NAME -eq 'azure/azure-rest-api-specs' -and $engOrRootChangedFiles) {
+  if ($Env:BUILD_REPOSITORY_NAME -eq 'azure/azure-rest-api-specs' -and $coreChangedFiles) {
     Write-Verbose "Found changes to core eng or root files so checking all specs."
     $changedFiles = $checkAllPath
   }
@@ -27,16 +27,25 @@ else {
 $changedFiles = $changedFiles -replace '\\', '/'
 
 $typespecFolders = @()
+$skippedTypespecFolders = @()
 foreach ($file in $changedFiles) {
   if ($file -match 'specification(\/[^\/]*\/)*') {
     $path = "$repoPath/$($matches[0])"
-    Write-Verbose "Checking for tspconfig files under $path"
-    $typespecFolder = Get-ChildItem -path $path tspconfig.* -Recurse
-    if ($typespecFolder) {
-      $typespecFolders += $typespecFolder.Directory.FullName
-    }
+    if (Test-Path $path) {   
+      Write-Verbose "Checking for tspconfig files under $path"
+      $typespecFolder = Get-ChildItem -path $path tspconfig.* -Recurse
+      if ($typespecFolder) {
+        $typespecFolders += $typespecFolder.Directory.FullName
+      }
+    } else {
+      $skippedTypespecFolders += $path
+    } 
   }
 }
+foreach ($skippedTypespecFolder in $skippedTypespecFolders | Select-Object -Unique) {
+  Write-Host "Cannot find directory $skippedTypespecFolder"
+}
+
 $typespecFolders = $typespecFolders | ForEach-Object { [IO.Path]::GetRelativePath($repoPath, $_) -replace '\\', '/' } | Sort-Object -Unique
 
 return $typespecFolders
