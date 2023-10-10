@@ -1,0 +1,10 @@
+.terraform.lock.hcl
+.terraform/
+ApiTestReport/
+ApiTestTraces/
+ApiTestResult/
+log.txt
+tfplan
+terraform.tfstate
+terraform.tfstate.backup
+armstrong_reports_*/
