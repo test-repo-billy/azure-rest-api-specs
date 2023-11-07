@@ -73,48 +73,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.TestBase/testBaseAccounts": {
-      "get": {
-        "tags": [
-          "Test Base Account"
-        ],
-        "operationId": "TestBaseAccounts_ListBySubscription",
-        "description": "Lists all the Test Base Accounts in a subscription. This API is required by ARM guidelines.",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/TestBaseAccountIncludeSoftDeletedParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The operation is completed.",
-            "schema": {
-              "$ref": "#/definitions/TestBaseAccountListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "x-ms-examples": {
-          "TestBaseAccountsListBySubscription": {
-            "$ref": "./examples/TestBaseAccountsListBySubscription.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.TestBase/testBaseAccounts": {
       "get": {
         "tags": [
