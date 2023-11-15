@@ -229,48 +229,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/Spring/{serviceName}/listTestKeys": {
-      "post": {
-        "tags": [
-          "AppPlatform"
-        ],
-        "description": "List test keys for a Service.",
-        "operationId": "Services_ListTestKeys",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "#/parameters/ServiceNameParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success. The response describes the test keys.",
-            "schema": {
-              "$ref": "#/definitions/TestKeys"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Services_ListTestKeys": {
-            "$ref": "./examples/Services_ListTestKeys.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/Spring/{serviceName}/regenerateTestKey": {
       "post": {
         "tags": [
