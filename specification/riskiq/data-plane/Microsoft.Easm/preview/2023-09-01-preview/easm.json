@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Defender EASM",
-    "version": "2023-03-01-preview",
+    "version": "2023-09-01-preview",
     "description": "Defender EASM discovers and maps your digital attack surface to provide an \"outside-in\" perspective using probes to discover assets. The assets are provided with detailed metadata associated, including vulnerabilities, configurations and web components, allowing customers to view and prioritize external risk. The EASM REST API enables you to develop clients that integrate with your application.",
     "x-typespec-generated": [
       {
@@ -5590,7 +5590,7 @@
       "type": "string",
       "description": "The EASM Defender service version.",
       "enum": [
-        "2023-03-01-preview"
+        "2023-09-01-preview"
       ],
       "x-ms-enum": {
         "name": "Versions",
@@ -5598,8 +5598,8 @@
         "values": [
           {
             "name": "v2023_03_01_preview",
-            "value": "2023-03-01-preview",
-            "description": "Version 2023-03-01-preview"
+            "value": "2023-09-01-preview",
+            "description": "Version 2023-09-01-preview"
           }
         ]
       }
