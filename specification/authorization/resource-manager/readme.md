@@ -101,7 +101,6 @@ These settings apply only when `--package-2022-05-01-preview-only` is specified 
 ```yaml $(tag) == 'package-2022-05-01-preview-only'
 input-file:
   - Microsoft.Authorization/preview/2022-05-01-preview/authorization-RoleDefinitionsCalls.json
-  - Microsoft.Authorization/preview/2022-05-01-preview/common-types.json
 ```
 ### Tag: package-2022-05-01-preview
 
