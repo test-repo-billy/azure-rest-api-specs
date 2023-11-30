@@ -1366,7 +1366,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/validateForModifyBackup": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName1}/validateForModifyBackup": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -1390,7 +1390,7 @@
             "$ref": "#/parameters/RestrictedVaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstanceName1"
           },
           {
             "name": "parameters",
@@ -8435,6 +8435,14 @@
     },
     "BackupInstanceName": {
       "name": "backupInstanceName",
+      "in": "path",
+      "description": "The name of the backup instance.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "BackupInstanceName1": {
+      "name": "backupInstanceName1",
       "in": "path",
       "description": "The name of the backup instance.",
       "required": true,
