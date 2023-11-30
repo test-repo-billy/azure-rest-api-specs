@@ -50,7 +50,7 @@
         "condition": {
           "readOnly": true,
           "type": "string",
-          "description": "The conditions on the role definition. This limits the resources it can be assigned to. e.g.: @Resource[Microsoft.Storage/storageAccounts/blobServices/containers:ContainerName] StringEqualsIgnoreCase 'foo_storage_container'"
+          "description": "The  conditions on the role definition. This limits the resources it can be assigned to. e.g.: @Resource[Microsoft.Storage/storageAccounts/blobServices/containers:ContainerName] StringEqualsIgnoreCase 'foo_storage_container'"
         },
         "conditionVersion": {
           "readOnly": true,
