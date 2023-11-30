@@ -28,15 +28,15 @@ These are the global settings for the DataProtection API.
 title: Data Protection Client
 description: Open API 2.0 Specs for Azure Data Protection service
 openapi-type: arm
-tag: package-2023-08
+tag: package-2023-09
 csharp-sdks-folder: ./Generated/CSharp
 python-sdks-folder: ./Generated/Python
 go-sdk-folder: ./Generated/Golang
 license-header: MICROSOFT_MIT
 suppressions:
     - code: ResourceNameRestriction
-      reason: BackupInstance Resource is created by DPP Service, so regex wont add much value here.
-    
+      where: $.parameters.BackupInstanceName
+      reason: Resource is created by DPP Service, so regex wont add much value here.    
 ```
 
 ### Validations
@@ -50,6 +50,15 @@ semantic-validator: true
 message-format: json
 ```
 
+
+### Tag: package-2023-09
+
+These settings apply only when `--tag=package-2023-09` is specified on the command line.
+
+```yaml $(tag) == 'package-2023-09'
+input-file:
+  - Microsoft.DataProtection/stable/2023-09-01/dataprotection.json
+```
 
 ### Tag: package-2023-08
 
