@@ -3,9 +3,9 @@
   "info": {
     "title": "Microsoft.VoiceServices",
     "version": "2022-12-01-preview",
-    "x-cadl-generated": [
+    "x-typespec-generated": [
       {
-        "emitter": "@azure-tools/cadl-autorest"
+        "emitter": "@azure-tools/typespec-autorest"
       }
     ]
   },
@@ -951,13 +951,13 @@
           "items": {
             "$ref": "#/definitions/CommunicationsGateway"
           },
-          "x-cadl-name": "CommunicationsGateway[]",
+          "x-typespec-name": "CommunicationsGateway[]",
           "description": "The CommunicationsGateway items on this page"
         },
         "nextLink": {
           "type": "string",
           "description": "The link to the next page of items",
-          "x-cadl-name": "Rest.ResourceLocation<CommunicationsGateway>"
+          "x-typespec-name": "Rest.ResourceLocation<CommunicationsGateway>"
         }
       },
       "description": "The response of a CommunicationsGateway list operation.",
@@ -986,7 +986,7 @@
           "x-ms-identifiers": [
             "name"
           ],
-          "x-cadl-name": "ServiceRegionProperties[]",
+          "x-typespec-name": "ServiceRegionProperties[]",
           "description": "The regions in which to deploy the resources needed for Teams Calling",
           "x-ms-mutability": [
             "read",
@@ -1007,7 +1007,7 @@
           "items": {
             "$ref": "#/definitions/TeamsCodecs"
           },
-          "x-cadl-name": "TeamsCodecs[]",
+          "x-typespec-name": "TeamsCodecs[]",
           "description": "Voice codecs to support",
           "x-ms-mutability": [
             "read",
@@ -1029,7 +1029,7 @@
           "items": {
             "$ref": "#/definitions/CommunicationsPlatform"
           },
-          "x-cadl-name": "CommunicationsPlatform[]",
+          "x-typespec-name": "CommunicationsPlatform[]",
           "description": "What platforms to support",
           "x-ms-mutability": [
             "read",
@@ -1064,7 +1064,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "x-cadl-name": "Record<string>",
+          "x-typespec-name": "Record<string>",
           "description": "Resource tags."
         }
       },
@@ -1128,13 +1128,13 @@
           "items": {
             "$ref": "#/definitions/Contact"
           },
-          "x-cadl-name": "Contact[]",
+          "x-typespec-name": "Contact[]",
           "description": "The Contact items on this page"
         },
         "nextLink": {
           "type": "string",
           "description": "The link to the next page of items",
-          "x-cadl-name": "Rest.ResourceLocation<Contact>"
+          "x-typespec-name": "Rest.ResourceLocation<Contact>"
         }
       },
       "description": "The response of a Contact list operation.",
@@ -1203,7 +1203,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "x-cadl-name": "Record<string>",
+          "x-typespec-name": "Record<string>",
           "description": "Resource tags."
         }
       },
@@ -1241,7 +1241,7 @@
           "items": {
             "type": "string"
           },
-          "x-cadl-name": "string[]",
+          "x-typespec-name": "string[]",
           "description": "IP address to use to contact the operator network from this region",
           "x-ms-mutability": [
             "read",
@@ -1254,7 +1254,7 @@
           "items": {
             "type": "string"
           },
-          "x-cadl-name": "string[]",
+          "x-typespec-name": "string[]",
           "description": "IP address to use to contact the ESRP from this region",
           "x-ms-mutability": [
             "read",
@@ -1376,13 +1376,13 @@
           "items": {
             "$ref": "#/definitions/TestLine"
           },
-          "x-cadl-name": "TestLine[]",
+          "x-typespec-name": "TestLine[]",
           "description": "The TestLine items on this page"
         },
         "nextLink": {
           "type": "string",
           "description": "The link to the next page of items",
-          "x-cadl-name": "Rest.ResourceLocation<TestLine>"
+          "x-typespec-name": "Rest.ResourceLocation<TestLine>"
         }
       },
       "description": "The response of a TestLine list operation.",
@@ -1443,7 +1443,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "x-cadl-name": "Record<string>",
+          "x-typespec-name": "Record<string>",
           "description": "Resource tags."
         }
       },

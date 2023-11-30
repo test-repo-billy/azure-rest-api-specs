@@ -1,13 +1,13 @@
-import "@cadl-lang/rest";
-import "@azure-tools/cadl-providerhub";
-import "@azure-tools/cadl-autorest";
-import "@azure-tools/cadl-azure-core";
-import "@azure-tools/cadl-azure-resource-manager";
-import "@cadl-lang/versioning";
+import "@TypeSpec-lang/rest";
+import "@azure-tools/TypeSpec-providerhub";
+import "@azure-tools/TypeSpec-autorest";
+import "@azure-tools/TypeSpec-azure-core";
+import "@azure-tools/TypeSpec-azure-resource-manager";
+import "@TypeSpec-lang/versioning";
 
-using Cadl.Http;
-using Cadl.Rest;
-using Cadl.Versioning;
+using TypeSpec.Http;
+using TypeSpec.Rest;
+using TypeSpec.Versioning;
 using Azure.ResourceManager;
 
 @armProviderNamespace("Microsoft.VoiceServices")
@@ -72,8 +72,8 @@ model ResourceUpdateModelNoProperties<TResource extends object>
     "Name" | "name"
   >>>;
 
-#suppress "@azure-tools/cadl-azure-resource-manager/arm-resource-interface-requires-decorator" "Interface template does not require this."
-#suppress "@azure-tools/cadl-azure-resource-manager/arm-resource-interface-uses-templates" "This is an official operations template."
+#suppress "@azure-tools/TypeSpec-azure-resource-manager/arm-resource-interface-requires-decorator" "Interface template does not require this."
+#suppress "@azure-tools/TypeSpec-azure-resource-manager/arm-resource-interface-uses-templates" "This is an official operations template."
 @doc("Template for resources with no updateable properties")
 @armResourceOperations
 interface ResourceUpdateNoProperties<TResource extends Foundations.ArmResource> {
@@ -90,13 +90,13 @@ interface ResourceUpdateNoProperties<TResource extends Foundations.ArmResource> 
   ): ArmResponse<TResource> | ErrorResponse;
 }
 
-// These models should be provided by the common CADL infra, but currently they are not. See GitHub PR:
-// https://github.com/Azure/cadl-azure/pull/2311
+// These models should be provided by the common TypeSpec infra, but currently they are not. See GitHub PR:
+// https://github.com/Azure/TypeSpec-azure/pull/2311
 // For now, these definitions are reimplementations of the common types from:
 // https://github.com/Azure/azure-rest-api-specs-pr/blob/66dc2c9a0243bc217a938583a53da052498ac39f/specification/common-types/resource-management/v3/types.json
 
 // Ideally all of these would be marked as @added(Versions.v2022_12_02_preview) but they can't be because of
-// https://github.com/microsoft/cadl/issues/1332
+// https://github.com/microsoft/TypeSpec/issues/1332
 
 @doc("The check availability request body.")
 model CheckNameAvailabilityRequest {

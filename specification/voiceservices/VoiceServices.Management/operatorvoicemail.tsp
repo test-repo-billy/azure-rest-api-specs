@@ -1,17 +1,17 @@
 // Definitions for the OperatorVoicemailInstance resource
 
-import "@cadl-lang/openapi";
-import "@cadl-lang/rest";
-import "@azure-tools/cadl-providerhub";
-import "@azure-tools/cadl-autorest";
-import "@azure-tools/cadl-azure-core";
-import "@azure-tools/cadl-azure-resource-manager";
+import "@TypeSpec-lang/openapi";
+import "@TypeSpec-lang/rest";
+import "@azure-tools/TypeSpec-providerhub";
+import "@azure-tools/TypeSpec-autorest";
+import "@azure-tools/TypeSpec-azure-core";
+import "@azure-tools/TypeSpec-azure-resource-manager";
 
 namespace Microsoft.VoiceServices;
 
-using Cadl.Http;
-using Cadl.Rest;
-using Cadl.Versioning;
+using TypeSpec.Http;
+using TypeSpec.Rest;
+using TypeSpec.Versioning;
 using Azure.ResourceManager;
 
 @doc("A OperatorVoicemailInstance resource")
