@@ -1023,7 +1023,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}": {
       "get": {
         "tags": [
           "BackupInstances"
@@ -1047,7 +1047,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           }
         ],
         "responses": {
@@ -1093,7 +1093,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "parameters",
@@ -1168,7 +1168,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           }
         ],
         "responses": {
@@ -1211,7 +1211,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/backup": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/backup": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -1235,7 +1235,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "parameters",
@@ -1366,7 +1366,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/validateForModifyBackup": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/validateForModifyBackup": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -1390,7 +1390,7 @@
             "$ref": "#/parameters/RestrictedVaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "parameters",
@@ -1439,7 +1439,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/operationResults/{operationId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/operationResults/{operationId}": {
       "get": {
         "tags": [
           "BackupInstances"
@@ -1460,7 +1460,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "operationId",
@@ -1496,7 +1496,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/recoveryPoints": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/recoveryPoints": {
       "get": {
         "tags": [
           "RecoveryPoint"
@@ -1520,7 +1520,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "$filter",
@@ -1562,7 +1562,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/recoveryPoints/{recoveryPointId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/recoveryPoints/{recoveryPointId}": {
       "get": {
         "tags": [
           "RecoveryPoint"
@@ -1586,7 +1586,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "recoveryPointId",
@@ -2004,7 +2004,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/rehydrate": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/rehydrate": {
       "post": {
         "description": "rehydrate recovery point for restore for a BackupInstance",
         "operationId": "BackupInstances_TriggerRehydrate",
@@ -2031,7 +2031,7 @@
             }
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           }
         ],
         "produces": [
@@ -2077,7 +2077,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/restore": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/restore": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -2101,7 +2101,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "parameters",
@@ -2162,7 +2162,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/resumeBackups": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/resumeBackups": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -2183,7 +2183,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v4/types.json#/parameters/ApiVersionParameter"
@@ -2226,7 +2226,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/resumeProtection": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/resumeProtection": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -2247,7 +2247,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v4/types.json#/parameters/ApiVersionParameter"
@@ -2290,7 +2290,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/stopProtection": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/stopProtection": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -2311,7 +2311,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v4/types.json#/parameters/ApiVersionParameter"
@@ -2354,7 +2354,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/suspendBackups": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/suspendBackups": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -2375,7 +2375,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v4/types.json#/parameters/ApiVersionParameter"
@@ -2418,7 +2418,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/sync": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/sync": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -2439,7 +2439,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v4/types.json#/parameters/ApiVersionParameter"
@@ -2491,7 +2491,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/validateRestore": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/validateRestore": {
       "post": {
         "tags": [
           "BackupInstances"
@@ -2515,7 +2515,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "parameters",
@@ -2618,7 +2618,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstanceName}/findRestorableTimeRanges": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/backupInstances/{backupInstancesName}/findRestorableTimeRanges": {
       "post": {
         "tags": [
           "FindRestorableTimeRanges"
@@ -2641,7 +2641,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "$ref": "#/parameters/BackupInstanceName"
+            "$ref": "#/parameters/BackupInstancesName"
           },
           {
             "name": "parameters",
@@ -3005,7 +3005,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/deletedBackupInstances/{backupInstanceName}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/deletedBackupInstances/{backupInstancesName}": {
       "get": {
         "tags": [
           "DeletedBackupInstances"
@@ -3029,7 +3029,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "name": "backupInstanceName",
+            "name": "backupInstancesName",
             "description": "The name of the deleted backup instance",
             "in": "path",
             "required": true,
@@ -3057,7 +3057,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/deletedBackupInstances/{backupInstanceName}/undelete": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataProtection/backupVaults/{vaultName}/deletedBackupInstances/{backupInstancesName}/undelete": {
       "post": {
         "tags": [
           "DeletedBackupInstances"
@@ -3080,7 +3080,7 @@
             "$ref": "#/parameters/VaultName"
           },
           {
-            "name": "backupInstanceName",
+            "name": "backupInstancesName",
             "description": "The name of the deleted backup instance",
             "in": "path",
             "required": true,
@@ -8433,8 +8433,8 @@
       "type": "string",
       "x-ms-parameter-location": "method"
     },
-    "BackupInstanceName": {
-      "name": "backupInstanceName",
+    "BackupInstancesName": {
+      "name": "backupInstancesName",
       "in": "path",
       "description": "The name of the backup instance.",
       "required": true,
