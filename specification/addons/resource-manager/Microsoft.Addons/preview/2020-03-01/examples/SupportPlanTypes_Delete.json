@@ -1,0 +1,24 @@
+{
+  "parameters": {
+    "api-version": "2020-03-01",
+    "subscriptionId": "d18d258f-bdba-4de1-8b51-e79d6c181d5e",
+    "providerName": "Canonical",
+    "planTypeName": "Standard"
+  },
+  "responses": {
+    "202": {
+      "headers": {
+        "location": "https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Addons/supportProviders/{providerName}/supportPlanTypes/{planTypeName}?api-version=2020-03-01"
+      },
+      "body": {
+        "properties": {
+          "provisioningState": "Cancelling"
+        },
+        "id": "subscriptions/d18d258f-bdba-4de1-8b51-e79d6c181d5e/providers/Microsoft.Addons/supportProviders/canonical/supportPlanTypes/Standard",
+        "name": "Standard",
+        "type": "Microsoft.Addons/supportProvider"
+      }
+    },
+    "204": {}
+  }
+}
