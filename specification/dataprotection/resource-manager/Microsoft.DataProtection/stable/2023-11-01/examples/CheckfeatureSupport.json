@@ -11,7 +11,7 @@
   "responses": {
     "200": {
       "body": {
-        "featureType": "DataSourceType",
+        "featureType": "DataSourceType", 
         "features": [
           {
             "featureName": "Microsoft.Storage/storageAccounts/blobServices",
