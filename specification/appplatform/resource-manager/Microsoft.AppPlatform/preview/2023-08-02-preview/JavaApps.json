@@ -1,0 +1,601 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2023-08-02-preview",
+    "title": "AppPlatformManagementClient"
+  },
+  "host": "management.azure.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.AppPlatform/javaApps": {
+      "get": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Get the JavaApps in a given subscription.",
+        "operationId": "JavaApps_ListBySubscription",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/JavaAppsCollection"
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List JavaApps by subscription": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_ListBySubscription.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/javaApps": {
+      "get": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Get the JavaApps in a given resource group.",
+        "operationId": "JavaApps_ListByResourceGroup",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/JavaAppsCollection"
+            }
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List JavaApps by resource group": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_ListByResourceGroup.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/javaApps/{appName}": {
+      "get": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Get the properties of a JavaApp.",
+        "operationId": "JavaApps_Get",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppNameParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK.",
+            "schema": {
+              "$ref": "#/definitions/JavaApp"
+            }
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get an App": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_Get.json"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Create or update a JavaApp.",
+        "operationId": "JavaApps_CreateOrUpdate",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppNameParameter"
+          },
+          {
+            "name": "appEnvelope",
+            "in": "body",
+            "description": "Properties used to create an app",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/JavaApp"
+            }
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No update performed on the App.",
+            "schema": {
+              "$ref": "#/definitions/JavaApp"
+            }
+          },
+          "201": {
+            "description": "App create or update has been started.",
+            "schema": {
+              "$ref": "#/definitions/JavaApp"
+            }
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create or Update an App": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_CreateOrUpdate.json"
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation"
+        }
+      },
+      "delete": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Delete a JavaApp.",
+        "operationId": "JavaApps_Delete",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppNameParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "App deleted successfully."
+          },
+          "202": {
+            "description": "Delete operation is in progress.",
+            "headers": {
+              "Location": {
+                "type": "string"
+              }
+            }
+          },
+          "204": {
+            "description": "App does not exist."
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete an App": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_Delete.json"
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
+      },
+      "patch": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Update properties of a JavaApp.",
+        "description": "Patches an App using JSON Merge Patch",
+        "operationId": "JavaApps_Update",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppEnvelopePatchParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/JavaApp"
+            }
+          },
+          "202": {
+            "description": "Patch operation is in progress.",
+            "headers": {
+              "Location": {
+                "type": "string"
+              }
+            }
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Patch an App": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_Patch.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/javaApps/{appName}/listSecrets": {
+      "post": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "List secrets for a JavaApp",
+        "operationId": "JavaApps_ListSecrets",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppNameParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SecretsCollection"
+            }
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List JavaApps Secrets": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_ListSecrets.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/javaApps/{appName}/start": {
+      "post": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Start a JavaApp",
+        "operationId": "JavaApps_Start",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppNameParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Start operation is in progress.",
+            "headers": {
+              "Location": {
+                "type": "string"
+              }
+            }
+          },
+          "204": {
+            "description": "App started successfully."
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Start an App": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_Start.json"
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppPlatform/javaApps/{appName}/stop": {
+      "post": {
+        "tags": [
+          "JavaApps"
+        ],
+        "summary": "Stop a JavaApp",
+        "operationId": "JavaApps_Stop",
+        "parameters": [
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AppNameParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Stop operation is in progress.",
+            "headers": {
+              "Location": {
+                "type": "string"
+              }
+            }
+          },
+          "204": {
+            "description": "App stopped successfully."
+          },
+          "default": {
+            "description": "Common error response.",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Stop an App": {
+            "$ref": "./examples/v2/JavaApps/JavaApps_Stop.json"
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "JavaAppsCollection": {
+      "description": "JavaApps collection ARM resource.",
+      "required": [
+        "value"
+      ],
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Collection of resources.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JavaApp"
+          }
+        },
+        "nextLink": {
+          "description": "Link to next page of resources.",
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "JavaApp": {
+      "description": "Azure Spring Apps JavaApp resource",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "../../../../../app/resource-manager/Microsoft.App/preview/2023-04-01-preview/ContainerApps.json#/definitions/ContainerApp"
+        }
+      ],
+      "properties": {
+        "properties": {
+          "type": "object",
+          "properties": {
+            "provisioningState": {
+              "description": "Provisioning state of the Azure Spring Apps JavaApp.",
+              "enum": [
+                "InProgress",
+                "Succeeded",
+                "Failed",
+                "Canceled",
+                "Deleting"
+              ],
+              "type": "string",
+              "readOnly": true,
+              "x-ms-enum": {
+                "name": "JavaAppProvisioningState",
+                "modelAsString": true
+              }
+            },
+            "template": {
+              "description": "Azure Spring Apps Revision Template with all possible settings and the\ndefaults if user did not provide them. The defaults are populated\nas they were at the creation time",
+              "$ref": "./CommonDefinitions.json#/definitions/SpringAppsTemplate"
+            }
+          },
+          "x-ms-client-flatten": true
+        }
+      }
+    },
+    "JavaAppForPatch": {
+      "description": "Azure Spring Apps JavaApp resource for patch body",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/JavaApp"
+        }
+      ],
+      "required": []
+    },
+    "SecretsCollection": {
+      "description": "App Secrets Collection ARM resource.",
+      "required": [
+        "value"
+      ],
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "Collection of resources.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AppSecret"
+          },
+          "x-ms-identifiers": [
+            "name"
+          ]
+        }
+      }
+    },
+    "AppSecret": {
+      "description": "App Secret.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "../../../../../app/resource-manager/Microsoft.App/preview/2023-04-01-preview/ContainerApps.json#/definitions/ContainerAppSecret"
+        }
+      ],
+      "properties": {
+        "keyVaultUrl": {
+          "description": "Azure Key Vault URL pointing to the secret referenced by the app.",
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    }
+  },
+  "parameters": {
+    "AppNameParameter": {
+      "name": "appName",
+      "in": "path",
+      "description": "Name of the App.",
+      "required": true,
+      "type": "string",
+      "pattern": "^[-\\w\\._\\(\\)]+$"
+    },
+    "AppEnvelopeParameter": {
+      "name": "appEnvelope",
+      "in": "body",
+      "description": "Properties used to create an app",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/JavaApp"
+      }
+    },
+    "AppEnvelopePatchParameter": {
+      "name": "appEnvelope",
+      "in": "body",
+      "description": "Properties used to create an app",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/JavaAppForPatch"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "azure_auth": {
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "scopes": {
+        "user_impersonation": "impersonate your user account"
+      },
+      "type": "oauth2",
+      "description": "Azure Active Directory OAuth2 Flow"
+    }
+  },
+  "security": [
+    {
+      "azure_auth": [
+        "user_impersonation"
+      ]
+    }
+  ]
+}
