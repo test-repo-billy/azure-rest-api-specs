@@ -10,7 +10,7 @@ If you're a Microsoft employee looking for information about all of the reposito
 
 External Contributors can read [Getting Started with OpenAPI Specifications](https://github.com/Azure/azure-rest-api-specs/blob/main/documentation/Getting%20started%20with%20OpenAPI%20specifications.md).
 
-<!--Please check the [announcements page](https://github.com/Azure/azure-rest-api-specs/wiki/Announcements) for any new updates since your last visit.-->
+<!-- Please check the [announcements page](https://github.com/Azure/azure-rest-api-specs/wiki/Announcements) for any new updates since your last visit.-->
 
 ### Terminology
 
@@ -180,3 +180,5 @@ External Contributors can read [Getting Started with OpenAPI Specifications](htt
 
 ---
 _This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments._
+
+test pr 5
