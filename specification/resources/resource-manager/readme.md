@@ -82,10 +82,6 @@ tag: package-snapshots-2022-11
 ```
 
 ``` yaml $(package-bicep)
-tag: package-bicep-2023-11
-```
-
-``` yaml $(package-bicep)
 tag: package-bicep-2023-12
 ```
 
