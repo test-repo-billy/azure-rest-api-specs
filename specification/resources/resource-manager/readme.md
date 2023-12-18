@@ -85,6 +85,10 @@ tag: package-snapshots-2022-11
 tag: package-bicep-2023-11
 ```
 
+``` yaml $(package-bicep)
+tag: package-bicep-2023-12
+```
+
 ### Tag: package-bicep-2023-11
 
 These settings apply only when `--tag=package-bicep-2023-11` is specified on the command line.
@@ -93,6 +97,16 @@ These settings apply only when `--tag=package-bicep-2023-11` is specified on the
 input-file:
   - Microsoft.Resources/stable/2023-11-01/bicepClient.json
 ```
+
+### Tag: package-bicep-2023-12
+
+These settings apply only when `--tag=package-bicep-2023-12` is specified on the command line.
+
+```yaml $(tag) == 'package-bicep-2023-12'
+input-file:
+  - Microsoft.Resources/stable/2023-12-01/bicepClient.json
+```
+
 ### Tag: package-policy-2023-04
 
 These settings apply only when `--tag=package-policy-2023-04` is specified on the command line.
