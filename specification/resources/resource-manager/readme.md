@@ -192,6 +192,15 @@ input-file:
   - Microsoft.Resources/stable/2022-12-01/subscriptions.json
 ```
 
+### Tag: package-2022-12
+
+These settings apply only when `--tag=package-2023-12` is specified on the command line.
+
+``` yaml $(tag) == 'package-2023-12'
+input-file:
+  - Microsoft.Resources/stable/2023-12-01/subscriptions.json
+```
+
 ### Tag: package-policy-2022-08-preview-only
 
 These settings apply only when `--tag=package-policy-2022-08-preview-only` is specified on the command line.
@@ -415,6 +424,15 @@ These settings apply only when `--tag=package-subscriptions-2022-12` is specifie
 ``` yaml $(tag) == 'package-subscriptions-2022-12'
 input-file:
 - Microsoft.Resources/stable/2022-12-01/subscriptions.json
+```
+
+### Tag: package-subscriptions-2023-12
+
+These settings apply only when `--tag=package-subscriptions-2023-12` is specified on the command line.
+
+``` yaml $(tag) == 'package-subscriptions-2022-12'
+input-file:
+- Microsoft.Resources/stable/2023-12-01/subscriptions.json
 ```
 
 ### Tag: package-subscriptions-2021-01
