@@ -12,6 +12,7 @@ namespace Microsoft.LoadTestService;
 enum PFMetrics {
   @doc("Pass fail criteria for response time metric in milliseconds.")
   response_time_ms,
+
   @doc("Pass fail criteria for latency metric in milliseconds.") latency,
   @doc("Pass fail criteria for error metric.") error,
   @doc("Pass fail criteria for total requests.") requests,
@@ -35,6 +36,7 @@ enum PFAgFunc {
 enum PFAction {
   @doc("Test will continue to run even if pass fail metric criteria metric gets failed.")
   continue,
+
   @doc("Test run will stop if pass fail criteria metric is not passed.") stop,
 }
 
@@ -58,11 +60,8 @@ enum CertificateType {
 
 @doc("Types of file supported.")
 enum FileType {
-  @doc("If the file is a JMX script.")
-  JMX_FILE,
-
-  @doc("If the file is a user properties file.")
-  USER_PROPERTIES,
+  @doc("If the file is a JMX script.") JMX_FILE,
+  @doc("If the file is a user properties file.") USER_PROPERTIES,
 
   @doc("If the file is not among any of the other supported file types.")
   ADDITIONAL_ARTIFACTS,
@@ -143,8 +142,7 @@ enum TimeGrain {
   @doc("10 seconds, available only if test run duration is less than 10 minutes.")
   PT10S,
 
-  @doc("1 minute")
-  PT1M,
+  @doc("1 minute") PT1M,
 
   @doc("5 minutes, available only if test run duration is greater than 1 minute.")
   PT5M,
@@ -156,11 +154,8 @@ enum TimeGrain {
 @added(APIVersions.v2023_04_01_preview)
 @doc("Test kind")
 enum TestKind {
-  @doc("URL Test")
-  URL,
-
-  @doc("JMX Test")
-  JMX,
+  @doc("URL Test") URL,
+  @doc("JMX Test") JMX,
 }
 
 @doc("Test file info.")
