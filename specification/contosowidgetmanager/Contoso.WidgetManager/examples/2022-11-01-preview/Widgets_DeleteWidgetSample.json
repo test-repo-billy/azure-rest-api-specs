@@ -20,7 +20,7 @@
       "body": {
         "error": {
           "code": "Error code",
-          "message": "Error message",
+          "message": "Error message test test",
           "details": []
         }
       }
