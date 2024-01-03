@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Microsoft.ServiceLinker",
-    "description": "Microsoft.ServiceLinker provider",
+    "description": "Microsoft.ServiceLinker provider test node 20",
     "version": "2022-11-01-preview"
   },
   "host": "management.azure.com",
