@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "ApplicationInsightsManagementClient",
-    "description": "Azure Application Insights client for application insights diagnostic services token.",
+    "description": "Azure Application Insights client for application insights diagnostic services token. test",
     "version": "2021-03-03-preview"
   },
   "host": "management.azure.com",
