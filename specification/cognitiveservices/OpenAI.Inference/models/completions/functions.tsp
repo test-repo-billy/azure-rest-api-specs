@@ -29,6 +29,7 @@ enum FunctionCallPreset {
   @doc("""
   Specifies that the model should not respond with a function call and should instead provide a standard chat
   completions response. Response content may still be influenced by the provided function information.
+  Doc change.
   """)
   none: "none",
 }
