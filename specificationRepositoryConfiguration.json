@@ -71,8 +71,8 @@
           "mainBranch": "main"
         },
         "azure-sdk-for-java": {
-          "mainRepository": "test-repo-billy/azure-sdk-for-java",
-          "mainBranch": "haoling-test",
+          "mainRepository": "weidongxu-microsoft/azure-sdk-for-java",
+          "mainBranch": "eng_migrate-tsp-client",
           "configFilePath": "eng/mgmt/automation/swagger_to_sdk_config.json"
         },
         "azure-resource-manager-schemas": {
