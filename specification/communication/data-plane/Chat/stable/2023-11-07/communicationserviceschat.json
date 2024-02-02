@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Azure Communication Chat Service",
-    "description": "Azure Communication Chat Service",
+    "description": "Azure Communication Chat Service test data plane",
     "version": "2023-11-07"
   },
   "paths": {
