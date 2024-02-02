@@ -67,6 +67,25 @@ input-file:
   - Microsoft.ConfidentialLedger/stable/2022-05-13/identityservice.json
 ```
 
+### Tag: package-2024-01-18-preview-ledger
+
+These settings apply only when `--tag=package-2024-01-18-preview-ledger` is specified on the command line.
+
+```yaml $(tag) == 'package-2024-01-18-preview-ledger'
+input-file:
+  - Microsoft.ConfidentialLedger/preview/2024-01-18-preview/confidentialledger.json
+```
+
+### Tag: package-2024-01-18-preview-identity
+
+These settings apply only when `--tag=package-2024-01-18-preview-identity` is specified on the command line.
+
+```yaml $(tag) == 'package-2024-01-18-preview-identity'
+input-file:
+  - Microsoft.ConfidentialLedger/preview/2024-01-18-preview/identityservice.json
+```
+
+
 ### Tag: package-2023-01-18-preview-ledger
 
 These settings apply only when `--tag=package-2023-01-18-preview-ledger` is specified on the command line.
