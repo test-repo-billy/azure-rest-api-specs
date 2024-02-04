@@ -2,6 +2,8 @@ import "@azure-tools/typespec-azure-core";
 import "@typespec/rest";
 import "@typespec/http";
 
+import "../HealthInsights.OpenAPI/service.tsp";
+
 using Azure.Core;
 using TypeSpec.Rest;
 using TypeSpec.Http;
