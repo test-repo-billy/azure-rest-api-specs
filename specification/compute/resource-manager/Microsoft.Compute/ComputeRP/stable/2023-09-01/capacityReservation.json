@@ -272,67 +272,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/capacityReservationGroups": {
-      "get": {
-        "tags": [
-          "CapacityReservationGroups"
-        ],
-        "operationId": "CapacityReservationGroups_ListByResourceGroup",
-        "description": "Lists all of the capacity reservation groups in the specified resource group. Use the nextLink property in the response to get the next page of capacity reservation groups.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the resource group."
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The expand expression to apply on the operation. Based on the expand param(s) specified we return Virtual Machine or ScaleSet VM Instance or both resource Ids which are associated to capacity reservation group in the response.",
-            "enum": [
-              "virtualMachineScaleSetVMs/$ref",
-              "virtualMachines/$ref"
-            ],
-            "x-ms-enum": {
-              "name": "ExpandTypesForGetCapacityReservationGroups",
-              "modelAsString": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/CapacityReservationGroupListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "List capacity reservation groups in resource group.": {
-            "$ref": "./examples/capacityReservationExamples/CapacityReservationGroup_ListByResourceGroup.json"
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/capacityReservationGroups": {
       "get": {
         "tags": [

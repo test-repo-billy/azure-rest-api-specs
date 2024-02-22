@@ -255,52 +255,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/availabilitySets": {
-      "get": {
-        "tags": [
-          "AvailabilitySets"
-        ],
-        "operationId": "AvailabilitySets_ListBySubscription",
-        "description": "Lists all availability sets in a subscription.",
-        "parameters": [
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The expand expression to apply to the operation. Allowed values are 'instanceView'."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/AvailabilitySetListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "x-ms-examples": {
-          "List availability sets in a subscription.": {
-            "$ref": "./examples/availabilitySetExamples/AvailabilitySet_ListBySubscription.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/availabilitySets": {
       "get": {
         "tags": [
