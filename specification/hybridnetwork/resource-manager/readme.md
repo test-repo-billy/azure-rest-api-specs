@@ -25,8 +25,32 @@ These are the global settings for the hybridnetwork.
 ```yaml
 openapi-type: arm
 openapi-subtype: rpaas
-tag: package-2023-09-01
+tag: package-2023-10-01
 ```
+### Tag: package-2023-10-01
+
+These settings apply only when `--tag=package-2023-10-01` is specified on the command line.
+
+```yaml $(tag) == 'package-2023-10-01'
+input-file:
+  - Microsoft.HybridNetwork/stable/2023-10-01/common.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/configurationGroupSchema.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/configurationGroupValues.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/networkFunction.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/networkFunctionDefinition.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/networkServiceDesign.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/operation.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/publisher.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/pureProxyArtifact.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/site.json
+  - Microsoft.HybridNetwork/stable/2023-10-01/siteNetworkService.json
+
+suppressions:
+  - code: PatchSkuProperty
+    from: siteNetworkService.json
+    reason: sku cannot be patched
+```
+
 ### Tag: package-2023-09-01
 
 These settings apply only when `--tag=package-2023-09-01` is specified on the command line.
