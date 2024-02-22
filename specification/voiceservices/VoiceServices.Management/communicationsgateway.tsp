@@ -1,17 +1,17 @@
 // Definitions for the CommunicationsGateway resource and child resources
 
-import "@cadl-lang/openapi";
-import "@cadl-lang/rest";
-import "@azure-tools/cadl-providerhub";
-import "@azure-tools/cadl-autorest";
-import "@azure-tools/cadl-azure-core";
-import "@azure-tools/cadl-azure-resource-manager";
+import "@TypeSpec-lang/openapi";
+import "@TypeSpec-lang/rest";
+import "@azure-tools/TypeSpec-providerhub";
+import "@azure-tools/TypeSpec-autorest";
+import "@azure-tools/TypeSpec-azure-core";
+import "@azure-tools/TypeSpec-azure-resource-manager";
 
 namespace Microsoft.VoiceServices;
 
-using Cadl.Http;
-using Cadl.Rest;
-using Cadl.Versioning;
+using TypeSpec.Http;
+using TypeSpec.Rest;
+using TypeSpec.Versioning;
 using Azure.ResourceManager;
 
 @doc("A TestLine resource")
@@ -262,24 +262,3 @@ interface CommunicationsGateways
     ResourceListByParent<CommunicationsGateway>,
     ResourceUpdateNoProperties<CommunicationsGateway> {}
 
-#suppress "@azure-tools/cadl-azure-resource-manager/arm-resource-interface-requires-decorator" "CheckNameAvailability is not supported by cadl-azure-resource-manager."
-#suppress "@azure-tools/cadl-azure-resource-manager/arm-resource-interface-uses-templates" "CheckNameAvailability is not supported by cadl-azure-resource-manager."
-#suppress "@azure-tools/cadl-azure-resource-manager/arm-resource-operation-missing-decorator" "CheckNameAvailability is not supported by cadl-azure-resource-manager."
-@added(Versions.v2023_01_31)
-interface NameAvailability {
-  @doc("Check whether the resource name is available in the given region.")
-  @post
-  @route("/subscriptions/{subscriptionId}/providers/Microsoft.VoiceServices/locations/{location}/checkNameAvailability")
-  checkLocal(
-    @doc("The check availability request body.")
-    @body
-    body: CheckNameAvailabilityRequest,
-
-    @doc("The location in which uniqueness will be verified.")
-    @path
-    location: string,
-
-    ...SubscriptionIdParameter,
-    ...ApiVersionParameter
-  ): CheckNameAvailabilityResponse | ErrorResponse;
-}
