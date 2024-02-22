@@ -381,7 +381,6 @@ input-file:
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskAccess.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskEncryptionSet.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskRestorePoint.json
-  - Microsoft.Compute/DiskRP/stable/2023-04-02/snapshot.json
   - Microsoft.Compute/Skus/stable/2021-07-01/skus.json
   - Microsoft.Compute/GalleryRP/stable/2022-08-03/galleryRPCommon.json
   - Microsoft.Compute/GalleryRP/stable/2022-08-03/gallery.json
@@ -439,7 +438,6 @@ input-file:
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskAccess.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskEncryptionSet.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskRestorePoint.json
-  - Microsoft.Compute/DiskRP/stable/2023-04-02/snapshot.json
   - Microsoft.Compute/Skus/stable/2021-07-01/skus.json
   - Microsoft.Compute/GalleryRP/stable/2022-08-03/galleryRPCommon.json
   - Microsoft.Compute/GalleryRP/stable/2022-08-03/gallery.json
@@ -487,7 +485,6 @@ input-file:
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskAccess.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskEncryptionSet.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskRestorePoint.json
-  - Microsoft.Compute/DiskRP/stable/2023-04-02/snapshot.json
   - Microsoft.Compute/Skus/stable/2021-07-01/skus.json
   - Microsoft.Compute/GalleryRP/stable/2022-03-03/galleryRPCommon.json
   - Microsoft.Compute/GalleryRP/stable/2022-03-03/gallery.json
@@ -545,7 +542,6 @@ input-file:
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskAccess.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskEncryptionSet.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskRestorePoint.json
-  - Microsoft.Compute/DiskRP/stable/2023-04-02/snapshot.json
   - Microsoft.Compute/Skus/stable/2021-07-01/skus.json
   - Microsoft.Compute/GalleryRP/stable/2022-03-03/galleryRPCommon.json
   - Microsoft.Compute/GalleryRP/stable/2022-03-03/gallery.json
@@ -566,7 +562,6 @@ input-file:
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskAccess.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskEncryptionSet.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskRestorePoint.json
-  - Microsoft.Compute/DiskRP/stable/2023-04-02/snapshot.json
 ```
 
 ### Tag: package-2023-01-02
