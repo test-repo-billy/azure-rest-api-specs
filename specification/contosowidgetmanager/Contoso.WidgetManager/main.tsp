@@ -39,10 +39,10 @@ model WidgetSuite {
 }
 
 interface Widgets {
-  @doc("Fetch a Widget by name.")
+  @doc("Fetch a Widget by name. test")
   getWidget is ResourceRead<WidgetSuite>;
 
-  @doc("Gets status of a Widget operation.")
+  @doc("Gets status of a Widget operation. test")
   getWidgetOperationStatus is GetResourceOperationStatus<WidgetSuite>;
 
   @doc("Creates or updates a Widget asynchronously.")

@@ -42,7 +42,7 @@
     "/widgets": {
       "get": {
         "operationId": "Widgets_ListWidgets",
-        "description": "List Widget resources",
+        "description": "List Widget resources test test",
         "parameters": [
           {
             "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
@@ -348,7 +348,7 @@
         },
         "message": {
           "type": "string",
-          "description": "A human-readable representation of the error."
+          "description": "A human-readable representation of the error test test."
         },
         "target": {
           "type": "string",
