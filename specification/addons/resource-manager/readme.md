@@ -26,7 +26,16 @@ These are the global settings for the Addons API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2018-03
+tag: package-2020-03
+```
+
+### Tag: package-2020-03
+
+These settings apply only when `--tag=package-2020-03` is specified on the command line.
+
+``` yaml $(tag) == 'package-2020-03'
+input-file:
+- Microsoft.Addons/preview/2020-03-01/addons-swagger.json
 ```
 
 ### Tag: package-2018-03
@@ -57,7 +66,7 @@ This is not used by Autorest itself.
 
 ``` yaml $(swagger-to-sdk)
 swagger-to-sdk:
-  - repo: azure-sdk-for-go
+  - repo: azure-sdk-for-go-track2
   - repo: azure-resource-manager-schemas
   - repo: azure-powershell
 ```
@@ -127,8 +136,22 @@ output-folder: $(azure-libraries-for-java-folder)/azure-mgmt-addons
 
 ``` yaml $(java) && $(multiapi)
 batch:
+  - tag: package-2020-03
   - tag: package-2018-03
   - tag: package-2017-05
+```
+
+### Tag: package-2020-03 and java
+
+These settings apply only when `--tag=package-2020-03 --java` is specified on the command line.
+Please also specify `--azure-libraries-for-java=<path to the root directory of your azure-sdk-for-java clone>`.
+
+``` yaml $(tag) == 'package-2020-03' && $(java) && $(multiapi)
+java:
+  namespace: com.microsoft.azure.management.addons.v2020_03_01
+  output-folder: $(azure-libraries-for-java-folder)/sdk/addons/mgmt-v2020_03_01
+regenerate-manager: true
+generate-interface: true
 ```
 
 ### Tag: package-2018-03 and java
