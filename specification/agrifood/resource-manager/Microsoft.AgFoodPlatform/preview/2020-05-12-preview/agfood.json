@@ -52,7 +52,7 @@
             "$ref": "./examples/Extensions_Get.json"
           }
         }
-      },
+      }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AgFoodPlatform/farmBeats/{farmBeatsResourceName}/extensions/{extensionId}": {
       "put": {
