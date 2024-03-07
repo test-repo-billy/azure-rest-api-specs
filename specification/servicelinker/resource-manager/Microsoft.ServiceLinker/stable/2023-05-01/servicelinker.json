@@ -37,8 +37,8 @@
     "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers": {
       "get": {
         "deprecated": false,
-        "description": "Returns list of Linkers which connects to the resource.",
-        "operationId": "Linker_List",
+        "description": "Returns list of Linkers which connects to the resource.test",
+        "operationId": "Linker_List_1",
         "x-ms-examples": {
           "LinkList": {
             "$ref": "./examples/LinkList.json"
@@ -46,7 +46,7 @@
         },
         "parameters": [
           {
-            "$ref": "#/parameters/ResourceUriParameter"
+            "$ref": "#/parameters/ResourceUriParameter2"
           },
           {
             "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
