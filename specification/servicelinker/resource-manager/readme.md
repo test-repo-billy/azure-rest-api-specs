@@ -28,7 +28,7 @@ These are the global settings for the ServiceLinker.
 title: ServiceLinkerManagementClient
 openapi-type: arm
 openapi-subtype : rpaas
-tag: package-2022-05-01
+tag: package-2023-05-01
 ```
 
 ### Tag: package-2021-11-01-preview
@@ -56,6 +56,15 @@ These settings apply only when `--tag=package-2022-05-01` is specified on the co
 ```yaml $(tag) == 'package-2022-05-01'
 input-file:
   - Microsoft.ServiceLinker/stable/2022-05-01/servicelinker.json
+```
+
+### Tag: package-2023-05-01
+
+These settings apply only when `--tag=package-2023-05-01` is specified on the command line.
+
+```yaml $(tag) == 'package-2023-05-01'
+input-file:
+  - Microsoft.ServiceLinker/stable/2023-05-01/servicelinker.json
 ```
 
 ### Tag: package-2022-11-01-preview
