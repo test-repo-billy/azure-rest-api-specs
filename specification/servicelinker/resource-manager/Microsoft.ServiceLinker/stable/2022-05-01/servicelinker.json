@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Microsoft.ServiceLinker",
-    "description": "Microsoft.ServiceLinker provider",
+    "description": "Microsoft.ServiceLinker provider test",
     "version": "2022-05-01"
   },
   "host": "management.azure.com",
@@ -55,6 +55,12 @@
         "responses": {
           "200": {
             "description": "linker details.",
+            "schema": {
+              "$ref": "#/definitions/LinkerList"
+            }
+          },
+          "201": {
+            "description": "linker details. test",
             "schema": {
               "$ref": "#/definitions/LinkerList"
             }
