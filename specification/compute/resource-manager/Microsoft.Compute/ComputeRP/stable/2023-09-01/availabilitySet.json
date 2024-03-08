@@ -349,62 +349,6 @@
           }
         }
       }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/availabilitySets/{availabilitySetName}/vmSizes": {
-      "get": {
-        "tags": [
-          "AvailabilitySets"
-        ],
-        "operationId": "AvailabilitySets_ListAvailableSizes",
-        "description": "Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the resource group."
-          },
-          {
-            "name": "availabilitySetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the availability set."
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "./computeRPCommon.json#/definitions/VirtualMachineSizeListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": null
-        },
-        "x-ms-examples": {
-          "AvailabilitySet_ListAvailableSizes_MaximumSet_Gen": {
-            "$ref": "./examples/availabilitySetExamples/AvailabilitySet_ListAvailableSizes_MaximumSet_Gen.json"
-          },
-          "AvailabilitySet_ListAvailableSizes_MinimumSet_Gen": {
-            "$ref": "./examples/availabilitySetExamples/AvailabilitySet_ListAvailableSizes_MinimumSet_Gen.json"
-          }
-        }
-      }
     }
   },
   "definitions": {

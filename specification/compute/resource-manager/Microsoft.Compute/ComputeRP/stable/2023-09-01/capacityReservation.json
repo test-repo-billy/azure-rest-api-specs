@@ -40,7 +40,7 @@
           "CapacityReservationGroups"
         ],
         "operationId": "CapacityReservationGroups_CreateOrUpdate",
-        "description": "The operation to create or update a capacity reservation group. When updating a capacity reservation group, only tags and sharing profile may be modified. Please refer to https://aka.ms/CapacityReservation for more details.",
+        "description": "test The operation to create or update a capacity reservation group. When updating a capacity reservation group, only tags and sharing profile may be modified. Please refer to https://aka.ms/CapacityReservation for more details.",
         "parameters": [
           {
             "name": "resourceGroupName",
@@ -589,75 +589,6 @@
           },
           "CapacityReservation_Delete_MinimumSet_Gen": {
             "$ref": "./examples/capacityReservationExamples/CapacityReservation_Delete_MinimumSet_Gen.json"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "CapacityReservations"
-        ],
-        "operationId": "CapacityReservations_Get",
-        "description": "The operation that retrieves information about the capacity reservation.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the resource group."
-          },
-          {
-            "name": "capacityReservationGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the capacity reservation group."
-          },
-          {
-            "name": "capacityReservationName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the capacity reservation."
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime properties of the capacity reservation that is managed by the platform and can change outside of control plane operations.",
-            "enum": [
-              "instanceView"
-            ],
-            "x-ms-enum": {
-              "name": "CapacityReservationInstanceViewTypes",
-              "modelAsString": true
-            }
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/CapacityReservation"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Get a capacity reservation.": {
-            "$ref": "./examples/capacityReservationExamples/CapacityReservation_Get.json"
           }
         }
       }
