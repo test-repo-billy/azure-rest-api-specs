@@ -73,49 +73,6 @@
           }
         }
       }
-    },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests": {
-      "get": {
-        "operationId": "ApplicationGatewayWafDynamicManifests_Get",
-        "description": "Gets the regional application gateway waf manifest.",
-        "parameters": [
-          {
-            "name": "location",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The region where the nrp are located at."
-          },
-          {
-            "$ref": "./network.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "./network.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request successful. Returns the regional application gateway waf manifest",
-            "schema": {
-              "$ref": "#/definitions/ApplicationGatewayWafDynamicManifestResultList"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "./network.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Gets WAF manifests": {
-            "$ref": "./examples/GetApplicationGatewayWafDynamicManifests.json"
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
     }
   },
   "definitions": {
