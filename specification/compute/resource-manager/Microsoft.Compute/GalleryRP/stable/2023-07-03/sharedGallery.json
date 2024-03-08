@@ -34,62 +34,6 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/sharedGalleries": {
-      "get": {
-        "tags": [
-          "SharedGalleries"
-        ],
-        "operationId": "SharedGalleries_List",
-        "description": "List shared galleries by subscription id or tenant id.",
-        "parameters": [
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "./galleryRPCommon.json#/parameters/LocationNameParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "name": "sharedTo",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The query parameter to decide what shared galleries to fetch when doing listing operations.",
-            "enum": [
-              "tenant"
-            ],
-            "x-ms-enum": {
-              "name": "SharedToValues",
-              "modelAsString": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/SharedGalleryList"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "List shared galleries.": {
-            "$ref": "./examples/sharedGalleryExamples/SharedGallery_List.json"
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/sharedGalleries/{galleryUniqueName}/images": {
       "get": {
         "tags": [

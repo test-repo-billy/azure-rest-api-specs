@@ -34,48 +34,6 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/communityGalleries/{publicGalleryName}": {
-      "get": {
-        "tags": [
-          "CommunityGalleries"
-        ],
-        "operationId": "CommunityGalleries_Get",
-        "description": "Get a community gallery by gallery public name.",
-        "parameters": [
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "./galleryRPCommon.json#/parameters/LocationNameParameter"
-          },
-          {
-            "$ref": "#/parameters/PublicGalleryNameParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/CommunityGallery"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Get a community gallery.": {
-            "$ref": "./examples/communityGalleryExamples/CommunityGallery_Get.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/communityGalleries/{publicGalleryName}/images/{galleryImageName}": {
       "get": {
         "tags": [
