@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Azure API Center",
-    "version": "2024-03-01",
+    "version": "2023-03-01",
     "description": "Azure API Center Resource Provider. tetetetetetet",
     "x-typespec-generated": [
       {
@@ -4620,7 +4620,7 @@
       "type": "string",
       "description": "The available API versions.",
       "enum": [
-        "2024-03-01"
+        "2023-03-01"
       ],
       "x-ms-enum": {
         "name": "Versions",
@@ -4628,7 +4628,7 @@
         "values": [
           {
             "name": "v2024_03_01",
-            "value": "2024-03-01",
+            "value": "2023-03-01",
             "description": "The initial service version"
           }
         ]

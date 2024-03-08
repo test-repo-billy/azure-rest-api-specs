@@ -27,12 +27,21 @@ These are the global settings for the Azure API Center.
 ``` yaml
 openapi-type: arm
 openapi-subtype: providerHub
-tag: package-2024-03
+tag: package-2023-03
 ```
 
 ``` yaml
 modelerfour:
   flatten-models: false
+```
+
+### Tag: package-2023-03
+
+These settings apply only when `--tag=package-2023-03` is specified on the command line.
+
+```yaml $(tag) == 'package-2023-03'
+input-file:
+  - Microsoft.ApiCenter/stable/2023-03-01/apicenter.json
 ```
 
 ### Tag: package-2024-03
@@ -43,6 +52,7 @@ These settings apply only when `--tag=package-2024-03` is specified on the comma
 input-file:
   - Microsoft.ApiCenter/stable/2024-03-01/apicenter.json
 ```
+
 ### Tag: package-2023-07-01-preview
 
 These settings apply only when `--tag=package-2023-07-01-preview` is specified on the command line.
