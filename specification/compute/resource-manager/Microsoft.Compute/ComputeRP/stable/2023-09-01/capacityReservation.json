@@ -98,66 +98,6 @@
           }
         }
       },
-      "patch": {
-        "tags": [
-          "CapacityReservationGroups"
-        ],
-        "operationId": "CapacityReservationGroups_Update",
-        "description": "The operation to update a capacity reservation group. When updating a capacity reservation group, only tags and sharing profile may be modified.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the resource group."
-          },
-          {
-            "name": "capacityReservationGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the capacity reservation group."
-          },
-          {
-            "name": "parameters",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/CapacityReservationGroupUpdate"
-            },
-            "description": "Parameters supplied to the Update capacity reservation Group operation."
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/CapacityReservationGroup"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "CapacityReservationGroup_Update_MaximumSet_Gen": {
-            "$ref": "./examples/capacityReservationExamples/CapacityReservationGroup_Update_MaximumSet_Gen.json"
-          },
-          "CapacityReservationGroup_Update_MinimumSet_Gen": {
-            "$ref": "./examples/capacityReservationExamples/CapacityReservationGroup_Update_MinimumSet_Gen.json"
-          }
-        }
-      },
       "delete": {
         "tags": [
           "CapacityReservationGroups"
