@@ -34,43 +34,6 @@
     }
   },
   "paths": {
-    "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers": {
-      "get": {
-        "deprecated": false,
-        "description": "Returns list of Linkers which connects to the resource.",
-        "operationId": "Linker_List",
-        "x-ms-examples": {
-          "LinkList": {
-            "$ref": "./examples/LinkList.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceUriParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "linker details.",
-            "schema": {
-              "$ref": "#/definitions/LinkerList"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers/{linkerName}": {
       "get": {
         "description": "Returns Linker resource for a given name.",
@@ -94,65 +57,6 @@
         "responses": {
           "200": {
             "description": "Linker details.",
-            "schema": {
-              "$ref": "#/definitions/LinkerResource"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      },
-      "put": {
-        "description": "Create or update linker resource.",
-        "operationId": "Linker_CreateOrUpdate",
-        "x-ms-long-running-operation": true,
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "azure-async-operation"
-        },
-        "x-ms-examples": {
-          "PutLink": {
-            "$ref": "./examples/PutLink.json"
-          },
-          "PutLinkWithServiceEndpoint": {
-            "$ref": "./examples/PutLinkWithServiceEndpoint.json"
-          },
-          "PutLinkWithSecretStore": {
-            "$ref": "./examples/PutLinkWithSecretStore.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceUriParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/LinkerNameParameter"
-          },
-          {
-            "name": "parameters",
-            "description": "Linker details.",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/LinkerResource"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful.",
-            "schema": {
-              "$ref": "#/definitions/LinkerResource"
-            }
-          },
-          "201": {
-            "description": "Long running operation.",
             "schema": {
               "$ref": "#/definitions/LinkerResource"
             }
