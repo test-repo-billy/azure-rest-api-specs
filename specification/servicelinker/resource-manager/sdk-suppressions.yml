@@ -14,7 +14,9 @@ suppressions:
       breaking-changes:
         - 'Type of `OperationStatus.Properties` has been changed from `map[string]interface{}` to `interface{}`'
         - 'Type of `OperationsDiscovery.Properties` has been changed from `map[string]interface{}` to `interface{}`'
-
+    - package: armservicelinker
+      breaking-changes:
+        - 'Function `*LinkerClient.NewListPager` has been removed'
   azure-sdk-for-js:
     - package: arm-operationalinsights
       breaking-changes:
