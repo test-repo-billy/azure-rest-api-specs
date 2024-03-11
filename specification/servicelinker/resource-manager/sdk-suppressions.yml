@@ -17,6 +17,7 @@ suppressions:
     - package: armservicelinker
       breaking-changes:
         - 'Function `*LinkerClient.NewListPager` has been removed'
+        - 'Function `*LinkerClient.NewListPager` has been removed'
   azure-sdk-for-js:
     - package: arm-operationalinsights
       breaking-changes:
