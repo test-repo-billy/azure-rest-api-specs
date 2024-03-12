@@ -171,42 +171,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/diagnostics/diskInspection": {
-      "get": {
-        "tags": [
-          "diagnostics_DiskInspection"
-        ],
-        "operationId": "DiskInspection_Get",
-        "description": "Gets a specific Compute diagnostic for a subscription in a location.",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/LocationParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/ComputeDiagnosticBase"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the get call failed.",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Gets the status of a scheduled disk inspection request.": {
-            "$ref": "./examples/GetDiskInspection.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/diagnostics/diskInspection/registerStorageConfiguration": {
       "post": {
         "tags": [
