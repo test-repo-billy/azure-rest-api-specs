@@ -34,49 +34,6 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/diagnosticOperations/{operationId}": {
-      "get": {
-        "tags": [
-          "diagnosticOperations"
-        ],
-        "operationId": "DiagnosticOperations_Read",
-        "description": "Gets status of a Diagnostic operation issued for Disk Inspection.",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/LocationParameter"
-          },
-          {
-            "in": "path",
-            "name": "operationId",
-            "required": true,
-            "type": "string",
-            "description": "The identifier pointing to a request for Disk Inspection. This is used for polling result of the request."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          },
-          "202": {
-            "description": "Accepted"
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Gets the status of a scheduled disk inspection request.": {
-            "$ref": "./examples/GetDiagnosticOperation.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/diagnostics/diskInspection/run": {
       "post": {
         "tags": [
