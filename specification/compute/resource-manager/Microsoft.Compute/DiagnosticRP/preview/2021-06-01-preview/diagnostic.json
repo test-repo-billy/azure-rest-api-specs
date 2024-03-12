@@ -77,61 +77,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/diagnostics/diskInspection/run": {
-      "post": {
-        "tags": [
-          "diagnostics"
-        ],
-        "operationId": "DiskInspection_Create",
-        "x-ms-long-running-operation": true,
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "location"
-        },
-        "description": "Creates a request for executing disk Inspection.",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/LocationParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "name": "runDiskInspectionInput",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RunDiskInspectionInput"
-            },
-            "description": "RunDiskInspection object supplied in the body of the Post run disk inspection operation."
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted",
-            "schema": {
-              "type": "string"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the diagnostic run failed.",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Create a request for disk inspection.": {
-            "$ref": "./examples/RunDiskInspection.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/diagnostics": {
       "get": {
         "tags": [
