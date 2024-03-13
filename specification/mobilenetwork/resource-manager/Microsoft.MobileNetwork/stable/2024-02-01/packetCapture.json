@@ -191,58 +191,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileNetwork/packetCoreControlPlanes/{packetCoreControlPlaneName}/packetCaptures/{packetCaptureName}/stop": {
-      "post": {
-        "tags": [
-          "PacketCaptures"
-        ],
-        "operationId": "PacketCaptures_Stop",
-        "description": "Stop a packet capture session.",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "./common.json#/parameters/PacketCoreControlPlaneNameParameter"
-          },
-          {
-            "$ref": "./common.json#/parameters/PacketCaptureNameParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Async operation completed.",
-            "schema": {
-              "$ref": "./common.json#/definitions/AsyncOperationStatus"
-            }
-          },
-          "202": {
-            "description": "Accepted. Returns an operation URI that can be queried to find the current state of the operation."
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Stop packet capture session": {
-            "$ref": "./examples/PacketCaptureStop.json"
-          }
-        },
-        "x-ms-long-running-operation": true,
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "location"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileNetwork/packetCoreControlPlanes/{packetCoreControlPlaneName}/packetCaptures": {
       "get": {
         "tags": [
