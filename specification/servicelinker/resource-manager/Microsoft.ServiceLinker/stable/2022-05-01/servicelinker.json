@@ -266,20 +266,20 @@
         }
       }
     },
-    "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers/{linkerName}/validateLinker": {
+    "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers/{linkerName}/revalidateLinkers": {
       "post": {
         "tags": [
           "Links"
         ],
-        "operationId": "Linker_Validate",
-        "description": "Validate a link.",
+        "operationId": "Linker_ReValidate",
+        "description": "Re-Validate a link.",
         "x-ms-long-running-operation": true,
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation"
         },
         "x-ms-examples": {
           "ValidateLinkSuccess": {
-            "$ref": "./examples/ValidateLinkSuccess.json"
+            "$ref": "./examples/ReValidateLinkSuccess.json"
           }
         },
         "parameters": [
@@ -302,45 +302,6 @@
           },
           "202": {
             "description": "Accepted - Returns this status until the asynchronous operation has completed."
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers/{linkerName}/listConfigurations": {
-      "post": {
-        "tags": [
-          "Links"
-        ],
-        "operationId": "Linker_ListConfigurations",
-        "description": "list source configurations for a linker.",
-        "x-ms-examples": {
-          "GetConfiguration": {
-            "$ref": "./examples/GetConfigurations.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceUriParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/LinkerNameParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK. The request has succeeded.",
-            "schema": {
-              "$ref": "#/definitions/SourceConfigurationResult"
-            }
           },
           "default": {
             "description": "Error response describing why the operation failed.",
