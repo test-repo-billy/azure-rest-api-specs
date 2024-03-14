@@ -40,7 +40,7 @@
           "CapacityReservationGroups"
         ],
         "operationId": "CapacityReservationGroups_CreateOrUpdate",
-        "description": "test The operation to create or update a capacity reservation group. When updating a capacity reservation group, only tags and sharing profile may be modified. Please refer to https://aka.ms/CapacityReservation for more details.",
+        "description": "test The operationtest to create or update a capacity reservation group. When updating a capacity reservation group, only tags and sharing profile may be modified. Please refer to https://aka.ms/CapacityReservation for more details.",
         "parameters": [
           {
             "name": "resourceGroupName",
