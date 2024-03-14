@@ -2,7 +2,7 @@ suppressions:
   azure-sdk-for-go:
     - package: armcognitiveservices
       breaking-changes:
-        - Function `*LocalRulestacksClient.ListAppIDs` has been removed
+        - Function `*LocalRulestacksClient.ListAppIDs` has been removed tttt
         - Function `*LocalRulestacksClient.ListCountries` has been removed
         - Function `*LocalRulestacksClient.ListPredefinedURLCategories` has been removed
     - package: armcompute
