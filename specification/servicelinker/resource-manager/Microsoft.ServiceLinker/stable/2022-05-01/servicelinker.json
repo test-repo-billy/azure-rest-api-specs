@@ -34,43 +34,6 @@
     }
   },
   "paths": {
-    "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers": {
-      "get": {
-        "deprecated": false,
-        "description": "Returns list of Linkers which connects to the resource.",
-        "operationId": "Linker_List",
-        "x-ms-examples": {
-          "LinkList": {
-            "$ref": "./examples/LinkList.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceUriParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "linker details.",
-            "schema": {
-              "$ref": "#/definitions/LinkerList"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers/{linkerName}": {
       "get": {
         "description": "Returns Linker resource for a given name.",
@@ -156,50 +119,6 @@
             "schema": {
               "$ref": "#/definitions/LinkerResource"
             }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Links"
-        ],
-        "operationId": "Linker_Delete",
-        "x-ms-long-running-operation": true,
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "azure-async-operation"
-        },
-        "description": "Delete a link.",
-        "x-ms-examples": {
-          "DeleteLink": {
-            "$ref": "./examples/DeleteLink.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceUriParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/LinkerNameParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK. The link is deleted."
-          },
-          "204": {
-            "description": "Deleted. The link is not found."
-          },
-          "202": {
-            "description": "Long running operation."
           },
           "default": {
             "description": "Error response describing why the operation failed.",
