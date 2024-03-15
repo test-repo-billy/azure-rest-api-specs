@@ -24,7 +24,7 @@ suppressions:
       breaking-changes:
         - 'Interface CanceledSubscriptionId no longer has parameter value'
         - 'Interface EnabledSubscriptionId no longer has parameter value'
-    - package: @azure/arm-servicelinker
+    - package: '@azure/arm-servicelinker'
       breaking-changes:
         - 'Removed operation Linker.beginCreateOrUpdate'
         -	'Removed operation Linker.beginCreateOrUpdateAndWait'
