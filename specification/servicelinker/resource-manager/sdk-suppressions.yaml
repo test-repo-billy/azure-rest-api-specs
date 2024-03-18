@@ -40,7 +40,5 @@ suppressions:
       breaking-changes:
         - 'Removed operation LinkerOperations.begin_create_or_update'
         - 'Removed operation LinkerOperations.list'
-    - package: 'track2_azure-mgmt-servicelinker'
-      breaking-chagnes:
         - 'Removed operation LinkerOperations.list'
         - 'Removed operation group Operations'
