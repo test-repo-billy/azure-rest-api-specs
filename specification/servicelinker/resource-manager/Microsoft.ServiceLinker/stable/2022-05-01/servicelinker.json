@@ -34,43 +34,6 @@
     }
   },
   "paths": {
-    "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers": {
-      "get": {
-        "deprecated": false,
-        "description": "Returns list of Linkers which connects to the resource.",
-        "operationId": "Linker_List",
-        "x-ms-examples": {
-          "LinkList": {
-            "$ref": "./examples/LinkList.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceUriParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "linker details.",
-            "schema": {
-              "$ref": "#/definitions/LinkerList"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers/{linkerName}": {
       "get": {
         "description": "Returns Linker resource for a given name.",
@@ -348,42 +311,6 @@
               "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
             }
           }
-        }
-      }
-    },
-    "/providers/Microsoft.ServiceLinker/operations": {
-      "get": {
-        "tags": [
-          "Operations"
-        ],
-        "operationId": "Operations_List",
-        "description": "Lists the available ServiceLinker REST API operations.",
-        "x-ms-examples": {
-          "GetConfiguration": {
-            "$ref": "./examples/OperationsList.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK. The request has succeeded.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/OperationListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
         }
       }
     }
