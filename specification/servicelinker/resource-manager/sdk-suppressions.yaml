@@ -1,5 +1,16 @@
 suppressions:
   azure-sdk-for-go:
+    - package: sdk/resourcemanager/servicelinker/armservicelinker
+      breaking-chages:
+        - Enum `ActionType` has been removed
+        - Enum `Origin` has been removed
+        - Function `*ClientFactory.NewOperationsClient` has been removed
+        - Function `*LinkerClient.NewListPager` has been removed
+        - Function `*OperationsClient.NewListPager` has been removed
+        - Function `NewOperationsClient` has been removed
+        - Struct `OperationDisplay` has been removed
+        - Struct `OperationListResult` has been removed
+        - Struct `Operation` has been removed
     - package: armcognitiveservices
       breaking-changes:
         - Function `*LocalRulestacksClient.ListAppIDs` has been removed ttt
@@ -31,6 +42,9 @@ suppressions:
         -	'Removed operation Linker.list'
         - 'Removed operation group Operations'
         - 'Class ServiceLinkerManagementClient no longer has parameter operations'
+        - 'Removed Enum KnownActionType'
+        - 'Removed Enum KnownOrigin'
+        - 'Removed function getContinuationToken'
 
   azure-sdk-for-python-track2:
     - package: track2_azure-mgmt-sql
