@@ -1,7 +1,7 @@
 suppressions:
   azure-sdk-for-go:
     - package: sdk/resourcemanager/servicelinker/armservicelinker
-      breaking-chages:
+      breaking-changes:
         - Enum `ActionType` has been removed
         - Enum `Origin` has been removed
         - Function `*ClientFactory.NewOperationsClient` has been removed
