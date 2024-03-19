@@ -11,14 +11,21 @@ suppressions:
     - package: sdk/resourcemanager/servicelinker/armservicelinker
       breaking-changes:
         - Function `*LinkerClient.BeginDelete` has been removed
+        - Function `*LinkerClient.BeginValidate` has been removed
+        - Function `*LinkerClient.NewListPager` has been removed
 
   azure-sdk-for-js:
     - package: '@azure/arm-servicelinker'
       breaking-changes:
         - Removed operation Linker.beginDelete
         - Removed operation Linker.beginDeleteAndWait
+        - Removed operation Linker.beginValidate
+        - Removed operation Linker.beginValidateAndWait
+        - Removed operation Linker.list
 
   azure-sdk-for-python-track2:
     - package: track2_azure-mgmt-servicelinker
       breaking-changes:
         - Removed operation LinkerOperations.begin_delete
+        - Removed operation LinkerOperations.begin_validate
+        - Removed operation LinkerOperations.list
