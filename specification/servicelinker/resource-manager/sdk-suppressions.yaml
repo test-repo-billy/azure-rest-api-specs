@@ -14,17 +14,21 @@ suppressions:
       breaking-changes:
         - 'Type of `OperationStatus.Properties` has been changed from `map[string]interface{}` to `interface{}`'
         - 'Type of `OperationsDiscovery.Properties` has been changed from `map[string]interface{}` to `interface{}`'
+    - package: armservicelinker
+      breaking-changes:
+        - 'Struct `LinkerList` has been removed'
+        - 'Struct `SourceConfigurationResult` has been removed'
+    - package: sdk/resourcemanager/servicelinker/armservicelinker
+      breaking-changes:
+        - Function `*LinkerClient.BeginDelete` has been removed
 
   azure-sdk-for-js:
-    - package: arm-operationalinsights
+    - package: '@azure/arm-servicelinker'
       breaking-changes:
-        - 'Removed operation group Schema'
-        - 'Removed operation Tables.create'
-    - package: arm-subscriptions
-      breaking-changes:
-        - 'Interface CanceledSubscriptionId no longer has parameter value'
-        - 'Interface EnabledSubscriptionId no longer has parameter value'
+        - Removed operation Linker.beginDelete
+        - Removed operation Linker.beginDeleteAndWait
+
   azure-sdk-for-python-track2:
-    - package: track2_azure-mgmt-sql
+    - package: track2_azure-mgmt-servicelinker
       breaking-changes:
-        - 'Removed operation ReplicationLinksOperations.delete'
+        - Removed operation LinkerOperations.begin_delete
