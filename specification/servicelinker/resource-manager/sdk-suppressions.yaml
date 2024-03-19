@@ -23,7 +23,7 @@ suppressions:
         - Function `*LinkerClient.BeginDelete` has been removed
 
   azure-sdk-for-js:
-    - package: '@azure/arm-servicelinker'
+    - package: @azure/arm-servicelinker
       breaking-changes:
         - Removed operation Linker.beginDelete
         - Removed operation Linker.beginDeleteAndWait
