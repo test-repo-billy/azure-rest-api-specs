@@ -1,0 +1,31 @@
+suppressions:
+  azure-sdk-for-go:
+    - package: armcognitiveservices
+      breaking-changes:
+        - Function `*LocalRulestacksClient.ListAppIDs` has been removed
+        - Function `*LocalRulestacksClient.ListCountries` has been removed
+        - Function `*LocalRulestacksClient.ListPredefinedURLCategories` has been removed
+    - package: armcompute
+      breaking-changes:
+        - Type of `CloudServiceExtensionProperties.ProtectedSettings` has been changed from `any` to `interface{}
+        - Function `NewClientFactory` has been removed
+        - Function `*LocalRulestacksClient.ListPredefinedURLCategories` has been removed
+    - package: armresourcemover
+      breaking-changes:
+        - 'Type of `OperationStatus.Properties` has been changed from `map[string]interface{}` to `interface{}`'
+        - 'Type of `OperationsDiscovery.Properties` has been changed from `map[string]interface{}` to `interface{}`'
+    - package: armservicelinker
+      breaking-changes:
+        - 'Struct `LinkerList` has been removed'
+        - 'Struct `SourceConfigurationResult` has been removed'
+        - 'Field `SourceConfigurationResult` of struct `LinkerClientListConfigurationsResponse` has been removed'
+        - 'Field `LinkerList` of struct `LinkerClientListResponse` has been removed'
+        - 'Function `*LinkerClient.BeginCreateOrUpdate` has been removed'
+        - 'Function `*LinkerClient.NewListPager` has been removed'
+    - package: sdk/resourcemanager/resources/armresources
+      breaking-changes:
+        - Operation `*TagsClient.CreateOrUpdateAtScope` has been changed to LRO, use `*TagsClient.BeginCreateOrUpdateAtScope` instead.
+        - Operation `*TagsClient.DeleteAtScope` has been changed to LRO, use `*TagsClient.BeginDeleteAtScope` instead.
+        - Operation `*TagsClient.UpdateAtScope` has been changed to LRO, use `*TagsClient.BeginUpdateAtScope` instead.
+        - Type of `DeploymentProperties.Parameters` has been changed from `any` to `map[string]*DeploymentParameter`
+        - Type of `DeploymentWhatIfProperties.Parameters` has been changed from `any` to `map[string]*DeploymentParameter`
