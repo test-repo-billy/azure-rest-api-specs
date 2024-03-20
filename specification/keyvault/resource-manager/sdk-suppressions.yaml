@@ -1,8 +1,12 @@
 suppressions:
   azure-sdk-for-go:
-    - package: armcognitiveservices
+    - package: sdk/resourcemanager/keyvault/armkeyvault 
       breaking-changes:
-        - Function `*LocalRulestacksClient.ListAppIDs` has been removed
-        - Function `*LocalRulestacksClient.ListCountries` has been removed
-        - Function `*LocalRulestacksClient.ListPredefinedURLCategories` has been removed
+        - Function `*VaultsClient.Delete` has been removed
+        - Function `*VaultsClient.Get` has been removed
 
+  azure-sdk-for-js:
+    - package: '@azure/arm-keyvault'
+      breaking-changes:
+        - Removed operation Vaults.delete
+        - Removed operation Vaults.get
