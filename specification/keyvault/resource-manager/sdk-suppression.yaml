@@ -1,0 +1,12 @@
+suppressions:
+  azure-sdk-for-go:
+    - package: @armcognitiveservices
+      breaking-changes:
+        - Function `*LocalRulestacksClient.ListAppIDs` has been removed
+        - Function `*LocalRulestacksClient.ListCountries` has been removed
+        - Function `*LocalRulestacksClient.ListPredefinedURLCategories` has been removed
+
+  azure-sdk-for-python-track2:
+    - package: track2_azure-mgmt-servicelinker
+      breaking-changes:
+        - Removed operation LinkerOperations.begin_delete
