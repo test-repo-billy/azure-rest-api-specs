@@ -27,13 +27,11 @@
     },
     "azure-sdk-for-python": {
       "integrationRepository": "azure-sdk/azure-sdk-for-python",
-      "mainRepository": "test-repo-billy/azure-sdk-for-python",
-      "configFilePath": "swagger_to_sdk_config.json"
+      "mainRepository": "test-repo-billy/azure-sdk-for-python"
     },
     "azure-sdk-for-python-track2": {
       "integrationRepository": "azure-sdk/azure-sdk-for-python",
-      "mainRepository": "test-repo-billy/azure-sdk-for-python",
-      "configFilePath": "swagger_to_sdk_config.json"
+      "mainRepository": "test-repo-billy/azure-sdk-for-python"
     },
     "azure-resource-manager-schemas": {
       "integrationRepository": "azure-sdk/azure-resource-manager-schemas",
