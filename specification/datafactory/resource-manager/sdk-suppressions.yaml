@@ -36,6 +36,7 @@ suppressions:
         - "Type of parameter value of interface CredentialListResponse is changed from ManagedIdentityCredentialResource[] to CredentialResource[]"
         - "Type of parameter headers of interface WebActivity is changed from {\n [propertyName: string]: string;\n} to {\n  [propertyName: string]: any;\n    }"
         - 'Type of parameter headers of interface WebHookActivity is changed from {        [propertyName: string]: string;    } to {        [propertyName: string]: any;    }'
+        - "Type of parameter headers of interface WebHookActivity is changed from {\n        [propertyName: string]: string;\n    } to {\n        [propertyName: string]: any;\n    }“
         - Class DataFactoryManagementClient no longer has parameter operations
         - "Class DataFactoryManagementClient no longer has parameter operations"
         - Type of parameter value of interface CredentialListResponse is changed from ManagedIdentityCredentialResource[] to CredentialResource[]
