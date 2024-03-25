@@ -29,6 +29,12 @@ suppressions:
     - package: '@azure/arm-datafactory'
       breaking-changes:
         - "Type of parameter headers of interface WebHookActivity is changed from {\n        [propertyName: string]: string;\n    } to {\n        [propertyName: string]: any;\n    }"
+        - "Type of parameter headers of interface WebActivity is changed from {\n        [propertyName: string]: string;\n    } to {\n        [propertyName: string]: any;\n    }"
+        - Class DataFactoryManagementClient no longer has parameter operations
+        - Interface ManagedIdentityCredential no longer has parameter resourceId
+        - Operation CredentialOperations.createOrUpdate has a new signature
+        - Removed operation group Operations
+        - "Type of parameter headers of interface AzureFunctionActivity is changed from {\n        [propertyName: string]: string;\n    } to {\n        [propertyName: string]: any;\n    }"
     
   azure-sdk-for-python:
     - package: track2_azure-mgmt-datafactory
