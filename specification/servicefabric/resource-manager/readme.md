@@ -79,6 +79,16 @@ input-file:
 - Microsoft.ServiceFabric/stable/2021-06-01/application.json
 ```
 
+### Tag: package-2024-02
+
+These settings apply only when `--tag=package-2024-02` is specified on the command line.
+
+``` yaml $(tag) == 'package-2024-02'
+input-file:
+- Microsoft.ServiceFabric/stable/2024-02-01/cluster.json
+- Microsoft.ServiceFabric/stable/2024-02-01/application.json
+```
+
 ### Tag: package-2020-03
 
 These settings apply only when `--tag=package-2020-03` is specified on the command line.

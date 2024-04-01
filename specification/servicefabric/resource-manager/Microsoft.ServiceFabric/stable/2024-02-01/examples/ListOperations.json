@@ -1,0 +1,26 @@
+{
+  "parameters": {
+    "api-version": "2024-02-01"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "value": [
+          {
+            "name": "aaaaaaaaaaaaaaaaaaaaaaaaa",
+            "isDataAction": true,
+            "display": {
+              "provider": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "resource": "aaaaaaaaaaaaaaaaaa",
+              "operation": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "description": "aaaaaaaaaaaaaaa"
+            },
+            "origin": "aaaaaaaaaaaaaa",
+            "nextLink": "aaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "nextLink": "aaaaaa"
+      }
+    }
+  }
+}
