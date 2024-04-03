@@ -272,45 +272,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Batch/batchAccounts": {
-      "get": {
-        "tags": [
-          "BatchAccount"
-        ],
-        "operationId": "BatchAccount_List",
-        "x-ms-examples": {
-          "BatchAccountList": {
-            "$ref": "./examples/BatchAccountList.json"
-          }
-        },
-        "description": "Gets information about the Batch accounts associated with the subscription.",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The operation was successful. The response contains a list of Batch account entities associated with the subscription.",
-            "schema": {
-              "$ref": "#/definitions/BatchAccountListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts": {
       "get": {
         "tags": [
