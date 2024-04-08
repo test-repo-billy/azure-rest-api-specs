@@ -78,68 +78,6 @@
           }
         }
       },
-      "put": {
-        "tags": [
-          "Resource"
-        ],
-        "description": "Create or update the metadata of a service instance.",
-        "operationId": "Services_CreateOrUpdate",
-        "x-ms-examples": {
-          "Create or Update a service with all parameters": {
-            "$ref": "./examples/legacy/ServiceCreate.json"
-          },
-          "Create or Update a service with minimum parameters": {
-            "$ref": "./examples/legacy/ServiceCreateMinimum.json"
-          },
-          "Create or Update a service with all parameters and CMK enabled in a data sovereign region": {
-            "$ref": "./examples/legacy/ServiceCreateInDataSovereignRegionWithCmkEnabled.json"
-          }
-        },
-        "x-ms-long-running-operation": true,
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/resourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/resourceName"
-          },
-          {
-            "name": "serviceDescription",
-            "in": "body",
-            "description": "The service instance metadata.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ServicesDescription"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Updated - Put request accepted and an existing resource is being updated; the operation will complete asynchronously.",
-            "schema": {
-              "$ref": "#/definitions/ServicesDescription"
-            }
-          },
-          "201": {
-            "description": "Created - Put request accepted and a new resource was created; the operation will complete asynchronously.",
-            "schema": {
-              "$ref": "#/definitions/ServicesDescription"
-            }
-          },
-          "default": {
-            "description": "DefaultErrorResponse",
-            "schema": {
-              "$ref": "#/definitions/ErrorDetails"
-            }
-          }
-        }
-      },
       "patch": {
         "tags": [
           "Resource"
