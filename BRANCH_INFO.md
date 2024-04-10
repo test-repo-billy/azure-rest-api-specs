@@ -2,7 +2,7 @@ This branch was created by kojamroz on 4/9/2024.
 It differs from main as follows:
 
 It copies the contents of:
-- specification\communication\resource-manager\Microsoft.Communication\stable\2024-04-01
+- specification\communication\resource-manager\Microsoft.Communication\stable\2023-04-01
 into:
 - specification\communication\resource-manager\Microsoft.Communication\stable\2024-04-09
 
