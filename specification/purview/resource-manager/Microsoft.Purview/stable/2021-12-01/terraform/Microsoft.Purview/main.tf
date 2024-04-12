@@ -26,6 +26,80 @@ resource "azapi_resource" "resourceGroup" {
   location = var.location
 }
 
+resource "azapi_resource" "virtualNetwork" {
+  type      = "Microsoft.Network/virtualNetworks@2022-07-01"
+  parent_id = azapi_resource.resourceGroup.id
+  name      = var.resource_name
+  location  = var.location
+  body = jsonencode({
+    properties = {
+      addressSpace = {
+        addressPrefixes = [
+          "10.0.0.0/16",
+        ]
+      }
+      dhcpOptions = {
+        dnsServers = [
+        ]
+      }
+      subnets = [
+      ]
+    }
+  })
+  schema_validation_enabled = false
+  response_export_values    = ["*"]
+  ignore_body_changes       = ["properties.subnets"]
+}
+
+resource "azapi_resource" "subnet" {
+  type      = "Microsoft.Network/virtualNetworks/subnets@2022-07-01"
+  parent_id = azapi_resource.virtualNetwork.id
+  name      = var.resource_name
+  body = jsonencode({
+    properties = {
+      addressPrefix = "10.0.2.0/24"
+      delegations = [
+      ]
+      privateEndpointNetworkPolicies    = "Enabled"
+      privateLinkServiceNetworkPolicies = "Enabled"
+      serviceEndpointPolicies = [
+      ]
+      serviceEndpoints = [
+      ]
+    }
+  })
+  schema_validation_enabled = false
+  response_export_values    = ["*"]
+}
+
+resource "azapi_resource" "networkInterface" {
+  type      = "Microsoft.Network/networkInterfaces@2022-07-01"
+  parent_id = azapi_resource.resourceGroup.id
+  name      = var.resource_name
+  location  = var.location
+  body = jsonencode({
+    properties = {
+      enableAcceleratedNetworking = false
+      enableIPForwarding          = false
+      ipConfigurations = [
+        {
+          name = "testconfiguration1"
+          properties = {
+            primary                   = true
+            privateIPAddressVersion   = "IPv4"
+            privateIPAllocationMethod = "Dynamic"
+            subnet = {
+              id = azapi_resource.subnet.id
+            }
+          }
+        },
+      ]
+    }
+  })
+  schema_validation_enabled = false
+  response_export_values    = ["*"]
+}
+
 resource "azapi_resource" "virtualMachine" {
   type      = "Microsoft.Compute/virtualMachines@2023-03-01"
   parent_id = azapi_resource.resourceGroup.id
