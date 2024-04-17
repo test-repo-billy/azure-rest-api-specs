@@ -19,6 +19,7 @@ pr:
     - eng
     - specification/common-types
 
+
 resources:
   pipelines:
   - pipeline: typespec
