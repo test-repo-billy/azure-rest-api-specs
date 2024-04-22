@@ -6,7 +6,7 @@ parameters:
 emit:
   - "@azure-tools/typespec-autorest"
   - "@typespec/openapi3"
-# - "@azure-tools/typespec-java"
+  - "@azure-tools/typespec-java"
 # - "@azure-tools/typespec-csharp"
 linter:
   extends:
