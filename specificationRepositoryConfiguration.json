@@ -72,7 +72,7 @@
         },
         "azure-sdk-for-java": {
           "mainRepository": "test-repo-billy/azure-sdk-for-java",
-          "mainBranch": "mgmt_tsp_automation_init",
+          "mainBranch": "eng_tsp-client",
           "configFilePath": "eng/mgmt/automation/swagger_to_sdk_config.json"
         },
         "azure-resource-manager-schemas": {
