@@ -307,6 +307,30 @@ input-file:
   - Microsoft.Compute/CloudserviceRP/stable/2022-09-04/cloudService.json
 ```
 
+
+### Tag: package-2024-04-01
+
+These settings apply only when `--tag=package-2024-04-01` is specified on the command line.
+
+``` yaml $(tag) == 'package-2024-04-01'
+input-file:
+  - Microsoft.Compute/common-types/v1/common.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/computeRPCommon.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/virtualMachineScaleSet.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/virtualMachine.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/virtualMachineImage.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/virtualMachineExtensionImage.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/availabilitySet.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/proximityPlacementGroup.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/dedicatedHost.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/sshPublicKey.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/image.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/restorePoint.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/capacityReservation.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/logAnalytic.json
+  - Microsoft.Compute/ComputeRP/stable/2024-04-01/runCommand.json 
+```
+
 ### Tag: package-2024-03-01-only
 
 These settings apply only when `--tag=package-2024-03-01-only` is specified on the command line.
@@ -1945,16 +1969,6 @@ These settings apply only when `--tag=package-compute-2016-04-preview` is specif
 input-file:
   - Microsoft.Compute/ComputeRP/preview/2016-04-30-preview/compute.json
   - Microsoft.Compute/DiskRP/preview/2016-04-30-preview/disk.json
-```
-
-### Tag: package-2016-03
-
-These settings apply only when `--tag=package-2016-03` is specified on the command line.
-
-```yaml $(tag) == 'package-2016-03'
-input-file:
-  - Microsoft.Compute/ComputeRP/stable/2016-03-30/compute.json
-  - Microsoft.ContainerService/stable/2016-03-30/containerService.json
 ```
 
 ### Tag: package-compute-2016-03
