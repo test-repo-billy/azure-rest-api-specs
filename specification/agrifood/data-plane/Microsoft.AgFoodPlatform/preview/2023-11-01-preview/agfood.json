@@ -42,13 +42,12 @@
             "type": "string"
           },
           {
-            "in": "query",
+            "in": "query test",
             "name": "maxPageSize",
             "description": "Maximum number of items needed (inclusive). Minimum = 10, Maximum = 1000, Default Value = 50.",
             "type": "integer",
             "format": "int32",
             "default": 50,
-            "maximum": 1000,
             "minimum": 10
           },
           {
