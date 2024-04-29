@@ -539,6 +539,19 @@
         "modelAsString": true
       }
     },
+    "SecretType": {
+      "description": "The secret type.",
+      "type": "string",
+      "enum": [
+        "rawValue",
+        "keyVaultSecretUri",
+        "keyVaultSecretReference"
+      ],
+      "x-ms-enum": {
+        "name": "SecretType",
+        "modelAsString": true
+      }
+    },
     "SecretInfoBase": {
       "description": "The secret info",
       "discriminator": "secretType",
