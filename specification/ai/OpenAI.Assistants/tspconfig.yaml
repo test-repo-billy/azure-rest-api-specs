@@ -1,6 +1,6 @@
 parameters:
   "service-dir":
-    default: "sdk/openai"
+    default: "sdk/openai/assistants"
   "dependencies":
     default: ""
 emit:
@@ -29,7 +29,7 @@ options:
     generate-protocol-methods: false
     flavor: azure
   "@azure-tools/typespec-java":
-    package-dir: "azure-ai-openai-assistants"
+    package-dir: "azure-ai-openai-"
     namespace: "azure-ai-openai-assistants"
     partial-update: true
     enable-sync-stack: true
