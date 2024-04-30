@@ -187,7 +187,8 @@
             "filename": "**/specification/containerservice/resource-manager/Microsoft.ContainerService/aks/**/*json",
             "words": [
                 "vtpm",
-                "trustedlaunch"
+                "trustedlaunch",
+                "aksadvancednetworking"
             ]
         },
         {
@@ -429,6 +430,12 @@
             "filename": "**/specification/web/resource-manager/Microsoft.Web/stable/2018-11-01/WebApps.json",
             "words": [
                 "priviledged"
+            ]
+        },
+        {
+            "filename": "**/specification/web/resource-manager/Microsoft.Web/stable/2023-12-01/WebApps.json",
+            "words": [
+                "sitecontainers"
             ]
         },
         {
@@ -1232,6 +1239,17 @@
             "words": [
                  "WUMU",
                  "WSUS"
+            ]
+        },
+        {          
+            "filename": "**/specification/monitor/resource-manager/Microsoft.Insights/**/actionGroups_API.json",
+            "words": [
+                "occurringlocation",
+                "routingid",
+                "automitigationenabled",
+                "monitorid",
+                "tsgid",
+                "correlationid"
             ]
         }
     ],
