@@ -9,7 +9,7 @@ namespace Azure.AI.OpenAI.Assistants;
 using TypeSpec.Versioning;
 using Azure.ClientGenerator.Core;
 
-@doc("Data representing a single evaluation run of an assistant thread.")
+@doc("Data representing a single evaluation run of an assistant thread. And.")
 @added(ServiceApiVersions.v2024_02_15_preview)
 model ThreadRun {
   @doc("The identifier, which can be referenced in API endpoints.")
