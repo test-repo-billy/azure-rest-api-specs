@@ -26,12 +26,14 @@
 - rule:
     type: label
     label: ARMChangesRequested
+    booleanFilterExpression: "!NotReadyForARMReview"
     onLabeledRemoveLabels:
         - WaitForARMFeedback
 
 - rule:
     type: unlabeled
     label: ARMChangesRequested
+    booleanFilterExpression: "!NotReadyForARMReview"
     onUnlabeledAddLabels:
         - WaitForARMFeedback
 
