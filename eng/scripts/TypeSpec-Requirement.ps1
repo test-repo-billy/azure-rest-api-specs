@@ -195,7 +195,14 @@ if ($pathsWithErrors.Count -gt 0) {
   foreach ($path in $pathsWithErrors) {
     LogErrorForFile $path "OpenAPI was not generated from TypeSpec, and spec appears to be new"
   }
+
+  LogInfo "Sleeping for 6 minutes"
+  Start-Sleep -Seconds 60*6
+  
   exit 1
 }
+
+LogInfo "Sleeping for 6 minutes"
+Start-Sleep -Seconds 60*6
 
 exit 0
