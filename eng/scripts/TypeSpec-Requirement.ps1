@@ -197,12 +197,12 @@ if ($pathsWithErrors.Count -gt 0) {
   }
 
   LogInfo "Sleeping for 6 minutes"
-  Start-Sleep -Seconds 60*6
+  Start-Sleep -Seconds 360
   
   exit 1
 }
 
 LogInfo "Sleeping for 6 minutes"
-Start-Sleep -Seconds 60*6
+Start-Sleep -Seconds 360
 
 exit 0
