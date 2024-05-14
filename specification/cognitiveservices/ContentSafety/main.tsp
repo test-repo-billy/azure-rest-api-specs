@@ -29,7 +29,7 @@ using Azure.Core;
   {
     @doc("""
 Supported Cognitive Services endpoints (protocol and hostname, for example:
-https://<resource-name>.cognitiveservices.azure.com).
+https://<resource-name>.cognitiveservices.azure.com). 
 """)
     endpoint: string,
   }
