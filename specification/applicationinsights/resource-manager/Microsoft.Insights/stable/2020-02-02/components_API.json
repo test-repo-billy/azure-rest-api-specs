@@ -34,42 +34,6 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Insights/components": {
-      "get": {
-        "description": "Gets a list of all Application Insights components within a subscription.",
-        "operationId": "Components_List",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list containing 0 or more Application Insights component definitions.",
-            "schema": {
-              "$ref": "#/definitions/ApplicationInsightsComponentListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponseComponents"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "ComponentsList.json": {
-            "$ref": "./examples/ComponentsList.json"
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components": {
       "get": {
         "description": "Gets a list of Application Insights components within a resource group.",
