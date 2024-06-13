@@ -67,61 +67,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.StorageSync/locations/{locationName}/checkNameAvailability": {
-      "post": {
-        "tags": [
-          "StorageSyncService"
-        ],
-        "operationId": "StorageSyncServices_CheckNameAvailability",
-        "x-ms-examples": {
-          "StorageSyncServiceCheckNameAvailability_Available": {
-            "$ref": "./examples/StorageSyncServiceCheckNameAvailability_Available.json"
-          },
-          "StorageSyncServiceCheckNameAvailability_AlreadyExists": {
-            "$ref": "./examples/StorageSyncServiceCheckNameAvailability_AlreadyExists.json"
-          }
-        },
-        "description": "Check the give namespace name availability.",
-        "parameters": [
-          {
-            "name": "locationName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The desired region for the name check."
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "name": "parameters",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/CheckNameAvailabilityParameters"
-            },
-            "description": "Parameters to check availability of the given namespace name"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "check availability returned successfully.",
-            "schema": {
-              "$ref": "#/definitions/CheckNameAvailabilityResult"
-            }
-          },
-          "default": {
-            "description": "Error message indicating why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/StorageSyncError"
-            }
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StorageSync/storageSyncServices/{storageSyncServiceName}": {
       "put": {
         "parameters": [
