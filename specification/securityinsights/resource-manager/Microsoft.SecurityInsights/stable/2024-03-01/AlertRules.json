@@ -34,51 +34,6 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules": {
-      "get": {
-        "x-ms-examples": {
-          "Get all alert rules.": {
-            "$ref": "./examples/alertRules/GetAllAlertRules.json"
-          }
-        },
-        "tags": [
-          "Alert Rules"
-        ],
-        "description": "Gets all alert rules.",
-        "operationId": "AlertRules_List",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK, Operation successfully completed",
-            "schema": {
-              "$ref": "#/definitions/AlertRulesList"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}": {
       "get": {
         "x-ms-examples": {
