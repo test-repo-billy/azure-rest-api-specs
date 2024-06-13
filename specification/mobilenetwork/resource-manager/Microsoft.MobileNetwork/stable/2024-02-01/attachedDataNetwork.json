@@ -198,61 +198,6 @@
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation"
         }
-      },
-      "patch": {
-        "tags": [
-          "AttachedDataNetwork"
-        ],
-        "operationId": "AttachedDataNetworks_UpdateTags",
-        "description": "Updates an attached data network tags.",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "./common.json#/parameters/PacketCoreControlPlaneNameParameter"
-          },
-          {
-            "$ref": "./common.json#/parameters/PacketCoreDataPlaneNameParameter"
-          },
-          {
-            "$ref": "./common.json#/parameters/AttachedDataNetworkNameParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "name": "parameters",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "./common.json#/definitions/TagsObject"
-            },
-            "description": "Parameters supplied to update attached data network tags."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Update successful. The operation returns the resulting attached data network resource.",
-            "schema": {
-              "$ref": "#/definitions/AttachedDataNetwork"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Update attached data network tags": {
-            "$ref": "./examples/AttachedDataNetworkUpdateTags.json"
-          }
-        }
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileNetwork/packetCoreControlPlanes/{packetCoreControlPlaneName}/packetCoreDataPlanes/{packetCoreDataPlaneName}/attachedDataNetworks": {
