@@ -539,6 +539,19 @@
         "modelAsString": true
       }
     },
+    "SecretType": {
+      "description": "The secret type.",
+      "type": "string",
+      "enum": [
+        "rawValue",
+        "keyVaultSecretUri",
+        "keyVaultSecretReference"
+      ],
+      "x-ms-enum": {
+        "name": "SecretType",
+        "modelAsString": true
+      }
+    },
     "SecretInfoBase": {
       "description": "The secret info",
       "discriminator": "secretType",
@@ -739,7 +752,7 @@
       "description": "Linker of source and target resource",
       "allOf": [
         {
-          "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ProxyResource",
+          "$ref": "#/definitions/Resource",
           "description": "The resource model definition for an Azure Resource Manager proxy resource."
         }
       ],
@@ -1017,6 +1030,28 @@
           "x-nullable": true,
           "type": "string",
           "description": "The key vault id to store secret"
+        }
+      }
+    },
+    "Resource": {
+      "title": "Resource",
+      "description": "Common fields that are returned in the response for all Azure Resource Manager resources",
+      "type": "object",
+      "properties": {
+        "id": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The name of the resource"
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
         }
       }
     }
