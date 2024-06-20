@@ -165,50 +165,6 @@
           }
         }
       },
-      "delete": {
-        "tags": [
-          "Links"
-        ],
-        "operationId": "Linker_Delete",
-        "x-ms-long-running-operation": true,
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "azure-async-operation"
-        },
-        "description": "Delete a link.",
-        "x-ms-examples": {
-          "DeleteLink": {
-            "$ref": "./examples/DeleteLink.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceUriParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/LinkerNameParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK. The link is deleted."
-          },
-          "204": {
-            "description": "Deleted. The link is not found."
-          },
-          "202": {
-            "description": "Long running operation."
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      },
       "patch": {
         "tags": [
           "Links"
