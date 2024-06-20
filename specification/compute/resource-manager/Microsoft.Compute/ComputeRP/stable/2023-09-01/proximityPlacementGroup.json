@@ -294,52 +294,6 @@
           }
         }
       }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/proximityPlacementGroups": {
-      "get": {
-        "tags": [
-          "ProximityPlacementGroups"
-        ],
-        "operationId": "ProximityPlacementGroups_ListByResourceGroup",
-        "description": "Lists all proximity placement groups in a resource group.",
-        "parameters": [
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the resource group."
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../common-types/v1/common.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/ProximityPlacementGroupListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../common-types/v1/common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "x-ms-examples": {
-          "List proximity placement group.": {
-            "$ref": "./examples/proximityPlacementGroupExamples/ProximityPlacementGroup_ListByResourceGroup.json"
-          }
-        }
-      }
     }
   },
   "definitions": {
