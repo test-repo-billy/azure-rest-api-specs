@@ -5,36 +5,38 @@ In addition, the TypeSpec requirement check should not trigger.
 
 It differs from main as follows:
 
-1. It introduces a new directory:
+## 1. It introduces a new directory:
 
 `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/stable/2024-05-01`
 
-which is a copy of;
+which is a copy of:
+
 `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/stable/2023-03-01`
 
-2. In the new directory the following file:
+## 2. In the new directory the following file:
+
 `specification/alertsmanagement/resource-manager/Microsoft.AlertsManagement/stable/2024-05-01/PrometheusRuleGroups.json`
 
-Differs from its original. It has operationID:
+Differs from its original. Its `operationId` has been changed. It is now:
 
 `"operationId": "CROSS_VER_BREAKING_CHANGE_TEST_PrometheusRuleGroups_ListBySubscription",`
 
-instead of:
+instead of the original:
 
 `"operationId": "PrometheusRuleGroups_ListBySubscription",`
 
-In addition, all files got their `"version"` updated to be `"2024-05-01"`.
+In addition, all files in the newly introduced directory got their `"version"` updated to be `"2024-05-01"`.
 
-3. The README:
+## 3. The README:
 
 `specification/alertsmanagement/resource-manager/readme.md`
 
 The default tag has been changed to `package-2024-05` and following entry was added:
 
-### Tag: package-2024-05
-
-These settings apply only when `--tag=package-2024-05` is specified on the command line.
-
+> Tag: package-2024-05
+> 
+> These settings apply only when `--tag=package-2024-05` is specified on the command line.
+>
 > ```yaml $(tag) == 'package-2023-03'
 > input-file:
 >   - Microsoft.AlertsManagement/stable/2024-05-01/PrometheusRuleGroups.json
