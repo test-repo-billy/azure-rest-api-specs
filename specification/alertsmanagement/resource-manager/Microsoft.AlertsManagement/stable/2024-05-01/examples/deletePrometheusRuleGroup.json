@@ -1,0 +1,12 @@
+{
+  "parameters": {
+    "subscriptionId": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+    "resourceGroupName": "promResourceGroup",
+    "ruleGroupName": "myPrometheusRuleGroup",
+    "api-version": "2024-05-01"
+  },
+  "responses": {
+    "200": {},
+    "204": {}
+  }
+}
