@@ -8,7 +8,7 @@ using Azure.ClientGenerator.Core;
 namespace Customizations;
 
 @client({
-  name: "ContentSafetyClient",
+  name: "ContentSafetyClient2",
   service: ContentSafety,
 })
 interface ContentSafetyClient {
