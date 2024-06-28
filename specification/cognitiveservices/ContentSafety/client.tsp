@@ -12,7 +12,7 @@ namespace Customizations;
   service: ContentSafety,
 })
 interface ContentSafetyClient {
-  analyzeText2 is ContentSafety.TextOperations.analyzeText;
+  analyzeText is ContentSafety.TextOperations.analyzeText;
   analyzeImage is ContentSafety.ImageOperations.analyzeImage;
   detectTextJailbreak is ContentSafety.TextOperations.detectTextJailbreak;
   detectTextProtectedMaterial is ContentSafety.TextOperations.detectTextProtectedMaterial;
