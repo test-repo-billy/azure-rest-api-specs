@@ -8,4 +8,5 @@ description: "SCVMM Client"
 client-flattened-annotation-target: disabled
 uuid-as-string: true
 output-model-immutable: true
+stream-style-serialization: false
 ```
