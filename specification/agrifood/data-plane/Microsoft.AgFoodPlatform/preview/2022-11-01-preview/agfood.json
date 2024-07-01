@@ -18938,7 +18938,7 @@
       "description": "Schema of cascade delete job.",
       "required": [
         "partyId",
-        "resourceId",
+        "resourceId2",
         "resourceType"
       ],
       "type": "object",
@@ -18948,7 +18948,7 @@
           "minLength": 1,
           "type": "string"
         },
-        "resourceId": {
+        "resourceId2": {
           "description": "The id of the resource.",
           "minLength": 1,
           "type": "string"
