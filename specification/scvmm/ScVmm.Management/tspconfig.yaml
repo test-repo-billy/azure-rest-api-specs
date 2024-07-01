@@ -11,6 +11,12 @@ options:
     azure-resource-provider-folder: "resource-manager"
     output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/scvmm.json"
     examples-directory: "{project-root}/examples"
+  "@azure-tools/typespec-java":
+    package-dir: "azure-resourcemanager-scvmm"
+    flavor: "azure"
+    namespace: "com.azure.resourcemanager.scvmm"
+    service-name: "SCVMM"
+    examples-directory: "examples"
 linter:
   disable:
   extends:
