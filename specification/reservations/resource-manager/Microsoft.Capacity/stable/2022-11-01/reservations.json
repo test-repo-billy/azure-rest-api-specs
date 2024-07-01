@@ -27,50 +27,6 @@
     }
   },
   "paths": {
-    "/providers/Microsoft.Capacity/reservationOrders/{reservationOrderId}/reservations/{reservationId}/availableScopes": {
-      "post": {
-        "summary": "Get Available Scopes for `Reservation`.",
-        "description": "Check whether the scopes from request is valid for `Reservation`.\n",
-        "operationId": "Reservation_AvailableScopes",
-        "x-ms-examples": {
-          "AvailableScopes": {
-            "$ref": "./examples/GetAvailableScope.json"
-          }
-        },
-        "x-ms-long-running-operation": true,
-        "parameters": [
-          {
-            "$ref": "#/parameters/ReservationOrderIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ReservationIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/ScopeParameter"
-          }
-        ],
-        "tags": [
-          "Reservation, AvailableScopes"
-        ],
-        "responses": {
-          "200": {
-            "description": "List of `Subscription`s created after the filter.",
-            "schema": {
-              "$ref": "#/definitions/AvailableScopeProperties"
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Capacity/catalogs": {
       "get": {
         "summary": "Get the regions and skus that are available for RI purchase for the specified Azure subscription.",
