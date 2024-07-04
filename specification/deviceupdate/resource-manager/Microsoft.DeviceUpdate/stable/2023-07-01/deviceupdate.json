@@ -34,52 +34,6 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.DeviceUpdate/checknameavailability": {
-      "post": {
-        "description": "Checks ADU resource name availability.",
-        "operationId": "CheckNameAvailability",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/CheckNameAvailabilityRequest"
-            },
-            "in": "body",
-            "name": "request",
-            "required": true,
-            "description": "Check Name Availability Request."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Check Name Availability Response.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/CheckNameAvailabilityResponse"
-            }
-          },
-          "default": {
-            "description": "Error response describing the reason for operation failure.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "CheckNameAvailability_Available": {
-            "$ref": "./examples/CheckNameAvailability_Available.json"
-          },
-          "CheckNameAvailability_AlreadyExists": {
-            "$ref": "./examples/CheckNameAvailability_AlreadyExists.json"
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.DeviceUpdate/accounts": {
       "get": {
         "description": "Returns list of Accounts.",
