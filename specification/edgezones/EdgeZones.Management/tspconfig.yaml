@@ -26,7 +26,7 @@ options:
   "@azure-tools/typespec-go":
     service-dir: sdk
     package-dir: resourcemanager/edgezones/armedgezones
-    module: github.com/Azure/azure-sdk-for-go/{service-dir}/{package-dir}
+    # module: github.com/Azure/azure-sdk-for-go/{service-dir}/{package-dir}
     generate-fakes: true
     head-as-boolean: true
     inject-spans: true
