@@ -25,8 +25,8 @@ options:
     examples-directory: "examples"
   "@azure-tools/typespec-go":
     service-dir: sdk
-    package-dir: resourcemanager/edgezones/armedgezones
-    # module: github.com/Azure/azure-sdk-for-go/{service-dir}/{package-dir}
+    package-dir: resourcemanager/edgezones/Xarmedgezones
+    module: github.com/Azure/azure-sdk-for-go/{service-dir}/{package-dir}
     generate-fakes: true
     head-as-boolean: true
     inject-spans: true
