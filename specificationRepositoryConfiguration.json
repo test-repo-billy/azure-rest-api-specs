@@ -31,7 +31,8 @@
     },
     "azure-sdk-for-python": {
       "integrationRepository": "azure-sdk/azure-sdk-for-python",
-      "mainRepository": "Azure/azure-sdk-for-python"
+      "mainRepository": "Azure/azure-sdk-for-python",
+      "mainBranch": "test-gen-remove"
     },
     "azure-sdk-for-python-track2": {
       "integrationRepository": "azure-sdk/azure-sdk-for-python",
