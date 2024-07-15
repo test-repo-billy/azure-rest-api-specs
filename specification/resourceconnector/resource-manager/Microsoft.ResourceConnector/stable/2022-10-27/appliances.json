@@ -71,46 +71,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.ResourceConnector/appliances": {
-      "get": {
-        "tags": [
-          "appliances"
-        ],
-        "operationId": "Appliances_ListBySubscription",
-        "summary": "Gets a list of Appliances in a subscription.",
-        "description": "Gets a list of Appliances in the specified subscription. The operation returns properties of each Appliance",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/applianceListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "x-ms-examples": {
-          "List Appliances by subscription": {
-            "$ref": "./examples/AppliancesListBySubscription.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.ResourceConnector/telemetryconfig": {
       "get": {
         "tags": [
