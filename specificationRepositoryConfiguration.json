@@ -5,7 +5,7 @@
     "azure-sdk-for-go": {
       "integrationRepository": "azure-sdk/azure-sdk-for-go",
       "mainRepository": "Alancere/azure-sdk-for-go",
-      "mainBranch": "generator_typespec_tool_0614",
+      "mainBranch": "generator_typespec_tool_0614_automation_0716",
       "configFilePath": "eng/swagger_to_sdk_config.json"
     },
     "azure-sdk-for-java": {
