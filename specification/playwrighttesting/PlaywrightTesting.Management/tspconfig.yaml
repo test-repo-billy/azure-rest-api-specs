@@ -1,22 +1,26 @@
+parameters:
+  service-directory-name:
+    default: playwrighttesting
 emit:
   - "@azure-tools/typespec-autorest"
-#  - "@azure-tools/typespec-providerhub-controller"
+options:
+  "@azure-tools/typespec-autorest":
+    azure-resource-provider-folder: resource-manager
+    emitter-output-dir: "{project-root}/.."
+    examples-directory: "{project-root}/examples"
+    omit-unreachable-types: true
+    output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/playwrighttesting.json"
+  "@azure-tools/typespec-go":
+    examples-directory: ./examples
+    generate-fakes: true
+    head-as-boolean: true
+    inject-spans: true
+    module: github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/playwrighttesting/armplaywrighttesting
+    package-dir: resourcemanager/playwrighttesting/armplaywrighttesting
+    remove-unreferenced-types: true
+    service-dir: sdk
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"
   disable:
-    "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": "New rule"
-parameters:
-  "service-directory-name":
-    default: "playwrighttesting"
-options:
-  "@azure-tools/typespec-autorest":
-    azure-resource-provider-folder: "resource-manager"
-    emitter-output-dir: "{project-root}/.."
-    examples-directory: "{project-root}/examples"
-    output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/playwrighttesting.json"
-    omit-unreachable-types: true
-#  "@azure-tools/typespec-providerhub-controller":
-#    azure-resource-provider-folder: "resource-manager"
-#    emitter-output-dir: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/generated"
-#    code-kind: model
+    "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": New rule

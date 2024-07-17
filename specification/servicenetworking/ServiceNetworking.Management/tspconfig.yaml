@@ -1,14 +1,23 @@
 emit:
   - "@azure-tools/typespec-autorest"
+options:
+  "@azure-tools/typespec-autorest":
+    azure-resource-provider-folder: resource-manager
+    emitter-output-dir: "{project-root}/.."
+    examples-directory: "{project-root}/examples"
+    omit-unreachable-types: true
+    output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/TrafficController.json"
+  "@azure-tools/typespec-go":
+    examples-directory: ./examples
+    generate-fakes: true
+    head-as-boolean: true
+    inject-spans: true
+    module: github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/servicenetworking/armservicenetworking
+    package-dir: resourcemanager/servicenetworking/armservicenetworking
+    remove-unreferenced-types: true
+    service-dir: sdk
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"
   disable:
-    "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": "New rule"
-options:
-  "@azure-tools/typespec-autorest":
-    azure-resource-provider-folder: "resource-manager"
-    emitter-output-dir: "{project-root}/.."
-    examples-directory: "{project-root}/examples"
-    output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/TrafficController.json"
-    omit-unreachable-types: true
+    "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": New rule
