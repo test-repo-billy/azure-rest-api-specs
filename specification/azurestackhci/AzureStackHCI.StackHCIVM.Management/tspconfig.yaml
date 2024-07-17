@@ -12,15 +12,15 @@ options:
     examples-directory: "{project-root}/examples"
     output-file: "{azure-resource-provider-folder}/{service-name}/StackHCIVM/{version-status}/{version}/stackhcivm.json"
     use-read-only-status-schema: true
-  "@azure-tools/typespec-go":
-    examples-directory: ./examples
-    generate-fakes: true
-    head-as-boolean: true
-    inject-spans: true
-    module: github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/azurestackhci/armazurestackhci
-    package-dir: resourcemanager/azurestackhci/armazurestackhci
-    remove-unreferenced-types: true
-    service-dir: sdk
+  # "@azure-tools/typespec-go":
+  #   examples-directory: ./examples
+  #   generate-fakes: true
+  #   head-as-boolean: true
+  #   inject-spans: true
+  #   module: github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/azurestackhci/armazurestackhci
+  #   package-dir: resourcemanager/azurestackhci/armazurestackhci
+  #   remove-unreferenced-types: true
+  #   service-dir: sdk
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"
