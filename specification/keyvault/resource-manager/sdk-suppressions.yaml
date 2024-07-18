@@ -1,0 +1,26 @@
+suppressions:
+  azure-sdk-for-js:
+    - package: '@azure/arm-keyvault'
+      breaking-changes:
+        - Removed operation Vaults.beginCreateOrUpdate
+        - Removed operation Vaults.beginCreateOrUpdateAndWait
+        - Removed operation Vaults.delete
+        - Removed operation Vaults.get
+        - Removed operation Vaults.update  
+  azure-sdk-for-python:
+    - package: azure-mgmt-keyvault
+      breaking-changes:
+        - Removed operation VaultsOperations.begin_create_or_update
+        - Removed operation VaultsOperations.delete
+        - Removed operation VaultsOperations.get
+        - Removed operation VaultsOperations.update
+  azure-sdk-for-go:
+    - package: sdk/resourcemanager/keyvault/armkeyvault
+      breaking-changes:
+        - Function `*VaultsClient.BeginCreateOrUpdate` has been removed
+        - Function `*VaultsClient.Delete` has been removed
+        - Function `*VaultsClient.Get` has been removed
+        - Function `*VaultsClient.Update` has been removed
+        - Struct `VaultCreateOrUpdateParameters` has been removed
+        - Struct `VaultPatchParameters` has been removed
+        - Struct `VaultPatchProperties` has been removed
