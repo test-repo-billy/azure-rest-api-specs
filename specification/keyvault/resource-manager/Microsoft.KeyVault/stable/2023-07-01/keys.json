@@ -147,66 +147,6 @@
         ]
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys": {
-      "get": {
-        "tags": [
-          "Keys"
-        ],
-        "operationId": "Keys_List",
-        "description": "Lists the keys in the specified key vault.",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the resource group which contains the specified key vault."
-          },
-          {
-            "name": "vaultName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]{3,24}$",
-            "description": "The name of the vault which contains the keys to be retrieved."
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The retrieved page of keys.",
-            "schema": {
-              "$ref": "#/definitions/KeyListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "List keys in the vault": {
-            "$ref": "./examples/listKeys.json"
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "produces": [
-          "application/json"
-        ],
-        "consumes": [
-          "application/json"
-        ]
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}/versions/{keyVersion}": {
       "get": {
         "tags": [
