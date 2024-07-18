@@ -51,45 +51,6 @@
     }
   ],
   "paths": {
-    "/providers/Microsoft.ElasticSan/operations": {
-      "get": {
-        "tags": [
-          "Elastic San Operations"
-        ],
-        "operationId": "Operations_List",
-        "description": "Gets a list of ElasticSan operations.",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK. The request has succeeded.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/OperationListResult"
-            }
-          },
-          "default": {
-            "description": "Error from the ElasticSan Resource Provider",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": null
-        },
-        "x-ms-examples": {
-          "Operations_List_MaximumSet_Gen": {
-            "$ref": "./examples/Operations_List_MaximumSet_Gen.json"
-          },
-          "Operations_List_MinimumSet_Gen": {
-            "$ref": "./examples/Operations_List_MinimumSet_Gen.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.ElasticSan/skus": {
       "get": {
         "tags": [
