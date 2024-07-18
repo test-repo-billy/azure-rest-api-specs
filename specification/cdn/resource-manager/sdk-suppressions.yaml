@@ -1,0 +1,13 @@
+suppressions:
+  azure-sdk-for-js:
+    - package: '@azure/arm-cdn'
+      breaking-changes:
+        - Removed operation Profiles.list  
+  azure-sdk-for-python:
+    - package: azure-mgmt-cdn
+      breaking-changes:
+        - Removed operation ProfilesOperations.list
+  azure-sdk-for-go:
+    - package: sdk/resourcemanager/cdn/armcdn
+      breaking-changes:
+        - Function `*ProfilesClient.NewListPager` has been removed
