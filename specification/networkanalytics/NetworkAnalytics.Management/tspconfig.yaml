@@ -13,6 +13,9 @@ options:
   "@azure-tools/typespec-autorest":
     azure-resource-provider-folder: resource-manager
     emitter-output-dir: "{project-root}/.."
+    emit-common-types-schema: "never"
+    # `arm-resource-flattening` is only used for back-compat for specs existed on July 2024. All new service spec should NOT use this flag
+    arm-resource-flattening: true
     examples-directory: "{project-root}/examples"
     output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/networkanalytics.json"
   "@azure-tools/typespec-go":
@@ -28,4 +31,4 @@ linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"
   disable:
-    "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": New rule
+    "@azure-tools/typespec-azure-resource-manager/arm-common-types-version": "New rule"
