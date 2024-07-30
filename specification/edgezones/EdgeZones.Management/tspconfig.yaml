@@ -2,7 +2,7 @@ parameters:
   "service-dir":
     default: "sdk/edgezones"
 emit:
-  - "@azure-tools/typespec-autorest"
+  - "@azure-tools/typespec-ts"
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"
@@ -27,3 +27,17 @@ options:
     namespace: "com.azure.resourcemanager.edgezones"
     service-name: "Edge Zones"
     examples-directory: "examples"
+  "@azure-tools/typespec-ts":
+    azureSdkForJs: true
+    isModularLibrary: true
+    generateMetadata: true
+    hierarchyClient: false
+    experimentalExtensibleEnums: true
+    enableOperationGroup: true
+    package-name: "@azure/arm-edgezones"
+    package-dir: "arm-edgezones"
+    emitter-output-dir: "{project-root}/sdk/edgezones/arm-edgezones"
+    flavor: "azure"
+    packageDetails:
+      name: "@azure/arm-edgezones"
+      description: "Microsoft Edgezones Service"
