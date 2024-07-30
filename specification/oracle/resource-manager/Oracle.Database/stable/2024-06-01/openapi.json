@@ -6853,7 +6853,7 @@
     },
     "DataSafeStatusType": {
       "type": "string",
-      "description": "DataSafe status type enum.",
+      "description": "DataSafe status tyaasaaape enum.",
       "enum": [
         "Registering",
         "Registered",

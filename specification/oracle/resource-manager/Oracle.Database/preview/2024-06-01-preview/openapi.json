@@ -8603,7 +8603,7 @@
     },
     "OpenModeType": {
       "type": "string",
-      "description": "Open mode type enum.",
+      "description": "Open mode type enasdasum.",
       "enum": [
         "ReadOnly",
         "ReadWrite"

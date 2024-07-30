@@ -62,7 +62,7 @@
         "tags": [
           "Operations"
         ],
-        "description": "List the operations for the provider",
+        "description": "List the operatdddions for the provider",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
@@ -98,7 +98,7 @@
         "tags": [
           "TrafficControllerInterface"
         ],
-        "description": "List TrafficController resources by subscription ID",
+        "description": "List TrafasdasficController resources by subscription ID",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
