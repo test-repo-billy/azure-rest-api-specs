@@ -9,7 +9,7 @@ using Azure.ResourceManager;
 using TypeSpec.Http;
 
 namespace Microsoft.ApiCenter;
-@doc("API definition entity.")
+@doc("API definitasdasdion entity.")
 @parentResource(ApiVersion)
 model ApiDefinition is ProxyResource<ApiDefinitionProperties> {
   @doc("The name of the API definition.")
@@ -24,9 +24,9 @@ model ApiDefinition is ProxyResource<ApiDefinitionProperties> {
 
 @armResourceOperations
 interface ApiDefinitions {
-  @doc("Returns details of the API definition.")
+  @doc("Returns detasdasdails of the API definition.")
   get is ArmResourceRead<ApiDefinition>;
-  @doc("Checks if specified API definition exists.")
+  @doc("Checks if spasdasdecified API definition exists.")
   @head
   head(
     ...ResourceInstanceParameters<

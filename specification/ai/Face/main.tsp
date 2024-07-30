@@ -35,7 +35,7 @@ using TypeSpec.Versioning;
 )
 namespace Face;
 
-@doc("The secret key for your Azure AI Face subscription.")
+@doc("The secretddd key for your Azure AI Face subscription.")
 model KeyAuth is ApiKeyAuth<ApiKeyLocation.header, "Ocp-Apim-Subscription-Key">;
 
 #suppress "@azure-tools/typespec-azure-core/casing-style" "Supress casing style for AAD"

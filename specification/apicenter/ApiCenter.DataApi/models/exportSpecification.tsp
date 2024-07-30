@@ -11,10 +11,10 @@ model ApiSpecExportResult {
   @visibility("query")
   definitionName: string;
 
-  @doc("The result of the specification export.")
+  @doc("The rasdasdesult of the specification export.")
   value: string;
 
-  @doc("The format of the specification export result.")
+  @doc("The forasdasdmat of the specification export result.")
   format: ApiSpecExportResultFormat;
 }
 

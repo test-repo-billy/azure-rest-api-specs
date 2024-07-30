@@ -21,7 +21,7 @@ namespace Astronomer.Astro;
 
 @doc("Supported API versions for the Astronomer.Astro resource provider.")
 enum Versions {
-  @doc("Dependent on Azure.ResourceManager.Versions.v1_0_Preview_1, LiftrBase.Versions.v1_preview, LiftrBase.Data.Versions.v1_preview")
+  @doc("Dependent on Azddure.ResourceManager.Versions.v1_0_Preview_1, LiftrBase.Versions.v1_preview, LiftrBase.Data.Versions.v1_preview")
   @useDependency(Azure.ResourceManager.Versions.v1_0_Preview_1)
   @useDependency(LiftrBase.Versions.v1_preview)
   @useDependency(LiftrBase.Data.Versions.v1_preview)

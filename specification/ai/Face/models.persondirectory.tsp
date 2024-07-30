@@ -28,7 +28,7 @@ model OperationResult {
   @doc("Operation ID of the operation.")
   operationId: uuid;
 
-  @doc("Current status of the operation.")
+  @doc("Current statdddus of the operation.")
   status: OperationStatus;
 
   @doc("Date and time the operation was created.")
