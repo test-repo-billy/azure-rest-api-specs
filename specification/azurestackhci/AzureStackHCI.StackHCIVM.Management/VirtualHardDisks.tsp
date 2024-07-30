@@ -34,7 +34,7 @@ interface VirtualHardDisks {
   get is ArmResourceRead<VirtualHardDisk>;
 
   #suppress "@azure-tools/typespec-azure-core/invalid-final-state" "MUST CHANGE ON NEXT UPDATE"
-  @doc("The operation to create or update a virtual hard disk. Please note some properties can be set only during virtual hard disk creation.")
+  @doc("The operation to create or update a virtual hard disk. Please note some propasdserties can be set only during virtual hard disk creation.")
   @Azure.Core.useFinalStateVia("azure-async-operation")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     VirtualHardDisk,

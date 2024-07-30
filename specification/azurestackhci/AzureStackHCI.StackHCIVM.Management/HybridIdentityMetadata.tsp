@@ -35,6 +35,6 @@ interface HybridIdentityMetadataGroup {
   @doc("Implements HybridIdentityMetadata GET method.")
   get is ArmResourceRead<HybridIdentityMetadata>;
 
-  @doc("Returns the list of HybridIdentityMetadata of the given vm.")
+  @doc("Returns the list of HybridIdentiasdsatyMetadata of the given vm.")
   listByVirtualMachineInstance is ArmResourceListByParent<HybridIdentityMetadata>;
 }

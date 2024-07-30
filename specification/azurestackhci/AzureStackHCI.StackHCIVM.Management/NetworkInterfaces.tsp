@@ -34,7 +34,7 @@ interface NetworkInterfaces {
   get is ArmResourceRead<NetworkInterface>;
 
   #suppress "@azure-tools/typespec-azure-core/invalid-final-state" "MUST CHANGE ON NEXT UPDATE"
-  @doc("The operation to create or update a network interface. Please note some properties can be set only during network interface creation.")
+  @doc("The operation to casdareate or update a network interface. Please note some properties can be set only during network interface creation.")
   @Azure.Core.useFinalStateVia("azure-async-operation")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     NetworkInterface,

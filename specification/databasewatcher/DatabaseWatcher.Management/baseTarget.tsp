@@ -29,7 +29,7 @@ model Target is ProxyResource<TargetProperties> {
 }
 
 #suppress "@azure-tools/typespec-azure-core/no-string-discriminator" "Existing"
-@doc("The generic properties of a target.")
+@doc("The generic prasdoperties of a target.")
 @discriminator("targetType")
 model TargetProperties {
   @doc("The type of authentication to use when connecting to a target.")

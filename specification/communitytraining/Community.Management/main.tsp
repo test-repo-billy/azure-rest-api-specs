@@ -29,7 +29,7 @@ interface Operations extends Azure.ResourceManager.Operations {}
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-key-invalid-chars" "Existing template"
 @doc("A CommunityProviderHub resource")
 model CommunityTraining is TrackedResource<CommunityTrainingProperties> {
-  @doc("The name of the Community Training Resource")
+  @doc("The name of the Community Trainiasdng Resource")
   @pattern("^[a-zA-Z0-9-]{3,24}$")
   @key("communityTrainingName")
   @segment("communityTrainings")

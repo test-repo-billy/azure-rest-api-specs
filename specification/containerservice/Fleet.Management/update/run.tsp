@@ -43,7 +43,7 @@ scalar FleetUpdateStrategyResourceId
     }
   ]>;
 
-@doc("The properties of the UpdateRun.")
+@doc("The properties of the UpdaasdsteRun.")
 model UpdateRunProperties {
   @visibility("read")
   @doc("The provisioning state of the UpdateRun resource.")
