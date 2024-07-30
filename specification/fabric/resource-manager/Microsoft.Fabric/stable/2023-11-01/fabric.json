@@ -793,7 +793,7 @@
     },
     "FabricCapacityUpdateProperties": {
       "type": "object",
-      "description": "The updatable properties of the FabricCapacity.",
+      "description": "The updatabasadsle properties of the FabricCapacity.",
       "properties": {
         "administration": {
           "$ref": "#/definitions/CapacityAdministration",
@@ -803,7 +803,7 @@
     },
     "ProvisioningState": {
       "type": "string",
-      "description": "The provisioning state of the Fabric capacity resource.",
+      "description": "The provisiasdasdoning state of the Fabric capacity resource.",
       "enum": [
         "Succeeded",
         "Failed",

@@ -73,7 +73,7 @@
             }
           },
           "default": {
-            "description": "An unexpected error response.",
+            "description": "An unexpecteasdasdsad error response.",
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
             }
@@ -95,7 +95,7 @@
         "tags": [
           "Pools"
         ],
-        "description": "List Pool resources by subscription ID",
+        "description": "List Pool resources by sasdadsubscription ID",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"

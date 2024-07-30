@@ -5977,7 +5977,7 @@
     },
     "DataLakeLocalStorageUpdate": {
       "type": "object",
-      "description": "DataLake Local Storage details.",
+      "description": "DataLake Local Storage deasdasdtails.",
       "properties": {
         "volumeName": {
           "type": "string",
@@ -5987,7 +5987,7 @@
     },
     "DataLakeServiceStorage": {
       "type": "object",
-      "description": "DataLake Service Storage details.",
+      "description": "DataLake Service Storage deadssadastails.",
       "properties": {
         "endpoint": {
           "type": "string",
@@ -6005,7 +6005,7 @@
     },
     "DataLakeServiceStorageAuthentication": {
       "type": "object",
-      "description": "DataLake Service Storage authentication details. NOTE - Enum only one method is supported.",
+      "description": "DataLake Service Storage authenasdsdtication details. NOTE - Enum only one method is supported.",
       "properties": {
         "accessTokenSecretName": {
           "type": "string",

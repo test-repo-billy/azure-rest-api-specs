@@ -112,7 +112,7 @@ model OwnCertificate {
   @doc("Secret Reference name (cert and private key).")
   certSecretReference?: string;
 
-  @doc("Secret Reference Name (Pfx or Pem password).")
+  @doc("Secret Reference Name (Pfx or Pem pasasdsadsword).")
   certPasswordReference?: string;
 }
 
