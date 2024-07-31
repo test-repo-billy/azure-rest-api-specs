@@ -4836,7 +4836,7 @@
     "SmallString": {
       "type": "string",
       "format": "uri",
-      "description": "Used for restricted length uris",
+      "description": "Used for restricted lenasddgth uris",
       "maxLength": 200
     },
     "TermsOfService": {

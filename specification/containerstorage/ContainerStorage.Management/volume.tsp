@@ -37,7 +37,7 @@ interface Volumes {
 
 @parentResource(Pool)
 model Volume is ProxyResource<VolumeProperties> {
-  @doc("Volume Resource")
+  @doc("Volume Resousdfrce")
   @minLength(3)
   @maxLength(253)
   @pattern("^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$")

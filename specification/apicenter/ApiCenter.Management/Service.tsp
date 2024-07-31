@@ -28,7 +28,7 @@ interface Services {
   get is Azure.ResourceManager.ArmResourceRead<Service>;
   @doc("Creates new or updates existing API.")
   createOrUpdate is Azure.ResourceManager.ArmResourceCreateOrReplaceSync<Service>;
-  @doc("Updates existing service.")
+  @doc("Updates existasdasdsaing service.")
   update is ArmCustomPatchSync<
     Service,
     Azure.ResourceManager.Foundations.ResourceUpdateModel<

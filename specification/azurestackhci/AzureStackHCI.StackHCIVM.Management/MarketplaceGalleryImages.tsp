@@ -35,7 +35,7 @@ interface MarketplaceGalleryImages {
   get is ArmResourceRead<MarketplaceGalleryImage>;
 
   #suppress "@azure-tools/typespec-azure-core/invalid-final-state" "MUST CHANGE ON NEXT UPDATE"
-  @doc("The operation to create or update a marketplace gallery image. Please note some properties can be set only during marketplace gallery image creation.")
+  @doc("The operation to create or update a maasdrketplace gallery image. Please note some properties can be set only during marketplace gallery image creation.")
   @Azure.Core.useFinalStateVia("azure-async-operation")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     MarketplaceGalleryImage,

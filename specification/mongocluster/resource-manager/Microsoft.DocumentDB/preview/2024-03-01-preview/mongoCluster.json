@@ -1427,7 +1427,7 @@
     },
     "MongoClusterUpdate": {
       "type": "object",
-      "description": "The type used for update operations of the MongoCluster.",
+      "description": "The type used for update opeasdasdrations of the MongoCluster.",
       "properties": {
         "tags": {
           "type": "object",

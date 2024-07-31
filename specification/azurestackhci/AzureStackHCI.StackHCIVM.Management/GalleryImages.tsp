@@ -30,7 +30,7 @@ model GalleryImage is TrackedResource<GalleryImageProperties> {
 
 @armResourceOperations(GalleryImage)
 interface GalleryImages {
-  @doc("Gets a gallery image")
+  @doc("Gets a galleasdry image")
   get is ArmResourceRead<GalleryImage>;
 
   #suppress "@azure-tools/typespec-azure-core/invalid-final-state" "MUST CHANGE ON NEXT UPDATE"
@@ -48,7 +48,7 @@ interface GalleryImages {
   @doc("The operation to delete a gallery image.")
   delete is ArmResourceDeleteWithoutOkAsync<GalleryImage>;
 
-  @doc("Lists all of the gallery images in the specified resource group. Use the nextLink property in the response to get the next page of gallery images.")
+  @doc("Lists all of the gaasdsllery images in the specified resource group. Use the nextLink property in the response to get the next page of gallery images.")
   listByResourceGroup is ArmResourceListByParent<GalleryImage>;
 
   @doc("Lists all of the gallery images in the specified subscription. Use the nextLink property in the response to get the next page of gallery images.")

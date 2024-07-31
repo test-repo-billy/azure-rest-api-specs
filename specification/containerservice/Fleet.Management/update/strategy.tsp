@@ -33,7 +33,7 @@ model FleetUpdateStrategy is ProxyResource<FleetUpdateStrategyProperties> {
   ...EntityTagProperty;
 }
 
-@doc("The provisioning state of the UpdateStrategy resource.")
+@doc("The provisioning state of the UpdasdsateStrategy resource.")
 union FleetUpdateStrategyProvisioningState {
   string,
   ResourceProvisioningState,

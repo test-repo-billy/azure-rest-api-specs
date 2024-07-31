@@ -31,7 +31,7 @@ interface SecurityRules {
   get is ArmResourceRead<SecurityRule>;
 
   #suppress "@azure-tools/typespec-azure-core/invalid-final-state" "MUST CHANGE ON NEXT UPDATE"
-  @doc("Creates or updates a security rule in the specified resource group.")
+  @doc("Creates or updatasdsaes a secasdsaurity rule in the specified resource group.")
   @Azure.Core.useFinalStateVia("azure-async-operation")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     SecurityRule,

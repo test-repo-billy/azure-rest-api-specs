@@ -1182,7 +1182,7 @@
     },
     "FrontendListResult": {
       "type": "object",
-      "description": "The response of a Frontend list operation.",
+      "description": "The response of a Frontddddend list operation.",
       "properties": {
         "value": {
           "type": "array",

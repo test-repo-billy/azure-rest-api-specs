@@ -331,7 +331,7 @@
         "tags": [
           "Accounts"
         ],
-        "description": "Get a Account",
+        "description": "Get a Accoaaaaaunt",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"

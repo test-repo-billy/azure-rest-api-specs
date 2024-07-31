@@ -123,7 +123,7 @@ interface Watchers {
   listByResourceGroup is ArmResourceListByParent<Watcher>;
   listBySubscription is ArmListBySubscription<Watcher>;
 
-  @doc("The action to start monitoring all targets configured for a database watcher.")
+  @doc("The action to start moniassdtoring all targets configured for a database watcher.")
   @action
   @post
   @armResourceAction(Watcher)

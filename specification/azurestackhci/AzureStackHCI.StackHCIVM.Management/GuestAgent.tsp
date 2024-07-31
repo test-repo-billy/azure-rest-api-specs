@@ -38,7 +38,7 @@ interface GuestAgents {
     LroHeaders = Azure.Core.Foundations.RetryAfterHeader
   >;
 
-  @doc("Implements GuestAgent DELETE method.")
+  @doc("Implements GuestAgasdasent DELETE method.")
   delete is ArmResourceDeleteWithoutOkAsync<GuestAgent>;
 
   @doc("Returns the list of GuestAgent of the given vm.")
