@@ -62,7 +62,7 @@ interface SapLandscapeMonitor {
 }
 
 @@doc(SapLandscapeMonitor.create::parameters.resource,
-  "Request body representing a configuration for Sap Landscape Monitor Dashboard"
+  "Request body test representing a configuration for Sap Landscape Monitor Dashboard"
 );
 @@doc(SapLandscapeMonitor.update::parameters.properties,
   "Request body representing a configuration for Sap Landscape Monitor Dashboard"

@@ -204,7 +204,7 @@
           {
             "name": "resource",
             "in": "body",
-            "description": "Request body representing a SAP monitor",
+            "description": "Request body representing a SAP monitor test",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Monitor"
@@ -541,7 +541,7 @@
           {
             "name": "resource",
             "in": "body",
-            "description": "Request body representing a provider instance associated with a SAP monitor.",
+            "description": "Request body test representing a provider instance associated with a SAP monitor.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/ProviderInstance"
@@ -810,7 +810,7 @@
           {
             "name": "resource",
             "in": "body",
-            "description": "Request body representing a configuration for Sap Landscape Monitor Dashboard",
+            "description": "Request body test representing a configuration for Sap Landscape Monitor Dashboard",
             "required": true,
             "schema": {
               "$ref": "#/definitions/SapLandscapeMonitorResource"

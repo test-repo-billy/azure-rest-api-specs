@@ -61,7 +61,7 @@ interface Monitors {
 }
 
 @@doc(Monitors.create::parameters.resource,
-  "Request body representing a SAP monitor"
+  "Request body representing a SAP monitor test"
 );
 @@doc(Monitors.update::parameters.properties,
   "The Update SAP workload monitor request body."

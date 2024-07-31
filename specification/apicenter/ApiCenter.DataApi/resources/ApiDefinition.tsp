@@ -14,7 +14,7 @@ using ApiCenter.DataApi;
 namespace ApiCenter.DataApi;
 
 interface ApiDefinitions {
-  @doc("List a collection of API definitions.")
+  @doc("List a collection of AasdasdPI definitions.")
   listDefinitions is Operations.ResourceList<
     ApiDefinition,
     ListQueryParametersTrait<StandardListQueryParameters>

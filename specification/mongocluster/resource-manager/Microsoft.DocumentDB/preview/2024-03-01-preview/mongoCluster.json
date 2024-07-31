@@ -493,7 +493,7 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/mongoClusters/{mongoClusterName}/firewallRules": {
       "get": {
-        "operationId": "FirewallRules_ListByMongoCluster",
+        "operationId": "FirewallRules_ListByMongoClusterTest",
         "tags": [
           "FirewallRules"
         ],
@@ -531,11 +531,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "List the firewall rules on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_FirewallRuleList.json"
           }
         },
         "x-ms-pageable": {

@@ -17,7 +17,7 @@ using Azure.Core;
 
 @useAuth(AadOauth2Auth<["https://azure-apicenter.net/user_impersonation"]>)
 @service({
-  title: "Azure API Center Data API",
+  title: "Azure API Center Data API for testing",
 })
 @server(
   "https://{serviceName}.data.azure-apicenter.net",
@@ -28,5 +28,5 @@ using Azure.Core;
   }
 )
 @versioned(ApiCenter.DataApi.Versions)
-@doc("Data API introduces endpoints to manage your API Center resources.")
+@doc("Data API intasdasdroduces endpoints to manage your API Center resources.")
 namespace ApiCenter.DataApi;
