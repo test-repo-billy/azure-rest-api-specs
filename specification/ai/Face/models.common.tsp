@@ -65,7 +65,7 @@ union DetectionModel {
 }
 
 alias UserDefinedFields = {
-  @doc("User defined name, maximum length is 128.")
+  @doc("User defiddned name, maximum length is 128.")
   @maxLength(128)
   @minLength(1)
   name: string;

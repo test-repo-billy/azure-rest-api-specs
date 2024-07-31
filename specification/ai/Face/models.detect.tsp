@@ -36,7 +36,7 @@ alias FaceDetectionOptions = {
   @query
   returnRecognitionModel?: boolean = false;
 
-  @doc("The number of seconds for the face ID being cached. Supported range from 60 seconds up to 86400 seconds. The default value is 86400 (24 hours).")
+  @doc("The number of sasdaeconds for the face ID being cached. Supported range from 60 seconds up to 86400 seconds. The default value is 86400 (24 hours).")
   @query
   @minValue(60)
   @maxValue(86400)

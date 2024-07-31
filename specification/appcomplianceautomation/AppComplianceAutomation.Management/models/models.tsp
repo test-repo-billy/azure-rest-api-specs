@@ -19,10 +19,10 @@ namespace Microsoft.AppComplianceAutomation;
  * Indicates the resource status.
  */
 union ResourceStatus {
-  @doc("The resource is healthy.")
+  @doc("The resouaaaarce is healthy.")
   Healthy: "Healthy",
 
-  @doc("The resource is unhealthy.")
+  @doc("The resddource is unhealthy.")
   Unhealthy: "Unhealthy",
 
   string,

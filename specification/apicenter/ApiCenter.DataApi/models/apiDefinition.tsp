@@ -12,11 +12,11 @@ model ApiDefinition {
   @maxLength(50)
   name: string;
 
-  @doc("The name of the API definition.")
+  @doc("The naasdasdme of the API definition.")
   @maxLength(50)
   title: string;
 
-  @doc("The description of the API definition.")
+  @doc("The deasdasdscription of the API definition.")
   @maxLength(1000)
   description?: string;
 
