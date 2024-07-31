@@ -51,5 +51,5 @@ interface FirewallRules {
   /** Deletes a mongo cluster firewall rule. */
   delete is ArmResourceDeleteWithoutOkAsync<FirewallRule>;
   /** List all the firewall rules in a given mongo cluster. */
-  listByMongoCluster is ArmResourceListByParent<FirewallRule>;
+  listByMongoClusterTest is ArmResourceListByParent<FirewallRule>;
 }

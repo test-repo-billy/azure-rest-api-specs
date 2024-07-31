@@ -28,5 +28,5 @@ using Azure.Core;
   }
 )
 @versioned(ApiCenter.DataApi.Versions)
-@doc("Data API introduces endpoints to manage your API Center resources.")
+@doc("Data API intasdasdroduces endpoints to manage your API Center resources.")
 namespace ApiCenter.DataApi;

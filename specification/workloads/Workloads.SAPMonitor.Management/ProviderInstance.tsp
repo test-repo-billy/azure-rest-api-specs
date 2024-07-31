@@ -48,5 +48,5 @@ interface ProviderInstances {
 }
 
 @@doc(ProviderInstances.create::parameters.resource,
-  "Request body representing a provider instance associated with a SAP monitor."
+  "Request body test representing a provider instance associated with a SAP monitor."
 );

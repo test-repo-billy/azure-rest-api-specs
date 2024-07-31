@@ -502,7 +502,7 @@
     "/workspaces/{workspaceName}/apis/{apiName}/versions/{versionName}/definitions": {
       "get": {
         "operationId": "ApiDefinitions_ListDefinitions",
-        "description": "List a collection of API definitions.",
+        "description": "List a collection of AasdasdPI definitions.",
         "parameters": [
           {
             "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
