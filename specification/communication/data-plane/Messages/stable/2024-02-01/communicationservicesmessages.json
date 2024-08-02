@@ -79,7 +79,7 @@
         "tags": [
           "Template"
         ],
-        "description": "List all templates for given Azure Communication Services channel",
+        "description": "List all templates for given Azure Communication Stetetervices channel",
         "parameters": [
           {
             "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"

@@ -27,7 +27,7 @@ alias PatchOperations = Azure.Core.ResourceOperations<PatchOperationTraits>;
 
 interface JobRouterAdministrationOperations {
   @summary("Creates or updates a classification policy.")
-  @doc("Creates or updates a classification policy.")
+  @doc("Creates or updates a classificatioasdasdasn policy.")
   upsertClassificationPolicy is PatchOperations.ResourceCreateOrUpdate<ClassificationPolicy>;
 
   @summary("Retrieves an existing classification policy by Id.")

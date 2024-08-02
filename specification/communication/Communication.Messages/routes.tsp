@@ -22,7 +22,7 @@ alias Operations = Azure.Core.ResourceOperations<ServiceTraits>;
 
 interface TemplateOperations {
   @tag("Template")
-  @doc("List all templates for given Azure Communication Services channel")
+  @doc("List all templates for given Azure Communication Stetetervices channel")
   @clientName("getTemplates", "csharp")
   listTemplates is Operations.ResourceList<
     MessageTemplateItem,
