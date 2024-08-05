@@ -5,19 +5,18 @@
     "azure-sdk-for-go": {
       "integrationRepository": "azure-sdk/azure-sdk-for-go",
       "mainRepository": "Alancere/azure-sdk-for-go",
-      "mainBranch": "generator_typespec_tool_0614",
+      "mainBranch": "unified_log_0730",
       "configFilePath": "eng/swagger_to_sdk_config.json"
     },
     "azure-sdk-for-java": {
       "integrationRepository": "azure-sdk/azure-sdk-for-java",
-      "mainRepository": "test-repo-billy/azure-sdk-for-java",
-      "mainBranch": "automation_branch",
+      "mainRepository": "Azure/azure-sdk-for-java",
       "configFilePath": "eng/automation/swagger_to_sdk_config.json"
     },
     "azure-sdk-for-js": {
       "integrationRepository": "azure-sdk/azure-sdk-for-js",
-      "mainRepository": "test-repo-billy/azure-sdk-for-js",
-      "mainBranch": "test_repo_breaking_change"
+      "mainRepository": "kazrael2119/azure-sdk-for-js",
+      "mainBranch": "remove-nvm-installation-for-automation"
     },
     "azure-sdk-for-net": {
       "integrationRepository": "azure-sdk/azure-sdk-for-net",
@@ -25,17 +24,14 @@
     },
     "azure-sdk-for-net-track2": {
       "integrationRepository": "azure-sdk/azure-sdk-for-net",
-      "mainRepository": "test-repo-billy/azure-sdk-for-net",
-      "mainBranch": "test-logging",
+      "mainRepository": "Azure/azure-sdk-for-net",
+      "mainBranch": "user/raych1/refine-log-filter-in-automation",
       "configFilePath": "eng/swagger_to_sdk_config.json"
     },
     "azure-sdk-for-python": {
       "integrationRepository": "azure-sdk/azure-sdk-for-python",
-      "mainRepository": "Azure/azure-sdk-for-python"
-    },
-    "azure-sdk-for-python-track2": {
-      "integrationRepository": "azure-sdk/azure-sdk-for-python",
-      "mainRepository": "Azure/azure-sdk-for-python"
+      "mainRepository": "Azure/azure-sdk-for-python",
+      "mainBranch": "log-optimization"
     },
     "azure-resource-manager-schemas": {
       "integrationRepository": "azure-sdk/azure-resource-manager-schemas",
@@ -73,10 +69,6 @@
           "configFilePath": "eng/swagger_to_sdk_config.json"
         },
         "azure-sdk-for-python": {
-          "integrationRepository": "azure-sdk/azure-sdk-for-python-pr",
-          "mainRepository": "Azure/azure-sdk-for-python-pr"
-        },
-        "azure-sdk-for-python-track2": {
           "integrationRepository": "azure-sdk/azure-sdk-for-python-pr",
           "mainRepository": "Azure/azure-sdk-for-python-pr"
         },
