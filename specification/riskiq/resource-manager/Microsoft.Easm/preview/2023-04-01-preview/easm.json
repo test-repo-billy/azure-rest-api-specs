@@ -34,45 +34,6 @@
     }
   },
   "paths": {
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Easm/workspaces": {
-      "get": {
-        "tags": [
-          "Workspaces"
-        ],
-        "description": "Returns a list of workspaces under the given subscription.",
-        "operationId": "Workspaces_ListBySubscription",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of workspaces.",
-            "schema": {
-              "$ref": "#/definitions/WorkspaceResourceList"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "x-ms-examples": {
-          "Workspaces": {
-            "$ref": "./examples/Workspaces_ListBySubscription.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Easm/workspaces": {
       "get": {
         "tags": [
