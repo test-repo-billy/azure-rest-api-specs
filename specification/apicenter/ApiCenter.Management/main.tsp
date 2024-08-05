@@ -23,14 +23,14 @@ using TypeSpec.Versioning;
 using Azure.ClientGenerator.Core;
 @armProviderNamespace
 @service({
-  title: "Azure API Center testtest",
+  title: "Azure API Center",
 })
 @versioned(Versions)
 @doc("Azure API Center Resource Provider.")
 @Azure.ResourceManager.armCommonTypesVersion("v5")
 namespace Microsoft.ApiCenter;
 
-@doc("The available API versions.")
+@doc("The available API versions. testtest")
 enum Versions {
   /** The initial service version */
   @useDependency(Azure.ResourceManager.Versions.v1_0_Preview_1)
