@@ -7,7 +7,7 @@ using TypeSpec.Http;
 using TypeSpec.Versioning;
 
 @service({
-  title: "Azure Analytics Purview Data Map",
+  title: "Azure Analytics Purview Data Map test",
 })
 @server(
   "{endpoint}/datamap/api",
