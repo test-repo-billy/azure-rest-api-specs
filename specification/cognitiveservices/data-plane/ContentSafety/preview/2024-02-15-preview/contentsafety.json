@@ -3,7 +3,7 @@
   "info": {
     "title": "ContentSafety Service",
     "version": "2024-02-15-preview",
-    "description": "Analyze harmful content test",
+    "description": "Analyze harmful content test test",
     "x-typespec-generated": [
       {
         "emitter": "@azure-tools/typespec-autorest"

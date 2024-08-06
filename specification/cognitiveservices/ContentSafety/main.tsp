@@ -34,7 +34,7 @@ using Azure.Core;
     endpoint: string,
   }
 )
-@doc("Analyze harmful content test")
+@doc("Analyze harmful content test test")
 namespace ContentSafety;
 
 enum Versions {
