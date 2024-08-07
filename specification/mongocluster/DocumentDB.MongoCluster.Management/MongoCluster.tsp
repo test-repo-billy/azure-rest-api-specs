@@ -24,7 +24,7 @@ model MongoCluster is TrackedResource<MongoClusterProperties> {
 @armResourceOperations
 interface MongoClusters {
   /** Gets information about a mongo cluster. */
-  get is ArmResourceRead<MongoCluster>;
+  get is ArmResourceRea<MongoCluster>;
   /** Create or update a mongo cluster. Update overwrites all properties for the resource. To only modify some of the properties, use PATCH. */
   #suppress "@azure-tools/typespec-azure-core/invalid-final-state" "MUST CHANGE ON NEXT UPDATE"
   @Azure.Core.useFinalStateVia("azure-async-operation")
