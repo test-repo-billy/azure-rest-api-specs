@@ -26,7 +26,7 @@ These are the global settings for the Purview API.
 
 ``` yaml
 openapi-type: arm
-tag: package-2024-04-01-preview
+tag: package-2021-12-01
 ```
 
 ### Tag: package-2024-04-01-preview
@@ -93,6 +93,7 @@ This is not used by Autorest itself.
 
 ``` yaml $(swagger-to-sdk)
 swagger-to-sdk:
+  - repo: azure-sdk-for-net-track2
   - repo: azure-sdk-for-python
   - repo: azure-sdk-for-go
   - repo: azure-resource-manager-schemas
