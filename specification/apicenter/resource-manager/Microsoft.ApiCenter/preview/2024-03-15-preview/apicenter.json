@@ -3569,6 +3569,29 @@
         ]
       }
     },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "street",
+        "city",
+        "state",
+        "zip"
+      ]
+    },
     "Api": {
       "type": "object",
       "description": "API entity.",
@@ -4660,6 +4683,30 @@
       },
       "required": [
         "schema"
+      ]
+    },
+    "MyModel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "number",
+          "format": "double"
+        },
+        "isAlive": {
+          "type": "boolean"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        }
+      },
+      "required": [
+        "name",
+        "age",
+        "isAlive",
+        "address"
       ]
     },
     "Onboarding": {
