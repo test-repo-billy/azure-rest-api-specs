@@ -315,49 +315,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Purview/accounts/{accountName}/listkeys": {
-      "post": {
-        "tags": [
-          "Account"
-        ],
-        "summary": "Lists the keys asynchronous.",
-        "description": "List the authorization keys associated with this account.",
-        "operationId": "Accounts_ListKeys",
-        "parameters": [
-          {
-            "$ref": "#/parameters/subscriptionId"
-          },
-          {
-            "$ref": "#/parameters/resourceGroupName"
-          },
-          {
-            "$ref": "#/parameters/accountName"
-          },
-          {
-            "$ref": "#/parameters/api-version"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/AccessKeys"
-            }
-          },
-          "default": {
-            "description": "An error response received from the provider.",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponseModel"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Accounts_ListKeys": {
-            "$ref": "./examples/Accounts_ListKeys.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Purview/accounts/{accountName}/addRootCollectionAdmin": {
       "post": {
         "tags": [
