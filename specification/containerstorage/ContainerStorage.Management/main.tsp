@@ -12,7 +12,7 @@ using Azure.ResourceManager;
 
 @armProviderNamespace
 @service({
-  title: "Azure-ContainerStorageRP",
+  title: "Azure-ContainerStorageRP test",
 })
 @versioned(Versions)
 @doc("Azure Container Storage Resource Provider API.")

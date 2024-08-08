@@ -17,7 +17,7 @@ using Azure.Core.Traits;
   >
 )
 @service({
-  title: "CommunicationMessagesClient",
+  title: "CommunicationMessagesClient test",
 })
 @server(
   "{endpoint}",

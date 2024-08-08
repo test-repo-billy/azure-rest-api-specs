@@ -15,7 +15,7 @@ using TypeSpec.Versioning;
 #suppress "@azure-tools/typespec-azure-core/casing-style" "HCI itself is a short form."
 @armProviderNamespace
 @service({
-  title: "Microsoft.AzureStackHCI",
+  title: "Microsoft.AzureStackHCI test",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)
