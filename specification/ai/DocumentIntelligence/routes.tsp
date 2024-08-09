@@ -63,9 +63,7 @@ model DocumentModelAnalyzeRequestParams {
   stringIndexType?: StringIndexType = StringIndexType.textElements;
 
   @doc("List of optional analysis features.")
-  @query({
-    format: "csv",
-  })
+  @query
   features?: DocumentAnalysisFeature[];
 
   @doc("List of additional fields to extract.  Ex. \"NumberOfGuests,StoreNumber\"")
