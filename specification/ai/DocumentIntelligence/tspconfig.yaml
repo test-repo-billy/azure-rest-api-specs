@@ -24,32 +24,3 @@ options:
     package-name: "{package-dir}"
     package-version: 1.0.0b2
     flavor: azure
-  "@azure-tools/typespec-java":
-    package-dir: "azure-ai-documentintelligence"
-    namespace: "com.azure.ai.documentintelligence"
-    enable-sync-stack: true
-    custom-types-subpackage: "implementation.models"
-    polling:
-      buildDocumentModel:
-        final-type: com.azure.ai.documentintelligence.models.DocumentModelDetails
-      buildClassifier:
-        final-type: com.azure.ai.documentintelligence.models.DocumentClassifierDetails
-      composeModel:
-        final-type: com.azure.ai.documentintelligence.models.DocumentModelDetails
-      copyModelTo:
-        final-type: com.azure.ai.documentintelligence.models.DocumentModelDetails
-    flavor: azure
-  "@azure-tools/typespec-csharp":
-    package-dir: "Azure.AI.DocumentIntelligence"
-    namespace: "Azure.AI.DocumentIntelligence"
-    model-namespace: false
-    flavor: azure
-  "@azure-tools/typespec-ts":
-    title: DocumentIntelligence
-    package-dir: "ai-document-intelligence-rest"
-    generateMetadata: true
-    packageDetails:
-      name: "@azure-rest/ai-document-intelligence"
-      description: "Document Intelligence Rest Client"
-      version: "1.0.0-beta.1"
-    flavor: azure
