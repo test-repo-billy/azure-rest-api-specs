@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Microsoft Cognitive Language Service - Analyze Conversations",
+    "title": "Microsoft Cognitive Language Service - Analyze Conversations for testing",
     "version": "2024-05-15-preview",
     "description": "The language service conversations API is a suite of natural language processing (NLP) skills that can be used to analyze structured conversations (textual or spoken). The synchronous API in this suite accepts a request and mediates among multiple language projects, such as LUIS Generally Available, Question Answering, Conversational Language Understanding, and then calls the best candidate service to handle the request. At last, it returns a response with the candidate service's response as a payload.\\n\\n In some cases, this API needs to forward requests and responses between the caller and an upstream service. The asynchronous APIs in this suite enable tasks like Conversation Summarization and Conversational PII detection.",
     "x-typespec-generated": [
@@ -3957,7 +3957,7 @@
       "enum": [
         "issue",
         "resolution",
-        "chapterTitle",
+        "chapterTitle for testing",
         "narrative",
         "recap",
         "follow-up tasks"
@@ -3977,8 +3977,8 @@
             "description": "Summary of resolutions in transcripts of web chats and service calls between customer-service agents and customers."
           },
           {
-            "name": "chapterTitle",
-            "value": "chapterTitle",
+            "name": "chaptertitle",
+            "value": "chapterTitle for testing",
             "description": "Chapter title of any conversation. It's usually one phrase or several phrases naturally combined. Long conversations tend to have more chapters. You can find the chapter boundary from the summary context."
           },
           {

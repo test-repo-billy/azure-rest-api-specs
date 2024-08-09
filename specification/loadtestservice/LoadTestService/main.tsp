@@ -11,7 +11,7 @@ using Azure.Core;
 @versioned(APIVersions)
 @useAuth(Oauth2)
 @service({
-  title: "Azure Load Testing",
+  title: "Azure Load Testing for testing",
 })
 @server(
   "https://{endpoint}",

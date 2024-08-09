@@ -24,7 +24,7 @@ using Azure.Core.Traits;
   ]>
 )
 @service({
-  title: "Microsoft Cognitive Language Service - Analyze Conversations",
+  title: "Microsoft Cognitive Language Service - Analyze Conversations for testing",
 })
 @server(
   "{Endpoint}/language",
@@ -1140,7 +1140,7 @@ union SummaryAspect {
   resolution: "resolution",
 
   /** Chapter title of any conversation. It's usually one phrase or several phrases naturally combined. Long conversations tend to have more chapters. You can find the chapter boundary from the summary context. */
-  chapterTitle: "chapterTitle",
+  chaptertitle: "chapterTitle for testing",
 
   /** Generic narrative summary of any conversation. It generally converts the conversational language into formal written language, compresses the text length, and keeps the salient information. */
   narrative: "narrative",

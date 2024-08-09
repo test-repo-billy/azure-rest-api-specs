@@ -21,7 +21,7 @@ using TypeSpec.Http;
   ]>
 )
 @service({
-  title: "Document Intelligence (formerly Form Recognizer)",
+  title: "Document Intelligence (formerly Form Recognizer) for testing",
 })
 @server(
   "{endpoint}/documentintelligence",

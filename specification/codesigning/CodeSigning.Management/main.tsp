@@ -16,7 +16,7 @@ using TypeSpec.Versioning;
 @doc("Code Signing resource provider api.")
 @armProviderNamespace("Microsoft.CodeSigning")
 @service({
-  title: "CodeSigningManagementClient",
+  title: "CodeSigningManagementClient for testing",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)

@@ -19,7 +19,7 @@ using Azure.Core;
   ]
 )
 @service({
-  title: "Programmable Connectivity",
+  title: "Programmable Connectivity for testing",
 })
 @server(
   "{endpoint}",
