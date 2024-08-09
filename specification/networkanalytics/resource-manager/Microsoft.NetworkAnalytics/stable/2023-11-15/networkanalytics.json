@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Microsoft.NetworkAnalytics",
+    "title": "Microsoft.NetworkAnalytics for testing",
     "version": "2023-11-15",
     "x-typespec-generated": [
       {

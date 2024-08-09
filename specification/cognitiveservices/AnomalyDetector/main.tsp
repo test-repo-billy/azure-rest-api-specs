@@ -10,7 +10,7 @@ using TypeSpec.Versioning;
 
 @versioned(APIVersion)
 @service({
-  title: "Anomaly Detector",
+  title: "Anomaly Detector for testing",
 })
 @useAuth(AnomalyDetectorApiKeyAuth)
 @server(

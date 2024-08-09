@@ -14,7 +14,7 @@ using Azure.ResourceManager.Foundations;
 
 @armProviderNamespace
 @service({
-  title: "Microsoft.DeviceRegistry management service",
+  title: "Microsoft.DeviceRegistry management service for testing",
 })
 @versioned(Microsoft.DeviceRegistry.Versions)
 @doc("Microsoft.DeviceRegistry Resource Provider management API.")

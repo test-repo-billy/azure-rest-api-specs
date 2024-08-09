@@ -17,7 +17,7 @@ using Azure.Core;
   ]>
 )
 @service({
-  title: "Azure Developer Signing",
+  title: "Azure Developer Signing for testing",
   summary: "Azure Developer Signing is a service that provides managed artifact signing for all.",
 })
 @versioned(Azure.Developer.Signing.Versions)

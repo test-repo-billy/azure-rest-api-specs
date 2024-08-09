@@ -23,7 +23,7 @@ using TypeSpec.Versioning;
 #suppress "@azure-tools/typespec-azure-resource-manager/missing-operations-endpoint" "For backward compatibility"
 @armProviderNamespace
 @service({
-  title: "portal",
+  title: "portal for testing",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)

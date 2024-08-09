@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "ContentSafety Service",
+    "title": "ContentSafety Service for testing",
     "version": "2023-10-15-preview",
     "description": "Analyze harmful content",
     "x-typespec-generated": [
