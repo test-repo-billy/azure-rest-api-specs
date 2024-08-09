@@ -19,25 +19,6 @@ options:
     package-name: "{package-dir}"
     package-mode: dataplane
     flavor: azure
-  "@azure-tools/typespec-csharp":
-    package-dir: "Azure.AI.Vision.Face"
-    namespace: "{package-dir}"
-    clear-output-folder: true
-    model-namespace: false
-    flavor: azure
-  "@azure-tools/typespec-ts":
-    package-dir: "ai-vision-face-rest"
-    generateMetadata: true
-    generateTest: true
-    flavor: azure
-    packageDetails:
-      name: "@azure-rest/ai-vision-face"
-      description: "Face API REST Client"
-  "@azure-tools/typespec-java":
-    package-dir: "azure-ai-vision-face"
-    namespace: com.azure.ai.vision.face
-    partial-update: true
-    flavor: azure
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/data-plane"
