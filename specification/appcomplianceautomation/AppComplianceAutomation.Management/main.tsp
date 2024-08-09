@@ -20,7 +20,7 @@ using TypeSpec.Versioning;
  */
 @armProviderNamespace
 @service({
-  title: "App Compliance Automation Tool for Microsoft 365",
+  title: "App Compliance Automation Tool for Microsoft 365 test",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v3)

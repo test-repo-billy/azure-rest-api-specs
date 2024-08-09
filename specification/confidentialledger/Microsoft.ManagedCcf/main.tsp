@@ -8,7 +8,7 @@ import "./service_state.tsp";
 import "./transactions.tsp";
 
 @service({
-  title: "Managed CCF Governance",
+  title: "Managed CCF Governance test",
 })
 @TypeSpec.Versioning.versioned(Microsoft.ManagedCcf.Versions)
 namespace Microsoft.ManagedCcf;
