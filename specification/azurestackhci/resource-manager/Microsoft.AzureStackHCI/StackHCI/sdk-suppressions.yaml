@@ -7,6 +7,12 @@ suppressions:
   azure-sdk-for-python:
     - package: 'azure-mgmt-azurestackhci'
       breaking-changes:
+        - Model ArcSetting no longer has parameter created_at
+        - Model ArcSetting no longer has parameter created_by
+        - Model ArcSetting no longer has parameter created_by_type
+        - Model ArcSetting no longer has parameter last_modified_at
+        - Model ArcSetting no longer has parameter last_modified_by
+        - Model ArcSetting no longer has parameter last_modified_by_type
         - Model Cluster no longer has parameter created_at
         - Model Cluster no longer has parameter created_by
         - Model Cluster no longer has parameter created_by_type
@@ -23,6 +29,13 @@ suppressions:
   azure-sdk-for-js:
     - package: '@azure/arm-azurestackhci'
       breaking-changes:
+        - Class AzureStackHCIClient has a new signature
+        - Interface ArcSetting no longer has parameter createdAt
+        - Interface ArcSetting no longer has parameter createdBy
+        - Interface ArcSetting no longer has parameter createdByType
+        - Interface ArcSetting no longer has parameter lastModifiedAt
+        - Interface ArcSetting no longer has parameter lastModifiedBy
+        - Interface ArcSetting no longer has parameter lastModifiedByType
         - Interface Cluster no longer has parameter createdAt
         - Interface Cluster no longer has parameter createdBy
         - Interface Cluster no longer has parameter createdByType
