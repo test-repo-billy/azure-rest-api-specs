@@ -9,7 +9,7 @@ modelerfour:
 typescript:
   azure-arm: true
   package-name: "@azure/arm-mongocluster"
-  output-folder: "$(typescript-sdks-folder)/sdk/mongocluster/arm-mongocluster"
+  output-folder: "$(typescript-sdks-folder)/sdk/mongocluster/arm-mongocluster-test"
   payload-flattening-threshold: 1
   clear-output-folder: true
   generate-metadata: true
