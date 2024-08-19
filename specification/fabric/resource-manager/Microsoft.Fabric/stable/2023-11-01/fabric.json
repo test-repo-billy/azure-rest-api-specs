@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Microsoft.Fabric management service",
+    "title": "Microsoft.Fabric management service for testing",
     "version": "2023-11-01",
     "description": "Microsoft.Fabric Resource Provider management API.",
     "x-typespec-generated": [
