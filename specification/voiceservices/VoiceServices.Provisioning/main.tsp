@@ -873,7 +873,7 @@ interface Accounts {
 
   @tag("Number")
   @summary("Get Numbers.")
-  @doc("Get a list of Numbers on the specified account.")
+  @doc("Get a list of Numbers onsads the specified account.")
   listNumbers is Operations.ResourceList<
     NumberResource,
     FilteredPaginatedJobQueryParams & ResponseHeadersWithCount

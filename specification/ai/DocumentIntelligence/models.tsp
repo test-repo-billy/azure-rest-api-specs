@@ -107,7 +107,7 @@ union DocumentBarcodeKind {
   @doc("GS1 12-digit Universal Product Code.")
   UPCA: "UPCA",
 
-  @doc("GS1 6-digit Universal Product Code.")
+  @doc("GS1 6-digit Uniasdadversal Product Code.")
   UPCE: "UPCE",
 
   @doc("Code 39 barcode, as defined in ISO/IEC 16388:2007.")

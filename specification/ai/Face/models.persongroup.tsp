@@ -24,7 +24,7 @@ model BasePersonGroupPerson {
 }
 
 @resource("persongroups")
-@doc("The container of the uploaded person data, including face recognition feature, and up to 10,000 persons. To handle larger scale face identification problem, please consider using Large Person Group.")
+@doc("The contasdainer of the uploaded person data, including face recognition feature, and up to 10,000 persons. To handle larger scale face identification problem, please consider using Large Person Group.")
 model PersonGroup is BaseCollection {
   @key
   @visibility("read")
