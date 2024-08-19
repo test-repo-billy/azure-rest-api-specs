@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure Batch",
+    "title": "Azure Batch for testing",
     "version": "2024-02-01.19.0",
     "description": "Azure Batch provides Cloud-scale job scheduling and compute management.",
     "x-typespec-generated": [
