@@ -13,7 +13,7 @@ using Azure.ResourceManager;
 
 @armProviderNamespace
 @service({
-  title: "LoadTest Client",
+  title: "LoadTest Client for testing",
 })
 @doc("LoadTest client provides access to LoadTest Resource and it's status operations.")
 @versioned(APIVersions)
