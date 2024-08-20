@@ -1,0 +1,21 @@
+parameters:
+  "service-dir":
+    default: "sdk/mongocluster-new"
+emit:
+  - "@azure-tools/typespec-autorest"
+options:
+  "@azure-tools/typespec-ts": 
+    azureSdkForJs: true 
+    isModularLibrary: true 
+    generateMetadata: true 
+    hierarchyClient: false 
+    experimentalExtensibleEnums: true 
+    enableOperationGroup: true 
+    package-dir: "arm-mongocluster-new" 
+    emitter-output-dir: "{project-root}/sdk/mongocluster/arm-mongocluster-new" 
+    flavor: "azure" 
+    packageDetails: 
+      name: "@azure/arm-mongocluster-new" 
+linter:
+  extends:
+    - "@azure-tools/typespec-azure-rulesets/resource-manager"
