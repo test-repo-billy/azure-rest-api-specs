@@ -249,7 +249,7 @@ union MongoClusterStatus {
   /** The mongo cluster resource is being dropped. */
   "Dropping",
 
-  "Test",
+  "Test123",
 }
 
 /** Whether or not public endpoint access is allowed for this Mongo cluster.  Value is optional and default value is 'Enabled' */
