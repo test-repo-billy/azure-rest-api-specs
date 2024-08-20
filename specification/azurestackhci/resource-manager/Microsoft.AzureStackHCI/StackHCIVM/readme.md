@@ -53,10 +53,6 @@ suppressions:
     reason: XmsPageable not needed for GET calls
     from:
       - stackhcivm.json
-  - code: EvenSegmentedPathForPutOperation
-    reason: resourceUri in virtualmachineinstances is the parent resource. It consists of an even number of segmented paths. 
-    from: 
-      - stackhcivm.json
 ```
 
 ### Tag: package-preview-2024-02

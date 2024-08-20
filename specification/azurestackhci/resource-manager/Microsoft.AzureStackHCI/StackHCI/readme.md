@@ -241,6 +241,8 @@ input-file:
   - stable/2024-04-01/clusters.json
   - stable/2024-04-01/deploymentSettings.json
   - stable/2024-04-01/edgeDevices.json
+  - stable/2024-04-01/extensions.json
+  - stable/2024-04-01/hciCommon.json
   - stable/2024-04-01/offers.json
   - ../operations/stable/2024-04-01/operations.json
   - stable/2024-04-01/publishers.json

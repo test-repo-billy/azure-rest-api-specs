@@ -18,6 +18,7 @@ go:
 batch:
   - tag: package-2020-11-01-preview
   - tag: package-preview-2021-01
+  - tag: package-preview-2024-02-01
 ```
 
 ### Tag: package-preview-2021-01 and go
