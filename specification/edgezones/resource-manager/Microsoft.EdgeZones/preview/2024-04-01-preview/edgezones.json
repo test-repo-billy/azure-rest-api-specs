@@ -364,6 +364,30 @@
         "homeLocation"
       ]
     },
+    "MyModel": {
+      "type": "object",
+      "description": "the test mode description",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "the name of the model"
+        },
+        "age": {
+          "type": "number",
+          "format": "double",
+          "description": "the age of the model"
+        },
+        "isAlive": {
+          "type": "boolean",
+          "description": "the isAlive of the model"
+        }
+      },
+      "required": [
+        "name",
+        "age",
+        "isAlive"
+      ]
+    },
     "ProvisioningState": {
       "type": "string",
       "description": "The status of the current operation.",

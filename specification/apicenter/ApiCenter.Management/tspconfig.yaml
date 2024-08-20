@@ -10,6 +10,18 @@ options:
     output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/apicenter.json"
     examples-directory: "{project-root}/examples"
     use-read-only-status-schema: true
+  "@azure-tools/typespec-go":
+    service-dir: "sdk/resourcemanager/apicenter"
+    package-dir: "armapicenter"
+    module: "github.com/Azure/azure-sdk-for-go/{service-dir}/{package-dir}"
+    examples-directory: "{project-root}/examples"
+    fix-const-stuttering: true
+    flavor: "azure"
+    generate-examples: true
+    generate-fakes: true
+    head-as-boolean: true
+    inject-spans: true
+    remove-unreferenced-types: true
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"
