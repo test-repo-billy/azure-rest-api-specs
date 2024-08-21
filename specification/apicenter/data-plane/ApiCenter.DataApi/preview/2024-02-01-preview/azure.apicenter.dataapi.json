@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure API Center Data API",
+    "title": "Azure API Center Data API test",
     "version": "2024-02-01-preview",
-    "description": "Data API introduces endpoints to manage your API Center resources.",
+    "description": "Data API introduces endpoints to manage your API Center resources. test",
     "x-typespec-generated": [
       {
         "emitter": "@azure-tools/typespec-autorest"
