@@ -47,8 +47,8 @@ options:
     isModularLibrary: true
     hierarchyClient: false
     experimentalExtensibleEnums: true
+    enableOperationGroup: true
     emitter-output-dir: "{project-root}/sdk/openai/openai-assistants"
-    flavor: "azure"
     packageDetails:
       name: "@azure/openai-assistants"
     flavor: azure
