@@ -43,9 +43,12 @@ options:
     model-namespace: false
     flavor: azure
   "@azure-tools/typespec-ts":
+    package-dir: "ai-anomaly-detector-rest"
     emitter-output-dir: "{js-sdk-folder}/sdk/{service-directory-name}/ai-anomaly-detector-rest"
     generateMetadata: true
+    generateSample: true
     generateTest: true
+    azureSdkForJs: true
     packageDetails:
       name: "@azure-rest/ai-anomaly-detector"
     flavor: azure
