@@ -32,9 +32,7 @@ options:
     generateMetadata: true
     generateSample: true
     generateTest: true
-    enableOperationGroup: true
     azureSdkForJs: true
-    experimentalExtensibleEnums: true
     emitter-output-dir: "{project-root}/sdk/openai/ai-content-safety-rest"
     packageDetails:
       name: "@azure-rest/ai-content-safety"
