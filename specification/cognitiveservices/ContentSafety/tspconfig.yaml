@@ -28,10 +28,10 @@ options:
     flavor: azure
   "@azure-tools/typespec-ts":
     package-dir: "ai-content-safety-rest"
-    generateMetadata: false
-    generateTest: false
+    generateMetadata: true
+    generateTest: true
     azureSdkForJs: true
-    isModularLibrary: true
+    isModularLibrary: false
     hierarchyClient: false
     experimentalExtensibleEnums: true
     emitter-output-dir: "{project-root}/sdk/openai/ai-content-safety-rest"
