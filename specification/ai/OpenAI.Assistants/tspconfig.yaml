@@ -41,7 +41,8 @@ options:
   "@azure-tools/typespec-ts":
     package-dir: "openai-assistants"
     generateMetadata: false
-    generateTest: false
+    generateSample: true
+    generateTest: true
     azureSdkForJs: true
     isModularLibrary: true
     hierarchyClient: false
