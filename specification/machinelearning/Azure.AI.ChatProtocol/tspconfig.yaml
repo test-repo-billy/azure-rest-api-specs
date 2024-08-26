@@ -28,7 +28,14 @@ options:
     flavor: azure
   "@azure-tools/typespec-ts":
     package-dir: "ai-chat-protocol"
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
     isModularLibrary: true
+    experimentalExtensibleEnums: true
+    enableOperationGroup: true
+    hierarchyClient: false
     packageDetails:
       name: "@azure/ai-chat-protocol"
     flavor: azure
