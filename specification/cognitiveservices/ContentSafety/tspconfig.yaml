@@ -33,7 +33,6 @@ options:
     generateSample: true
     generateTest: true
     azureSdkForJs: true
-    emitter-output-dir: "{project-root}/sdk/openai/ai-content-safety-rest"
     packageDetails:
       name: "@azure-rest/ai-content-safety"
       version: "1.0.0"
