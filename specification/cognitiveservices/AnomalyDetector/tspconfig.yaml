@@ -10,7 +10,7 @@ parameters:
   "service-directory-name":
     default: "anomalydetector"
   "service-dir":
-    default: "anomalydetector"
+    default: "sdk/anomalydetector"
 emit:
   - "@azure-tools/typespec-autorest"
 linter:
