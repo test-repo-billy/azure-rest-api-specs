@@ -44,10 +44,6 @@ options:
     generateSample: true
     generateTest: true
     azureSdkForJs: true
-    isModularLibrary: true
-    experimentalExtensibleEnums: true
-    enableOperationGroup: true
-    hierarchyClient: false
     packageDetails:
       name: "@azure-rest/ai-translation-document"
       description: "Microsoft Translation Document"
