@@ -37,8 +37,10 @@ options:
     flavor: azure
   "@azure-tools/typespec-ts":
     package-dir: "ai-translation-text-rest"
-    generateMetadata: false
-    generateTest: false
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
     packageDetails:
       name: "@azure-rest/ai-translation-text"
       description: "Microsoft Translation Text"
