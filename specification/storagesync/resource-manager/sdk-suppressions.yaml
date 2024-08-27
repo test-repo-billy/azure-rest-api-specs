@@ -1,0 +1,14 @@
+suppressions:
+  azure-sdk-for-go:
+    - package: sdk/resourcemanager/costmanagement/armcostmanagement
+      breaking-changes:
+        - Field `DownloadURL` of struct `PriceSheetClientDownloadByBillingProfileResponse` has been removed
+        - Function `*PriceSheetClient.BeginDownload` has been removed
+  azure-sdk-for-python:
+    - package: azure-mgmt-costmanagement
+      breaking-change:
+        - Removed operation PriceSheetOperations.begin_download
+  azure-sdk-for-js:
+    - package: @azure/arm-netapp
+      breaking-changes:
+        - Removed operation Backups.getVolumeRestoreStatus  
