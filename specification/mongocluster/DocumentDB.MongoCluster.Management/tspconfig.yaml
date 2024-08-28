@@ -4,6 +4,20 @@ parameters:
 emit:
   - "@azure-tools/typespec-autorest"
 options:
+
+  "@azure-tools/typespec-ts":
+    azureSdkForJs: true
+    isModularLibrary: true
+    generateMetadata: true
+    hierarchyClient: true
+    experimentalExtensibleEnums: true
+    package-name: "@azure/arm-mongocluster"
+    flavor: "azure"
+    package-dir: "arm-mongocluster"
+    packageDetails:
+      name: "@azure/arm-mongocluster"
+      description: "DocumentDB MongoCluster Service"
+
   "@azure-tools/typespec-autorest":
     use-read-only-status-schema: true
     emitter-output-dir: "{project-root}/.."
@@ -40,6 +54,7 @@ options:
     flavor: azure
     clear-output-folder: true
     namespace: "{package-dir}"
+
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"

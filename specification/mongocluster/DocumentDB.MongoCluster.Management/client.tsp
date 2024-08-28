@@ -6,6 +6,9 @@ using Azure.ResourceManager.CommonTypes;
 using Microsoft.DocumentDB;
 
 @@clientName(Microsoft.DocumentDB, "MongoClusterMgmtClient", "python");
+
+@@clientName(Microsoft.DocumentDB, "MongoClusterMgmtClient", "javascript");
+
 @@access(Operations.list, Access.internal, "csharp");
 @@clientName(CheckNameAvailabilityResponse,
   "MongoClusterNameAvailabilityResult",
@@ -72,3 +75,4 @@ using Microsoft.DocumentDB;
   "MongoClusterConnectionStringsResult",
   "csharp"
 );
+
