@@ -231,45 +231,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AzureStackHCI/galleryImages": {
-      "get": {
-        "operationId": "GalleryImages_List",
-        "description": "Lists all of the gallery images in the specified resource group. Use the nextLink property in the response to get the next page of gallery images.",
-        "x-ms-examples": {
-          "ListGalleryImageByResourceGroup": {
-            "$ref": "./examples/ListGalleryImageByResourceGroup.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
-            }
-          },
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/GalleryImagesListResult"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.AzureStackHCI/galleryImages": {
       "get": {
         "operationId": "GalleryImages_ListAll",
