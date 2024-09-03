@@ -26,15 +26,18 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[typespec]": {
     "editor.defaultFormatter": "typespec.typespec-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[markdown]": {
     "editor.rulers": [
         { "column": 120, "color": "#ff0000c0" }
     ]
+},
+"[go]": {
+    "editor.formatOnSave": false
 },
 }
