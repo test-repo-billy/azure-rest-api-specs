@@ -30,8 +30,14 @@ options:
     examples-directory: "{project-root}/examples"
   "@azure-tools/typespec-ts":
     package-dir: "schema-registry"
-    generateMetadata: false
-    generateTest: false
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
+    isModularLibrary: true
+    experimentalExtensibleEnums: true
+    enableOperationGroup: true
+    hierarchyClient: false
     packageDetails:
       name: "@azure/schema-registry"
     flavor: azure
