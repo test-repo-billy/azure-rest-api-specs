@@ -37,7 +37,7 @@
     "/{resourceUri}/providers/Microsoft.ServiceLinker/linkers": {
       "get": {
         "deprecated": false,
-        "description": "Returns list of Linkers which connects to the resource.",
+        "description": "Returns list of Linkers which connects to the resource. 222test",
         "operationId": "Linker_List",
         "x-ms-examples": {
           "LinkList": {
