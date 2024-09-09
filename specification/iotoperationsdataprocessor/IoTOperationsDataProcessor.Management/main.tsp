@@ -15,7 +15,7 @@ using Azure.ResourceManager;
 #suppress "@azure-tools/typespec-azure-core/casing-style"
 @armProviderNamespace
 @service({
-  title: "Microsoft.IoTOperationsDataProcessor management service.",
+  title: "Microsoft.IoTOperationsDataProcessor management service. for testing",
 })
 @versioned(Versions)
 @doc("Microsoft.IoTOperationsDataProcessor Resource Provider management API.")

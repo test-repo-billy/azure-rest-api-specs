@@ -6,7 +6,7 @@ import "@azure-tools/typespec-azure-resource-manager";
 
 @armProviderNamespace
 @service({
-  title: "Informatica.DataManagement",
+  title: "Informatica.DataManagement for testing",
   description: "Azure Native Services Informatica DataManagement",
 })
 @versioned(Versions)

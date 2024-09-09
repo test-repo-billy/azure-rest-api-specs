@@ -34,8 +34,10 @@ options:
     package-dir: "load-testing-rest"
     title: Azure Load Testing
     description: Azure Load Testing Client
-    generateMetadata: false
-    generateTest: false
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
     packageDetails:
       name: "@azure-rest/load-testing"
       description: "This package contains Microsoft Azure LoadTestingClient client library."
