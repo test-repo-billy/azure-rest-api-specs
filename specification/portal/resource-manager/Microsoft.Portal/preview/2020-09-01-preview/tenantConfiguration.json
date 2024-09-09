@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "portal",
+    "title": "portal for testing",
     "version": "2020-09-01-preview",
     "description": "Allows creation and deletion of Azure Shared Dashboards.",
     "x-typespec-generated": [

@@ -14,7 +14,7 @@ using LiftrBase.Data;
 
 @armProviderNamespace
 @service({
-  title: "Astronomer.Astro",
+  title: "Astronomer.Astro for testing",
 })
 @versioned(Astronomer.Astro.Versions)
 namespace Astronomer.Astro;

@@ -11,7 +11,7 @@ using Azure.ResourceManager;
 
 @armProviderNamespace("Microsoft.Community")
 @service({
-  title: "Microsoft.Community",
+  title: "Microsoft.Community for testing",
 })
 @versioned(Versions)
 namespace Microsoft.Community;

@@ -29,7 +29,7 @@ import "./propertyNameOverride.tsp";
 
 /** Azure Messaging EventGrid SystemEvents */
 @service({
-  title: "Azure.Messaging.SystemEvents",
+  title: "Azure.Messaging.SystemEvents for testing",
 })
 @versioned(ServiceApiVersions)
 namespace Microsoft.EventGrid.SystemEvents {

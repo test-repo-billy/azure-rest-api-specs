@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "CommunicationMessagesClient",
+    "title": "CommunicationMessagesClient for testing",
     "version": "2024-02-01",
     "description": "Azure Communication Messages Service",
     "x-typespec-generated": [

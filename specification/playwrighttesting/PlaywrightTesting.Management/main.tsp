@@ -12,7 +12,7 @@ using Azure.ResourceManager;
 
 @armProviderNamespace("Microsoft.AzurePlaywrightService")
 @service({
-  title: "Microsoft AzurePlaywrightService Management API",
+  title: "Microsoft AzurePlaywrightService Management API for testing",
 })
 @doc("Microsoft.AzurePlaywrightService Resource Provider Management API.")
 @versioned(Versions)

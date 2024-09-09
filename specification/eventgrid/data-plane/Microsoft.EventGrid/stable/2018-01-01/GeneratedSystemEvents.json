@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure.Messaging.SystemEvents",
+    "title": "Azure.Messaging.SystemEvents for testing",
     "version": "2018-01-01",
     "description": "Azure Messaging EventGrid SystemEvents",
     "x-typespec-generated": [

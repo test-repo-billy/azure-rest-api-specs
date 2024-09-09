@@ -11,7 +11,7 @@ using Azure.ResourceManager;
 
 @armProviderNamespace("Microsoft.EdgeZones")
 @service({
-  title: "Microsoft.EdgeZones",
+  title: "Microsoft.EdgeZones for testing",
 })
 @versioned(Versions)
 @armCommonTypesVersion(CommonTypes.Versions.v5)

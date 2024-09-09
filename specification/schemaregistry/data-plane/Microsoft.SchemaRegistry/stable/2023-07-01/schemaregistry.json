@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure Schema Registry",
+    "title": "Azure Schema Registry for testing",
     "version": "2023-07-01",
     "description": "SchemaRegistryClient is a client for registering and retrieving schemas from the Azure Schema Registry service.",
     "x-typespec-generated": [
