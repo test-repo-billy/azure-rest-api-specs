@@ -40,8 +40,10 @@ options:
     generate-sample-project: false
   "@azure-tools/typespec-ts":
     package-dir: "ai-translation-document-rest"
-    generateMetadata: false
-    generateTest: false
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
     packageDetails:
       name: "@azure-rest/ai-translation-document"
       description: "Microsoft Translation Document"

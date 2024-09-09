@@ -9,7 +9,7 @@ using Azure.Core;
 using TypeSpec.Versioning;
 
 @service({
-  title: "Text Translation",
+  title: "Text Translation for testing",
 })
 @server(
   "{Endpoint}",
