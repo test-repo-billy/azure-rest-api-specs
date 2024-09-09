@@ -16,7 +16,7 @@ namespace SplitIO {
 
 @armProviderNamespace
 @service({
-  title: "Split.IO Experimentation",
+  title: "Split.IO Experimentation for testing",
 })
 @versioned(SplitIO.Experimentation.Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)

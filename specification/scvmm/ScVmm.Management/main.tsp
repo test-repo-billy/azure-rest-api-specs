@@ -23,7 +23,7 @@ using TypeSpec.Versioning;
 /** The Microsoft.ScVmm Rest API spec. */
 @armProviderNamespace
 @service({
-  title: "ScVmm",
+  title: "ScVmm for testing",
 })
 @versioned(Versions)
 namespace Microsoft.ScVmm;

@@ -13,7 +13,7 @@ using Azure.ResourceManager;
 @doc("Mobile Packet Core Network Function Management API")
 @armProviderNamespace("Microsoft.MobilePacketCore")
 @service({
-  title: "Microsoft.MobilePacketCore Network Function resource",
+  title: "Microsoft.MobilePacketCore Network Function resource for testing",
 })
 @versioned(Versions)
 namespace Microsoft.MobilePacketCore;
