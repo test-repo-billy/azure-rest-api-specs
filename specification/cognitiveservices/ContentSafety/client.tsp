@@ -12,7 +12,6 @@ namespace Customizations;
   service: ContentSafety,
 })
 interface ContentSafetyClient {
-  analyzeImage is ContentSafety.ImageOperations.analyzeImage;
   analyzeText is ContentSafety.TextOperations.analyzeText;
   detectTextProtectedMaterial is ContentSafety.TextOperations.detectTextProtectedMaterial;
   shieldPrompt is ContentSafety.TextOperations.shieldPrompt;
@@ -23,7 +22,6 @@ interface ContentSafetyClient {
   service: ContentSafety,
 })
 interface BlocklistClient {
-  addOrUpdateBlocklistItems is ContentSafety.TextBlocklists.addOrUpdateBlocklistItems;
   @convenientAPI(false, "csharp") // csharp is not ready for patch operations, therefore hide the convenience API of this operation
   createOrUpdateTextBlocklist is ContentSafety.TextBlocklists.createOrUpdateTextBlocklist;
   deleteTextBlocklist is ContentSafety.TextBlocklists.deleteTextBlocklist;
