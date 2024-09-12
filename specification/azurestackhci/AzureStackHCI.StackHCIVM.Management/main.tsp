@@ -28,7 +28,7 @@ using TypeSpec.Versioning;
 #suppress "@azure-tools/typespec-azure-resource-manager/missing-operations-endpoint" "Operations API is still spec'd, but now resides in another spec in this namespace."
 @armProviderNamespace
 @service({
-  title: "Microsoft.AzureStackHCI",
+  title: "Microsoft.AzureStackHCI test",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)
