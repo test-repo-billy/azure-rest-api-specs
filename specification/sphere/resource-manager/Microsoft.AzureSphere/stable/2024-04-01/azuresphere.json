@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "AzureSphereProviderClient",
+    "title": "AzureSphereProviderClient test",
     "version": "2024-04-01",
     "description": "Azure Sphere resource management API.",
     "x-typespec-generated": [

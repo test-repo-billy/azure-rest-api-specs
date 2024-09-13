@@ -18,7 +18,7 @@ using OpenAPI;
 
 @armProviderNamespace("Microsoft.StandbyPool")
 @service({
-  title: "Microsoft.StandbyPool",
+  title: "Microsoft.StandbyPool test",
 })
 @versioned(Microsoft.StandbyPool.Versions)
 namespace Microsoft.StandbyPool;

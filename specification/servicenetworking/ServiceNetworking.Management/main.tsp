@@ -8,7 +8,7 @@ import "@azure-tools/typespec-azure-resource-manager";
 @armProviderNamespace
 @armCommonTypesVersion("v3")
 @service({
-  title: "TrafficController",
+  title: "TrafficController test",
 })
 @versioned(Versions)
 namespace Microsoft.ServiceNetworking;

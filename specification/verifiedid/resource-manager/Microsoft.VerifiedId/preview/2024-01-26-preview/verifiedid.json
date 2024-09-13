@@ -3,7 +3,7 @@
   "info": {
     "title": "VerifiedIdMgmtClient test",
     "version": "2024-01-26-preview",
-    "description": "VerifiedId Resource Provider management API.",
+    "description": "VerifiedId Resource Provider management API. test",
     "x-typespec-generated": [
       {
         "emitter": "@azure-tools/typespec-autorest"
