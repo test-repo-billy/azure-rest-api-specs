@@ -15,7 +15,7 @@ using TypeSpec.Versioning;
 /** Creates a Microsoft.Purview management client. */
 @armProviderNamespace
 @service({
-  title: "PurviewPolicyClient",
+  title: "PurviewPolicyClient test",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)

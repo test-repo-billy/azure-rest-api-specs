@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Defender EASM",
+    "title": "Defender EASM test",
     "version": "2024-03-01-preview",
     "description": "Defender EASM discovers and maps your digital attack surface to provide an \"outside-in\" perspective using probes to discover assets. The assets are provided with detailed metadata associated, including vulnerabilities, configurations and web components, allowing customers to view and prioritize external risk. The EASM REST API enables you to develop clients that integrate with your application.",
     "x-typespec-generated": [
@@ -132,11 +132,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Assets_ListAssetResource": {
-            "$ref": "./examples/Assets_ListAssetResource_MaximumSet_Gen.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -183,11 +178,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Assets_UpdateAssets": {
-            "$ref": "./examples/Assets_UpdateAssets_MaximumSet_Gen.json"
-          }
         }
       }
     },
@@ -228,11 +218,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Assets_GetAssetResource": {
-            "$ref": "./examples/Assets_GetAssetResource_MaximumSet_Gen.json"
           }
         }
       }
@@ -287,11 +272,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Assets_GetObservations": {
-            "$ref": "./examples/Assets_GetObservations.json"
-          }
         }
       }
     },
@@ -340,11 +320,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Assets_GetAssetsExport": {
-            "$ref": "./examples/Assets_GetAssetsExport.json"
           }
         }
       }
@@ -396,11 +371,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Assets_GetDeltaDetails": {
-            "$ref": "./examples/Assets_GetDeltaDetails.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -446,11 +416,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Assets_GetDeltaSummary": {
-            "$ref": "./examples/Assets_GetDeltaSummary.json"
-          }
         }
       }
     },
@@ -484,11 +449,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "CisaCves_GetCisaCves": {
-            "$ref": "./examples/CisaCves_List.json"
           }
         },
         "x-ms-pageable": {
@@ -534,11 +494,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "CisaCves_GetCisaCve": {
-            "$ref": "./examples/CisaCves_Get.json"
-          }
         }
       }
     },
@@ -578,11 +533,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DataConnections_ListDataConnection": {
-            "$ref": "./examples/DataConnections_ListDataConnection_MaximumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -627,11 +577,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DataConnections_GetDataConnection": {
-            "$ref": "./examples/DataConnections_GetDataConnection_MaximumSet_Gen.json"
           }
         }
       },
@@ -681,11 +626,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "DataConnections_CreateOrReplaceDataConnection": {
-            "$ref": "./examples/DataConnections_CreateOrReplaceDataConnection_MaximumSet_Gen.json"
-          }
         }
       },
       "delete": {
@@ -721,11 +661,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DataConnections_DeleteDataConnection": {
-            "$ref": "./examples/DataConnections_DeleteDataConnection_MaximumSet_Gen.json"
           }
         }
       }
@@ -769,11 +704,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DataConnections_ValidateDataConnection": {
-            "$ref": "./examples/DataConnections_ValidateDataConnection_MaximumSet_Gen.json"
           }
         }
       }
@@ -819,11 +749,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "DiscoveryGroups_ListDiscoGroup": {
-            "$ref": "./examples/DiscoveryGroups_ListDiscoGroup_MaximumSet_Gen.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -866,11 +791,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DiscoveryGroups_GetDiscoGroup": {
-            "$ref": "./examples/DiscoveryGroups_GetDiscoGroup_MaximumSet_Gen.json"
           }
         }
       },
@@ -920,11 +840,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "DiscoveryGroups_CreateOrReplaceDiscoGroup": {
-            "$ref": "./examples/DiscoveryGroups_CreateOrReplaceDiscoGroup_MaximumSet_Gen.json"
-          }
         }
       },
       "delete": {
@@ -960,11 +875,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DiscoveryGroups_DeleteDiscoGroup": {
-            "$ref": "./examples/DiscoveryGroups_DeleteDiscoGroup_MaximumSet_Gen.json"
           }
         }
       }
@@ -1003,11 +913,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DiscoveryGroups_RunDiscoGroup": {
-            "$ref": "./examples/DiscoveryGroups_RunDiscoGroup_MaximumSet_Gen.json"
           }
         }
       }
@@ -1056,11 +961,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "DiscoveryGroups_ListRuns": {
-            "$ref": "./examples/DiscoveryGroups_ListRuns_MaximumSet_Gen.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -1106,11 +1006,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "DiscoveryGroups_DismissAssetChain": {
-            "$ref": "./examples/DiscoveryGroups_DismissAssetChain.json"
-          }
         }
       }
     },
@@ -1154,11 +1049,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "DiscoveryGroups_GetAssetChainSummary": {
-            "$ref": "./examples/DiscoveryGroups_GetAssetChainSummary.json"
-          }
         }
       }
     },
@@ -1201,11 +1091,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "DiscoveryGroups_ValidateDiscoGroup": {
-            "$ref": "./examples/DiscoveryGroups_ValidateDiscoGroup_MaximumSet_Gen.json"
           }
         }
       }
@@ -1251,11 +1136,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "DiscoveryTemplates_ListDiscoTemplate": {
-            "$ref": "./examples/DiscoveryTemplates_ListDiscoTemplate_MaximumSet_Gen.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -1299,11 +1179,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "DiscoveryTemplates_GetDiscoTemplate": {
-            "$ref": "./examples/DiscoveryTemplates_GetDiscoTemplate_MaximumSet_Gen.json"
-          }
         }
       }
     },
@@ -1337,11 +1212,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Reports_GetBillable": {
-            "$ref": "./examples/Reports_GetBillable_MaximumSet_Gen.json"
           }
         }
       }
@@ -1386,11 +1256,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Reports_GetSnapshot": {
-            "$ref": "./examples/Reports_GetSnapshot_MaximumSet_Gen.json"
-          }
         }
       }
     },
@@ -1434,11 +1299,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Reports_GetSnapshotExport": {
-            "$ref": "./examples/Reports_GetReportAssetSnapshotExport.json"
-          }
         }
       }
     },
@@ -1481,11 +1341,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Reports_GetSummary": {
-            "$ref": "./examples/Reports_GetSummary_MaximumSet_Gen.json"
           }
         }
       }
@@ -1531,11 +1386,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "SavedFilters_ListSavedFilter": {
-            "$ref": "./examples/SavedFilters_ListSavedFilter_MaximumSet_Gen.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -1578,11 +1428,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "SavedFilters_GetSavedFilter": {
-            "$ref": "./examples/SavedFilters_GetSavedFilter_MaximumSet_Gen.json"
           }
         }
       },
@@ -1632,11 +1477,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "SavedFilters_CreateOrReplaceSavedFilter": {
-            "$ref": "./examples/SavedFilters_CreateOrReplaceSavedFilter_MaximumSet_Gen.json"
-          }
         }
       },
       "delete": {
@@ -1672,11 +1512,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "SavedFilters_DeleteSavedFilter": {
-            "$ref": "./examples/SavedFilters_DeleteSavedFilter_MaximumSet_Gen.json"
           }
         }
       }
@@ -1725,11 +1560,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Tasks_ListTask": {
-            "$ref": "./examples/Tasks_ListTask_MaximumSet_Gen.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -1773,11 +1603,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Tasks_GetTask": {
-            "$ref": "./examples/Tasks_GetTask_MaximumSet_Gen.json"
-          }
         }
       }
     },
@@ -1818,11 +1643,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Tasks_CancelTask": {
-            "$ref": "./examples/Tasks_CancelTask_MaximumSet_Gen.json"
           }
         }
       }
@@ -1865,11 +1685,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Tasks_RunTask": {
-            "$ref": "./examples/Tasks_RunTask.json"
-          }
         }
       }
     },
@@ -1910,11 +1725,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Tasks_DownloadTask": {
-            "$ref": "./examples/Tasks_DownloadTask.json"
           }
         }
       }

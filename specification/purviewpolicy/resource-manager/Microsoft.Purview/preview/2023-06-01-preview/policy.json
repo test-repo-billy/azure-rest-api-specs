@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "PurviewPolicyClient",
+    "title": "PurviewPolicyClient test",
     "version": "2023-06-01-preview",
     "description": "Creates a Microsoft.Purview management client.",
     "x-typespec-generated": [
