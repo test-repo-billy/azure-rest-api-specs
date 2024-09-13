@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Document Intelligence (formerly Form Recognizer)",
+    "title": "Document Intelligence (formerly Form Recognizer) test",
     "version": "2024-07-31-preview",
     "description": "Extracts content, layout, and structured data from documents.",
     "x-typespec-generated": [
@@ -95,11 +95,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Get Document Classifiers": {
-            "$ref": "./examples/GetDocumentClassifiers.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -146,11 +141,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Document Classifier": {
-            "$ref": "./examples/GetDocumentClassifier.json"
-          }
         }
       },
       "delete": {
@@ -189,11 +179,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Delete Document Classifier": {
-            "$ref": "./examples/DeleteDocumentClassifier.json"
           }
         }
       }
@@ -258,11 +243,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Classify Document from Url": {
-            "$ref": "./examples/ClassifyDocument_Stream.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -316,11 +296,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Copy Document Classifier To": {
-            "$ref": "./examples/CopyDocumentClassifierTo.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -363,11 +338,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Classify Document Result": {
-            "$ref": "./examples/GetClassifyDocumentResult.json"
-          }
         }
       }
     },
@@ -401,11 +371,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Authorize Copy of Document Classifier": {
-            "$ref": "./examples/AuthorizeCopyDocumentClassifier.json"
           }
         }
       }
@@ -451,11 +416,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Build Document Classifier": {
-            "$ref": "./examples/BuildDocumentClassifier.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -490,11 +450,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Document Models": {
-            "$ref": "./examples/GetDocumentModels.json"
           }
         },
         "x-ms-pageable": {
@@ -574,11 +529,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Analyze Document from Url": {
-            "$ref": "./examples/AnalyzeDocument_Stream.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -647,11 +597,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Analyze Batch Documents": {
-            "$ref": "./examples/AnalyzeBatchDocuments.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -695,14 +640,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Custom Document Model": {
-            "$ref": "./examples/GetDocumentModel_Custom.json"
-          },
-          "Get Prebuilt Document Model": {
-            "$ref": "./examples/GetDocumentModel_Prebuilt.json"
-          }
         }
       },
       "delete": {
@@ -740,11 +677,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Delete Document Model": {
-            "$ref": "./examples/DeleteDocumentModel.json"
           }
         }
       }
@@ -799,11 +731,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Copy Document Model To": {
-            "$ref": "./examples/CopyDocumentModelTo.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -846,11 +773,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Analyze Batch Documents Result": {
-            "$ref": "./examples/GetAnalyzeBatchDocumentsResult.json"
-          }
         }
       }
     },
@@ -892,11 +814,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Analyze Document Result": {
-            "$ref": "./examples/GetAnalyzeDocumentResult.json"
           }
         }
       }
@@ -951,11 +868,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Analyze Document Result Figure": {
-            "$ref": "./examples/GetAnalyzeDocumentResultFigure.json"
-          }
         }
       }
     },
@@ -1002,11 +914,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Analyze Document Result PDF": {
-            "$ref": "./examples/GetAnalyzeDocumentResultFPdf.json"
-          }
         }
       }
     },
@@ -1040,11 +947,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Authorize Copy of Document Model": {
-            "$ref": "./examples/AuthorizeCopyDocumentModel.json"
           }
         }
       }
@@ -1088,11 +990,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Build Document Model": {
-            "$ref": "./examples/BuildDocumentModel.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -1139,11 +1036,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Compose Document Model": {
-            "$ref": "./examples/ComposeDocumentModel.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -1168,11 +1060,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Resource Details": {
-            "$ref": "./examples/GetResourceDetails.json"
           }
         }
       }
@@ -1208,11 +1095,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Operations": {
-            "$ref": "./examples/GetOperations.json"
           }
         },
         "x-ms-pageable": {
@@ -1258,11 +1140,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Operation - Document Model Build": {
-            "$ref": "./examples/GetOperation_DocumentModelBuild.json"
           }
         }
       }
@@ -1320,11 +1197,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Classify Document from Url": {
-            "$ref": "./examples/ClassifyDocument_Url.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -1395,14 +1267,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Analyze Document from Base64": {
-            "$ref": "./examples/AnalyzeDocument_Base64.json"
-          },
-          "Analyze Document from Url": {
-            "$ref": "./examples/AnalyzeDocument_Url.json"
-          }
-        },
         "x-ms-long-running-operation": true
       }
     },
@@ -1444,11 +1308,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Operation - Document Model Compose": {
-            "$ref": "./examples/GetOperation_DocumentModelCompose.json"
           }
         }
       }
@@ -1492,11 +1351,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Operation - Document Model Copy To": {
-            "$ref": "./examples/GetOperation_DocumentModelCopyTo.json"
-          }
         }
       }
     },
@@ -1538,11 +1392,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Operation - Document Classifier Copy To": {
-            "$ref": "./examples/GetOperation_DocumentClassifierCopyTo.json"
           }
         }
       }
@@ -1586,11 +1435,6 @@
               "$ref": "#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Operation - Document Classifier Build": {
-            "$ref": "./examples/GetOperation_DocumentClassifierBuild.json"
-          }
         }
       }
     },
@@ -1632,11 +1476,6 @@
             "schema": {
               "$ref": "#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Operation": {
-            "$ref": "./examples/GetOperation.json"
           }
         }
       }

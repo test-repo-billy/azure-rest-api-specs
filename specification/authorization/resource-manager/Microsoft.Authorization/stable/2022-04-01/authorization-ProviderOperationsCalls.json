@@ -34,50 +34,6 @@
     }
   },
   "paths": {
-    "/providers/Microsoft.Authorization/providerOperations/{resourceProviderNamespace}": {
-      "get": {
-        "tags": [
-          "ProviderOperationsMetadata"
-        ],
-        "operationId": "ProviderOperationsMetadata_Get",
-        "description": "Gets provider operations metadata for the specified resource provider.",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceProviderNamespaceParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "default": "resourceTypes",
-            "description": "Specifies whether to expand the values."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK - Returns the operations metadata.",
-            "schema": {
-              "$ref": "#/definitions/ProviderOperationsMetadata"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "List provider operations metadata for resource provider": {
-            "$ref": "./examples/GetProviderOperationsRP.json"
-          }
-        }
-      }
-    },
     "/providers/Microsoft.Authorization/providerOperations": {
       "get": {
         "tags": [

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure Large Instance",
+    "title": "Azure Large Instance test",
     "version": "2024-04-10",
     "description": "The AzureLargeInstance Management client",
     "x-typespec-generated": [

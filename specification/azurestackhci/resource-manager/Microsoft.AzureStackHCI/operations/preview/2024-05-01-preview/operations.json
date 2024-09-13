@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Microsoft.AzureStackHCI",
+    "title": "Microsoft.AzureStackHCI test",
     "version": "2024-05-01-preview",
     "description": "Azure Stack HCI management service",
     "x-typespec-generated": [

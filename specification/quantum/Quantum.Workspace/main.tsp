@@ -30,7 +30,7 @@ using OpenAPI;
 
 /** Azure Quantum Workspace Services */
 @service({
-  title: "Azure Quantum Workspace Services",
+  title: "Azure Quantum Workspace Services test",
 })
 @useAuth(AzureEntraAuth | AzureApiKeyAuth)
 @versioned(QuantumWorkspaceAPIVersion)

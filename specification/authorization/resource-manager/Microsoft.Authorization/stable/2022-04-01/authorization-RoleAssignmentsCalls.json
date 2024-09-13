@@ -80,55 +80,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/roleAssignments": {
-      "get": {
-        "tags": [
-          "RoleAssignments"
-        ],
-        "operationId": "RoleAssignments_ListForResourceGroup",
-        "description": "List all role assignments that apply to a resource group.",
-        "parameters": [
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "../../../../../common-types/resource-management/v2/types.json#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/RoleAssignmentFilterParameter"
-          },
-          {
-            "$ref": "#/parameters/TenantIdQueryParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Returns an array of role assignments.",
-            "schema": {
-              "$ref": "#/definitions/RoleAssignmentListResult"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v2/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-odata": "#/definitions/RoleAssignmentFilter",
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        },
-        "x-ms-examples": {
-          "List role assignments for resource group": {
-            "$ref": "./examples/RoleAssignments_ListForResourceGroup.json"
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/roleAssignments": {
       "get": {
         "tags": [
