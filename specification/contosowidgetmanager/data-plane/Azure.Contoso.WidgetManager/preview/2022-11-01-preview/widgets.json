@@ -39,45 +39,6 @@
   },
   "tags": [],
   "paths": {
-    "/widgets": {
-      "get": {
-        "operationId": "Widgets_ListWidgets",
-        "description": "List Widget resources",
-        "parameters": [
-          {
-            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The request has succeeded.",
-            "schema": {
-              "$ref": "#/definitions/PagedWidgetSuite"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/Azure.Core.Foundations.ErrorResponse"
-            },
-            "headers": {
-              "x-ms-error-code": {
-                "type": "string",
-                "description": "String error code indicating what went wrong."
-              }
-            }
-          }
-        },
-        "x-ms-examples": {
-          "Widgets_ListWidgets": {
-            "$ref": "./examples/Widgets_ListWidgetsSample.json"
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
     "/widgets/{widgetName}": {
       "get": {
         "operationId": "Widgets_GetWidget",
@@ -150,19 +111,6 @@
         "responses": {
           "200": {
             "description": "The request has succeeded.",
-            "schema": {
-              "$ref": "#/definitions/WidgetSuite"
-            },
-            "headers": {
-              "Operation-Location": {
-                "type": "string",
-                "format": "uri",
-                "description": "The location for monitoring the operation state."
-              }
-            }
-          },
-          "201": {
-            "description": "The request has succeeded and a new resource has been created as a result.",
             "schema": {
               "$ref": "#/definitions/WidgetSuite"
             },
@@ -296,6 +244,10 @@
                 "id": {
                   "type": "string",
                   "description": "The unique ID of the operation."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "The unique name of the operation."
                 },
                 "status": {
                   "$ref": "#/definitions/Azure.Core.Foundations.OperationState",
@@ -496,6 +448,24 @@
       "required": [
         "value"
       ]
+    },
+    "Versions": {
+      "type": "string",
+      "description": "Versions info.",
+      "enum": [
+        "2022-11-01-preview"
+      ],
+      "x-ms-enum": {
+        "name": "Versions",
+        "modelAsString": true,
+        "values": [
+          {
+            "name": "v2022_11_01_Preview",
+            "value": "2022-11-01-preview",
+            "description": "The 2022-11-01-preview version."
+          }
+        ]
+      }
     },
     "WidgetSuite": {
       "type": "object",
