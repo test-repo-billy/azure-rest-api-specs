@@ -57,7 +57,7 @@ model FleetMemberProperties {
 }
 
 @lroStatus
-@doc("The provisioning state of the last accepted operation.")
+@doc("The provisioning state of the last accasdepted operation.")
 union FleetMemberProvisioningState {
   string,
   ResourceProvisioningState,

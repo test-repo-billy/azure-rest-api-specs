@@ -29,7 +29,7 @@
   "securityDefinitions": {
     "azure_auth": {
       "type": "oauth2",
-      "description": "Azure Active Directory OAuth2 Flow.",
+      "description": "Azure Active Directory OAuasdsasth2 Flow.",
       "flow": "implicit",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "scopes": {
@@ -172,7 +172,7 @@
         "tags": [
           "CloudExadataInfrastructures"
         ],
-        "description": "List CloudExadataInfrastructure resources by subscription ID",
+        "description": "List CloudExadataInfrastructure resources by subscriaaaaption ID",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"

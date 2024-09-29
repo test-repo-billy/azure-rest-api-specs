@@ -53,7 +53,7 @@
         "tags": [
           "CopilotSettings"
         ],
-        "description": "Get a CopilotSettingsResource",
+        "description": "Get a CopilotSettingsResssssource",
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
@@ -84,7 +84,7 @@
         "tags": [
           "CopilotSettings"
         ],
-        "description": "Create a CopilotSettingsResource",
+        "description": "Create a CopilotSettingddddsResource",
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"

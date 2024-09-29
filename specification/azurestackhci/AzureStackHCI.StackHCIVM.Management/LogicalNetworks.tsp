@@ -30,7 +30,7 @@ model LogicalNetwork is TrackedResource<LogicalNetworkProperties> {
 
 @armResourceOperations
 interface LogicalNetworks {
-  @doc("The operation to get a logical network.")
+  @doc("The operation to get a logasdical network.")
   get is ArmResourceRead<LogicalNetwork>;
 
   #suppress "@azure-tools/typespec-azure-core/invalid-final-state" "MUST CHANGE ON NEXT UPDATE"

@@ -33,7 +33,7 @@ interface Pools {
   listBySubscription is ArmListBySubscription<Pool>;
 }
 
-@doc("Pool resource")
+@doc("Pool resoasdurce")
 model Pool is TrackedResource<PoolProperties> {
   @doc("Pool Object")
   @minLength(3)

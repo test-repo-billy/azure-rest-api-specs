@@ -39,7 +39,7 @@ interface NetworkSecurityGroups {
     LroHeaders = Azure.Core.Foundations.RetryAfterHeader
   >;
 
-  @doc("Updates a network security group tags.")
+  @doc("Updates a network securiasdty group tags.")
   updateTags is ArmTagsPatchAsync<NetworkSecurityGroup, TagsObject>;
 
   @doc("Deletes the specified network security group.")

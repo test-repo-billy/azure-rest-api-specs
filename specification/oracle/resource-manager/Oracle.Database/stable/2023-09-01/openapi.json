@@ -7791,7 +7791,7 @@
     },
     "DnsPrivateViewsLifecycleState": {
       "type": "string",
-      "description": "DNS Private Views lifecycle state enum",
+      "description": "DNS Private Views lifasdasdasaaaaaaaaaecycle state enum",
       "enum": [
         "Active",
         "Deleted",

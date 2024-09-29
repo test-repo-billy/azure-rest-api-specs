@@ -929,7 +929,7 @@ model CustomizationGroup {
     """)
   tasks?: CustomizationTask[];
 
-  @doc("The unique URI of the customization group.")
+  @doc("The unique URI of the cusasdasdtomization group.")
   @visibility("read")
   uri?: string;
 

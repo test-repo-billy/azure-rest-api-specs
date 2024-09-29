@@ -48,7 +48,7 @@ model AssetProperties {
   @visibility("read", "create")
   externalAssetId?: string;
 
-  @doc("Human-readable display name.")
+  @doc("Human-readable disasdasplay name.")
   displayName?: string;
 
   @doc("Human-readable description of the asset.")

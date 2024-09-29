@@ -58,7 +58,7 @@
         "tags": [
           "Operations"
         ],
-        "description": "List the operations for the provider",
+        "description": "List the operasdsadations for the provider",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
@@ -94,7 +94,7 @@
         "tags": [
           "StandbyContainerGroupPools"
         ],
-        "description": "List StandbyContainerGroupPoolResource resources by subscription ID",
+        "description": "List StandbyContainerGroupPodddolResource resources by subscription ID",
         "parameters": [
           {
             "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"

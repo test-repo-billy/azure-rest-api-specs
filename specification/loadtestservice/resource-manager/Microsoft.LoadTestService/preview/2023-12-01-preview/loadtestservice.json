@@ -1373,7 +1373,7 @@
     },
     "LoadTestProfileMappingResourceUpdateProperties": {
       "type": "object",
-      "description": "The updatable properties of the LoadTestProfileMappingResource.",
+      "description": "The updatable propeasdasdrties of the LoadTestProfileMappingResource.",
       "properties": {
         "sourceResourceId": {
           "type": "string",
