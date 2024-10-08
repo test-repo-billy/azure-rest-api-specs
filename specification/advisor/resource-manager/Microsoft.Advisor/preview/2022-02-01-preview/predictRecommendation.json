@@ -30,7 +30,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK. Successfully retrieved operation list. Trivial change for testing. Do not use trivial change. Another trivial change. Yet another trivial change.",
+            "description": "OK. Successfully retrieved operation list.",
             "schema": {
               "$ref": "#/definitions/OperationEntityListResult"
             }
