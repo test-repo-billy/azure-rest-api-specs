@@ -11,7 +11,7 @@ using TypeSpec.Http;
 using TypeSpec.Versioning;
 
 @service({
-  title: "Azure Communication Routing Service",
+  title: "Azure Communication Routing Service test",
 })
 @server(
   "{endpoint}",

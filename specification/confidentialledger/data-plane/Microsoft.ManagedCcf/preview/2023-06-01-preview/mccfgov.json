@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Managed CCF Governance",
+    "title": "Managed CCF Governance test",
     "version": "2023-06-01-preview",
     "x-typespec-generated": [
       {
@@ -54,11 +54,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Proposals_List": {
-            "$ref": "./examples/Proposals_List.json"
           }
         },
         "x-ms-pageable": {
@@ -115,11 +110,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Proposals_Withdraw": {
-            "$ref": "./examples/Proposals_Withdraw.json"
-          }
         }
       }
     },
@@ -166,11 +156,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Proposals_Get": {
-            "$ref": "./examples/Proposals_Get.json"
-          }
         }
       }
     },
@@ -216,11 +201,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Proposals_GetActions": {
-            "$ref": "./examples/Proposals_GetActions.json"
           }
         }
       }
@@ -282,11 +262,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Ballots_Submit": {
-            "$ref": "./examples/Ballots_Submit.json"
-          }
         }
       }
     },
@@ -345,11 +320,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Ballots_Get": {
-            "$ref": "./examples/Ballots_Get.json"
-          }
         }
       }
     },
@@ -393,11 +363,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Proposals_Create": {
-            "$ref": "./examples/Proposals_Create.json"
           }
         }
       }
@@ -451,11 +416,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "StateDigests_Update": {
-            "$ref": "./examples/StateDigests_Update.json"
-          }
         }
       }
     },
@@ -505,11 +465,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "StateDigests_Acknowledge": {
-            "$ref": "./examples/StateDigests_Acknowledge.json"
-          }
         }
       }
     },
@@ -556,11 +511,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "StateDigests_Get": {
-            "$ref": "./examples/StateDigests_Get.json"
-          }
         }
       }
     },
@@ -599,11 +549,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "EncryptedShares_Get": {
-            "$ref": "./examples/EncryptedShares_Get.json"
           }
         }
       }
@@ -657,11 +602,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Shares_Submit": {
-            "$ref": "./examples/Shares_Submit.json"
-          }
         }
       }
     },
@@ -704,11 +644,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "ServiceState_GetConstitution": {
-            "$ref": "./examples/ServiceState_GetConstitution.json"
-          }
         }
       }
     },
@@ -746,11 +681,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "ServiceState_GetServiceInfo": {
-            "$ref": "./examples/ServiceState_GetServiceInfo.json"
           }
         }
       }
@@ -790,11 +720,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "ServiceState_GetJsApp": {
-            "$ref": "./examples/ServiceState_GetJsApp.json"
-          }
         }
       }
     },
@@ -832,11 +757,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "ServiceState_GetJoinPolicies": {
-            "$ref": "./examples/ServiceState_GetJoinPolicies.json"
           }
         }
       }
@@ -876,11 +796,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "ServiceState_GetJwkInfo": {
-            "$ref": "./examples/ServiceState_GetJwkInfo.json"
-          }
         }
       }
     },
@@ -918,11 +833,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "ServiceState_ListMembers": {
-            "$ref": "./examples/ServiceState_ListMembers.json"
           }
         },
         "x-ms-pageable": {
@@ -973,11 +883,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "ServiceState_GetMember": {
-            "$ref": "./examples/ServiceState_GetMember.json"
-          }
         }
       }
     },
@@ -1015,11 +920,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "ServiceState_ListNodes": {
-            "$ref": "./examples/ServiceState_ListNodes.json"
           }
         },
         "x-ms-pageable": {
@@ -1070,11 +970,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "ServiceState_GetNode": {
-            "$ref": "./examples/ServiceState_GetNode.json"
-          }
         }
       }
     },
@@ -1114,11 +1009,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Transactions_Get": {
-            "$ref": "./examples/Transactions_Get.json"
-          }
         }
       }
     },
@@ -1149,11 +1039,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Transactions_GetCommit": {
-            "$ref": "./examples/Transactions_GetCommit.json"
           }
         }
       }
