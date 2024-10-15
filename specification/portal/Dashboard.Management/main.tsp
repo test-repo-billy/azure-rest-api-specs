@@ -22,7 +22,7 @@ using TypeSpec.Versioning;
  */
 @armProviderNamespace
 @service({
-  title: "portal",
+  title: "portal for testing",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)

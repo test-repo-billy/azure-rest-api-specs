@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Microsoft.MobilePacketCore Network Function resource",
+    "title": "Microsoft.MobilePacketCore Network Function resource for testing",
     "version": "2023-05-15-preview",
     "description": "Mobile Packet Core Network Function Management API",
     "x-typespec-generated": [

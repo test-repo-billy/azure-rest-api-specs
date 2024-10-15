@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure Developer Signing",
+    "title": "Azure Developer Signing for testing",
     "version": "2023-06-15-preview",
     "description": "Azure Developer Signing is a service that provides managed artifact signing for all.",
     "x-typespec-generated": [

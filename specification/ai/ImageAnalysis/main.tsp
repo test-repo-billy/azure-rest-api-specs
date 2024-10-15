@@ -11,7 +11,7 @@ using TypeSpec.Versioning;
 using Azure.Core;
 
 @service({
-  title: "Image Analysis",
+  title: "Image Analysis for testing",
 })
 @versioned(ImageAnalysis.Versions)
 @useAuth(

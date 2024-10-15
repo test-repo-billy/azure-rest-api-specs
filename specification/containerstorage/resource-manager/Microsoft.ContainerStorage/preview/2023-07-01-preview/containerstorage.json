@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure-ContainerStorageRP",
+    "title": "Azure-ContainerStorageRP for testing",
     "version": "2023-07-01-preview",
     "description": "Azure Container Storage Resource Provider API.",
     "x-typespec-generated": [

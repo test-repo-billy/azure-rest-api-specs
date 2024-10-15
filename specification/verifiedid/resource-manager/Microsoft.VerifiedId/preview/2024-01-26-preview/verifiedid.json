@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "VerifiedIdMgmtClient",
+    "title": "VerifiedIdMgmtClient for testing",
     "version": "2024-01-26-preview",
     "description": "VerifiedId Resource Provider management API.",
     "x-typespec-generated": [

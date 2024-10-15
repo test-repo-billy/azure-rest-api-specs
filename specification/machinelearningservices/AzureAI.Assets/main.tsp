@@ -20,7 +20,7 @@ using Azure.Core.Traits;
   ]>
 )
 @service({
-  title: "Azure Machine Learning Data Plane Services",
+  title: "Azure Machine Learning Data Plane Services for testing",
 })
 @server(
   "{endpoint}/genericasset/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}",

@@ -22,7 +22,7 @@ using TypeSpec.Versioning;
  */
 @armProviderNamespace
 @service({
-  title: "AzureSphereProviderClient",
+  title: "AzureSphereProviderClient for testing",
 })
 @versioned(Versions)
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v3)

@@ -14,7 +14,7 @@ using OpenAPI;
 
 @armProviderNamespace
 @service({
-  title: "Microsoft.NetworkAnalytics",
+  title: "Microsoft.NetworkAnalytics for testing",
 })
 @versioned(Microsoft.NetworkAnalytics.Versions)
 namespace Microsoft.NetworkAnalytics;
