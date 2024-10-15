@@ -253,6 +253,31 @@ input-file:
   - stable/2024-04-01/updates.json
 ```
 
+
+### Tag: package-2024-10-01-preview
+
+These settings apply only when `--tag=2024-10-01-preview` is specified on the command line.
+
+```yaml $(tag) == '2024-10-01-preview'
+input-file:
+  - preview/2024-10-01-preview/arcSettings.json
+  - preview/2024-10-01-preview/clusters.json
+  - preview/2024-10-01-preview/deploymentSettings.json
+  - preview/2024-10-01-preview/edgeDevices.json
+  - preview/2024-10-01-preview/edgeDeviceJobs.json
+  - preview/2024-10-01-preview/extensions.json
+  - preview/2024-10-01-preview/hciCommon.json
+  - preview/2024-10-01-preview/offers.json
+  - ../operations/preview/2024-10-01-preview/operations.json
+  - preview/2024-10-01-preview/publishers.json
+  - preview/2024-10-01-preview/securitySettings.json
+  - preview/2024-10-01-preview/skus.json
+  - preview/2024-10-01-preview/updateRuns.json
+  - preview/2024-10-01-preview/updateSummaries.json
+  - preview/2024-10-01-preview/updates.json
+```
+
+
 ---
 
 # Code Generation
