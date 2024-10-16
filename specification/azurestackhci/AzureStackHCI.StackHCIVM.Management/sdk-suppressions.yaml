@@ -1,0 +1,16 @@
+suppressions:
+  azure-sdk-for-go:
+    - package: 'sdk/resourcemanager/azurestackhci/armazurestackhci'
+      breaking-changes:
+        - Function `*ExtensionsClient.BeginUpdate` parameter(s) have been changed from `(context.Context, string, string, string, string, Extension, *ExtensionsClientBeginUpdateOptions)` to `(context.Context, string, string, string, string, ExtensionPatch, *ExtensionsClientBeginUpdateOptions)`
+
+  azure-sdk-for-python:
+    - package: 'azure-mgmt-azurestackhci'
+      breaking-changes:
+        - The publicly exposed function 'patch_sdk' was deleted or renamed in the current version
+
+  azure-sdk-for-js:
+    - package: '@azure/arm-azurestackhci'
+      breaking-changes:
+        - Class AzureStackHCIClient has a new signature
+        - Operation Extensions.beginUpdateAndWait has a new signature
