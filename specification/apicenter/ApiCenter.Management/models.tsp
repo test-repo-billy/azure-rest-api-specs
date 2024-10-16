@@ -556,3 +556,18 @@ model DeletedServiceProperties {
   @doc("UTC date and time when the service was soft-deleted. The date conforms to the following format: yyyy-MM-ddTHH:mm:ssZ as specified by the ISO 8601 standard.")
   softDeletionDate?: utcDateTime;
 }
+
+// unused model test swagger
+model MyModel {
+  name: string;
+  age: float64;
+  isAlive: boolean;
+  address: Address;
+}
+
+model Address {
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+}

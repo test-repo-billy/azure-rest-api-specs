@@ -135,3 +135,13 @@ interface ExtendedZones {
   @doc("Unregisters a subscription for an Extended Zone")
   unregister is ArmResourceActionSync<ExtendedZone, void, ExtendedZone>;
 }
+
+/** the test mode description */
+model MyModel {
+  /** the name of the model */
+  name: string;
+  /** the age of the model */
+  age: float64;
+  /** the isAlive of the model */
+  isAlive: boolean;
+}

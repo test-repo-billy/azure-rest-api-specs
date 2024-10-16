@@ -40,7 +40,7 @@
           "ApiGateway"
         ],
         "operationId": "ApiGateway_CreateOrUpdate",
-        "description": "Creates or updates an API Management gateway. This is long running operation and could take several minutes to complete.",
+        "description": "Normal swagger case Creates or updates an API Management gateway. This is long running operation and could take several minutes to complete.",
         "x-ms-examples": {
           "ApiManagementCreateStandardGateway": {
             "$ref": "./examples/ApiManagementCreateStandardGateway.json"
