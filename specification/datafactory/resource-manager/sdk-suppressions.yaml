@@ -9,6 +9,19 @@ suppressions:
     - package: sdk/resourcemanager/datafactory/armdatafactory
       breaking-changes:
         - Type of `AzureTableStorageLinkedService.TypeProperties` has been changed from `*AzureStorageLinkedServiceTypeProperties` to `*AzureTableStorageLinkedServiceTypeProperties`
+        - Function `*ClientFactory.NewOperationsClient` has been removed
+        - Function `*FactoriesClient.NewListByResourceGroupPager` has been removed
+        - Function `*OperationsClient.NewListPager` has been removed
+        - Function `NewOperationsClient` has been removed
+        - Struct `OperationDisplay` has been removed
+        - Struct `OperationListResponse` has been removed
+        - Struct `OperationLogSpecification` has been removed
+        - Struct `OperationMetricAvailability` has been removed
+        - Struct `OperationMetricDimension` has been removed
+        - Struct `OperationMetricSpecification` has been removed
+        - Struct `OperationProperties` has been removed
+        - Struct `OperationServiceSpecification` has been removed
+        - Struct `Operation` has been removed
   azure-sdk-for-js:
     - package: "@azure/arm-datafactory"
       breaking-changes:
