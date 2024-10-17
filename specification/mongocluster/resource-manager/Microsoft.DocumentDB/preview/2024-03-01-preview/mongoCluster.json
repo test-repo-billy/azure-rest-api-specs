@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "MongoClusterManagementClient",
+    "title": "MongoClusterManagementClient test",
     "version": "2024-03-01-preview",
     "description": "The Microsoft Azure management API provides create, read, update, and delete functionality for Azure Cosmos DB for MongoDB vCore resources including clusters and firewall rules.",
     "x-typespec-generated": [
@@ -82,11 +82,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Operations_List": {
-            "$ref": "./examples/Operations_List.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -132,14 +127,6 @@
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "Checks and confirms the Mongo Cluster name is availability for use.": {
-            "$ref": "./examples/MongoClusters_NameAvailability.json"
-          },
-          "Checks and returns that the Mongo Cluster name is already in-use.": {
-            "$ref": "./examples/MongoClusters_NameAvailability_AlreadyExists.json"
-          }
         }
       }
     },
@@ -170,11 +157,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Lists the Mongo Cluster resources in a subscription.": {
-            "$ref": "./examples/MongoClusters_List.json"
           }
         },
         "x-ms-pageable": {
@@ -212,11 +194,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Lists the Mongo Cluster resources in a resource group.": {
-            "$ref": "./examples/MongoClusters_ListByResourceGroup.json"
           }
         },
         "x-ms-pageable": {
@@ -264,11 +241,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Gets a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_Get.json"
           }
         }
       },
@@ -333,14 +305,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Creates a Mongo Cluster resource from a point in time restore": {
-            "$ref": "./examples/MongoClusters_CreatePITR.json"
-          },
-          "Creates a new Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_Create.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -412,17 +376,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Disables public network access on a Mongo Cluster resource with a private endpoint connection.": {
-            "$ref": "./examples/MongoClusters_PatchPrivateNetworkAccess.json"
-          },
-          "Updates a Mongo Cluster resource": {
-            "$ref": "./examples/MongoClusters_Update.json"
-          },
-          "Updates the disk size on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_PatchDiskSize.json"
-          }
-        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "location"
         },
@@ -480,11 +433,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Deletes a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_Delete.json"
-          }
-        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "location"
         },
@@ -531,11 +479,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "List the firewall rules on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_FirewallRuleList.json"
           }
         },
         "x-ms-pageable": {
@@ -593,11 +536,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Gets a firewall rule on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_FirewallRuleGet.json"
           }
         }
       },
@@ -681,11 +619,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Creates a firewall rule on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_FirewallRuleCreate.json"
-          }
-        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation"
         },
@@ -753,11 +686,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Deletes a firewall rule on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_FirewallRuleDelete.json"
-          }
-        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "location"
         },
@@ -805,11 +733,6 @@
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "List the available connection strings for the Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_ListConnectionStrings.json"
-          }
         }
       }
     },
@@ -853,11 +776,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Lists the private endpoint connection resources on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_PrivateEndpointConnectionList.json"
           }
         },
         "x-ms-pageable": {
@@ -908,11 +826,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get a private endpoint connection on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_PrivateEndpointConnectionGet.json"
           }
         }
       },
@@ -989,11 +902,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Approves a private endpoint connection on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_PrivateEndpointConnectionPut.json"
-          }
-        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation"
         },
@@ -1054,11 +962,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Delete a private endpoint connection on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_PrivateEndpointConnectionDelete.json"
-          }
-        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "location"
         },
@@ -1105,11 +1008,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "Lists the private link resources available on a Mongo Cluster resource.": {
-            "$ref": "./examples/MongoClusters_PrivateLinkResourceList.json"
           }
         },
         "x-ms-pageable": {
