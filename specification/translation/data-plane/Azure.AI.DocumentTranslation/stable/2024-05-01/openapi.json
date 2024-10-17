@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure.AI.DocumentTranslation",
+    "title": "Azure.AI.DocumentTranslation test",
     "version": "2024-05-01",
     "description": "Document translation service",
     "x-typespec-generated": [
@@ -171,11 +171,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Returns a list of batch requests submitted and the status for each request": {
-            "$ref": "./examples/operations.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -213,11 +208,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Submit a document translation request to the Document Translation service": {
-            "$ref": "./examples/batch.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -260,11 +250,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Returns the status for a batch document translation request": {
-            "$ref": "./examples/operation.json"
-          }
         }
       },
       "delete": {
@@ -302,11 +287,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Cancel a currently processing or queued translation": {
-            "$ref": "./examples/cancel.json"
           }
         }
       }
@@ -428,11 +408,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "Returns the status for all documents in a batch document translation request": {
-            "$ref": "./examples/documents.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -482,11 +457,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Returns the status of a single document in a batch translation request": {
-            "$ref": "./examples/document.json"
           }
         }
       }
@@ -546,11 +516,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Returns a list of supported document formats": {
-            "$ref": "./examples/format.json"
           }
         }
       }
@@ -630,11 +595,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Translate a single document": {
-            "$ref": "./examples/DocumentTranslate_MaximumSet_Gen.json"
           }
         }
       }
