@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Microsoft.EdgeZones",
+    "title": "Microsoft.EdgeZones test",
     "version": "2024-04-01-preview",
     "x-typespec-generated": [
       {
@@ -72,11 +72,6 @@
             }
           }
         },
-        "x-ms-examples": {
-          "ListOperations": {
-            "$ref": "./examples/Operations_List.json"
-          }
-        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -109,11 +104,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "ListExtendedZones": {
-            "$ref": "./examples/ExtendedZones_ListBySubscription.json"
           }
         },
         "x-ms-pageable": {
@@ -157,11 +147,6 @@
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "GetExtendedZone": {
-            "$ref": "./examples/ExtendedZones_Get.json"
-          }
         }
       }
     },
@@ -201,11 +186,6 @@
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
           }
-        },
-        "x-ms-examples": {
-          "RegisterExtendedZone": {
-            "$ref": "./examples/ExtendedZones_Register.json"
-          }
         }
       }
     },
@@ -244,11 +224,6 @@
             "schema": {
               "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
-          }
-        },
-        "x-ms-examples": {
-          "UnregisterExtendedZone": {
-            "$ref": "./examples/ExtendedZones_Unregister.json"
           }
         }
       }
