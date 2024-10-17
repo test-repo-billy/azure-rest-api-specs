@@ -15,7 +15,6 @@ suppressions:
         - Function `NewOperationsClient` has been removed
         - Struct `OperationDisplay` has been removed
         - Struct `OperationListResponse` has been removed
-        - Struct `OperationLogSpecification` has been removed
         - Struct `OperationMetricAvailability` has been removed
         - Struct `OperationMetricDimension` has been removed
         - Struct `OperationMetricSpecification` has been removed
