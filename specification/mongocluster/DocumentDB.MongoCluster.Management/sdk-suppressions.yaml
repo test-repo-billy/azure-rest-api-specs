@@ -1,0 +1,620 @@
+suppressions:
+  azure-sdk-for-python:
+    - package: azure-mgmt-mongocluster
+      breaking-changes:
+        - Model DefenderForStorageSetting no longer has parameter cap_gb_per_month
+        - AdministratorProperties.__init__ had all overloads removed
+        - CheckNameAvailabilityRequest.__init__ had all overloads removed
+        - CheckNameAvailabilityResponse.__init__ had all overloads removed
+        - ComputeProperties.__init__ had all overloads removed
+        - Deleted or renamed client `MongoClusterMgmtClient`
+        - Deleted or renamed method `AdministratorProperties.clear`
+        - Deleted or renamed method `AdministratorProperties.copy`
+        - Deleted or renamed method `AdministratorProperties.get`
+        - Deleted or renamed method `AdministratorProperties.items`
+        - Deleted or renamed method `AdministratorProperties.keys`
+        - Deleted or renamed method `AdministratorProperties.password`
+        - Deleted or renamed method `AdministratorProperties.pop`
+        - Deleted or renamed method `AdministratorProperties.popitem`
+        - Deleted or renamed method `AdministratorProperties.setdefault`
+        - Deleted or renamed method `AdministratorProperties.update`
+        - Deleted or renamed method `AdministratorProperties.user_name`
+        - Deleted or renamed method `AdministratorProperties.values`
+        - Deleted or renamed method `BackupProperties.clear`
+        - Deleted or renamed method `BackupProperties.copy`
+        - Deleted or renamed method `BackupProperties.earliest_restore_time`
+        - Deleted or renamed method `BackupProperties.get`
+        - Deleted or renamed method `BackupProperties.items`
+        - Deleted or renamed method `BackupProperties.keys`
+        - Deleted or renamed method `BackupProperties.pop`
+        - Deleted or renamed method `BackupProperties.popitem`
+        - Deleted or renamed method `BackupProperties.setdefault`
+        - Deleted or renamed method `BackupProperties.update`
+        - Deleted or renamed method `BackupProperties.values`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.clear`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.copy`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.get`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.items`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.keys`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.name`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.pop`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.popitem`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.setdefault`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.type`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.update`
+        - Deleted or renamed method `CheckNameAvailabilityRequest.values`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.clear`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.copy`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.get`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.items`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.keys`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.message`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.name_available`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.pop`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.popitem`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.reason`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.setdefault`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.update`
+        - Deleted or renamed method `CheckNameAvailabilityResponse.values`
+        - Deleted or renamed method `ComputeProperties.clear`
+        - Deleted or renamed method `ComputeProperties.copy`
+        - Deleted or renamed method `ComputeProperties.get`
+        - Deleted or renamed method `ComputeProperties.items`
+        - Deleted or renamed method `ComputeProperties.keys`
+        - Deleted or renamed method `ComputeProperties.pop`
+        - Deleted or renamed method `ComputeProperties.popitem`
+        - Deleted or renamed method `ComputeProperties.setdefault`
+        - Deleted or renamed method `ComputeProperties.tier`
+        - Deleted or renamed method `ComputeProperties.update`
+        - Deleted or renamed method `ComputeProperties.values`
+        - Deleted or renamed method `ConnectionString.clear`
+        - Deleted or renamed method `ConnectionString.connection_string`
+        - Deleted or renamed method `ConnectionString.copy`
+        - Deleted or renamed method `ConnectionString.description`
+        - Deleted or renamed method `ConnectionString.get`
+        - Deleted or renamed method `ConnectionString.items`
+        - Deleted or renamed method `ConnectionString.keys`
+        - Deleted or renamed method `ConnectionString.name`
+        - Deleted or renamed method `ConnectionString.pop`
+        - Deleted or renamed method `ConnectionString.popitem`
+        - Deleted or renamed method `ConnectionString.setdefault`
+        - Deleted or renamed method `ConnectionString.update`
+        - Deleted or renamed method `ConnectionString.values`
+        - Deleted or renamed method `ErrorAdditionalInfo.clear`
+        - Deleted or renamed method `ErrorAdditionalInfo.copy`
+        - Deleted or renamed method `ErrorAdditionalInfo.get`
+        - Deleted or renamed method `ErrorAdditionalInfo.info`
+        - Deleted or renamed method `ErrorAdditionalInfo.items`
+        - Deleted or renamed method `ErrorAdditionalInfo.keys`
+        - Deleted or renamed method `ErrorAdditionalInfo.pop`
+        - Deleted or renamed method `ErrorAdditionalInfo.popitem`
+        - Deleted or renamed method `ErrorAdditionalInfo.setdefault`
+        - Deleted or renamed method `ErrorAdditionalInfo.type`
+        - Deleted or renamed method `ErrorAdditionalInfo.update`
+        - Deleted or renamed method `ErrorAdditionalInfo.values`
+        - Deleted or renamed method `ErrorDetail.additional_info`
+        - Deleted or renamed method `ErrorDetail.clear`
+        - Deleted or renamed method `ErrorDetail.code`
+        - Deleted or renamed method `ErrorDetail.copy`
+        - Deleted or renamed method `ErrorDetail.details`
+        - Deleted or renamed method `ErrorDetail.get`
+        - Deleted or renamed method `ErrorDetail.items`
+        - Deleted or renamed method `ErrorDetail.keys`
+        - Deleted or renamed method `ErrorDetail.message`
+        - Deleted or renamed method `ErrorDetail.pop`
+        - Deleted or renamed method `ErrorDetail.popitem`
+        - Deleted or renamed method `ErrorDetail.setdefault`
+        - Deleted or renamed method `ErrorDetail.target`
+        - Deleted or renamed method `ErrorDetail.update`
+        - Deleted or renamed method `ErrorDetail.values`
+        - Deleted or renamed method `ErrorResponse.clear`
+        - Deleted or renamed method `ErrorResponse.copy`
+        - Deleted or renamed method `ErrorResponse.error`
+        - Deleted or renamed method `ErrorResponse.get`
+        - Deleted or renamed method `ErrorResponse.items`
+        - Deleted or renamed method `ErrorResponse.keys`
+        - Deleted or renamed method `ErrorResponse.pop`
+        - Deleted or renamed method `ErrorResponse.popitem`
+        - Deleted or renamed method `ErrorResponse.setdefault`
+        - Deleted or renamed method `ErrorResponse.update`
+        - Deleted or renamed method `ErrorResponse.values`
+        - Deleted or renamed method `FirewallRule.clear`
+        - Deleted or renamed method `FirewallRule.copy`
+        - Deleted or renamed method `FirewallRule.get`
+        - Deleted or renamed method `FirewallRule.id`
+        - Deleted or renamed method `FirewallRule.items`
+        - Deleted or renamed method `FirewallRule.keys`
+        - Deleted or renamed method `FirewallRule.name`
+        - Deleted or renamed method `FirewallRule.pop`
+        - Deleted or renamed method `FirewallRule.popitem`
+        - Deleted or renamed method `FirewallRule.properties`
+        - Deleted or renamed method `FirewallRule.setdefault`
+        - Deleted or renamed method `FirewallRule.system_data`
+        - Deleted or renamed method `FirewallRule.type`
+        - Deleted or renamed method `FirewallRule.update`
+        - Deleted or renamed method `FirewallRule.values`
+        - Deleted or renamed method `FirewallRuleProperties.clear`
+        - Deleted or renamed method `FirewallRuleProperties.copy`
+        - Deleted or renamed method `FirewallRuleProperties.end_ip_address`
+        - Deleted or renamed method `FirewallRuleProperties.get`
+        - Deleted or renamed method `FirewallRuleProperties.items`
+        - Deleted or renamed method `FirewallRuleProperties.keys`
+        - Deleted or renamed method `FirewallRuleProperties.pop`
+        - Deleted or renamed method `FirewallRuleProperties.popitem`
+        - Deleted or renamed method `FirewallRuleProperties.provisioning_state`
+        - Deleted or renamed method `FirewallRuleProperties.setdefault`
+        - Deleted or renamed method `FirewallRuleProperties.start_ip_address`
+        - Deleted or renamed method `FirewallRuleProperties.update`
+        - Deleted or renamed method `FirewallRuleProperties.values`
+        - Deleted or renamed method `HighAvailabilityProperties.clear`
+        - Deleted or renamed method `HighAvailabilityProperties.copy`
+        - Deleted or renamed method `HighAvailabilityProperties.get`
+        - Deleted or renamed method `HighAvailabilityProperties.items`
+        - Deleted or renamed method `HighAvailabilityProperties.keys`
+        - Deleted or renamed method `HighAvailabilityProperties.pop`
+        - Deleted or renamed method `HighAvailabilityProperties.popitem`
+        - Deleted or renamed method `HighAvailabilityProperties.setdefault`
+        - Deleted or renamed method `HighAvailabilityProperties.target_mode`
+        - Deleted or renamed method `HighAvailabilityProperties.update`
+        - Deleted or renamed method `HighAvailabilityProperties.values`
+        - Deleted or renamed method `ListConnectionStringsResult.clear`
+        - Deleted or renamed method `ListConnectionStringsResult.connection_strings`
+        - Deleted or renamed method `ListConnectionStringsResult.copy`
+        - Deleted or renamed method `ListConnectionStringsResult.get`
+        - Deleted or renamed method `ListConnectionStringsResult.items`
+        - Deleted or renamed method `ListConnectionStringsResult.keys`
+        - Deleted or renamed method `ListConnectionStringsResult.pop`
+        - Deleted or renamed method `ListConnectionStringsResult.popitem`
+        - Deleted or renamed method `ListConnectionStringsResult.setdefault`
+        - Deleted or renamed method `ListConnectionStringsResult.update`
+        - Deleted or renamed method `ListConnectionStringsResult.values`
+        - Deleted or renamed method `MongoCluster.clear`
+        - Deleted or renamed method `MongoCluster.copy`
+        - Deleted or renamed method `MongoCluster.get`
+        - Deleted or renamed method `MongoCluster.id`
+        - Deleted or renamed method `MongoCluster.items`
+        - Deleted or renamed method `MongoCluster.keys`
+        - Deleted or renamed method `MongoCluster.location`
+        - Deleted or renamed method `MongoCluster.name`
+        - Deleted or renamed method `MongoCluster.pop`
+        - Deleted or renamed method `MongoCluster.popitem`
+        - Deleted or renamed method `MongoCluster.properties`
+        - Deleted or renamed method `MongoCluster.setdefault`
+        - Deleted or renamed method `MongoCluster.system_data`
+        - Deleted or renamed method `MongoCluster.tags`
+        - Deleted or renamed method `MongoCluster.type`
+        - Deleted or renamed method `MongoCluster.update`
+        - Deleted or renamed method `MongoCluster.values`
+        - Deleted or renamed method `MongoClusterProperties.administrator`
+        - Deleted or renamed method `MongoClusterProperties.backup`
+        - Deleted or renamed method `MongoClusterProperties.clear`
+        - Deleted or renamed method `MongoClusterProperties.cluster_status`
+        - Deleted or renamed method `MongoClusterProperties.compute`
+        - Deleted or renamed method `MongoClusterProperties.connection_string`
+        - Deleted or renamed method `MongoClusterProperties.copy`
+        - Deleted or renamed method `MongoClusterProperties.create_mode`
+        - Deleted or renamed method `MongoClusterProperties.get`
+        - Deleted or renamed method `MongoClusterProperties.high_availability`
+        - Deleted or renamed method `MongoClusterProperties.infrastructure_version`
+        - Deleted or renamed method `MongoClusterProperties.items`
+        - Deleted or renamed method `MongoClusterProperties.keys`
+        - Deleted or renamed method `MongoClusterProperties.pop`
+        - Deleted or renamed method `MongoClusterProperties.popitem`
+        - Deleted or renamed method `MongoClusterProperties.preview_features`
+        - Deleted or renamed method `MongoClusterProperties.private_endpoint_connections`
+        - Deleted or renamed method `MongoClusterProperties.provisioning_state`
+        - Deleted or renamed method `MongoClusterProperties.public_network_access`
+        - Deleted or renamed method `MongoClusterProperties.replica_parameters`
+        - Deleted or renamed method `MongoClusterProperties.replica`
+        - Deleted or renamed method `MongoClusterProperties.restore_parameters`
+        - Deleted or renamed method `MongoClusterProperties.server_version`
+        - Deleted or renamed method `MongoClusterProperties.setdefault`
+        - Deleted or renamed method `MongoClusterProperties.sharding`
+        - Deleted or renamed method `MongoClusterProperties.storage`
+        - Deleted or renamed method `MongoClusterProperties.update`
+        - Deleted or renamed method `MongoClusterProperties.values`
+        - Deleted or renamed method `MongoClusterReplicaParameters.clear`
+        - Deleted or renamed method `MongoClusterReplicaParameters.copy`
+        - Deleted or renamed method `MongoClusterReplicaParameters.get`
+        - Deleted or renamed method `MongoClusterReplicaParameters.items`
+        - Deleted or renamed method `MongoClusterReplicaParameters.keys`
+        - Deleted or renamed method `MongoClusterReplicaParameters.pop`
+        - Deleted or renamed method `MongoClusterReplicaParameters.popitem`
+        - Deleted or renamed method `MongoClusterReplicaParameters.setdefault`
+        - Deleted or renamed method `MongoClusterReplicaParameters.source_location`
+        - Deleted or renamed method `MongoClusterReplicaParameters.source_resource_id`
+        - Deleted or renamed method `MongoClusterReplicaParameters.update`
+        - Deleted or renamed method `MongoClusterReplicaParameters.values`
+        - Deleted or renamed method `MongoClusterRestoreParameters.clear`
+        - Deleted or renamed method `MongoClusterRestoreParameters.copy`
+        - Deleted or renamed method `MongoClusterRestoreParameters.get`
+        - Deleted or renamed method `MongoClusterRestoreParameters.items`
+        - Deleted or renamed method `MongoClusterRestoreParameters.keys`
+        - Deleted or renamed method `MongoClusterRestoreParameters.point_in_time_utc`
+        - Deleted or renamed method `MongoClusterRestoreParameters.pop`
+        - Deleted or renamed method `MongoClusterRestoreParameters.popitem`
+        - Deleted or renamed method `MongoClusterRestoreParameters.setdefault`
+        - Deleted or renamed method `MongoClusterRestoreParameters.source_resource_id`
+        - Deleted or renamed method `MongoClusterRestoreParameters.update`
+        - Deleted or renamed method `MongoClusterRestoreParameters.values`
+        - Deleted or renamed method `MongoClusterUpdate.clear`
+        - Deleted or renamed method `MongoClusterUpdate.copy`
+        - Deleted or renamed method `MongoClusterUpdate.get`
+        - Deleted or renamed method `MongoClusterUpdate.items`
+        - Deleted or renamed method `MongoClusterUpdate.keys`
+        - Deleted or renamed method `MongoClusterUpdate.pop`
+        - Deleted or renamed method `MongoClusterUpdate.popitem`
+        - Deleted or renamed method `MongoClusterUpdate.properties`
+        - Deleted or renamed method `MongoClusterUpdate.setdefault`
+        - Deleted or renamed method `MongoClusterUpdate.tags`
+        - Deleted or renamed method `MongoClusterUpdate.update`
+        - Deleted or renamed method `MongoClusterUpdate.values`
+        - Deleted or renamed method `MongoClusterUpdateProperties.administrator`
+        - Deleted or renamed method `MongoClusterUpdateProperties.backup`
+        - Deleted or renamed method `MongoClusterUpdateProperties.clear`
+        - Deleted or renamed method `MongoClusterUpdateProperties.compute`
+        - Deleted or renamed method `MongoClusterUpdateProperties.copy`
+        - Deleted or renamed method `MongoClusterUpdateProperties.get`
+        - Deleted or renamed method `MongoClusterUpdateProperties.high_availability`
+        - Deleted or renamed method `MongoClusterUpdateProperties.items`
+        - Deleted or renamed method `MongoClusterUpdateProperties.keys`
+        - Deleted or renamed method `MongoClusterUpdateProperties.pop`
+        - Deleted or renamed method `MongoClusterUpdateProperties.popitem`
+        - Deleted or renamed method `MongoClusterUpdateProperties.preview_features`
+        - Deleted or renamed method `MongoClusterUpdateProperties.public_network_access`
+        - Deleted or renamed method `MongoClusterUpdateProperties.server_version`
+        - Deleted or renamed method `MongoClusterUpdateProperties.setdefault`
+        - Deleted or renamed method `MongoClusterUpdateProperties.sharding`
+        - Deleted or renamed method `MongoClusterUpdateProperties.storage`
+        - Deleted or renamed method `MongoClusterUpdateProperties.update`
+        - Deleted or renamed method `MongoClusterUpdateProperties.values`
+        - Deleted or renamed method `Operation.action_type`
+        - Deleted or renamed method `Operation.clear`
+        - Deleted or renamed method `Operation.copy`
+        - Deleted or renamed method `Operation.display`
+        - Deleted or renamed method `Operation.get`
+        - Deleted or renamed method `Operation.is_data_action`
+        - Deleted or renamed method `Operation.items`
+        - Deleted or renamed method `Operation.keys`
+        - Deleted or renamed method `Operation.name`
+        - Deleted or renamed method `Operation.origin`
+        - Deleted or renamed method `Operation.pop`
+        - Deleted or renamed method `Operation.popitem`
+        - Deleted or renamed method `Operation.setdefault`
+        - Deleted or renamed method `Operation.update`
+        - Deleted or renamed method `Operation.values`
+        - Deleted or renamed method `OperationDisplay.clear`
+        - Deleted or renamed method `OperationDisplay.copy`
+        - Deleted or renamed method `OperationDisplay.description`
+        - Deleted or renamed method `OperationDisplay.get`
+        - Deleted or renamed method `OperationDisplay.items`
+        - Deleted or renamed method `OperationDisplay.keys`
+        - Deleted or renamed method `OperationDisplay.operation`
+        - Deleted or renamed method `OperationDisplay.pop`
+        - Deleted or renamed method `OperationDisplay.popitem`
+        - Deleted or renamed method `OperationDisplay.provider`
+        - Deleted or renamed method `OperationDisplay.resource`
+        - Deleted or renamed method `OperationDisplay.setdefault`
+        - Deleted or renamed method `OperationDisplay.update`
+        - Deleted or renamed method `OperationDisplay.values`
+        - Deleted or renamed method `PrivateEndpoint.clear`
+        - Deleted or renamed method `PrivateEndpoint.copy`
+        - Deleted or renamed method `PrivateEndpoint.get`
+        - Deleted or renamed method `PrivateEndpoint.id`
+        - Deleted or renamed method `PrivateEndpoint.items`
+        - Deleted or renamed method `PrivateEndpoint.keys`
+        - Deleted or renamed method `PrivateEndpoint.pop`
+        - Deleted or renamed method `PrivateEndpoint.popitem`
+        - Deleted or renamed method `PrivateEndpoint.setdefault`
+        - Deleted or renamed method `PrivateEndpoint.update`
+        - Deleted or renamed method `PrivateEndpoint.values`
+        - Deleted or renamed method `PrivateEndpointConnection.clear`
+        - Deleted or renamed method `PrivateEndpointConnection.copy`
+        - Deleted or renamed method `PrivateEndpointConnection.get`
+        - Deleted or renamed method `PrivateEndpointConnection.id`
+        - Deleted or renamed method `PrivateEndpointConnection.items`
+        - Deleted or renamed method `PrivateEndpointConnection.keys`
+        - Deleted or renamed method `PrivateEndpointConnection.name`
+        - Deleted or renamed method `PrivateEndpointConnection.pop`
+        - Deleted or renamed method `PrivateEndpointConnection.popitem`
+        - Deleted or renamed method `PrivateEndpointConnection.properties`
+        - Deleted or renamed method `PrivateEndpointConnection.setdefault`
+        - Deleted or renamed method `PrivateEndpointConnection.system_data`
+        - Deleted or renamed method `PrivateEndpointConnection.type`
+        - Deleted or renamed method `PrivateEndpointConnection.update`
+        - Deleted or renamed method `PrivateEndpointConnection.values`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.clear`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.copy`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.get`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.group_ids`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.items`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.keys`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.pop`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.popitem`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.private_endpoint`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.private_link_service_connection_state`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.provisioning_state`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.setdefault`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.update`
+        - Deleted or renamed method `PrivateEndpointConnectionProperties.values`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.clear`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.copy`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.get`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.id`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.items`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.keys`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.name`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.pop`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.popitem`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.properties`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.setdefault`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.system_data`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.type`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.update`
+        - Deleted or renamed method `PrivateEndpointConnectionResource.values`
+        - Deleted or renamed method `PrivateLinkResource.clear`
+        - Deleted or renamed method `PrivateLinkResource.copy`
+        - Deleted or renamed method `PrivateLinkResource.get`
+        - Deleted or renamed method `PrivateLinkResource.id`
+        - Deleted or renamed method `PrivateLinkResource.items`
+        - Deleted or renamed method `PrivateLinkResource.keys`
+        - Deleted or renamed method `PrivateLinkResource.name`
+        - Deleted or renamed method `PrivateLinkResource.pop`
+        - Deleted or renamed method `PrivateLinkResource.popitem`
+        - Deleted or renamed method `PrivateLinkResource.properties`
+        - Deleted or renamed method `PrivateLinkResource.setdefault`
+        - Deleted or renamed method `PrivateLinkResource.system_data`
+        - Deleted or renamed method `PrivateLinkResource.type`
+        - Deleted or renamed method `PrivateLinkResource.update`
+        - Deleted or renamed method `PrivateLinkResource.values`
+        - Deleted or renamed method `PrivateLinkResourceProperties.clear`
+        - Deleted or renamed method `PrivateLinkResourceProperties.copy`
+        - Deleted or renamed method `PrivateLinkResourceProperties.get`
+        - Deleted or renamed method `PrivateLinkResourceProperties.group_id`
+        - Deleted or renamed method `PrivateLinkResourceProperties.items`
+        - Deleted or renamed method `PrivateLinkResourceProperties.keys`
+        - Deleted or renamed method `PrivateLinkResourceProperties.pop`
+        - Deleted or renamed method `PrivateLinkResourceProperties.popitem`
+        - Deleted or renamed method `PrivateLinkResourceProperties.required_members`
+        - Deleted or renamed method `PrivateLinkResourceProperties.required_zone_names`
+        - Deleted or renamed method `PrivateLinkResourceProperties.setdefault`
+        - Deleted or renamed method `PrivateLinkResourceProperties.update`
+        - Deleted or renamed method `PrivateLinkResourceProperties.values`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.actions_required`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.clear`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.copy`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.description`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.get`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.items`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.keys`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.pop`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.popitem`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.setdefault`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.status`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.update`
+        - Deleted or renamed method `PrivateLinkServiceConnectionState.values`
+        - Deleted or renamed method `PromoteReplicaRequest.clear`
+        - Deleted or renamed method `PromoteReplicaRequest.copy`
+        - Deleted or renamed method `PromoteReplicaRequest.get`
+        - Deleted or renamed method `PromoteReplicaRequest.items`
+        - Deleted or renamed method `PromoteReplicaRequest.keys`
+        - Deleted or renamed method `PromoteReplicaRequest.mode`
+        - Deleted or renamed method `PromoteReplicaRequest.pop`
+        - Deleted or renamed method `PromoteReplicaRequest.popitem`
+        - Deleted or renamed method `PromoteReplicaRequest.promote_option`
+        - Deleted or renamed method `PromoteReplicaRequest.setdefault`
+        - Deleted or renamed method `PromoteReplicaRequest.update`
+        - Deleted or renamed method `PromoteReplicaRequest.values`
+        - Deleted or renamed method `ProxyResource.clear`
+        - Deleted or renamed method `ProxyResource.copy`
+        - Deleted or renamed method `ProxyResource.get`
+        - Deleted or renamed method `ProxyResource.id`
+        - Deleted or renamed method `ProxyResource.items`
+        - Deleted or renamed method `ProxyResource.keys`
+        - Deleted or renamed method `ProxyResource.name`
+        - Deleted or renamed method `ProxyResource.pop`
+        - Deleted or renamed method `ProxyResource.popitem`
+        - Deleted or renamed method `ProxyResource.setdefault`
+        - Deleted or renamed method `ProxyResource.system_data`
+        - Deleted or renamed method `ProxyResource.type`
+        - Deleted or renamed method `ProxyResource.update`
+        - Deleted or renamed method `ProxyResource.values`
+        - Deleted or renamed method `Replica.clear`
+        - Deleted or renamed method `Replica.copy`
+        - Deleted or renamed method `Replica.get`
+        - Deleted or renamed method `Replica.id`
+        - Deleted or renamed method `Replica.items`
+        - Deleted or renamed method `Replica.keys`
+        - Deleted or renamed method `Replica.name`
+        - Deleted or renamed method `Replica.pop`
+        - Deleted or renamed method `Replica.popitem`
+        - Deleted or renamed method `Replica.properties`
+        - Deleted or renamed method `Replica.setdefault`
+        - Deleted or renamed method `Replica.system_data`
+        - Deleted or renamed method `Replica.type`
+        - Deleted or renamed method `Replica.update`
+        - Deleted or renamed method `Replica.values`
+        - Deleted or renamed method `ReplicationProperties.clear`
+        - Deleted or renamed method `ReplicationProperties.copy`
+        - Deleted or renamed method `ReplicationProperties.get`
+        - Deleted or renamed method `ReplicationProperties.items`
+        - Deleted or renamed method `ReplicationProperties.keys`
+        - Deleted or renamed method `ReplicationProperties.pop`
+        - Deleted or renamed method `ReplicationProperties.popitem`
+        - Deleted or renamed method `ReplicationProperties.replication_state`
+        - Deleted or renamed method `ReplicationProperties.role`
+        - Deleted or renamed method `ReplicationProperties.setdefault`
+        - Deleted or renamed method `ReplicationProperties.source_resource_id`
+        - Deleted or renamed method `ReplicationProperties.update`
+        - Deleted or renamed method `ReplicationProperties.values`
+        - Deleted or renamed method `Resource.clear`
+        - Deleted or renamed method `Resource.copy`
+        - Deleted or renamed method `Resource.get`
+        - Deleted or renamed method `Resource.id`
+        - Deleted or renamed method `Resource.items`
+        - Deleted or renamed method `Resource.keys`
+        - Deleted or renamed method `Resource.name`
+        - Deleted or renamed method `Resource.pop`
+        - Deleted or renamed method `Resource.popitem`
+        - Deleted or renamed method `Resource.setdefault`
+        - Deleted or renamed method `Resource.system_data`
+        - Deleted or renamed method `Resource.type`
+        - Deleted or renamed method `Resource.update`
+        - Deleted or renamed method `Resource.values`
+        - Deleted or renamed method `ShardingProperties.clear`
+        - Deleted or renamed method `ShardingProperties.copy`
+        - Deleted or renamed method `ShardingProperties.get`
+        - Deleted or renamed method `ShardingProperties.items`
+        - Deleted or renamed method `ShardingProperties.keys`
+        - Deleted or renamed method `ShardingProperties.pop`
+        - Deleted or renamed method `ShardingProperties.popitem`
+        - Deleted or renamed method `ShardingProperties.setdefault`
+        - Deleted or renamed method `ShardingProperties.shard_count`
+        - Deleted or renamed method `ShardingProperties.update`
+        - Deleted or renamed method `ShardingProperties.values`
+        - Deleted or renamed method `StorageProperties.clear`
+        - Deleted or renamed method `StorageProperties.copy`
+        - Deleted or renamed method `StorageProperties.get`
+        - Deleted or renamed method `StorageProperties.items`
+        - Deleted or renamed method `StorageProperties.keys`
+        - Deleted or renamed method `StorageProperties.pop`
+        - Deleted or renamed method `StorageProperties.popitem`
+        - Deleted or renamed method `StorageProperties.setdefault`
+        - Deleted or renamed method `StorageProperties.size_gb`
+        - Deleted or renamed method `StorageProperties.update`
+        - Deleted or renamed method `StorageProperties.values`
+        - Deleted or renamed method `SystemData.clear`
+        - Deleted or renamed method `SystemData.copy`
+        - Deleted or renamed method `SystemData.created_at`
+        - Deleted or renamed method `SystemData.created_by_type`
+        - Deleted or renamed method `SystemData.created_by`
+        - Deleted or renamed method `SystemData.get`
+        - Deleted or renamed method `SystemData.items`
+        - Deleted or renamed method `SystemData.keys`
+        - Deleted or renamed method `SystemData.last_modified_at`
+        - Deleted or renamed method `SystemData.last_modified_by_type`
+        - Deleted or renamed method `SystemData.last_modified_by`
+        - Deleted or renamed method `SystemData.pop`
+        - Deleted or renamed method `SystemData.popitem`
+        - Deleted or renamed method `SystemData.setdefault`
+        - Deleted or renamed method `SystemData.update`
+        - Deleted or renamed method `SystemData.values`
+        - Deleted or renamed method `TrackedResource.clear`
+        - Deleted or renamed method `TrackedResource.copy`
+        - Deleted or renamed method `TrackedResource.get`
+        - Deleted or renamed method `TrackedResource.id`
+        - Deleted or renamed method `TrackedResource.items`
+        - Deleted or renamed method `TrackedResource.keys`
+        - Deleted or renamed method `TrackedResource.location`
+        - Deleted or renamed method `TrackedResource.name`
+        - Deleted or renamed method `TrackedResource.pop`
+        - Deleted or renamed method `TrackedResource.popitem`
+        - Deleted or renamed method `TrackedResource.setdefault`
+        - Deleted or renamed method `TrackedResource.system_data`
+        - Deleted or renamed method `TrackedResource.tags`
+        - Deleted or renamed method `TrackedResource.type`
+        - Deleted or renamed method `TrackedResource.update`
+        - Deleted or renamed method `TrackedResource.values`
+        - ErrorResponse.__init__ had all overloads removed
+        - FirewallRule.__init__ had all overloads removed
+        - FirewallRuleProperties.__init__ had all overloads removed
+        - "FirewallRulesOperations.begin_create_or_update had an overload `def begin_create_or_update(self: None, resource_group_name: str, mongo_cluster_name: str, firewall_rule_name: str, resource: JSON, content_type: str)` removed"
+        - HighAvailabilityProperties.__init__ had all overloads removed
+        - Method `AdministratorProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `AdministratorProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `BackupProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `BackupProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `CheckNameAvailabilityRequest.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `CheckNameAvailabilityRequest.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `CheckNameAvailabilityResponse.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `CheckNameAvailabilityResponse.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ComputeProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ComputeProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ConnectionString.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ConnectionString.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ErrorAdditionalInfo.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ErrorAdditionalInfo.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ErrorDetail.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ErrorDetail.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ErrorResponse.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ErrorResponse.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `FirewallRule.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `FirewallRule.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `FirewallRuleProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `FirewallRuleProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `HighAvailabilityProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `HighAvailabilityProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ListConnectionStringsResult.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ListConnectionStringsResult.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `MongoCluster.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `MongoCluster.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `MongoClusterProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `MongoClusterProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `MongoClusterReplicaParameters.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `MongoClusterReplicaParameters.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `MongoClusterRestoreParameters.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `MongoClusterRestoreParameters.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `MongoClusterUpdate.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `MongoClusterUpdate.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `MongoClusterUpdateProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `MongoClusterUpdateProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `Operation.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `Operation.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `OperationDisplay.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `OperationDisplay.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PrivateEndpoint.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PrivateEndpoint.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PrivateEndpointConnection.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PrivateEndpointConnection.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PrivateEndpointConnectionProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PrivateEndpointConnectionProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PrivateEndpointConnectionResource.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PrivateEndpointConnectionResource.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PrivateLinkResource.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PrivateLinkResource.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PrivateLinkResourceProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PrivateLinkResourceProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PrivateLinkServiceConnectionState.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PrivateLinkServiceConnectionState.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `PromoteReplicaRequest.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `PromoteReplicaRequest.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ProxyResource.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ProxyResource.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `Replica.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `Replica.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ReplicationProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ReplicationProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `Resource.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `Resource.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `ShardingProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `ShardingProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `StorageProperties.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `StorageProperties.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `SystemData.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `SystemData.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - Method `TrackedResource.as_dict` inserted a `positional_or_keyword` parameter `keep_readonly`
+        - Method `TrackedResource.as_dict` inserted a `positional_or_keyword` parameter `key_transformer`
+        - MongoCluster.__init__ had all overloads removed
+        - MongoClusterProperties.__init__ had all overloads removed
+        - MongoClusterReplicaParameters.__init__ had all overloads removed
+        - MongoClusterRestoreParameters.__init__ had all overloads removed
+        - MongoClusterUpdate.__init__ had all overloads removed
+        - MongoClusterUpdateProperties.__init__ had all overloads removed
+        - "MongoClustersOperations.begin_create_or_update had an overload `def begin_create_or_update(self: None, resource_group_name: str, mongo_cluster_name: str, resource: JSON, content_type: str)` removed"
+        - "MongoClustersOperations.begin_promote had an overload `def begin_promote(self: None, resource_group_name: str, mongo_cluster_name: str, body: JSON, content_type: str)` removed"
+        - "MongoClustersOperations.begin_update had an overload `def begin_update(self: None, resource_group_name: str, mongo_cluster_name: str, properties: JSON, content_type: str)` removed"
+        - "MongoClustersOperations.check_name_availability had an overload `def check_name_availability(self: None, location: str, body: JSON, content_type: str)` removed"
+        - Operation.__init__ had all overloads removed
+        - PrivateEndpointConnection.__init__ had all overloads removed
+        - PrivateEndpointConnectionProperties.__init__ had all overloads removed
+        - PrivateEndpointConnectionResource.__init__ had all overloads removed
+        - "PrivateEndpointConnectionsOperations.begin_create had an overload `def begin_create(self: None, resource_group_name: str, mongo_cluster_name: str, private_endpoint_connection_name: str, resource: JSON, content_type: str)` removed"
+        - PrivateLinkResource.__init__ had all overloads removed
+        - PrivateLinkResourceProperties.__init__ had all overloads removed
+        - PrivateLinkServiceConnectionState.__init__ had all overloads removed
+        - PromoteReplicaRequest.__init__ had all overloads removed
+        - Replica.__init__ had all overloads removed
+        - ShardingProperties.__init__ had all overloads removed
+        - StorageProperties.__init__ had all overloads removed
+        - SystemData.__init__ had all overloads removed
+        - TrackedResource.__init__ had all overloads remove
