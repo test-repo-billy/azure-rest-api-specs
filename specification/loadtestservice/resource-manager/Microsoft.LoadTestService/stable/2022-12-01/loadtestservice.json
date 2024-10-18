@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "LoadTest Client",
+    "title": "LoadTest Client for testing",
     "version": "2022-12-01",
     "description": "LoadTest client provides access to LoadTest Resource and it's status operations.",
     "x-typespec-generated": [

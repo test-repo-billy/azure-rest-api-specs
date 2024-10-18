@@ -12,7 +12,7 @@ using Azure.ResourceManager;
 #suppress "@azure-tools/typespec-azure-core/casing-style" "Using the AI acronym similar to what was done for OpenAI"
 @armProviderNamespace("Microsoft.HealthDataAIServices")
 @service({
-  title: "Microsoft.HealthDataAIServices",
+  title: "Microsoft.HealthDataAIServices for testing",
 })
 @versioned(Microsoft.HealthDataAIServices.Versions)
 namespace Microsoft.HealthDataAIServices;

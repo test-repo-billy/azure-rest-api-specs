@@ -19,7 +19,7 @@ using LiftrBase;
 @armProviderNamespace
 @useLibraryNamespace(LiftrBase.Storage)
 @service({
-  title: "Qumulo.Storage",
+  title: "Qumulo.Storage for testing",
 })
 @versioned(Versions)
 namespace Qumulo.Storage;
