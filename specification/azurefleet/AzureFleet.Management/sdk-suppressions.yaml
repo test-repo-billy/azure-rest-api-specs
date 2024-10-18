@@ -1,0 +1,5 @@
+suppressions:
+  azure-sdk-for-go:
+    - package: 'sdk/resourcemanager/computefleet/armcomputefleet'
+      breaking-changes:
+        - '`NetworkAPIVersion20201101` from enum `NetworkAPIVersion` has been removed'
