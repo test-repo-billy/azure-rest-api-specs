@@ -10,7 +10,7 @@ using TypeSpec.Versioning;
 using Azure.Core;
 
 @service({
-  title: "Azure.AI.DocumentTranslation",
+  title: "Azure.AI.DocumentTranslation for testing",
 })
 @versioned(DocumentTranslation.Versions)
 @useAuth(
