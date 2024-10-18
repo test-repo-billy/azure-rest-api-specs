@@ -31,7 +31,7 @@ using OpenAPI;
 /** Azure Quantum Workspace Services */
 #suppress "@azure-tools/typespec-azure-core/no-openapi" "Non standard use of openapi info metadata for azure spec"
 @service({
-  title: "Azure Quantum Workspace Services",
+  title: "Azure Quantum Workspace Services for testing",
 })
 @useAuth(AzureEntraAuth | AzureApiKeyAuth)
 @versioned(QuantumWorkspaceAPIVersion)

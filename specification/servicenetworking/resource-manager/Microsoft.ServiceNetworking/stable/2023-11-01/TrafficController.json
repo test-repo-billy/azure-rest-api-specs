@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "TrafficController",
+    "title": "TrafficController for testing",
     "version": "2023-11-01",
     "description": "Traffic Controller Provider management API.",
     "x-typespec-generated": [

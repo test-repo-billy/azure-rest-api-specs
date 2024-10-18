@@ -27,7 +27,7 @@ using Autorest;
 
 @armProviderNamespace
 @service({
-  title: "Oracle Database Resource Manager",
+  title: "Oracle Database Resource Manager for testing",
 })
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)
 @versioned(Oracle.Database.Versions)
