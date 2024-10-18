@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Azure Schema Registry",
+    "title": "Azure Schema Registry test",
     "version": "2022-10",
     "description": "SchemaRegistryClient is a client for registering and retrieving schemas from the Azure Schema Registry service.",
     "x-typespec-generated": [
@@ -83,14 +83,8 @@
             }
           }
         },
-        "x-ms-examples": {
-          "List Schema Groups": {
-            "$ref": "./examples/ListSchemaGroups.json"
-          }
-        },
         "x-ms-pageable": {
-          "nextLinkName": "NextLink",
-          "itemName": "Value"
+          "nextLinkName": "NextLink"
         }
       }
     },
@@ -177,11 +171,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Schema Properties By Content": {
-            "$ref": "./examples/GetSchemaPropertiesByContent.json"
           }
         }
       }
@@ -270,11 +259,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Register Schema": {
-            "$ref": "./examples/RegisterSchema.json"
-          }
         }
       }
     },
@@ -324,14 +308,8 @@
             }
           }
         },
-        "x-ms-examples": {
-          "List Schema Versions": {
-            "$ref": "./examples/ListSchemaVersions.json"
-          }
-        },
         "x-ms-pageable": {
-          "nextLinkName": "NextLink",
-          "itemName": "Value"
+          "nextLinkName": "NextLink"
         }
       }
     },
@@ -421,11 +399,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Get Schema by Version": {
-            "$ref": "./examples/GetSchemaByVersion.json"
-          }
         }
       }
     },
@@ -497,11 +470,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Get Schema by ID": {
-            "$ref": "./examples/GetSchemaById.json"
           }
         }
       }
