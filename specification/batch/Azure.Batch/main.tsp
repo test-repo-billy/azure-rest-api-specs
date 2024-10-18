@@ -6,7 +6,7 @@ using TypeSpec.Http;
 using TypeSpec.Versioning;
 
 @service({
-  title: "Azure Batch",
+  title: "Azure Batch for testing",
 })
 @versioned(Azure.Batch.Versions)
 @doc("Azure Batch provides Cloud-scale job scheduling and compute management.")

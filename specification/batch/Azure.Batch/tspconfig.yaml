@@ -38,3 +38,8 @@ options:
       description: "Batch Service Rest Level Client"
       version: "1.0.0-beta.1"
     flavor: azure
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
+    emitter-output-dir: "{project-root}/sdk/batch/batch-rest"

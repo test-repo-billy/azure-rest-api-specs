@@ -34,9 +34,15 @@ options:
     flavor: azure
   "@azure-tools/typespec-ts":
     package-dir: "openai"
-    generateMetadata: false
-    generateTest: false
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
     isModularLibrary: true
+    experimentalExtensibleEnums: true
+    enableOperationGroup: true
+    hierarchyClient: false
+    emitter-output-dir: "{project-root}/sdk/openai/openai"
     packageDetails:
       name: "@azure/openai"
     flavor: azure
