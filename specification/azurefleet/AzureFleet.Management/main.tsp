@@ -15,7 +15,7 @@ using Azure.ResourceManager;
 
 @armProviderNamespace("Microsoft.AzureFleet")
 @service({
-  title: "Microsoft.AzureFleet",
+  title: "Microsoft.AzureFleet test",
 })
 @versioned(Versions)
 namespace Microsoft.AzureFleet;
