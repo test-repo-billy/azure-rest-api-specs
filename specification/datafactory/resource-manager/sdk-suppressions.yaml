@@ -4,7 +4,6 @@ suppressions:
       breaking-changes:
         - Model ManagedIdentityCredential no longer has parameter resource_id
         - Model ExpressionV2 no longer has parameter operator
-        - Model HDInsightOnDemandLinkedService has a new required parameter version_type_properties_version
   azure-sdk-for-go:
     - package: sdk/resourcemanager/datafactory/armdatafactory
       breaking-changes:
@@ -13,4 +12,3 @@ suppressions:
     - package: "@azure/arm-datafactory"
       breaking-changes:
         - Interface HDInsightOnDemandLinkedService has a new required parameter versionTypePropertiesVersion
-        - Interface PostgreSqlV2LinkedService has a new required parameter authenticationType
