@@ -1,5 +1,5 @@
 suppressions:
-  azure-sdk-for-java:
+  azure-sdk-for-js:
     - package: azure-mgmt-computefleet
       breaking-changes:
         - The 'NetworkApiVersion' enum had its value 'ENUM_2020_11_01' deleted or renamed in the current version

@@ -1,5 +1,5 @@
 suppressions:
-  azure-sdk-for-js:
+  azure-sdk-for-java:
     - package: sdk/resourcemanager/appcomplianceautomation/armappcomplianceautomation
       breaking-changes:
         - Enum `AssessmentSeverity` has been removed
