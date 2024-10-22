@@ -8,8 +8,6 @@ suppressions:
         - Deleted or renamed enum value `SecurityEncryptionTypes.DISK_WITH_V_M_GUEST_STATE`
         - Deleted or renamed enum value `SecurityEncryptionTypes.NON_PERSISTED_T_P_M`
         - Deleted or renamed enum value `SecurityEncryptionTypes.V_M_GUEST_STATE_ONLY`
-        - Deleted or renamed enum value `SecurityTypes.CONFIDENTIAL_V_M`
-        - Deleted or renamed enum value `StorageAccountTypes.PREMIUM_L_R_S`
         - Deleted or renamed enum value `StorageAccountTypes.PREMIUM_V2_L_R_S`
         - Deleted or renamed enum value `StorageAccountTypes.PREMIUM_Z_R_S`
         - Deleted or renamed enum value `StorageAccountTypes.STANDARD_L_R_S`

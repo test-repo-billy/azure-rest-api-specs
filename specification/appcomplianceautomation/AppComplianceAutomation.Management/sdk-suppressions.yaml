@@ -1,0 +1,6 @@
+suppressions:
+  azure-sdk-for-js:
+    - package: sdk/resourcemanager/appcomplianceautomation/armappcomplianceautomation
+      breaking-changes:
+        - Enum `AssessmentSeverity` has been removed
+        - Enum `CategoryType` has been removed

@@ -1,0 +1,7 @@
+suppressions:
+  azure-sdk-for-java:
+    - package: azure-mgmt-computefleet
+      breaking-changes:
+        - The 'NetworkApiVersion' enum had its value 'ENUM_2020_11_01' deleted or renamed in the current version
+        - Deleted or renamed enum value `DiskControllerTypes.N_V_ME`
+      

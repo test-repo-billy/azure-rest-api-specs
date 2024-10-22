@@ -16,7 +16,6 @@ suppressions:
         - Field `ID`, `ReportName` of struct `ReportProperties` has been removed
         - Field `ReportResourceList` of struct `ReportsClientListResponse` has been removed
         - Field `ResourceName`, `Tags` of struct `ResourceMetadata` has been removed
-        - Field `SnapshotResourceList` of struct `SnapshotsClientListResponse` has been removed
         - Function `*ClientFactory.NewSnapshotClient` has been removed
         - Function `*ReportClient.BeginCreateOrUpdate` has been removed
         - Function `*ReportClient.BeginDelete` has been removed
