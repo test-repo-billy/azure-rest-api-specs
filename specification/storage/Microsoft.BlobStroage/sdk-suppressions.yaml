@@ -1,0 +1,7 @@
+suppressions:
+  azure-sdk-for-python:
+    - package: azure-storage-blob
+      breaking-changes:
+        - Deleted or renamed enum value `MatchProcessingBehavior.CONTINUE_ENUM`
+        - Deleted or renamed model `CacheExpirationActionParametersTypeName`
+        - Deleted or renamed model `CacheKeyQueryStringActionParametersTypeName`
