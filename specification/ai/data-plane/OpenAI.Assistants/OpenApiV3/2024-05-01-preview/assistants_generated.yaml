@@ -3731,7 +3731,6 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          code_interpreter: '#/components/schemas/CodeInterpreterToolDefinition'
           file_search: '#/components/schemas/FileSearchToolDefinition'
           function: '#/components/schemas/FunctionToolDefinition'
       description: An abstract representation of an input tool definition that an assistant can use.

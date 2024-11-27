@@ -15,7 +15,7 @@ using TypeSpec.Versioning;
 
 @useAuth(KeyAuth | AADToken)
 @service({
-  title: "Azure AI Face API",
+  title: "Azure AI Face API for testing",
 })
 @versioned(Versions)
 @server(
