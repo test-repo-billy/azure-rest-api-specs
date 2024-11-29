@@ -117,7 +117,6 @@ warnings.txt
 .assets
 
 # Blanket ignores
-*.js
 *.d.ts
 *.js.map
 *.d.ts.map
