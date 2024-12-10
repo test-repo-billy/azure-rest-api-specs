@@ -1,0 +1,6 @@
+suppressions:
+  azure-sdk-for-python:
+    - package: azure-schemaregistry
+      breaking-changes:
+        - Client name is changed from `SchemaRegistryClient` to `SchemaRegistryClient`
+ 
