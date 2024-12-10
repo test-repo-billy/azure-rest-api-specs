@@ -2,7 +2,7 @@
 
 > see https://aka.ms/autorest
 
-This is the AutoRest configuration file for Contoso.WidgetManager. Test with no spelling errors.
+This is the AutoRest configuration file for Contoso.WidgetManager. Test with no sepellgni errors.
 
 ## Configuration
 
