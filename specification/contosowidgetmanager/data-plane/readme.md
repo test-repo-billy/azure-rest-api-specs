@@ -2,7 +2,7 @@
 
 > see https://aka.ms/autorest
 
-This is the AutoRest configuration file for Contoso.WidgetManager. sepelling errrrrror
+This is the AutoRest configuration file for Contoso.WidgetManager.
 
 ## Configuration
 
