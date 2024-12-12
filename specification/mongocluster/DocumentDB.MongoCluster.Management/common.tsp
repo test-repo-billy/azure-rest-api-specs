@@ -18,7 +18,7 @@ union ProvisioningState {
   "InProgress",
 
   /** An update operation is in-progress on the resource. */
-  "Updating",
+  "UpdatingTest2",
 
   /** A drop operation is in-progress on the resource. */
   "Dropping",
