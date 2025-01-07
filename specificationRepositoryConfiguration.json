@@ -15,6 +15,7 @@
     },
     "azure-sdk-for-js": {
       "integrationRepository": "test-repo-billy/azure-sdk-for-js",
+      "mainBranch": "test_repo_breaking_change_mlc",
       "mainRepository": "test-repo-billy/azure-sdk-for-js"
     },
     "azure-sdk-for-net": {
@@ -50,6 +51,7 @@
         },
         "azure-sdk-for-js": {
           "integrationRepository": "test-repo-billy/azure-sdk-for-js-pr",
+          "mainBranch": "test_repo_breaking_change_mlc",
           "mainRepository": "test-repo-billy/azure-sdk-for-js-pr"
         },
         "azure-sdk-for-net": {
