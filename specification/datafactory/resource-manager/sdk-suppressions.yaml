@@ -8,6 +8,7 @@ suppressions:
     - package: sdk/resourcemanager/datafactory/armdatafactory
       breaking-changes:
         - Type of `AzureTableStorageLinkedService.TypeProperties` has been changed from `*AzureStorageLinkedServiceTypeProperties` to `*AzureTableStorageLinkedServiceTypeProperties`
+        - Type of `AzureTableStorageLinkedService1.TypeProperties` has been changed from `*AzureStorageLinkedServiceTypeProperties` to `*AzureTableStorageLinkedServiceTypeProperties`
   azure-sdk-for-js:
     - package: "@azure/arm-datafactory"
       breaking-changes:
