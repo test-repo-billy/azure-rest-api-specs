@@ -12,3 +12,4 @@ suppressions:
     - package: "@azure/arm-datafactory"
       breaking-changes:
         - Interface PostgreSqlV2LinkedService has a new required parameter authenticationType
+        - Interface PostgreSqlV3LinkedService has a new required parameter authenticationType
