@@ -53,6 +53,7 @@ jobs:
           $specRepoOwner = $Matches['organization']
           $specRepoName = $Matches['repository']
         }
+        # Check if the build reason is a pull request
         if ($env:BUILD_REASON -eq 'PullRequest') {
           $repository = $env:BUILD_REPOSITORY_NAME
           $repoInfo = $repository -split '/'
@@ -206,6 +207,6 @@ jobs:
             -PROwner "azure-sdk"
             -PRBranch "$(PrBranch)-$(Build.BuildId)"
             -AuthToken "$(azuresdk-github-pat)"
-            -PRTitle "$(PrTitle)-generated-from-$(Build.DefinitionName)_$(Build.BuildId)"
+            -PRTitle "$(PrTitle)-generated-from-$(Build.DefinitionName)-$(Build.BuildId)"
             -PRBody "$(GeneratedSDKInformation)"
             -OpenAsDraft $true
