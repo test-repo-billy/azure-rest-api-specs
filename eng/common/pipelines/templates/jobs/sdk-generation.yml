@@ -40,6 +40,10 @@ jobs:
       value: '3.13'
     - name: SdkArtifactName
       value: SDK_Artifact
+    - name: CodePushRequiredVar
+      value: ${{ parameters.CodePushRequired }}
+    - name: SdkPrRequiredVar
+      value: ${{ parameters.SdkPrRequired }}
   pool:
     name: $(LINUXPOOL)
     vmImage: $(LINUXVMIMAGE)
@@ -60,6 +64,8 @@ jobs:
           $specRepoOwner = $repoInfo[0]
           $specRepoName = $repoInfo[1]
           $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
+          $CodePushRequiredVar = $true
+          $SdkPrRequiredVar = $true
         } else {
           $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
         }
@@ -181,7 +187,7 @@ jobs:
         targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
 
 
-    - ${{ if eq(parameters.CodePushRequired, true) }}:
+    - ${{ if eq(variables['CodePushRequiredVar'], 'true') }}:
       - template: /eng/common/pipelines/templates/steps/git-push-changes.yml
         parameters:
           BaseRepoBranch: $(PrBranch)-$(Build.BuildId)
@@ -195,7 +201,7 @@ jobs:
 
       - task: PowerShell@2
         displayName: Create pull request
-        condition: and(succeeded(), eq('${{ parameters.SdkPrRequired }}', true), eq(variables['HasChanges'], 'true'))
+        condition: and(succeeded(), eq(variables['SdkPrRequiredVar'], 'true'), eq(variables['HasChanges'], 'true'))
         inputs:
           pwsh: true
           workingDirectory: $(SdkRepoDirectory)
