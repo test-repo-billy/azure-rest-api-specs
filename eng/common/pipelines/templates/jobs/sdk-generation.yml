@@ -54,10 +54,10 @@ jobs:
           $specRepoName = $Matches['repository']
         }
         if ($env:BUILD_REASON -eq 'PullRequest') {
-          $repository = $env:GITHUB_REPOSITORY
-          $repoInfo = $repository -split '/';
-          $specRepoOwner = $repoInfo[0];
-          $specRepoName = $repoInfo[1];
+          $repository = $env:BUILD_REPOSITORY_NAME
+          $repoInfo = $repository -split '/'
+          $specRepoOwner = $repoInfo[0]
+          $specRepoName = $repoInfo[1]
           $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
         } else {
           $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
