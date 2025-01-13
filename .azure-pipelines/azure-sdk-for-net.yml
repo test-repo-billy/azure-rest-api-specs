@@ -54,7 +54,7 @@ extends:
     SpecRepoUrl: ${{ parameters.SpecRepoUrl }}
     SpecRepoBranch: ${{ parameters.SpecRepoBranch }}
     SpecRepoCommit: ${{ parameters.SpecRepoCommit }}
-    SdkRepoUrl: 'https://github.com/Azure/azure-sdk-for-net'
+    SdkRepoUrl: 'https://github.com/azure-sdk/azure-sdk-for-net'
     SdkRepoBranch: ${{ parameters.SdkRepoBranch }}
     ConfigType: ${{ parameters.ConfigType }}
     TspConfigPath: ${{ parameters.TspConfigPath }}

@@ -51,24 +51,28 @@ jobs:
         $urlPattern = '^https://github\.com/(?<organization>[^/]+)/(?<repository>[^/]+)'
         if ('${{ parameters.SpecRepoUrl }}' -match $urlPattern) {
           $specRepoOwner = $Matches['organization']
-          Write-Host "##vso[task.setvariable variable=SpecRepoOwner]$specRepoOwner"
-          Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
-
           $specRepoName = $Matches['repository']
-          Write-Host "##vso[task.setvariable variable=SpecRepoName]$specRepoName"
-          Write-Host "SpecRepoName variable set to: $specRepoName"
-
-          $specRepoDirectory = "$(System.DefaultWorkingDirectory)/$specRepoName"
-          Write-Host "##vso[task.setvariable variable=SpecRepoDirectory]$specRepoDirectory"
-          Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
         }
         if ($env:BUILD_REASON -eq 'PullRequest') {
+          $repository = $env:GITHUB_REPOSITORY
+          $repoInfo = $repository -split '/';
+          $specRepoOwner = $repoInfo[0];
+          $specRepoName = $repoInfo[1];
           $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
         } else {
           $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
         }
+        Write-Host "##vso[task.setvariable variable=SpecRepoOwner]$specRepoOwner"
+        Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
         Write-Host "##vso[task.setvariable variable=SpecRepoBranchVar]$specRepoBranchVar"
         Write-Host "SpecRepoBranchVar variable set to: $specRepoBranchVar"
+
+        Write-Host "##vso[task.setvariable variable=SpecRepoName]$specRepoName"
+        Write-Host "SpecRepoName variable set to: $specRepoName"
+
+        $specRepoDirectory = "$(System.DefaultWorkingDirectory)/$specRepoName"
+        Write-Host "##vso[task.setvariable variable=SpecRepoDirectory]$specRepoDirectory"
+        Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
 
         if ('${{ parameters.SdkRepoUrl }}' -match $urlPattern) {
           $sdkRepoOwner = $Matches['organization']
