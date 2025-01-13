@@ -39,11 +39,14 @@ parameters:
     default: false
     displayName: 'Create Pull Request for SDK Changes'
 
-trigger: none
+trigger:
+  branches:
+    include:
+      - user/raych1/pipeline-sdk-auto
 pr:
   branches:
     include:
-      - 'user/raych1/pipeline-sdk-auto'
+      - user/raych1/pipeline-sdk-auto
 
 extends:
   template: /eng/common/pipelines/templates/jobs/sdk-generation.yml
