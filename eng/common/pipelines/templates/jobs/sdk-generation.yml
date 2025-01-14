@@ -188,7 +188,7 @@ jobs:
         artifactName: $(sdkArtifactName)
         targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
 
-    - pwsh : PowerShell@2
+    - task: PowerShell@2
       displayName: Write label to the spec PR
       condition: and((ne(variables['BreakingChangeLabel'], ''), eq(variables['Build.Reason'], 'PullRequest')))
       inputs:
