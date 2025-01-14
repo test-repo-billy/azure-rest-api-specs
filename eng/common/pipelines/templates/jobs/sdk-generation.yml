@@ -190,7 +190,7 @@ jobs:
 
     - task: PowerShell@2
       displayName: Write label to the spec PR
-      condition: and((ne(variables['BreakingChangeLabel'], ''), eq(variables['Build.Reason'], 'PullRequest')))
+      condition: and(ne(variables['BreakingChangeLabel'], ''), eq(variables['Build.Reason'], 'PullRequest'))
       inputs:
         pwsh: true
         workingDirectory: $(SdkRepoDirectory)
