@@ -160,10 +160,10 @@ jobs:
         workingDirectory: $(SdkRepoDirectory)
         filePath: $(SdkRepoDirectory)/eng/common/scripts/Add-IssueLabels.ps1
         arguments: >
-          -RepoOwner $specRepoOwner
-          -RepoName $specRepoName
+          -RepoOwner $(SpecRepoOwner)
+          -RepoName $(SpecRepoName)
           -IssueNumber "$(System.PullRequest.PullRequestNumber)"
-          -Labels $BreakingChangeLabel
+          -Labels $(BreakingChangeLabel)
           -AuthToken "$(azuresdk-github-pat)"
 
     - script: |
