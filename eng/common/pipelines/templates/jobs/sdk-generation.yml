@@ -193,7 +193,7 @@ jobs:
       condition: and((ne(variables['BreakingChangeLabel'], ''), eq(variables['Build.Reason'], 'PullRequest')))
       inputs:
         pwsh: true
-        workingDirectory: ${{ parameters.WorkingDirectory }}
+        workingDirectory: $(SdkRepoDirectory)
         filePath: $SdkRepoDirectory/eng/common/scripts/Add-IssueLabels.ps1
         arguments: >
           -RepoOwner $specRepoOwner
