@@ -64,8 +64,10 @@ jobs:
           $specRepoOwner = $repoInfo[0]
           $specRepoName = $repoInfo[1]
           $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
-          $CodePushRequiredVar = $true
-          $SdkPrRequiredVar = $true
+          $CodePushRequiredVar = 'true'
+          $SdkPrRequiredVar = 'true'
+          Write-Host "##vso[task.setvariable variable=BreakingChangeLabel]BreakingChange-Go-Sdk"
+          Write-Host "BreakingChangeLabel variable set to: BreakingChange-Go-Sdk"
         } else {
           $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
         }
@@ -186,6 +188,19 @@ jobs:
         artifactName: $(sdkArtifactName)
         targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
 
+    - pwsh : PowerShell@2
+      displayName: Write label to the spec PR
+      condition: and((ne(variables['BreakingChangeLabel'], ''), eq(variables['Build.Reason'], 'PullRequest')))
+      inputs:
+        pwsh: true
+        workingDirectory: ${{ parameters.WorkingDirectory }}
+        filePath: $SdkRepoDirectory/eng/common/scripts/Add-IssueLabels.ps1
+        arguments: >
+          -RepoOwner $specRepoOwner
+          -RepoName $specRepoName
+          -IssueNumber "$(System.PullRequest.PullRequestNumber)"
+          -Labels $BreakingChangeLabel
+          -AuthToken "$(azuresdk-github-pat)"
 
     - ${{ if eq(variables['CodePushRequiredVar'], 'true') }}:
       - template: /eng/common/pipelines/templates/steps/git-push-changes.yml
