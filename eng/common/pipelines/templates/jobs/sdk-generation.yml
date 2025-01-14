@@ -158,7 +158,7 @@ jobs:
       inputs:
         pwsh: true
         workingDirectory: $(SdkRepoDirectory)
-        filePath: $SdkRepoDirectory/eng/common/scripts/Add-IssueLabels.ps1
+        filePath: $(SdkRepoDirectory)/eng/common/scripts/Add-IssueLabels.ps1
         arguments: >
           -RepoOwner $specRepoOwner
           -RepoName $specRepoName
