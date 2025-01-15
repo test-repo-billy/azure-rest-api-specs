@@ -24,9 +24,7 @@ parameters:
   - name: ApiVersion
     type: string
     default: 'not-specified'
-  - name: CodePushRequired
-    type: boolean
-  - name: SdkPrRequired
+  - name: SkipPullRequestCreation
     type: boolean
 
 jobs:
@@ -68,6 +66,8 @@ jobs:
           $SdkPrRequiredVar = 'true'
           Write-Host "##vso[task.setvariable variable=BreakingChangeLabel]BreakingChange-Go-Sdk"
           Write-Host "BreakingChangeLabel variable set to: BreakingChange-Go-Sdk"
+          Write-Host "##vso[task.setvariable variable=BreakingChangeLabelAction]add"
+          Write-Host "BreakingChangeLabelAction variable set to: add"
         } else {
           $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
         }
@@ -153,8 +153,8 @@ jobs:
       displayName: 'Install spec-gen-sdk'
 
     - task: PowerShell@2
-      displayName: Write label to the spec PR
-      condition: and(ne(variables['BreakingChangeLabel'], ''), eq(variables['Build.Reason'], 'PullRequest'))
+      displayName: Add label to the spec PR
+      condition: and(eq(variables['Build.Reason'], 'PullRequest'), ne(variables['BreakingChangeLabel'], ''), eq(variables['BreakingChangeLabelAction'], 'add'))
       inputs:
         pwsh: true
         workingDirectory: $(SdkRepoDirectory)
@@ -164,6 +164,20 @@ jobs:
           -RepoName $(SpecRepoName)
           -IssueNumber "$(System.PullRequest.PullRequestNumber)"
           -Labels $(BreakingChangeLabel)
+          -AuthToken "$(azuresdk-github-pat)"
+
+    - task: PowerShell@2
+      displayName: Remove label from the spec PR
+      condition: and(eq(variables['Build.Reason'], 'PullRequest'), ne(variables['BreakingChangeLabel'], ''), eq(variables['BreakingChangeLabelAction'], 'remove'))
+      inputs:
+        pwsh: true
+        workingDirectory: $(SdkRepoDirectory)
+        filePath: $(SdkRepoDirectory)/eng/common/scripts/Remove-IssueLabel.ps1
+        arguments: >
+          -RepoOwner $(SpecRepoOwner)
+          -RepoName $(SpecRepoName)
+          -IssueNumber "$(System.PullRequest.PullRequestNumber)"
+          -LabelName $(BreakingChangeLabel)
           -AuthToken "$(azuresdk-github-pat)"
 
     - script: |
@@ -202,7 +216,7 @@ jobs:
         artifactName: $(sdkArtifactName)
         targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
 
-    - ${{ if eq(variables['CodePushRequiredVar'], 'true') }}:
+    - ${{ if eq(parameters.SkipPullRequestCreation, true) }}: 
       - template: /eng/common/pipelines/templates/steps/git-push-changes.yml
         parameters:
           BaseRepoBranch: $(PrBranch)-$(Build.BuildId)
@@ -216,7 +230,7 @@ jobs:
 
       - task: PowerShell@2
         displayName: Create pull request
-        condition: and(succeeded(), eq(variables['SdkPrRequiredVar'], 'true'), eq(variables['HasChanges'], 'true'))
+        condition: and(succeeded(), eq('${{ parameters.SkipPullRequestCreation }}', true), eq(variables['HasChanges'], 'true'))
         inputs:
           pwsh: true
           workingDirectory: $(SdkRepoDirectory)
