@@ -131,6 +131,7 @@ jobs:
           echo "##vso[task.setvariable variable=SpecRepoCommit]${{ parameters.SpecRepoCommit }}"
           echo "SpecRepoCommit variable set to: ${{ parameters.SpecRepoCommit }}"
         fi
+        cp $(SpecRepoDirectory)/eng/common/scripts/Remove-IssueLabel.ps1 $(SdkRepoDirectory)/eng/common/scripts/
       displayName: 'Set SpecRepoCommit variable'
 
     - task: NodeTool@0
