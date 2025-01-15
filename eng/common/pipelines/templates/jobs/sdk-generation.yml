@@ -38,10 +38,6 @@ jobs:
       value: '3.13'
     - name: SdkArtifactName
       value: SDK_Artifact
-    - name: CodePushRequiredVar
-      value: ${{ parameters.CodePushRequired }}
-    - name: SdkPrRequiredVar
-      value: ${{ parameters.SdkPrRequired }}
   pool:
     name: $(LINUXPOOL)
     vmImage: $(LINUXVMIMAGE)
@@ -62,8 +58,6 @@ jobs:
           $specRepoOwner = $repoInfo[0]
           $specRepoName = $repoInfo[1]
           $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
-          $CodePushRequiredVar = 'true'
-          $SdkPrRequiredVar = 'true'
           Write-Host "##vso[task.setvariable variable=BreakingChangeLabel]BreakingChange-Go-Sdk"
           Write-Host "BreakingChangeLabel variable set to: BreakingChange-Go-Sdk"
           Write-Host "##vso[task.setvariable variable=BreakingChangeLabelAction]add"
