@@ -60,8 +60,8 @@ jobs:
           $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
           Write-Host "##vso[task.setvariable variable=BreakingChangeLabel]BreakingChange-Go-Sdk"
           Write-Host "BreakingChangeLabel variable set to: BreakingChange-Go-Sdk"
-          Write-Host "##vso[task.setvariable variable=BreakingChangeLabelAction]add"
-          Write-Host "BreakingChangeLabelAction variable set to: add"
+          Write-Host "##vso[task.setvariable variable=BreakingChangeLabelAction]remove"
+          Write-Host "BreakingChangeLabelAction variable set to: remove"
         } else {
           $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
         }
