@@ -23,6 +23,10 @@ try {
   -IssueNumber $IssueNumber -LabelName $LabelName -AuthToken $AuthToken
 }
 catch {
+  if ($_.Exception.Response.StatusCode -eq 404) {
+    LogWarning "Label $LabelName not found on issue"
+    exit 0
+  }
   LogError "Remove-GithubIssueLabel failed with exception:`n$_"
   exit 1
 }
