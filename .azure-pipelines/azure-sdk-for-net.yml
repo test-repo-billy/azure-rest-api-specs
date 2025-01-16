@@ -46,7 +46,7 @@ pr:
   branches:
     include:
       - user/raych1/pipeline-sdk-auto
--steps:
+steps:
   - script: |
       echo "##[group]Lint Errors"
       echo "##vso[task.logissue type=error;sourcepath=src/app.js;linenumber=12;code=LINT_ERR_01]Missing semicolon."

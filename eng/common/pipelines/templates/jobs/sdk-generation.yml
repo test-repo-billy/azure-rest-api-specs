@@ -212,7 +212,7 @@ jobs:
         artifactName: $(sdkArtifactName)
         targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
 
-    - ${{ if eq(parameters.SkipPullRequestCreation, true) }}: 
+    - ${{ if eq(parameters.SkipPullRequestCreation, false) }}: 
       - template: /eng/common/pipelines/templates/steps/git-push-changes.yml
         parameters:
           BaseRepoBranch: $(PrBranch)-$(Build.BuildId)
