@@ -46,16 +46,17 @@ pr:
   branches:
     include:
       - user/raych1/pipeline-sdk-auto
-steps:
-  - template: /eng/common/pipelines/templates/jobs/sdk-generation.yml
-    parameters:
-      SpecRepoUrl: ${{ parameters.SpecRepoUrl }}
-      SpecRepoBranch: ${{ parameters.SpecRepoBranch }}
-      SpecRepoCommit: ${{ parameters.SpecRepoCommit }}
-      SdkRepoUrl: ${{ parameters.SdkRepoUrl }}
-      SdkRepoBranch: ${{ parameters.SdkRepoBranch }}
-      ConfigType: ${{ parameters.ConfigType }}
-      TspConfigPath: ${{ parameters.TspConfigPath }}
-      ReadmePath: ${{ parameters.ReadmePath }}
-      ApiVersion: ${{ parameters.ApiVersion }}
-      SkipPullRequestCreation: ${{ parameters.SkipPullRequestCreation }}
+
+extends:
+  template: /eng/common/pipelines/templates/jobs/sdk-generation.yml
+  parameters:
+    SpecRepoUrl: ${{ parameters.SpecRepoUrl }}
+    SpecRepoBranch: ${{ parameters.SpecRepoBranch }}
+    SpecRepoCommit: ${{ parameters.SpecRepoCommit }}
+    SdkRepoUrl: ${{ parameters.SdkRepoUrl }}
+    SdkRepoBranch: ${{ parameters.SdkRepoBranch }}
+    ConfigType: ${{ parameters.ConfigType }}
+    TspConfigPath: ${{ parameters.TspConfigPath }}
+    ReadmePath: ${{ parameters.ReadmePath }}
+    ApiVersion: ${{ parameters.ApiVersion }}
+    SkipPullRequestCreation: ${{ parameters.SkipPullRequestCreation }}
