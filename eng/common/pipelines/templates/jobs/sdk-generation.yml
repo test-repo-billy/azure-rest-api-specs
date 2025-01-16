@@ -44,7 +44,7 @@ jobs:
 
   steps:
     - checkout: self
-      path: '$(Build.SourcesDirectory)/$(Build.Repository.Name)'
+      path: '$(Build.Repository.Name)'
       fetchDepth: 2
 
     - pwsh: |
