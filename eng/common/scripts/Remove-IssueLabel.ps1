@@ -23,6 +23,6 @@ try {
   -IssueNumber $IssueNumber -LabelName $LabelName -AuthToken $AuthToken
 }
 catch {
-  LogError "Remove-GithubIssueLabels failed with exception:`n$_"
+  LogError "Remove-GithubIssueLabel failed with exception:`n$_"
   exit 1
 }
