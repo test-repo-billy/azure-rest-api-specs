@@ -48,6 +48,8 @@ jobs:
       fetchDepth: 2
 
     - pwsh: |
+        Write-Host "Build.SourcesDirectory:$(Build.SourcesDirectory)"
+        Write-Host "Build.Repository.Name:$(Build.Repository.Name)"
         if ('${{ parameters.SdkRepoUrl }}' -match $urlPattern) {
           $sdkRepoOwner = $Matches['organization']
           $sdkRepoName = $Matches['repository']
