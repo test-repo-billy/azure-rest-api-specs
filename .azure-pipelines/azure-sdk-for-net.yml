@@ -47,43 +47,15 @@ pr:
     include:
       - user/raych1/pipeline-sdk-auto
 steps:
-  - script: |
-      echo "##[group]Lint Errors"
-      echo "##vso[task.logissue type=error;sourcepath=src/app.js;linenumber=12;code=LINT_ERR_01]Missing semicolon."
-      echo "##vso[task.logissue type=error;sourcepath=src/app.js;linenumber=45;code=LINT_ERR_02]Unused variable detected."
-      echo "##[endgroup]"
-
-      echo "##[group]Test Failures"
-      echo "##vso[task.logissue type=error;sourcepath=tests/app.test.js;linenumber=20;code=TEST_ERR_01]Expected true but got false."
-      echo "##vso[task.logissue type=error;sourcepath=tests/utils.test.js;linenumber=35;code=TEST_ERR_02]Unhandled exception in test."
-      echo "##[endgroup]"
-    displayName: 'Log Grouped Errors'
-  - script: |
-      echo "<details><summary>Lint Errors</summary>" > error_report.html
-      echo "Missing semicolon at src/app.js:12" >> error_report.html
-      echo "Unused variable detected at src/app.js:45" >> error_report.html
-      echo "</details>" >> error_report.html
-      echo "<details><summary>Test Failures</summary>" >> error_report.html
-      echo "Expected true but got false at tests/app.test.js:20" >> error_report.html
-      echo "Unhandled exception in test at tests/utils.test.js:35" >> error_report.html
-      echo "</details>" >> error_report.html
-    displayName: 'Generate HTML Error Report'
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathToPublish: error_report.html
-      artifactName: 'ErrorReport'
-
-#extends:
-  #template: /eng/common/pipelines/templates/jobs/sdk-generation.yml
-  #parameters:
-    #SpecRepoUrl: ${{ parameters.SpecRepoUrl }}
-    #SpecRepoBranch: ${{ parameters.SpecRepoBranch }}
-    #SpecRepoCommit: ${{ parameters.SpecRepoCommit }}
-    #SdkRepoUrl: ${{ parameters.SdkRepoUrl }}
-    #SdkRepoBranch: ${{ parameters.SdkRepoBranch }}
-    #ConfigType: ${{ parameters.ConfigType }}
-    #TspConfigPath: ${{ parameters.TspConfigPath }}
-    #ReadmePath: ${{ parameters.ReadmePath }}
-    #ApiVersion: ${{ parameters.ApiVersion }}
-    #SkipPullRequestCreation: ${{ parameters.SkipPullRequestCreation }}
+  - template: /eng/common/pipelines/templates/jobs/sdk-generation.yml
+    parameters:
+      SpecRepoUrl: ${{ parameters.SpecRepoUrl }}
+      SpecRepoBranch: ${{ parameters.SpecRepoBranch }}
+      SpecRepoCommit: ${{ parameters.SpecRepoCommit }}
+      SdkRepoUrl: ${{ parameters.SdkRepoUrl }}
+      SdkRepoBranch: ${{ parameters.SdkRepoBranch }}
+      ConfigType: ${{ parameters.ConfigType }}
+      TspConfigPath: ${{ parameters.TspConfigPath }}
+      ReadmePath: ${{ parameters.ReadmePath }}
+      ApiVersion: ${{ parameters.ApiVersion }}
+      SkipPullRequestCreation: ${{ parameters.SkipPullRequestCreation }}

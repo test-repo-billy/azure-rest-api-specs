@@ -43,7 +43,47 @@ jobs:
     vmImage: $(LINUXVMIMAGE)
 
   steps:
-    - checkout: none
+    - checkout: self
+      path: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+      fetchDepth: 2
+
+    - pwsh: |
+        if ('${{ parameters.SdkRepoUrl }}' -match $urlPattern) {
+          $sdkRepoOwner = $Matches['organization']
+          $sdkRepoName = $Matches['repository']
+        }
+        # Define the path to the JSON file
+        $configPath = "$(Build.SourcesDirectory)/specificationRepositoryConfiguration.json"
+        $jsonContent = Get-Content -Raw -Path $configPath
+        $configJson = $jsonContent | ConvertFrom-Json
+
+        # Get the 'sdkRepository' settings for the specified SDK repository
+        $sdkRepositoryMappings = $configJson.sdkRepositoryMappings
+        $mainRepository = $sdkRepositoryMappings.$sdkRepoName.mainRepository
+
+        # Split the value into repo owner and repo name
+        $repoInfo = $mainRepository -split '/'
+        $sdkRepoOwner = $repoInfo[0]
+        $sdkRepoName = $repoInfo[1]
+        $sdkRepoDirectory = "$(System.DefaultWorkingDirectory)/$sdkRepoName"
+
+        $integrationRepository = $sdkRepositoryMappings.$sdkRepoName.integrationRepository
+        $repoInfo = $integrationRepository -split '/'
+        $integrationsdkRepoOwner = $repoInfo[0]
+        $integrationsdkRepoName = $repoInfo[1]
+
+        Write-Host "##vso[task.setvariable variable=SdkRepoOwner]$sdkRepoOwner"
+        Write-Host "SdkRepoOwner variable set to: $sdkRepoOwner"
+        Write-Host "##vso[task.setvariable variable=SdkRepoName]$sdkRepoName"
+        Write-Host "SdkRepoName variable set to: $sdkRepoName"
+        Write-Host "##vso[task.setvariable variable=SdkRepoDirectory]$sdkRepoDirectory"
+        Write-Host "SdkRepoDirectory variable set to: $sdkRepoDirectory"
+        Write-Host "##vso[task.setvariable variable=IntegrationsdkRepoOwner]$integrationsdkRepoOwner"
+        Write-Host "IntegrationsdkRepoOwner variable set to: $integrationsdkRepoOwner"
+        Write-Host "##vso[task.setvariable variable=IntegrationsdkRepoName]$integrationsdkRepoName"
+        Write-Host "IntegrationsdkRepoName variable set to: $integrationsdkRepoName"
+      condition: eq(variables['Build.Reason'], 'PullRequest')
+      displayName: 'Load configuration for spec-gen-sdk'
 
     - pwsh: |
         $urlPattern = '^https://github\.com/(?<organization>[^/]+)/(?<repository>[^/]+)'
@@ -77,20 +117,6 @@ jobs:
         Write-Host "##vso[task.setvariable variable=SpecRepoDirectory]$specRepoDirectory"
         Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
 
-        if ('${{ parameters.SdkRepoUrl }}' -match $urlPattern) {
-          $sdkRepoOwner = $Matches['organization']
-          Write-Host "##vso[task.setvariable variable=SdkRepoOwner]$sdkRepoOwner"
-          Write-Host "SdkRepoOwner variable set to: $sdkRepoOwner"
-
-          $sdkRepoName = $Matches['repository']
-          Write-Host "##vso[task.setvariable variable=SdkRepoName]$sdkRepoName"
-          Write-Host "SdkRepoName variable set to: $sdkRepoName"
-
-          $sdkRepoDirectory = "$(System.DefaultWorkingDirectory)/$sdkRepoName"
-          Write-Host "##vso[task.setvariable variable=SdkRepoDirectory]$sdkRepoDirectory"
-          Write-Host "SdkRepoDirectory variable set to: $sdkRepoDirectory"
-        }
-
         if ([string]::IsNullOrEmpty($SpecRepoOwner) -or [string]::IsNullOrEmpty($SpecRepoName) -or [string]::IsNullOrEmpty($SdkRepoOwner) -or [string]::IsNullOrEmpty($SdkRepoName)) {
           Write-Host "One or more required variables are null or empty. Ensure that SpecRepourl and SdkRepoUrl are set to valid GitHub repository URLs."
           Exit 1
@@ -113,9 +139,6 @@ jobs:
         - '!sdk/**/SessionRecords/*'
         - '!sdk/**/session-records/*'
         Repositories:
-        - Name: $(SpecRepoOwner)/$(SpecRepoName)
-          Commitish: $(SpecRepoBranchVar)
-          WorkingDirectory: $(SpecRepoDirectory)
         - Name: $(SdkRepoOwner)/$(SdkRepoName)
           Commitish: ${{ parameters.SdkRepoBranch }}
           WorkingDirectory: $(SdkRepoDirectory)
@@ -204,6 +227,10 @@ jobs:
           -c "$(SpecRepoCommit)" \
           -t $true \
           $optional_params
+        if [ "$BUILD_REASON" == "PullRequest" ]; then
+          SdkRepoOwner="$IntegrationsdkRepoOwner"
+          SdkRepoName="$IntegrationsdkRepoName"
+        fi
       displayName: 'Generate SDK'
 
     - task: PublishPipelineArtifact@1
