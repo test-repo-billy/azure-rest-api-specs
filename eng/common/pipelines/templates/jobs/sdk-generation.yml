@@ -38,11 +38,12 @@ steps:
 - pwsh: |
     Write-Host "Build.SourcesDirectory: $(Build.SourcesDirectory)"
     Write-Host "DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)"
-    $specRepoDirectory = "$(Build.SourcesDirectory)/${{ parameters.SpecRepoName }}"
+    Write-Host "PipelineWorkspace: $(Pipeline.Workspace)"
+    $specRepoDirectory = "$(Pipeline.Workspace)/${{ parameters.SpecRepoName }}"
     Write-Host "##vso[task.setvariable variable=SpecRepoDirectory]$specRepoDirectory"
     Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
 
-    $sdkRepoDirectory = "$(Build.SourcesDirectory)/${{ parameters.SdkRepoName }}"
+    $sdkRepoDirectory = "$(Pipeline.Workspace)/${{ parameters.SdkRepoName }}"
     Write-Host "##vso[task.setvariable variable=SdkRepoDirectory]$sdkRepoDirectory"
     Write-Host "SdkRepoDirectory variable set to: $sdkRepoDirectory"
 
@@ -125,7 +126,7 @@ steps:
     spec-gen-sdk \
       --scp "$(SpecRepoDirectory)" \
       --sdp "$(SdkRepoDirectory)" \
-      --wf "$(System.DefaultWorkingDirectory)" \
+      --wf "$(Pipeline.Workspace)" \
       -l "$(SdkRepoNameForSpecGen)" \
       -c "$(SpecRepoCommit)" \
       -t $true \
@@ -140,7 +141,7 @@ steps:
   displayName: Publish SDK ${sdkLanguage} Artifact to Pipeline Artifacts
   inputs:
     artifactName: $(sdkArtifactName)
-    targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
+    targetPath: "$(Pipeline.Workspace)/generatedSdkArtifacts"
 
 - ${{ if eq(parameters.SkipPullRequestCreation, false) }}:
   - template: /eng/common/pipelines/templates/steps/git-push-changes.yml

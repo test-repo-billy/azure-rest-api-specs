@@ -65,8 +65,9 @@ jobs:
     - pwsh: |
         Write-Host "Build.SourcesDirectory: $(Build.SourcesDirectory)"
         Write-Host "DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)"
+        Write-Host "PipelineWorkspace: $(Pipeline.Workspace)"
         # Define the path to the JSON file
-        $configPath = "$(Build.SourcesDirectory)/$(SpecRepoName)/specificationRepositoryConfiguration.json"
+        $configPath = "$(Build.SourcesDirectory)/specificationRepositoryConfiguration.json"
         $jsonContent = Get-Content -Raw -Path $configPath
         $configJson = $jsonContent | ConvertFrom-Json
 
@@ -78,7 +79,6 @@ jobs:
         $repoInfo = $mainRepository -split '/'
         $SdkRepoOwner = $repoInfo[0]
         $SdkRepoName = $repoInfo[1]
-        #$sdkRepoDirectory = "$(Build.SourcesDirectory)/$sdkRepoName"
         Write-Host "##vso[task.setvariable variable=SdkRepoOwner]$sdkRepoOwner"
         Write-Host "##vso[task.setvariable variable=SdkRepoName]$sdkRepoName"
         Write-Host "SdkRepoOwner variable set to: $sdkRepoOwner"
@@ -123,8 +123,8 @@ jobs:
       condition: and(eq(variables['Build.Reason'], 'PullRequest'), ne(variables['BreakingChangeLabel'], ''), eq(variables['BreakingChangeLabelAction'], 'add'))
       inputs:
         pwsh: true
-        workingDirectory: $(Build.SourcesDirectory)/$(SpecRepoName)
-        filePath: $(Build.SourcesDirectory)/$(SpecRepoName)/eng/common/scripts/Add-IssueLabels.ps1
+        workingDirectory: $(Build.SourcesDirectory)
+        filePath: $(Build.SourcesDirectory)/eng/common/scripts/Add-IssueLabels.ps1
         arguments: >
           -RepoOwner $(SpecRepoOwner)
           -RepoName $(SpecRepoName)
@@ -137,8 +137,8 @@ jobs:
       condition: and(eq(variables['Build.Reason'], 'PullRequest'), ne(variables['BreakingChangeLabel'], ''), eq(variables['BreakingChangeLabelAction'], 'remove'))
       inputs:
         pwsh: true
-        workingDirectory: $(Build.SourcesDirectory)/$(SpecRepoName)
-        filePath: $(Build.SourcesDirectory)/$(SpecRepoName)/eng/common/scripts/Remove-IssueLabel.ps1
+        workingDirectory: $(Build.SourcesDirectory)
+        filePath: $(Build.SourcesDirectory)/eng/common/scripts/Remove-IssueLabel.ps1
         arguments: >
           -RepoOwner $(SpecRepoOwner)
           -RepoName $(SpecRepoName)
