@@ -34,12 +34,6 @@ parameters:
     type: boolean
     default: false
 
-variables:
-  - name: SdkRepoOwnerForPullRequest
-    value: ''
-  - name: SdkRepoNameForPullRequest
-    value: ''
-
 steps:
 - pwsh: |
     $specRepoDirectory = "$(Build.SourcesDirectory)/${{ parameters.SpecRepoName }}"
