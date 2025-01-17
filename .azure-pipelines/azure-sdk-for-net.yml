@@ -63,6 +63,8 @@ jobs:
       path: '$(SpecRepoName)'
 
     - pwsh: |
+        Write-Host "Build.SourcesDirectory: $(Build.SourcesDirectory)"
+        Write-Host "DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)"
         # Define the path to the JSON file
         $configPath = "$(Build.SourcesDirectory)/$(SpecRepoName)/specificationRepositoryConfiguration.json"
         $jsonContent = Get-Content -Raw -Path $configPath

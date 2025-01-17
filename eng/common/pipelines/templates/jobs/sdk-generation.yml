@@ -36,6 +36,8 @@ parameters:
 
 steps:
 - pwsh: |
+    Write-Host "Build.SourcesDirectory: $(Build.SourcesDirectory)"
+    Write-Host "DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)"
     $specRepoDirectory = "$(Build.SourcesDirectory)/${{ parameters.SpecRepoName }}"
     Write-Host "##vso[task.setvariable variable=SpecRepoDirectory]$specRepoDirectory"
     Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
