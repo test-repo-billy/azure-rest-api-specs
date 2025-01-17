@@ -1,55 +1,59 @@
 parameters:
-  - name: SpecRepourl
+  - name: SpecRepoUrl
     type: string
-  - name: SpecRepoBranch
+  - name: SdkRepoUrl
     type: string
-    default: 'main'
   - name: SpecRepoCommit
     type: string
     default: 'HEAD'
-  - name: SdkRepoUrl
+  - name: SdkRepoCommit
     type: string
-  - name: SdkRepoBranch
-    type: string
-    default: 'main'
+    default: 'HEAD'
   - name: ConfigType
     type: string
     values:
       - 'TypeSpec'
-      - 'AutoRest'
-  - name: TspConfigPath
+      - 'OpenAPI'
+    default: 'TypeSpec'
+    displayName: 'API specification type'
+  - name: ConfigPath
     type: string
-  - name: ReadmePath
-    type: string
-  - name: ApiVersion
-    type: string
-    default: 'not-specified'
+    default: 'specification/contosowidgetmanager/Contoso.Management/tspconfig.yaml'
+    displayName: 'Path to API specification file (TypeSpec/OpenAPI)'
   - name: SkipPullRequestCreation
     type: boolean
+    default: false
 
 jobs:
 - job:
   displayName: 'SDK Generation'
+
   variables:
     - template: /eng/pipelines/templates/variables/image.yml
     - name: NodeVersion
       value: '22.13.x'
     - name: PythonVersion
       value: '3.13'
+    - name: SpecGenSdkVersion
+      value: 'latest'
     - name: SdkArtifactName
       value: SDK_Artifact
+
   pool:
     name: $(LINUXPOOL)
     vmImage: $(LINUXVMIMAGE)
 
   steps:
+    - powershell: |
+        $repoParts = "$(Build.Repository.Name)" -split '/'
+        $repoName = $repoParts[-1] # Extract the last part
+        Write-Host "##vso[task.setvariable variable=SourceRepoName]$repoName"
+      displayName: "Extract repo name"
+
     - checkout: self
-      path: '$(Build.Repository.Name)'
-      fetchDepth: 2
+      path: '$(SourceRepoName)'
 
     - pwsh: |
-        Write-Host "Build.SourcesDirectory:$(Build.SourcesDirectory)"
-        Write-Host "Build.Repository.Name:$(Build.Repository.Name)"
         if ('${{ parameters.SdkRepoUrl }}' -match $urlPattern) {
           $sdkRepoOwner = $Matches['organization']
           $sdkRepoName = $Matches['repository']
@@ -99,19 +103,13 @@ jobs:
           $repoInfo = $repository -split '/'
           $specRepoOwner = $repoInfo[0]
           $specRepoName = $repoInfo[1]
-          $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
           Write-Host "##vso[task.setvariable variable=BreakingChangeLabel]BreakingChange-Go-Sdk"
           Write-Host "BreakingChangeLabel variable set to: BreakingChange-Go-Sdk"
           Write-Host "##vso[task.setvariable variable=BreakingChangeLabelAction]remove"
           Write-Host "BreakingChangeLabelAction variable set to: remove"
-        } else {
-          $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
         }
         Write-Host "##vso[task.setvariable variable=SpecRepoOwner]$specRepoOwner"
         Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
-        Write-Host "##vso[task.setvariable variable=SpecRepoBranchVar]$specRepoBranchVar"
-        Write-Host "SpecRepoBranchVar variable set to: $specRepoBranchVar"
-
         Write-Host "##vso[task.setvariable variable=SpecRepoName]$specRepoName"
         Write-Host "SpecRepoName variable set to: $specRepoName"
 
@@ -170,7 +168,7 @@ jobs:
         versionSpec: $(PythonVersion)
 
     - script: |
-        npm install -g @azure-tools/spec-gen-sdk
+        npm install -g @azure-tools/spec-gen-sdk@$(SpecGenSdkVersion)
       displayName: 'Install spec-gen-sdk'
 
     - task: PowerShell@2
@@ -206,18 +204,14 @@ jobs:
         sdk_gen_info="sdk generation from Config : "
 
         if [ "${{ parameters.ConfigType }}" = "TypeSpec" ]; then
-          optional_params="$optional_params --tsp-config-relative-path ${{ parameters.TspConfigPath }}"
-          sdk_gen_info="$sdk_gen_info '${{ parameters.TspConfigPath }}',"
+          optional_params="$optional_params --tsp-config-relative-path ${{ parameters.ConfigPath }}"
+          sdk_gen_info="$sdk_gen_info '${{ parameters.ConfigPath }}',"
         else
-          optional_params="$optional_params --readme-relative-path ${{ parameters.ReadmePath }}"
-          sdk_gen_info="$sdk_gen_info '${{ parameters.ReadmePath }}',"
-        fi
-        if [ "${{ parameters.ApiVersion }}" != "not-specified" ]; then
-          optional_params="$optional_params --api-version ${{ parameters.ApiVersion }}"
-          sdk_gen_info="$sdk_gen_info API Version: '${{ parameters.ApiVersion }}',"
+          optional_params="$optional_params --readme-relative-path ${{ parameters.ConfigPath }}"
+          sdk_gen_info="$sdk_gen_info '${{ parameters.ConfigPath }}',"
         fi
 
-        sdk_gen_info="$sdk_gen_info and CommitSHA: '$(SpecRepoCommit)'"
+        sdk_gen_info="$sdk_gen_info and CommitSHA: '$(SpecRepoCommit)', in SpecRepo: '${{ parameters.SpecRepoUrl }}'"
         echo "##vso[task.setvariable variable=GeneratedSDKInformation]$sdk_gen_info"
         echo "Generated SDK Information : $sdk_gen_info"
 
@@ -255,7 +249,7 @@ jobs:
 
       - task: PowerShell@2
         displayName: Create pull request
-        condition: and(succeeded(), eq('${{ parameters.SkipPullRequestCreation }}', true), eq(variables['HasChanges'], 'true'))
+        condition: and(succeeded(), eq(variables['HasChanges'], 'true'))
         inputs:
           pwsh: true
           workingDirectory: $(SdkRepoDirectory)
