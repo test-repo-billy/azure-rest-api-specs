@@ -58,6 +58,8 @@ jobs:
         Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
         Write-Host "SpecRepoName variable set to: $specRepoName"
 
+        Write-Host "SdkRepoOwner from pipeline UI: $env:SdkRepoOwner"
+        Write-Host "SdkRepoOwner from pipeline UI: $(SdkRepoOwner)"
         if ([string]::IsNullOrEmpty($env:SdkRepoName) -or [string]::IsNullOrEmpty($env:SdkRepoOwner)) {
           Write-Host "##vso[task.logissue type=error]SdkRepoName and SdkRepoOwner must set in the pipeline."
           exit 1
