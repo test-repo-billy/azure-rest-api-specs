@@ -58,15 +58,15 @@ jobs:
         Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
         Write-Host "SpecRepoName variable set to: $specRepoName"
 
-        if ([string]::IsNullOrEmpty($SdkRepoName) -or [string]::IsNullOrEmpty($SdkRepoOwner)) {
+        if ([string]::IsNullOrEmpty($env:SdkRepoName) -or [string]::IsNullOrEmpty($env:SdkRepoOwner)) {
           Write-Host "##vso[task.logissue type=error]SdkRepoName and SdkRepoOwner must set in the pipeline."
           exit 1
         }
-        if ([string]::IsNullOrEmpty($IntegrationSdkRepoOwner)) {
+        if ([string]::IsNullOrEmpty($env:IntegrationSdkRepoOwner)) {
           Write-Host "##vso[task.setvariable variable=IntegrationSdkRepoOwner]''"
           Write-Host "IntegrationSdkRepoOwner variable set to ''"
         }
-        if ([string]::IsNullOrEmpty($IntegrationSdkRepoName)) {
+        if ([string]::IsNullOrEmpty($env:IntegrationSdkRepoName)) {
           Write-Host "##vso[task.setvariable variable=IntegrationSdkRepoName]''"
           Write-Host "IntegrationSdkRepoName variable set to ''"
         }
