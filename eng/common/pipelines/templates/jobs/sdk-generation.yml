@@ -39,6 +39,8 @@ steps:
     Write-Host "Build.SourcesDirectory: $(Build.SourcesDirectory)"
     Write-Host "DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)"
     Write-Host "PipelineWorkspace: $(Pipeline.Workspace)"
+    Write-Host "IntegrationSdkRepoOwner: ${{ parameters.IntegrationSdkRepoOwner }}"
+    Write-Host "IntegrationSdkRepoName: ${{ parameters.IntegrationSdkRepoName }}"
     $specRepoDirectory = "$(Pipeline.Workspace)/${{ parameters.SpecRepoName }}"
     Write-Host "##vso[task.setvariable variable=SpecRepoDirectory]$specRepoDirectory"
     Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
