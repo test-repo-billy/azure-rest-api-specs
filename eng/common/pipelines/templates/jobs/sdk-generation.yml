@@ -47,9 +47,9 @@ steps:
     Write-Host "##vso[task.setvariable variable=SdkRepoDirectory]$sdkRepoDirectory"
     Write-Host "SdkRepoDirectory variable set to: $sdkRepoDirectory"
 
-    $sdkRepoNameForSpecGen = ${{ parameters.SdkRepoName }}
+    $sdkRepoNameForSpecGen = "${{ parameters.SdkRepoName }}"
     if ($sdkRepoName.EndsWith('-for-net')) {
-      $sdkRepoNameForSpecGen = $sdkRepoName + "-track2"
+      $sdkRepoNameForSpecGen = $sdkRepoNameForSpecGen + "-track2"
     }
     Write-Host "##vso[task.setvariable variable=SdkRepoNameForSpecGen]$sdkRepoNameForSpecGen"
     Write-Host "SdkRepoNameForSpecGen variable set to: $sdkRepoNameForSpecGen"
