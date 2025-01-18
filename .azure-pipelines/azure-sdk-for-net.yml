@@ -62,6 +62,7 @@ jobs:
           Write-Host "##vso[task.logissue type=error]SdkRepoName and SdkRepoOwner must set in the pipeline."
           exit 1
         }
+        Write-Host "IntegrationSdkRepoOwner from pipeline UI: $(IntegrationSdkRepoOwner)"
         if ([string]::IsNullOrEmpty('$(IntegrationSdkRepoOwner)')) {
           Write-Host "##vso[task.setvariable variable=IntegrationSdkRepoOwner]''"
           Write-Host "IntegrationSdkRepoOwner variable set to ''"
