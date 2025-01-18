@@ -57,7 +57,7 @@ steps:
     $sdkRepoOwnerForPullRequest = '${{ parameters.SdkRepoOwner }}'
     $sdkRepoNameForPullRequest = '${{ parameters.SdkRepoName }}'
 
-    if (-and(-not [string]::IsNullOrEmpty($IntegrationSdkRepoOwner), -not [string]::IsNullOrEmpty($IntegrationSdkRepoName))) {
+    if ((-not [string]::IsNullOrEmpty('${{ parameters.IntegrationSdkRepoOwner }}')) -and (-not [string]::IsNullOrEmpty('${{ parameters.IntegrationSdkRepoName }}'))) {
       $sdkRepoOwnerForPullRequest = '${{ parameters.IntegrationSdkRepoOwner }}'
       $sdkRepoNameForPullRequest = '${{ parameters.IntegrationSdkRepoName }}'
     }
