@@ -69,6 +69,7 @@ jobs:
         if ([string]::IsNullOrEmpty($IntegrationSdkRepoName)) {
           Write-Host "##vso[task.setvariable variable=IntegrationSdkRepoName]''"
           Write-Host "IntegrationSdkRepoName variable set to ''"
+        }
       displayName: "Initialize variables"
 
     - checkout: self
