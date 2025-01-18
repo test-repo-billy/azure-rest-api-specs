@@ -62,7 +62,9 @@ steps:
       $sdkRepoNameForPullRequest = '${{ parameters.IntegrationSdkRepoName }}'
     }
     Write-Host "##vso[task.setvariable variable=SdkRepoOwnerForPullRequest]$sdkRepoOwnerForPullRequest"
+    Write-Host "SdkRepoOwnerForPullRequest variable set to: $sdkRepoOwnerForPullRequest"
     Write-Host "##vso[task.setvariable variable=SdkRepoNameForPullRequest]$sdkRepoNameForPullRequest"
+    Write-Host "SdkRepoNameForPullRequest variable set to: $sdkRepoNameForPullRequest"
   displayName: "Create Run Time Variables"
 
 - template: /eng/common/pipelines/templates/steps/sparse-checkout.yml
