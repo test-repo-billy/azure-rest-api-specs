@@ -39,6 +39,11 @@ steps:
     Write-Host "Build.SourcesDirectory: $(Build.SourcesDirectory)"
     Write-Host "DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)"
     Write-Host "PipelineWorkspace: $(Pipeline.Workspace)"
+    if ([string]::IsNullOrEmpty('${{ parameters.IntegrationSdkRepoOwner }}')) {
+      Write-Host "IntegrationSdkRepoOwner is not set"
+    } else {
+      Write-Host "IntegrationSdkRepoOwner: '${{ parameters.IntegrationSdkRepoOwner }}'"
+    }
     Write-Host "IntegrationSdkRepoOwner: '${{ parameters.IntegrationSdkRepoOwner }}'"
     Write-Host "IntegrationSdkRepoName: '${{ parameters.IntegrationSdkRepoName }}'"
     $specRepoDirectory = "$(Pipeline.Workspace)/${{ parameters.SpecRepoName }}"
