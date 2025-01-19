@@ -43,14 +43,10 @@ jobs:
       value: 'latest'
     - name: SdkArtifactName
       value: SDK_Artifact
-    - name: SdkRepoOwner
-      value: ${{ coalesce(variables['SdkRepoOwner'], '') }}
-    - name: SdkRepoName
-      value: ${{ coalesce(variables['SdkRepoName'], '') }}
     - name: IntegrationSdkRepoOwner
-      value: ${{ coalesce(variables['IntegrationSdkRepoOwner'], '') }}
+      value: ''
     - name: IntegrationSdkRepoName
-      value: ${{ coalesce(variables['IntegrationSdkRepoName'], '') }}
+      value: ''
 
   pool:
     name: $(LINUXPOOL)
@@ -65,16 +61,7 @@ jobs:
         Write-Host "##vso[task.setvariable variable=SpecRepoName]$specRepoName"
         Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
         Write-Host "SpecRepoName variable set to: $specRepoName"
-        Write-Host "SdkRepoOwner from pipeline UI: $(SdkRepoOwner)"        
-        Write-Host "IntegrationSdkRepoOwner from pipeline UI: $(IntegrationSdkRepoOwner)"
-        if ([string]::IsNullOrEmpty('$(IntegrationSdkRepoOwner)')) {
-          Write-Host "##vso[task.setvariable variable=IntegrationSdkRepoOwner]''"
-          Write-Host "IntegrationSdkRepoOwner variable set to ''"
-        }
-        if ([string]::IsNullOrEmpty('$(IntegrationSdkRepoName)')) {
-          Write-Host "##vso[task.setvariable variable=IntegrationSdkRepoName]''"
-          Write-Host "IntegrationSdkRepoName variable set to ''"
-        }
+        Write-Host "SdkRepoOwner from pipeline UI: $(SdkRepoOwner)"
       displayName: "Initialize variables"
 
     - checkout: self
