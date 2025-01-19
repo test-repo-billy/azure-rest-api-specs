@@ -44,13 +44,13 @@ jobs:
     - name: SdkArtifactName
       value: SDK_Artifact
     - name: SdkRepoOwner
-      value: ${{ variables['SdkRepoOwner'] || '' }}
+      value: ${{ coalesce(variables['SdkRepoOwner'], '') }}
     - name: SdkRepoName
-      value: ${{ variables['SdkRepoName'] || '' }}
+      value: ${{ coalesce(variables['SdkRepoName'], '') }}
     - name: IntegrationSdkRepoOwner
-      value: ${{ variables['IntegrationSdkRepoOwner'] || '' }}
+      value: ${{ coalesce(variables['IntegrationSdkRepoOwner'], '') }}
     - name: IntegrationSdkRepoName
-      value: ${{ variables['IntegrationSdkRepoName'] || '' }}
+      value: ${{ coalesce(variables['IntegrationSdkRepoName'], '') }}
 
   pool:
     name: $(LINUXPOOL)
