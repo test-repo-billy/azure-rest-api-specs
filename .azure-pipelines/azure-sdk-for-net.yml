@@ -43,6 +43,14 @@ jobs:
       value: 'latest'
     - name: SdkArtifactName
       value: SDK_Artifact
+    - name: SdkRepoOwner
+      value: ${{ variables['SdkRepoOwner'] || '' }}
+    - name: SdkRepoName
+      value: ${{ variables['SdkRepoName'] || '' }}
+    - name: IntegrationSdkRepoOwner
+      value: ${{ variables['IntegrationSdkRepoOwner'] || '' }}
+    - name: IntegrationSdkRepoName
+      value: ${{ variables['IntegrationSdkRepoName'] || '' }}
 
   pool:
     name: $(LINUXPOOL)
@@ -57,11 +65,7 @@ jobs:
         Write-Host "##vso[task.setvariable variable=SpecRepoName]$specRepoName"
         Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
         Write-Host "SpecRepoName variable set to: $specRepoName"
-        Write-Host "SdkRepoOwner from pipeline UI: $(SdkRepoOwner)"
-        if ([string]::IsNullOrEmpty('$(SdkRepoName)') -or [string]::IsNullOrEmpty('$(SdkRepoOwner)')) {
-          Write-Host "##vso[task.logissue type=error]SdkRepoName and SdkRepoOwner must set in the pipeline."
-          exit 1
-        }
+        Write-Host "SdkRepoOwner from pipeline UI: $(SdkRepoOwner)"        
         Write-Host "IntegrationSdkRepoOwner from pipeline UI: $(IntegrationSdkRepoOwner)"
         if ([string]::IsNullOrEmpty('$(IntegrationSdkRepoOwner)')) {
           Write-Host "##vso[task.setvariable variable=IntegrationSdkRepoOwner]''"
