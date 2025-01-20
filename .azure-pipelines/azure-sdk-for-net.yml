@@ -84,8 +84,8 @@ jobs:
             https://aka.ms/azsdk/support/specreview-channel"
           exit 1
         }
-        Write-Host "SdkRepoName from pipeline UI: $SdkRepoName"
-        $mainRepository = $sdkRepositoryMappings.$SdkRepoName.mainRepository
+        Write-Host "SdkRepoName from pipeline UI: $(SdkRepoName)"
+        $mainRepository = $sdkRepositoryMappings.$(SdkRepoName).mainRepository
         if (-not [string]::IsNullOrEmpty($mainRepository)) {
           # Split the value into repo owner and repo name
           $repoInfo = $mainRepository -split '/'
@@ -102,7 +102,7 @@ jobs:
           exit 1
         }
 
-        $integrationRepository = $sdkRepositoryMappings.$sdkRepoName.integrationRepository
+        $integrationRepository = $sdkRepositoryMappings.$(SdkRepoName).integrationRepository
         if (-not [string]::IsNullOrEmpty($integrationRepository)) {
           $repoInfo = $integrationRepository -split '/'
           $integrationSdkRepoOwner = $repoInfo[0]
