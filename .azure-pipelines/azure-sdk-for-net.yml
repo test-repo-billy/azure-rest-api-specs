@@ -85,7 +85,7 @@ jobs:
           exit 1
         }
         Write-Host "SdkRepoName from pipeline UI: $(SdkRepoName)"
-        $mainRepository = $sdkRepositoryMappings.$(SdkRepoName).mainRepository
+        $mainRepository = $sdkRepositoryMappings.'$(SdkRepoName)'.mainRepository
         if (-not [string]::IsNullOrEmpty($mainRepository)) {
           # Split the value into repo owner and repo name
           $repoInfo = $mainRepository -split '/'
@@ -96,13 +96,13 @@ jobs:
           Write-Host "SdkRepoOwner variable set to: $sdkRepoOwner"
           Write-Host "SdkRepoName variable set to: $sdkRepoName"
         } else {
-          Write-Host "##vso[task.logissue type=error]mainRepository isn't set for '$SdkRepoName' in the specificationRepositoryConfiguration.json.`
+          Write-Host "##vso[task.logissue type=error]mainRepository isn't set for '$(SdkRepoName)' in the specificationRepositoryConfiguration.json.`
             Request help in API Spec Review Teams Channel at `
             https://aka.ms/azsdk/support/specreview-channel"
           exit 1
         }
 
-        $integrationRepository = $sdkRepositoryMappings.$(SdkRepoName).integrationRepository
+        $integrationRepository = $sdkRepositoryMappings.'$(SdkRepoName)'.integrationRepository
         if (-not [string]::IsNullOrEmpty($integrationRepository)) {
           $repoInfo = $integrationRepository -split '/'
           $integrationSdkRepoOwner = $repoInfo[0]
