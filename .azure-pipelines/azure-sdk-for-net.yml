@@ -77,7 +77,12 @@ jobs:
         $configJson = $jsonContent | ConvertFrom-Json
 
         # Get the 'sdkRepository' settings for the specified SDK repository
-        $sdkRepositoryMappings = $configJson.sdkRepositoryMappings
+        if ('$(SpecRepoName)' -eq 'azure-rest-api-specs-pr') {
+          $sdkRepositoryMappings = $configJson.'overrides'.'Azure/azure-rest-api-specs-pr'.sdkRepositoryMappings
+        }
+        else {
+          $sdkRepositoryMappings = $configJson.sdkRepositoryMappings
+        }
         if (-not $sdkRepositoryMappings) {
           Write-Host "##vso[task.logissue type=error]No sdkRepositoryMappings found in the specificationRepositoryConfiguration.json.`
             Request help in API Spec Review Teams Channel at `
