@@ -11,54 +11,6 @@
     "version": "2024-04-01"
   },
   "paths": {
-    "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileName}/billingRoleDefinitions/{roleDefinitionName}": {
-      "get": {
-        "tags": [
-          "BillingRoleDefinition"
-        ],
-        "description": "Gets the definition for a role on a billing profile. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement.",
-        "externalDocs": {
-          "url": "https://docs.microsoft.com/en-us/rest/api/billing/"
-        },
-        "operationId": "BillingRoleDefinition_GetByBillingProfile",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "$ref": "./types.json#/parameters/billingAccountName"
-          },
-          {
-            "$ref": "./types.json#/parameters/billingProfileName"
-          },
-          {
-            "$ref": "./types.json#/parameters/roleDefinitionName"
-          },
-          {
-            "$ref": "./types.json#/parameters/apiVersionParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The properties of a role definition.",
-            "schema": {
-              "$ref": "#/definitions/BillingRoleDefinition"
-            }
-          },
-          "default": {
-            "description": "Error response describing why the operation failed.",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "BillingRoleDefinitionGetByBillingProfile": {
-            "$ref": "./examples/billingRoleDefinitionGetByBillingProfile.json"
-          }
-        }
-      }
-    },
     "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingProfiles/{billingProfileName}/billingRoleDefinitions": {
       "get": {
         "tags": [
