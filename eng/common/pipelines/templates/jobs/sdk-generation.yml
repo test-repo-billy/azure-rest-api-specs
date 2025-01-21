@@ -121,6 +121,10 @@ steps:
       sdk_gen_info="$sdk_gen_info '${{ parameters.ConfigPath }}',"
     fi
 
+    if [ "$(Build.Reason)" = "PullRequest" ]; then
+      optional_params="$optional_params --n=$(System.PullRequest.PullRequestId)"
+    fi
+
     sdk_gen_info="$sdk_gen_info and CommitSHA: '$(SpecRepoCommit)', in SpecRepo: '${{ parameters.SpecRepoOwner }}/${{ parameters.SpecRepoName }}'"
     echo "##vso[task.setvariable variable=GeneratedSDKInformation]$sdk_gen_info"
     echo "Generated SDK Information : $sdk_gen_info"
