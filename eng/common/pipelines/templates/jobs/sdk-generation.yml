@@ -123,6 +123,7 @@ steps:
 
     if [ "$(Build.Reason)" = "PullRequest" ]; then
       optional_params="$optional_params --n=$(System.PullRequest.PullRequestId)"
+      sdk_gen_info="$sdk_gen_info spec PR: '$(System.PullRequest.PullRequestId)',"
     fi
 
     sdk_gen_info="$sdk_gen_info and CommitSHA: '$(SpecRepoCommit)', in SpecRepo: '${{ parameters.SpecRepoOwner }}/${{ parameters.SpecRepoName }}'"
