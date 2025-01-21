@@ -30,7 +30,7 @@
   "securityDefinitions": {
     "azure_auth": {
       "type": "oauth2",
-      "description": "Azure Active Directory OAuth2 Flow. And with some test text.",
+      "description": "Azure Active Directory OAuth2 Flow.",
       "flow": "implicit",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "scopes": {
@@ -463,7 +463,7 @@
         "age": {
           "type": "integer",
           "format": "int32",
-          "description": "Age of employee"
+          "description": "Age of employee and some test text."
         },
         "city": {
           "type": "string",
