@@ -68,6 +68,8 @@ jobs:
       path: '$(SpecRepoName)'
 
     - pwsh: |
+        Write-Host "git history:"
+        git log --oneline -n 10
         Write-Host "Build.SourcesDirectory: $(Build.SourcesDirectory)"
         Write-Host "DefaultWorkingDirectory: $(System.DefaultWorkingDirectory)"
         Write-Host "PipelineWorkspace: $(Pipeline.Workspace)"
