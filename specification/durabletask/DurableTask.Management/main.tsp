@@ -66,7 +66,6 @@ model SchedulerSku {
   capacity?: int32;
 
   @doc("Indicates whether the current SKU configuration is zone redundant")
-  @visibility("read")
   redundancyState?: RedundancyState;
 }
 
