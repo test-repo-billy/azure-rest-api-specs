@@ -155,8 +155,8 @@ jobs:
         fi
 
         if [ "$(Build.Reason)" = "PullRequest" ]; then
-          optional_params="$optional_params --n=$SYSTEM_PULLREQUEST_PULLREQUESTID"
-          sdk_gen_info="$sdk_gen_info spec PR: '$SYSTEM_PULLREQUEST_PULLREQUESTID',"
+          optional_params="$optional_params --n=$System.PullRequest.PullRequestId"
+          sdk_gen_info="$sdk_gen_info spec PR: '$(System.PullRequest.PullRequestId)', $(System.PullRequest.PullRequestNumber)"
         fi
 
         sdk_gen_info="$sdk_gen_info and CommitSHA: '$(SpecRepoCommit)', in SpecRepo: '${{ parameters.SpecRepoUrl }}'"
