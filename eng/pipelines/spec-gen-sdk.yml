@@ -19,15 +19,9 @@ parameters:
   - name: SkipPullRequestCreation
     type: boolean
     default: false
-
-trigger:
-  branches:
-    include:
-      - user/raych1/pipeline-sdk-auto
-pr:
-  branches:
-    include:
-      - user/raych1/pipeline-sdk-auto
+    
+trigger: none
+pr: none
 
 extends:
   template: /eng/common/pipelines/templates/jobs/archetype-spec-gen-sdk.yml
