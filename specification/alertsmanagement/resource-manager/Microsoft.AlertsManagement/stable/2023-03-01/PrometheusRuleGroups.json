@@ -32,7 +32,7 @@
         "tags": [
           "PrometheusRuleGroups"
         ],
-        "description": "Retrieve Prometheus all rule group definitions in a subscription. test",
+        "description": "Retrieve Prometheus all rule group definitions in a subscription. test2323",
         "operationId": "PrometheusRuleGroups_ListBySubscription",
         "parameters": [
           {
@@ -71,7 +71,7 @@
         "tags": [
           "PrometheusRuleGroups"
         ],
-        "description": "Retrieve Prometheus rule group definitions in a resource group.",
+        "description": "Retrieve Prometheus rule group definitions in a resource group. 22",
         "operationId": "PrometheusRuleGroups_ListByResourceGroup",
         "parameters": [
           {
