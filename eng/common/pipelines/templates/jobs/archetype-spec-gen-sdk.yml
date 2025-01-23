@@ -47,6 +47,15 @@ jobs:
     - checkout: none
 
     - pwsh: |
+        $tspConfigPathPattern = '^specification\/([^\/]+\/)+tspconfig\.yaml$'
+        $readmePathPattern = '^specification\/([^\/]+\/){2,}readme\.md$'
+        if (('${{ parameters.ConfigType }}' -eq 'TypeSpec') -and ('${{ parameters.ConfigPath }}' -notmatch $tspConfigPathPattern)) {
+          Write-Error "ConfigPath must be a valid 'tspconfig.yaml' file path when ConfigType is set to 'TypeSpec'. For example, 'specification/contosowidgetmanager/Contoso.Management/tspconfig.yaml'"
+          Exit 1
+        } elseif (('${{ parameters.ConfigType }}' -eq 'OpenAPI') -and ('${{ parameters.ConfigPath }}' -notmatch $readmePathPattern)) {
+          Write-Error "ConfigPath must be a valid 'readme.md' file path when ConfigType is set to 'OpenAPI'. For example, 'specification/appplatform/resource-manager/readme.md'"
+          Exit 1
+        }
         $urlPattern = '^https://github\.com/(?<organization>[^/]+)/(?<repository>[^/]+)'
         if ('${{ parameters.SpecRepoUrl }}' -match $urlPattern) {
           $specRepoOwner = $Matches['organization']
