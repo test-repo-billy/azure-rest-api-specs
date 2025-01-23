@@ -463,7 +463,7 @@
         "age": {
           "type": "integer",
           "format": "int32",
-          "description": "Age of employee"
+          "description": "Age of employee and some test text."
         },
         "city": {
           "type": "string",
