@@ -1,10 +1,10 @@
 parameters:
   - name: SpecRepoCommit
     type: string
-    default: 'HEAD'
+    default: '$(Build.SourceBranch)'
   - name: SdkRepoCommit
     type: string
-    default: 'HEAD'
+    default: 'main'
   - name: ConfigType
     type: string
     values:

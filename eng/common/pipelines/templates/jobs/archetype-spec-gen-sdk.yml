@@ -5,7 +5,7 @@ parameters:
     type: string
   - name: SpecRepoCommit
     type: string
-    default: 'HEAD'
+    default: '$(Build.SourceBranch)'
   - name: SdkRepoCommit
     type: string
     default: 'HEAD'
@@ -86,14 +86,6 @@ jobs:
           Exit 1
         }
 
-        if ($env:BUILD_REASON -eq 'PullRequest') {
-           $specRepoCommitVar = $env:BUILD_SOURCEBRANCH
-        } else {
-           $specRepoCommitVar = '${{ parameters.SpecRepoCommit }}'
-        }
-        Write-Host "##vso[task.setvariable variable=SpecRepoCommitVar]$specRepoCommitVar"
-        Write-Host "SpecRepoCommitVar variable set to: $specRepoCommitVar"
-
       displayName: "Create Run Time Variables"
 
     - template: /eng/common/pipelines/templates/steps/sparse-checkout.yml
@@ -106,7 +98,7 @@ jobs:
         - '!sdk/**/session-records/*'
         Repositories:
         - Name: $(SpecRepoOwner)/$(SpecRepoName)
-          Commitish: $(SpecRepoCommitVar)
+          Commitish: ${{ parameters.SpecRepoCommit }}
           WorkingDirectory: $(SpecRepoDirectory)
         - Name: $(SdkRepoOwner)/$(SdkRepoName)
           Commitish: ${{ parameters.SdkRepoCommit }}
@@ -114,7 +106,7 @@ jobs:
         SkipCheckoutNone: true
 
     - script: |
-        if [ "${{ parameters.SpecRepoCommit }}" = "HEAD" ]; then
+        if [ "${{ parameters.SpecRepoCommit }}" = "$(Build.SourceBranch)" ]; then
           cd $(SpecRepoDirectory)
           default_commit=$(git rev-parse HEAD)
           echo "##vso[task.setvariable variable=SpecRepoCommit]$default_commit"
@@ -151,7 +143,7 @@ jobs:
         fi
 
         if [ "$(Build.Reason)" = "PullRequest" ]; then
-          optional_params="$optional_params --n=$System.PullRequest.PullRequestNumber"
+          optional_params="$optional_params --n=$(System.PullRequest.PullRequestNumber)"
           specPrUrl="${{ parameters.SpecRepoUrl }}/pull/$(System.PullRequest.PullRequestNumber)"
           sdk_gen_info="$sdk_gen_info spec PR: $specPrUrl"
           echo "Setting SDK repository to the forked repository under azure-sdk organization"
