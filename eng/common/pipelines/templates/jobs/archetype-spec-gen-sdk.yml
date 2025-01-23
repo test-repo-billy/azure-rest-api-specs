@@ -81,8 +81,6 @@ jobs:
           Write-Host "SdkRepoDirectory variable set to: $sdkRepoDirectory"
         }
 
-        Write-Host "SpecRepoOwner: $SpecRepoOwner"
-        Write-Host "SdkRepoOwner: $SdkRepoOwner"
         if ([string]::IsNullOrEmpty($SpecRepoOwner) -or [string]::IsNullOrEmpty($SpecRepoName) -or [string]::IsNullOrEmpty($SdkRepoOwner) -or [string]::IsNullOrEmpty($SdkRepoName)) {
           Write-Host "One or more required variables is empty or invalid. Ensure that SpecRepourl and SdkRepoUrl are set to valid GitHub repository URLs."
           Exit 1
@@ -118,8 +116,6 @@ jobs:
     - script: |
         if [ "${{ parameters.SpecRepoCommit }}" = "HEAD" ]; then
           cd $(SpecRepoDirectory)
-          echo "Current folder: $(pwd)"
-          git log --oneline -n 10
           default_commit=$(git rev-parse HEAD)
           echo "##vso[task.setvariable variable=SpecRepoCommit]$default_commit"
           echo "SpecRepoCommit variable set to default commit: $default_commit"
@@ -155,8 +151,11 @@ jobs:
         fi
 
         if [ "$(Build.Reason)" = "PullRequest" ]; then
-          optional_params="$optional_params --n=$System.PullRequest.PullRequestId"
-          sdk_gen_info="$sdk_gen_info spec PR: '$(System.PullRequest.PullRequestId)', $(System.PullRequest.PullRequestNumber)"
+          optional_params="$optional_params --n=$System.PullRequest.PullRequestNumber"
+          specPrUrl="'${{ parameters.SpecRepoUrl }}'/pull/$System.PullRequest.PullRequestNumber"
+          sdk_gen_info="$sdk_gen_info spec PR: $specPrUrl"
+          echo "Setting SDK repository to the forked repository under azure-sdk organization"
+          echo "##vso[task.setvariable variable=SdkRepoOwner]azure-sdk"
         fi
 
         sdk_gen_info="$sdk_gen_info and CommitSHA: '$(SpecRepoCommit)', in SpecRepo: '${{ parameters.SpecRepoUrl }}'"
@@ -184,8 +183,8 @@ jobs:
       condition: and(eq(variables['Build.Reason'], 'PullRequest'), ne(variables['BreakingChangeLabel'], ''), eq(variables['BreakingChangeLabelAction'], 'add'))
       inputs:
         pwsh: true
-        workingDirectory: $(Build.SourcesDirectory)
-        filePath: $(Build.SourcesDirectory)/eng/common/scripts/Add-IssueLabels.ps1
+        workingDirectory: $(SdkRepoDirectory)
+        filePath: $(SdkRepoDirectory)/eng/common/scripts/Add-IssueLabels.ps1
         arguments: >
           -RepoOwner $(SpecRepoOwner)
           -RepoName $(SpecRepoName)
@@ -198,8 +197,8 @@ jobs:
       condition: and(eq(variables['Build.Reason'], 'PullRequest'), ne(variables['BreakingChangeLabel'], ''), eq(variables['BreakingChangeLabelAction'], 'remove'))
       inputs:
         pwsh: true
-        workingDirectory: $(Build.SourcesDirectory)
-        filePath: $(Build.SourcesDirectory)/eng/common/scripts/Remove-IssueLabel.ps1
+        workingDirectory: $(SdkRepoDirectory)
+        filePath: $(SdkRepoDirectory)/eng/common/scripts/Remove-IssueLabel.ps1
         arguments: >
           -RepoOwner $(SpecRepoOwner)
           -RepoName $(SpecRepoName)
@@ -221,7 +220,7 @@ jobs:
 
       - task: PowerShell@2
         displayName: Create pull request
-        condition: and(succeeded(), eq(variables['HasChanges'], 'true'))
+        condition: and(succeeded(), eq(variables['HasChanges'], 'true'), ne(variables['Build.Reason'], 'PullRequest'))
         inputs:
           pwsh: true
           workingDirectory: $(SdkRepoDirectory)
