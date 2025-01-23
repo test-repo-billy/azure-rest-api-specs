@@ -157,6 +157,6 @@ model PrivateLinkResource is ProxyResource<PrivateLinkResourceProperties> {
 /** Operations for private links on DeidService resource */
 @armResourceOperations(PrivateLinkResource)
 interface PrivateLinks {
-  /** List private links on the given resource */
+  /** List private links on the given resource. Test changes. */
   listByDeidService is ArmResourceListByParent<PrivateLinkResource>;
 }
