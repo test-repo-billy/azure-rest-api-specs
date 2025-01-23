@@ -50,10 +50,10 @@ jobs:
         $tspConfigPathPattern = '^specification\/([^\/]+\/)+tspconfig\.yaml$'
         $readmePathPattern = '^specification\/([^\/]+\/){2,}readme\.md$'
         if (('${{ parameters.ConfigType }}' -eq 'TypeSpec') -and ('${{ parameters.ConfigPath }}' -notmatch $tspConfigPathPattern)) {
-          Write-Error "ConfigPath must be a valid 'tspconfig.yaml' file path when ConfigType is set to 'TypeSpec'. For example, 'specification/contosowidgetmanager/Contoso.Management/tspconfig.yaml'"
+          Write-Host "##vso[task.logissue type=error]ConfigPath must be a valid 'tspconfig.yaml' file path when ConfigType is set to 'TypeSpec'. For example, 'specification/contosowidgetmanager/Contoso.Management/tspconfig.yaml'"
           Exit 1
         } elseif (('${{ parameters.ConfigType }}' -eq 'OpenAPI') -and ('${{ parameters.ConfigPath }}' -notmatch $readmePathPattern)) {
-          Write-Error "ConfigPath must be a valid 'readme.md' file path when ConfigType is set to 'OpenAPI'. For example, 'specification/appplatform/resource-manager/readme.md'"
+          Write-Host "##vso[task.logissue type=error]ConfigPath must be a valid 'readme.md' file path when ConfigType is set to 'OpenAPI'. For example, 'specification/appplatform/resource-manager/readme.md'"
           Exit 1
         }
         $urlPattern = '^https://github\.com/(?<organization>[^/]+)/(?<repository>[^/]+)'
@@ -73,7 +73,7 @@ jobs:
 
         if ('${{ parameters.SdkRepoUrl }}' -match $urlPattern) {
           if ('${{ parameters.SpecRepoUrl }}'.EndsWith('-pr') -and (-not '${{ parameters.SdkRepoUrl }}'.EndsWith('-pr'))) {
-            Write-Host "SdkRepoUrl must be a private repository if SpecRepoUrl is a private repository."
+            Write-Host "##vso[task.logissue type=error]SdkRepoUrl must be a private repository if SpecRepoUrl is a private repository."
             Exit 1
           }
 
@@ -91,7 +91,7 @@ jobs:
         }
 
         if ([string]::IsNullOrEmpty($SpecRepoOwner) -or [string]::IsNullOrEmpty($SpecRepoName) -or [string]::IsNullOrEmpty($SdkRepoOwner) -or [string]::IsNullOrEmpty($SdkRepoName)) {
-          Write-Host "One or more required variables is empty or invalid. Ensure that SpecRepourl and SdkRepoUrl are set to valid GitHub repository URLs."
+          Write-Host "##vso[task.logissue type=error]One or more required variables is empty or invalid. Ensure that SpecRepourl and SdkRepoUrl are set to valid GitHub repository URLs."
           Exit 1
         }
 
