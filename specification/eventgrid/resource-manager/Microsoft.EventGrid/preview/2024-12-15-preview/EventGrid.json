@@ -3,7 +3,7 @@
   "info": {
     "version": "2024-12-15-preview",
     "title": "EventGridManagementClient",
-    "description": "Azure EventGrid Management Client"
+    "description": "Azure EventGrid Management Client test"
   },
   "host": "management.azure.com",
   "schemes": [
