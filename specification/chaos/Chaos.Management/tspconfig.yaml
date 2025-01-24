@@ -21,7 +21,7 @@ options:
     experimentalExtensibleEnums: true
     enableOperationGroup: true
     clear-output-folder: true
-    package-dir: "xxx-arm-chaos"
+    package-dir: "xxx"
     flavor: "azure"
     packageDetails:
       name: "@azure/arm-chaos"
