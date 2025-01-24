@@ -28,7 +28,7 @@ using TypeSpec.Versioning;
       """)
     endpoint: url,
 
-    @doc("API Version")
+    @doc("API Version test")
     @path
     apiVersion: Versions,
   }
