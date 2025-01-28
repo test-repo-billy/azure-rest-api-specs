@@ -51,12 +51,23 @@ extends:
           os: linux
 
         templateContext:
+          outputParentDirectory: $(System.DefaultWorkingDirectory)/out
           outputs:
             - output: pipelineArtifact
-              displayName: Publish artifacts and logs to Pipeline Artifacts
-              condition: succeededOrFailed()
+              displayName: Publish SDK artifacts to Pipeline Artifacts
+              condition: and(ne(variables['ValidationResult'], ''), eq(variables['HasSDKArtifact'], 'true'))
               artifactName: $(sdkArtifactName)
-              targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
+              targetPath: "$(System.DefaultWorkingDirectory)/out/generatedSdkArtifacts"
+            - output: pipelineArtifact
+              displayName: Publish API View artifacts to Pipeline Artifacts
+              condition: and(ne(variables['ValidationResult'], ''), eq(variables['HasSDKArtifact'], 'true'))
+              artifactName: $(ArtifactName)
+              targetPath: "$(System.DefaultWorkingDirectory)/out/sdkApiViewArtifacts"
+            - output: pipelineArtifact
+              displayName: Publish logs to Pipeline Artifacts
+              condition: ne(variables['ValidationResult'], '')
+              artifactName: "spec-gen-sdk-logs"
+              targetPath: "$(System.DefaultWorkingDirectory)/out/logs"
 
         steps:
           - checkout: none
