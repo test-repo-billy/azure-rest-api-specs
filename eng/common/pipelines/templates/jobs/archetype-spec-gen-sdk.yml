@@ -48,6 +48,14 @@ extends:
           name: $(LINUXPOOL)
           vmImage: $(LINUXVMIMAGE)
 
+        templateContext:
+          outputs:
+            - output: pipelineArtifact
+              displayName: Publish artifacts and logs to Pipeline Artifacts
+              condition: succeededOrFailed()
+              artifactName: $(sdkArtifactName)
+              targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
+
         steps:
           - checkout: none
 
@@ -175,12 +183,6 @@ extends:
                 -t $true \
                 $optional_params
             displayName: 'Generate SDK'
-
-          - task: PublishPipelineArtifact@1
-            displayName: Publish SDK Artifact to Pipeline Artifacts
-            inputs:
-              artifactName: $(sdkArtifactName)
-              targetPath: "$(System.DefaultWorkingDirectory)/generatedSdkArtifacts"
 
           - task: PowerShell@2
             displayName: Add label to the spec PR
