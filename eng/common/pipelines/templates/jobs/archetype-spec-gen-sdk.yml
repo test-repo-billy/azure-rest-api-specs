@@ -28,7 +28,7 @@ extends:
   template: /eng/pipelines/templates/stages/1es-redirect.yml
   parameters:
     stages:
-    - stage: 'SDK Generation'
+    - stage: 'SDK-Generation'
       jobs:
       - job:
         displayName: 'SDK Generation'
