@@ -60,7 +60,7 @@ extends:
               targetPath: "$(System.DefaultWorkingDirectory)/out/generatedSdkArtifacts"
             - output: pipelineArtifact
               displayName: Publish API View artifacts to Pipeline Artifacts
-              condition: and(ne(variables['ValidationResult'], ''), eq(variables['HasSDKArtifact'], 'true'))
+              condition: and(ne(variables['ValidationResult'], ''), eq(variables['HasApiViewArtifact'], 'true'))
               artifactName: $(ArtifactName)
               targetPath: "$(System.DefaultWorkingDirectory)/out/sdkApiViewArtifacts"
             - output: pipelineArtifact
