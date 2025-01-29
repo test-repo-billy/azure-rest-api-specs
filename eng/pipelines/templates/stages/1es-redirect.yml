@@ -4,10 +4,6 @@ resources:
       type: git
       name: 1ESPipelineTemplates/1ESPipelineTemplates
       ref: refs/tags/release
-    - repository: azure-rest-api-specs
-      type: github
-      name: test-repo-billy/azure-rest-api-specs
-      endpoint: raych1
 
 parameters:
 - name: stages
@@ -29,9 +25,6 @@ extends:
     settings:
       skipBuildTagsForGitHubPullRequests: true
     sdl:
-      binaryAnalysis:
-        enabled: false
-        justificationForDisabling: 'Binary analysis is disabled because it is not required for this repo. See: https://dev.azure.com/azure-sdk/internal/_build/results?buildId=3499746'
       ${{ if and(parameters.GenerateBaselines, eq(variables['Build.SourceBranchName'], 'main'), eq(variables['System.TeamProject'], 'internal')) }}:
         autobaseline:
           isMainPipeline: true
@@ -41,16 +34,6 @@ extends:
         name: azsdk-pool-mms-win-2022-general
         image: azsdk-pool-mms-win-2022-1espt
         os: windows
-      sourceRepositoriesToScan:
-        exclude:
-          - repository: azure-rest-api-specs
-      eslint:
-        enabled: false
-        justificationForDisabling: 'ESLint injected task has failures because it uses an old version of mkdirp. We should not fail for tools not controlled by the repo. See: https://dev.azure.com/azure-sdk/internal/_build/results?buildId=3499746'
-      codeql:
-        compiled:
-          enabled: false
-          justificationForDisabling: CodeQL times our pipelines out by running for 2+ hours before being force canceled.
       psscriptanalyzer:
         compiled: true
         break: true
