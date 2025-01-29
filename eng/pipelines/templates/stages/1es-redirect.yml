@@ -6,7 +6,7 @@ resources:
       ref: refs/tags/release
     - repository: azure-rest-api-specs
       type: git
-      name: test-repo-billy/azure-rest-api-specs
+      name: azure-rest-api-specs
 
 parameters:
 - name: stages
