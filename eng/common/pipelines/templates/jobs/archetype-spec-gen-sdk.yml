@@ -73,6 +73,11 @@ extends:
           - checkout: none
 
           - pwsh: |
+              Write-Host "##[group]Package contoso.management"
+              Write-Host "   ##[section]Start of a Subsection"
+              Write-Host "   ##[error]The generation process failed. Please check the logs for details."
+              Write-Host "##[endgroup]"
+              exit 0
               $tspConfigPathPattern = '^specification\/([^\/]+\/)+tspconfig\.yaml$'
               $readmePathPattern = '^specification\/([^\/]+\/){2,}readme\.md$'
               if (('${{ parameters.ConfigType }}' -eq 'TypeSpec') -and ('${{ parameters.ConfigPath }}' -notmatch $tspConfigPathPattern)) {
