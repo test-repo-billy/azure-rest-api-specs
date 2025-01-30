@@ -147,7 +147,7 @@ extends:
 
           - script: |
               echo "BuildHasErrors: $BuildHasErrors"
-              if ["$BuildHasErrors" = "true"]; then
+              if ["$(BuildHasErrors)" = "true"]; then
                 exit 1
               fi
               if [ "${{ parameters.SpecRepoCommit }}" = "$(Build.SourceBranch)" ]; then
