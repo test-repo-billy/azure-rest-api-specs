@@ -75,16 +75,18 @@ extends:
           - pwsh: |
               Write-Host "##[group] Package: contoso.management"
               Write-Host "##[section] Validation Errors"
+              Write-Host "##[group] Package: contoso.management2"
 
               # Log multiple errors in a structured way
               Write-Host "##vso[task.logissue type=error] Error 1: Missing required configuration."
               Write-Host "##vso[task.logissue type=error] Error 2: Invalid parameter in input file."
-
+              Write-Host "##[endgroup]"
               Write-Host "##[section] Generation Errors"
               Write-Host "##vso[task.logissue type=error] Error 3: Failed to generate artifact due to missing dependencies."
               Write-Host "##vso[task.logissue type=error] Error 4: Permission denied while writing to output directory."
               Write-Host "##[endgroup]"
               Write-Host "##vso[task.setvariable variable=BuildHasErrors]true"
+              exit 1
               $tspConfigPathPattern = '^specification\/([^\/]+\/)+tspconfig\.yaml$'
               $readmePathPattern = '^specification\/([^\/]+\/){2,}readme\.md$'
               if (('${{ parameters.ConfigType }}' -eq 'TypeSpec') -and ('${{ parameters.ConfigPath }}' -notmatch $tspConfigPathPattern)) {
