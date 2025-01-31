@@ -73,6 +73,22 @@ extends:
           - checkout: none
 
           - pwsh: |
+              Write-Host "##[group] Package: contoso.management"
+              Write-Host "##[section] Validation Errors"
+
+              # Log multiple errors in a structured way
+              Write-Host "##vso[task.logissue type=error] Error 1: Missing required configuration."
+              Write-Host "##vso[task.logissue type=error] Error 2: Invalid parameter in input file."
+
+              Write-Host "##[section] Generation Errors"
+              Write-Host "##vso[task.logissue type=error] Error 3: Failed to generate artifact due to missing dependencies."
+              Write-Host "##vso[task.logissue type=error] Error 4: Permission denied while writing to output directory."
+
+              Write-Host "##[endgroup]"
+
+              # Fail the step to make sure errors appear in the Summary Errors tab
+              exit 1
+
               Write-Host "##[group]Package contoso.management"
               Write-Host "##[section]Start of a Subsection"
               Write-Host "##[error]The generation process failed. Please check the logs for details."
