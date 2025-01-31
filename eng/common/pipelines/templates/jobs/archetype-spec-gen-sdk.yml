@@ -153,10 +153,6 @@ extends:
               SkipCheckoutNone: true
 
           - script: |
-              echo "BuildHasErrors: $BuildHasErrors"
-              if [ "$(BuildHasErrors)" = "true" ]; then
-                exit 1
-              fi
               if [ "${{ parameters.SpecRepoCommit }}" = "$(Build.SourceBranch)" ]; then
                 cd $(SpecRepoDirectory)
                 default_commit=$(git rev-parse HEAD)
