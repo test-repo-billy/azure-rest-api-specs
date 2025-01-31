@@ -86,7 +86,6 @@ extends:
               Write-Host "##vso[task.logissue type=error] Error 4: Permission denied while writing to output directory."
               Write-Host "##[endgroup]"
               Write-Host "##vso[task.setvariable variable=BuildHasErrors]true"
-              exit 1
               $tspConfigPathPattern = '^specification\/([^\/]+\/)+tspconfig\.yaml$'
               $readmePathPattern = '^specification\/([^\/]+\/){2,}readme\.md$'
               if (('${{ parameters.ConfigType }}' -eq 'TypeSpec') -and ('${{ parameters.ConfigPath }}' -notmatch $tspConfigPathPattern)) {
@@ -258,6 +257,7 @@ extends:
               Copy-Item -Path "$markdownFilePath" -Destination "$outputPath/BuildSummary.md"
               #Write-Host "##vso[task.addattachment type=Distributedtask.Core.Summary;name=testsummaryname;]$(System.DefaultWorkingDirectory)/out/logs/spec-gen-sdk-net-result.html"
               Write-Host "##vso[task.addattachment type=Distributedtask.Core.Summary;name=summary;]$(System.DefaultWorkingDirectory)/out/logs/BuildSummary.md"
+              Write-Host "##vso[task.addattachment type=Distributedtask.Core.Summary;name=report;]$(System.DefaultWorkingDirectory)/out/logs/GenerationReport.md"
               #Write-Host "##vso[task.addattachment type=Distributedtask.Core.BuildSummary;name=BuildSummary.md;]$(System.DefaultWorkingDirectory)/out/logs/BuildSummary.md"
               #Write-Host "##vso[task.addattachment type=Distributedtask.Core.BuildLog;name=filtered.log;]$(System.DefaultWorkingDirectory)/out/logs/filtered.log"
 
