@@ -254,9 +254,10 @@ extends:
               $markdownFilePath = "$outputPath/GenerationReport.md"
               $markdownContent | Out-File -FilePath $markdownFilePath -Encoding utf8
               Copy-Item -Path "$markdownFilePath" -Destination "$outputPath/BuildSummary.md"
-              Write-Host "##vso[task.addattachment type=Distributedtask.Core.Summary;name=testsummaryname;]$(System.DefaultWorkingDirectory)/out/logs/spec-gen-sdk-net-result.html"
-              Write-Host "##vso[task.addattachment type=Distributedtask.Core.BuildSummary;name=BuildSummary.md;]$(System.DefaultWorkingDirectory)/out/logs/BuildSummary.md"
-              Write-Host "##vso[task.addattachment type=Distributedtask.Core.BuildLog;name=filtered.log;]$(System.DefaultWorkingDirectory)/out/logs/filtered.log"
+              #Write-Host "##vso[task.addattachment type=Distributedtask.Core.Summary;name=testsummaryname;]$(System.DefaultWorkingDirectory)/out/logs/spec-gen-sdk-net-result.html"
+              Write-Host "##vso[task.addattachment type=Distributedtask.Core.Summary;name=summary;]$(System.DefaultWorkingDirectory)/out/logs/BuildSummary.md"
+              #Write-Host "##vso[task.addattachment type=Distributedtask.Core.BuildSummary;name=BuildSummary.md;]$(System.DefaultWorkingDirectory)/out/logs/BuildSummary.md"
+              #Write-Host "##vso[task.addattachment type=Distributedtask.Core.BuildLog;name=filtered.log;]$(System.DefaultWorkingDirectory)/out/logs/filtered.log"
 
           - ${{ if eq(parameters.SkipPullRequestCreation, true) }}:
             - template: /eng/common/pipelines/templates/steps/git-push-changes.yml
