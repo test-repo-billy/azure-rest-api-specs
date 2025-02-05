@@ -19,7 +19,7 @@
       {
         "name": "endpoint",
         "in": "path",
-        "description": "Supported Azure Playwright Service API Endpoints (protocol and hostname, for example:\n  https://{region}.api.playwright.microsoft.com).",
+        "description": "Supported Azure Playwright Service API Endpoints (protocol and hostname, for example:\n  https://{region}.api.playwright.microsoft.com Test).",
         "required": true,
         "type": "string"
       }
@@ -98,11 +98,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "Accounts_Get": {
-            "$ref": "./examples/Accounts_Get.json"
-          }
         }
       }
     },
@@ -152,11 +147,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "AccessTokens_List": {
-            "$ref": "./examples/AccessTokens_List.json"
           }
         },
         "x-ms-pageable": {
@@ -220,11 +210,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "AccessTokens_Get": {
-            "$ref": "./examples/AccessTokens_Get.json"
           }
         }
       },
@@ -306,11 +291,6 @@
               }
             }
           }
-        },
-        "x-ms-examples": {
-          "AccessTokens_CreateOrReplace": {
-            "$ref": "./examples/AccessTokens_CreateOrReplace.json"
-          }
         }
       },
       "delete": {
@@ -365,11 +345,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "AccessTokens_Delete": {
-            "$ref": "./examples/AccessTokens_Delete.json"
           }
         }
       }
@@ -455,11 +430,6 @@
                 "description": "String error code indicating what went wrong."
               }
             }
-          }
-        },
-        "x-ms-examples": {
-          "Accounts_GetBrowsers": {
-            "$ref": "./examples/Accounts_GetBrowsers.json"
           }
         }
       }
@@ -614,7 +584,7 @@
     },
     "Microsoft.PlaywrightTesting.Shared.Account": {
       "type": "object",
-      "description": "An account is a parent resource for most of the other service resources. It's directly mapped to an Azure resource.",
+      "description": "An account is a parent resource for most of the other service resources. It's directly mapped to an Azure resource. Test",
       "properties": {
         "id": {
           "type": "string",

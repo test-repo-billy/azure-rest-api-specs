@@ -16,11 +16,11 @@ using Microsoft.PlaywrightTesting.Shared;
 
 @server(
   "{endpoint}",
-  "Microsoft Azure Playwright Service API Endpoint",
+  "Microsoft Azure Playwright Service API Endpoint Test",
   {
     @doc("""
       Supported Azure Playwright Service API Endpoints (protocol and hostname, for example:
-        https://{region}.api.playwright.microsoft.com).
+        https://{region}.api.playwright.microsoft.com Test).
       """)
     endpoint: string,
   }
