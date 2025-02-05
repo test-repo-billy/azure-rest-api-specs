@@ -110,9 +110,8 @@ async function generateSdk() {
       console.error("Error executing command:", error);
     }
 
+    const executionReportPath = path.join(workingFolder, `${sdkLanguage}_tmp/execution-report.json`)
     try {
-      // Load the report JSON file
-      const executionReportPath = path.join(workingFolder, `${sdkLanguage}_tmp/execution-report.json`)
       const executionReport = JSON.parse(fs.readFileSync(executionReportPath, "utf8"));
       const executionResult = executionReport.packages[0]?.result;
       console.log("Execution Result:", executionResult);
