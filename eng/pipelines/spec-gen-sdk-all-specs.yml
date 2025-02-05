@@ -65,7 +65,7 @@ extends:
 
           - pwsh: |
               $urlPattern = '^https://github\.com/(?<organization>[^/]+)/(?<repository>[^/]+)'
-              if ($(SpecRepoUrl) -match $urlPattern) {
+              if ('$(SpecRepoUrl)' -match $urlPattern) {
                 $specRepoOwner = $Matches['organization']
                 Write-Host "##vso[task.setvariable variable=SpecRepoOwner]$specRepoOwner"
                 Write-Host "SpecRepoOwner variable set to: $specRepoOwner"
@@ -79,7 +79,7 @@ extends:
                 Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
               }
 
-              if ($(SdkRepoUrl) -match $urlPattern) {
+              if ('$(SdkRepoUrl)' -match $urlPattern) {
                 if ('$(SpecRepoUrl)'.EndsWith('-pr') -and (-not '$(SdkRepoUrl)'.EndsWith('-pr'))) {
                   Write-Host "##vso[task.logissue type=error]SdkRepoUrl must be a private repository if SpecRepoUrl is a private repository."
                   Exit 1

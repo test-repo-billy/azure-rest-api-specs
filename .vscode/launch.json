@@ -20,6 +20,18 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "spec-gen-run",
+      "program": "${workspaceFolder}/eng/scripts/spec-gen-sdk.js",
+      "args": [
+        "--scp", ".",
+        "--sdp", "/home/raychen/repos/github/azure-sdk-for-net",
+        "--l", "azure-sdk-for-net",
+        "--wk", "../"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch Program",
       "program": "${file}"
     }
