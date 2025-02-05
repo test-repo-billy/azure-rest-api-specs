@@ -126,6 +126,7 @@ warnings.txt
 # Eng Tools
 eng/tools/**/dist
 !eng/tools/**/cmd/*.js
+!eng/scripts/**/*.js
 !eng/tools/**/eslint.config.js
 
 # TypeScript cache
