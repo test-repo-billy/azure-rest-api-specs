@@ -5,7 +5,7 @@ linter:
     - "@azure-tools/typespec-azure-rulesets/data-plane"
 parameters:
   "service-dir":
-    default: "sdk/playwrighttesting"
+    default: "./sdk/playwrighttesting"
   "dependencies":
     "additionalDirectories":
       - "specification/playwrighttesting/PlaywrightTesting.Shared/"
