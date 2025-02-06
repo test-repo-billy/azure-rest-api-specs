@@ -10,7 +10,7 @@ Hence, each sub-service has its own swagger spec.
 All of them are tied together using this configuration and are packaged together into one compute client library.
 This makes it easier for customers to download one (NuGet/npm/pip/maven/gem) compute client library package rather than installing individual packages for each sub service.
 
----
+---  
 
 ## Getting Started
 
