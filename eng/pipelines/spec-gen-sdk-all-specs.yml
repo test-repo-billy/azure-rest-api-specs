@@ -149,7 +149,7 @@ extends:
                 --wf $(System.DefaultWorkingDirectory) \
                 --lang $(SdkRepoName) \
                 --commit $(SpecRepoCommit) \
-                --tr $true
+                --tr $true \
                 --rm $(RunMode)
             displayName: 'Run spec-gen-sdk'
 
