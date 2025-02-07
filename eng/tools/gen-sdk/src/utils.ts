@@ -6,6 +6,7 @@
 import { spawn, spawnSync } from "node:child_process";
 import path from "node:path";
 import fs from "node:fs";
+import { LogLevel, logMessage } from "./logging.js";
 
 type Dirent = fs.Dirent;
 
@@ -76,7 +77,7 @@ export function getAllTypeSpecPaths(specRepoPath: string): string[] {
   ];
   const output = runPowerShellScript(args);
   if (!output) {
-    console.error("Error getting type spec paths");
+    logMessage("Error getting type spec paths", LogLevel.Error);
     return [];
   }
   try {
@@ -85,18 +86,18 @@ export function getAllTypeSpecPaths(specRepoPath: string): string[] {
     specConfigPaths.pop();
     return specConfigPaths;
   } catch (error) {
-    console.error("Error parsing PowerShell output:", error);
+    logMessage(`Error parsing PowerShell output:${error}`, LogLevel.Error);
     return [];
   }
 }
 export function runPowerShellScript(args: string[]): string | undefined {
   const result = spawnSync("/usr/bin/pwsh", args, { encoding: "utf8" });
   if (result.error) {
-    console.error("Error executing PowerShell script:", result.error);
+    logMessage(`Error executing PowerShell script:${result.error}`, LogLevel.Error);
     return undefined;
   }
   if (result.stderr) {
-    console.error("PowerShell script error output:", result.stderr);
+    logMessage(`PowerShell script error output:${result.stderr}`, LogLevel.Error);
   }
   return result.stdout.trim();
 }

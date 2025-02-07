@@ -11,11 +11,28 @@ import {
   runSpecGenSdkCommand,
   getAllTypeSpecPaths,
 } from "./utils.js";
+import { LogLevel, logMessage } from "./logging.js";
 
-export async function main(): Promise<void> {
+export async function main() {
+  // Get the arguments passed to the script
+  const args: string[] = process.argv.slice(2);
+  const runMode: string = getArgumentValue(args, "--rm", "");
+  let statusCode = 0;
+  if (runMode) {
+    statusCode = await generateSdkForAllSpecs(runMode);
+  }
+  exit(statusCode);
+}
+
+/**
+ * Generate SDKs for all specs.
+ */
+export async function generateSdkForAllSpecs(runMode: string): Promise<number> {
   const __filename: string = fileURLToPath(import.meta.url);
   const __dirname: string = path.dirname(__filename);
+  let statusCode = 0;
 
+  // Get the arguments passed to the script
   const args: string[] = process.argv.slice(2);
   const specRepoPath: string = path.resolve(
     getArgumentValue(args, "--scp", path.join(__dirname, "..", ".."))
@@ -29,15 +46,21 @@ export async function main(): Promise<void> {
   );
   const triggerByPipeline: string = getArgumentValue(args, "--tr", "false");
   const specRepoCommit: string = getArgumentValue(args, "--commit", "HEAD");
-  const runMode: string = getArgumentValue(args, "--rm", "sample-typespecs");
 
+  // Get the spec paths based on the run mode
   const specConfigPaths = getSpecPaths(runMode, specRepoPath);
-  let markdownContent = "# Generation Summary\n";
-  markdownContent += `## Specs Failed in Generation\n`;
+
+  // Prepare markdown content
+  let markdownContent = "\n";
+  let failedContent = `## Specs Failed in Generation\n`;
   let succeededContent = `## Specs Succeeded in Generation\n`;
   let failedCount = 0;
+
+  // Generate SDKs for each spec
   for (const specConfigPath of specConfigPaths) {
-    console.log(`Generating SDK from ${specConfigPath}`);
+    logMessage(`Generating SDK from ${specConfigPath}`, LogLevel.Group);
+
+    // Construct the spec-gen-sdk command
     const specGenSdkCommand = [];
     specGenSdkCommand.push(
       "spec-gen-sdk",
@@ -60,48 +83,68 @@ export async function main(): Promise<void> {
     } else {
       specGenSdkCommand.push("--readme-relative-path", specConfigPath);
     }
-    console.log("Command:", specGenSdkCommand.join(" "));
+    logMessage(`Command:${specGenSdkCommand.join(" ")}`);
     try {
       await runSpecGenSdkCommand(specGenSdkCommand);
-      console.log("Command executed successfully");
+      logMessage("Command executed successfully");
     } catch (error) {
-      console.error("Error executing command:", error);
+      logMessage(`Error executing command:${error}`, LogLevel.Error);
+      statusCode = 1;
     }
 
+    // Read the execution report to determine if the generation was successful
     const executionReportPath = path.join(workingFolder, `${sdkLanguage}_tmp/executionReport.json`);
     try {
       const executionReport = JSON.parse(fs.readFileSync(executionReportPath, "utf8"));
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       const executionResult = executionReport.packages[0]?.result;
-      console.log("Execution Result:", executionResult);
+      logMessage(`Execution Result:${executionResult}`);
 
       if (executionResult === "failed") {
-        markdownContent += `${specConfigPath},`;
+        failedContent += `${specConfigPath},`;
         failedCount++;
       } else {
         succeededContent += `${specConfigPath},`;
       }
     } catch (error) {
-      console.error(`Error reading execution report at ${executionReportPath}:`, error);
+      logMessage(
+        `Error reading execution report at ${executionReportPath}:${error}`,
+        LogLevel.Error
+      );
+      statusCode = 1;
     }
+    logMessage("ending group logging", LogLevel.EndGroup);
   }
-  markdownContent += `\n${succeededContent}\n`;
+  if (failedCount > 0) {
+    markdownContent += `${failedContent}\n`;
+  }
+  if (specConfigPaths.length > failedCount) {
+    markdownContent += `${succeededContent}\n`;
+  }
   markdownContent += `## Total Specs Failed:\n ${failedCount}\n`;
   markdownContent += `## Total Specs Generated:\n ${specConfigPaths.length}\n\n`;
+
+  // Write the markdown content to a file
   const markdownFilePath = path.join(workingFolder, "out/logs/generation-summary.md");
   try {
     if (fs.existsSync(markdownFilePath)) {
       fs.rmSync(markdownFilePath);
     }
     fs.writeFileSync(markdownFilePath, markdownContent);
-    console.log(`Markdown file written to ${markdownFilePath}`);
+    logMessage(`Markdown file written to ${markdownFilePath}`);
   } catch (error) {
-    console.error(`Error writing markdown file ${markdownFilePath}:`, error);
-    exit(1);
+    logMessage(`Error writing markdown file ${markdownFilePath}:${error}`, LogLevel.Error);
+    statusCode = 1;
   }
-  exit(0);
+  return statusCode;
 }
 
+/**
+ * Get the spec paths based on the run mode.
+ * @param runMode The run mode.
+ * @param specRepoPath The specification repository path.
+ * @returns The spec paths.
+ */
 function getSpecPaths(runMode: string, specRepoPath: string): string[] {
   const specConfigPaths: string[] = [];
   switch (runMode) {
