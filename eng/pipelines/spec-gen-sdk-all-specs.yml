@@ -5,10 +5,6 @@ parameters:
       - 'all-specs'
       - 'all-typespecs'
       - 'all-openapis'
-      - 'all-control-plane-specs'
-      - 'all-data-plane-specs'
-      - 'control-plane-typespecs'
-      - 'data-plane-typespecs'
       - 'sample-typespecs'
     default: 'sample-typespecs'
     displayName: 'Specs to Run'
@@ -139,11 +135,16 @@ extends:
               versionSpec: $(PythonVersion)
 
           - script: |
+              cd $(SpecRepoDirectory)/eng/tools/gen-sdk
+              npm ci
+            displayName: 'Run npm ci'
+
+          - script: |
               npm install -g @azure-tools/spec-gen-sdk@$(SpecGenSdkVersion)
             displayName: 'Install spec-gen-sdk'
 
           - script: |
-              node $(SpecRepoDirectory)/eng/scripts/spec-gen-sdk.js \
+              node $(SpecRepoDirectory)/eng/tools/gen-sdk/cmd/gen-sdk.js \
                 --scp $(SpecRepoDirectory) \
                 --sdp $(SdkRepoDirectory) \
                 --wf $(System.DefaultWorkingDirectory) \
