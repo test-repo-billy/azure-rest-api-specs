@@ -68,10 +68,7 @@ export async function main(): Promise<void> {
       console.error("Error executing command:", error);
     }
 
-    const executionReportPath = path.join(
-      workingFolder,
-      `${sdkLanguage}_tmp/execution-report.json`
-    );
+    const executionReportPath = path.join(workingFolder, `${sdkLanguage}_tmp/executionReport.json`);
     try {
       const executionReport = JSON.parse(fs.readFileSync(executionReportPath, "utf8"));
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
