@@ -149,7 +149,7 @@ extends:
                 --lang $(SdkRepoName) \
                 --commit $(SpecRepoCommit) \
                 --tr $true \
-                --rm $(RunMode)
+                --rm ${{ parameters.RunMode }}
             displayName: 'Run spec-gen-sdk'
 
           - pwsh: |
