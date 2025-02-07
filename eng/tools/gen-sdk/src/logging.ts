@@ -8,7 +8,7 @@ export enum LogLevel {
 }
 
 /**
- * Logs a message to the console with a specified log level. * 
+ * Logs a message to the console with a specified log level. *
  * @param message The message to log.
  * @param level The log level (e.g., LogLevel.Group, LogLevel.EndGroup, LogLevel.Debug, LogLevel.Error).
  */
@@ -35,4 +35,13 @@ export function logMessage(message: string, level?: LogLevel): void {
       break;
     }
   }
+}
+
+export function vsoAddAttachment(name: string, path: string): void {
+  console.log(`##vso[task.addattachment type=Distributedtask.Core.Summary;name=${name};]${path}`);
+}
+
+export function vsoLogIssue(message: string, type?: string): void {
+  const typeString = type ? `type=${type};` : "error";
+  console.log(`##vso[task.logissue type=${typeString};]${message}`);
 }

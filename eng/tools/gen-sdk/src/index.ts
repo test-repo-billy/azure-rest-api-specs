@@ -11,7 +11,7 @@ import {
   runSpecGenSdkCommand,
   getAllTypeSpecPaths,
 } from "./utils.js";
-import { LogLevel, logMessage } from "./logging.js";
+import { LogLevel, logMessage, vsoAddAttachment, vsoLogIssue } from "./logging.js";
 
 export async function main() {
   // Get the arguments passed to the script
@@ -54,7 +54,10 @@ export async function generateSdkForAllSpecs(runMode: string): Promise<number> {
   let markdownContent = "\n";
   let failedContent = `## Specs Failed in Generation\n`;
   let succeededContent = `## Specs Succeeded in Generation\n`;
+  let undefinedContent = `## Specs disabled for this language emitter\n`;
   let failedCount = 0;
+  let undefinedCount = 0;
+  let succeededCount = 0;
 
   // Generate SDKs for each spec
   for (const specConfigPath of specConfigPaths) {
@@ -100,11 +103,17 @@ export async function generateSdkForAllSpecs(runMode: string): Promise<number> {
       const executionResult = executionReport.packages[0]?.result;
       logMessage(`Execution Result:${executionResult}`);
 
-      if (executionResult === "failed") {
+      if (executionResult === "succeeded") {
+        succeededContent += `${specConfigPath},`;
+        succeededCount++;
+      } else if (executionResult === "undefined") {
+        undefinedContent += `${specConfigPath},`;
+        undefinedCount++;
+        vsoLogIssue(`Language emitter is disabled for ${specConfigPath}`, "warning");
+      } else {
         failedContent += `${specConfigPath},`;
         failedCount++;
-      } else {
-        succeededContent += `${specConfigPath},`;
+        vsoLogIssue(`Generation failed for ${specConfigPath}`, "error");
       }
     } catch (error) {
       logMessage(
@@ -118,10 +127,15 @@ export async function generateSdkForAllSpecs(runMode: string): Promise<number> {
   if (failedCount > 0) {
     markdownContent += `${failedContent}\n`;
   }
-  if (specConfigPaths.length > failedCount) {
+  if (undefinedCount > 0) {
+    markdownContent += `${undefinedContent}\n`;
+  }
+  if (succeededCount > 0) {
     markdownContent += `${succeededContent}\n`;
   }
   markdownContent += `## Total Specs Failed:\n ${failedCount}\n`;
+  markdownContent += `## Total Specs Undefined this Language Emitter:\n ${undefinedCount}\n`;
+  markdownContent += `## Total Specs Succeeded:\n ${succeededCount}\n`;
   markdownContent += `## Total Specs Generated:\n ${specConfigPaths.length}\n\n`;
 
   // Write the markdown content to a file
@@ -132,6 +146,7 @@ export async function generateSdkForAllSpecs(runMode: string): Promise<number> {
     }
     fs.writeFileSync(markdownFilePath, markdownContent);
     logMessage(`Markdown file written to ${markdownFilePath}`);
+    vsoAddAttachment("Generation Summary", markdownFilePath);
   } catch (error) {
     logMessage(`Error writing markdown file ${markdownFilePath}:${error}`, LogLevel.Error);
     statusCode = 1;
