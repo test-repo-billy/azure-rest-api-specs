@@ -142,6 +142,7 @@ extends:
               cd $(SpecRepoDirectory)/eng/tools/gen-sdk
               npm ci
               npm run build
+              cd $(SpecRepoDirectory)
               node $(SpecRepoDirectory)/eng/tools/gen-sdk/cmd/gen-sdk.js \
                 --scp $(SpecRepoDirectory) \
                 --sdp $(SdkRepoDirectory) \
