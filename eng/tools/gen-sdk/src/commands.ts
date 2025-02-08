@@ -179,9 +179,9 @@ function parseArguments(): SpecGenSdkCmdInput {
     localSdkRepoPath,
     sdkRepoName,
     isTriggeredByPipeline: getArgumentValue(args, "--tr", "false"),
-    tspConfigPath: getArgumentValue(args, "--tsp-config-path", ""),
-    readmePath: getArgumentValue(args, "--readme-path", ""),
-    prNumber: getArgumentValue(args, "--pr", ""),
+    tspConfigPath: getArgumentValue(args, "--tsp-config-relative-path", ""),
+    readmePath: getArgumentValue(args, "--readme-relative-path", ""),
+    prNumber: getArgumentValue(args, "--pr-number", ""),
     specCommitSha: getArgumentValue(args, "--commit", "HEAD"),
     specRepoHttpsUrl: getArgumentValue(args, "--spec-repo-url", ""),
     headRepoHttpsUrl: getArgumentValue(args, "--head-repo-url", ""),
@@ -215,7 +215,7 @@ function prepareSpecGenSdkCommand(commandInput: SpecGenSdkCmdInput): string[] {
     specGenSdkCommand.push("--spec-repo-url", commandInput.specRepoHttpsUrl);
   }
   if (commandInput.prNumber) {
-    specGenSdkCommand.push("--pr", commandInput.prNumber);
+    specGenSdkCommand.push("--pr-number", commandInput.prNumber);
   }
   if (commandInput.tspConfigPath) {
     specGenSdkCommand.push("--tsp-config-relative-path", commandInput.tspConfigPath);
