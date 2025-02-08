@@ -209,18 +209,19 @@ function prepareSpecGenSdkCommand(commandInput: SpecGenSdkCmdInput): string[] {
     "-c",
     commandInput.specCommitSha,
     "-t",
-    commandInput.isTriggeredByPipeline,
-    "--spec-repo-url",
-    commandInput.specRepoHttpsUrl
+    commandInput.isTriggeredByPipeline
   );
+  if (commandInput.specRepoHttpsUrl) {
+    specGenSdkCommand.push("--spec-repo-url", commandInput.specRepoHttpsUrl);
+  }
   if (commandInput.prNumber) {
     specGenSdkCommand.push("--pr", commandInput.prNumber);
   }
   if (commandInput.tspConfigPath) {
-    specGenSdkCommand.push("--tsp-config-path", commandInput.tspConfigPath);
+    specGenSdkCommand.push("--tsp-config-relative-path", commandInput.tspConfigPath);
   }
   if (commandInput.readmePath) {
-    specGenSdkCommand.push("--readme-path", commandInput.readmePath);
+    specGenSdkCommand.push("--readme-relative-path", commandInput.readmePath);
   }
   if (commandInput.headRepoHttpsUrl) {
     specGenSdkCommand.push("--head-repo-url", commandInput.headRepoHttpsUrl);
