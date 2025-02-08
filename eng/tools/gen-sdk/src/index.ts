@@ -136,7 +136,7 @@ export async function generateSdkForAllSpecs(runMode: string): Promise<number> {
   markdownContent += `## Total Specs Failed:\n ${failedCount}\n`;
   markdownContent += `## Total Specs Undefined this Language Emitter:\n ${undefinedCount}\n`;
   markdownContent += `## Total Specs Succeeded:\n ${succeededCount}\n`;
-  markdownContent += `## Total Specs Generated:\n ${specConfigPaths.length}\n\n`;
+  markdownContent += `## Total Specs:\n ${specConfigPaths.length}\n\n`;
 
   // Write the markdown content to a file
   const markdownFilePath = path.join(workingFolder, "out/logs/generation-summary.md");
