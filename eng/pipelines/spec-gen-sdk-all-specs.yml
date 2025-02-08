@@ -153,7 +153,3 @@ extends:
                 --rm ${{ parameters.RunMode }}
             displayName: 'Run spec-gen-sdk'
 
-          - pwsh: |
-              Write-Host "##vso[task.uploadsummary]$(System.DefaultWorkingDirectory)/out/logs/generation-summary.md"
-            displayName: 'Upload generation summary'
-
