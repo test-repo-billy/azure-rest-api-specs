@@ -106,7 +106,7 @@ export async function generateSdkForAllSpecs(runMode: string): Promise<number> {
       if (executionResult === "succeeded") {
         succeededContent += `${specConfigPath},`;
         succeededCount++;
-      } else if (executionResult === "undefined") {
+      } else if (executionResult === undefined) {
         undefinedContent += `${specConfigPath},`;
         undefinedCount++;
         vsoLogIssue(`Language emitter is disabled for ${specConfigPath}`, "warning");

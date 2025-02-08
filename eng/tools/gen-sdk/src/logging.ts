@@ -41,7 +41,6 @@ export function vsoAddAttachment(name: string, path: string): void {
   console.log(`##vso[task.addattachment type=Distributedtask.Core.Summary;name=${name};]${path}`);
 }
 
-export function vsoLogIssue(message: string, type?: string): void {
-  const typeString = type ? `type=${type};` : "error";
-  console.log(`##vso[task.logissue type=${typeString};]${message}`);
+export function vsoLogIssue(message: string, type = "error"): void {
+  console.log(`##vso[task.logissue type=${type}]${message}`);
 }
