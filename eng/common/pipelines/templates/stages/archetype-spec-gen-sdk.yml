@@ -25,11 +25,6 @@ parameters:
     default: false
   - name: SpecBatchTypes
     type: string
-    values:
-      - 'all-specs'
-      - 'all-typespecs'
-      - 'all-openapis'
-      - 'sample-typespecs'
     default: ''
 
 extends:
