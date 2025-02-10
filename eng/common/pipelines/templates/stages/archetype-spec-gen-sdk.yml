@@ -11,14 +11,11 @@ parameters:
     default: 'HEAD'
   - name: ConfigType
     type: string
-    values:
-      - 'TypeSpec'
-      - 'OpenAPI'
-    default: 'TypeSpec'
+    default: ''
     displayName: 'API specification type'
   - name: ConfigPath
     type: string
-    default: 'specification/contosowidgetmanager/Contoso.Management/tspconfig.yaml'
+    default: ''
     displayName: 'Path to API specification file (TypeSpec/OpenAPI)'
   - name: SkipPullRequestCreation
     type: boolean
