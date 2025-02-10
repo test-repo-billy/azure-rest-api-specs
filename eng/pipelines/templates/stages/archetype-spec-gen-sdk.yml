@@ -194,8 +194,9 @@ extends:
               #cd $(SpecRepoDirectory)/eng/tools/spec-gen-sdk-runner
               #npm ci
               #npm run build
-              #cd $(SpecRepoDirectory)
+              cd $(SpecRepoDirectory)
               pwd
+              npm ci
               node $(SpecRepoDirectory)/eng/tools/spec-gen-sdk-runner/cmd/spec-gen-sdk-runner.js \
                 --scp $(SpecRepoDirectory) \
                 --sdp $(SdkRepoDirectory) \
