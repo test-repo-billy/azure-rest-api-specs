@@ -11,14 +11,14 @@ using Azure.Core;
 @versioned(Microsoft.PlaywrightTesting.Shared.Versions)
 namespace Microsoft.PlaywrightTesting.Shared;
 
-@doc("The PlaywrightTesting Accounts Model Version.")
+@doc("The PlaywrightTesting Accounts Model Version. Test")
 enum Versions {
   @doc("Version 1.0")
   @useDependency(Azure.Core.Versions.v1_0_Preview_2)
   v1_0,
 }
 
-@doc("An account is a parent resource for most of the other service resources. It's directly mapped to an Azure resource.")
+@doc("An account is a parent resource for most of the other service resources. It's directly mapped to an Azure resource. Test")
 @resource("accounts")
 model Account {
   @key("accountId")
