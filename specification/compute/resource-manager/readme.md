@@ -2,7 +2,7 @@
 
 > see https://aka.ms/autorest
 
-This is the AutoRest configuration file for Compute.
+This is the AutoRest configuration file for Compute..
 
 The compute RP comprises of small services where each service has its own tag.
 Hence, each sub-service has its own swagger spec.
@@ -34,7 +34,7 @@ These are the global settings for the Compute API.
 title: ComputeManagementClient
 description: Compute Client
 openapi-type: arm
-tag: package-2024-11-04
+tag: package-2025-02-01-preview
 
 directive:
   - where:
@@ -269,6 +269,12 @@ suppressions:
     from: diagnostic.json
   - code: XmsPageableForListCalls
     reason: False positive error as API Path does not match ARM Lint check formatting, requesting to suppress due to approval from reviewer.
+    from: diagnostic.json  
+  - code: DefinitionsPropertiesNamesCamelCase
+    reason: The property name contains abbreviations and need to keep it as upper case.
+    from: diagnostic.json
+  - code: BodyTopLevelProperties
+    reason: The is the additional property bag to introduce new nonbreaking properties.
     from: diagnostic.json
   - code: PatchResponseCodes
     reason: PATCH and PUT follow the same behavior and response codes in Compute. Keeping it for legacy reasons.
@@ -286,6 +292,42 @@ suppressions:
   - code: GetCollectionOnlyHasValueAndNextLink
     from: gallery.json
     reason: Existing issue from last version. 
+```
+
+### Tag: package-2025-02-01-preview
+
+These settings apply only when `--tag=package-2025-02-01-preview` is specified on the command line.
+
+```yaml $(tag) == 'package-2025-02-01-preview'
+input-file:
+  - Microsoft.Compute/DiagnosticRP/preview/2025-02-01-preview/diagnostic.json
+  - Microsoft.Compute/common-types/v1/common.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/computeRPCommon.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/virtualMachineScaleSet.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/virtualMachine.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/virtualMachineImage.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/virtualMachineExtensionImage.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/availabilitySet.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/proximityPlacementGroup.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/dedicatedHost.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/sshPublicKey.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/image.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/restorePoint.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/capacityReservation.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/logAnalytic.json
+  - Microsoft.Compute/ComputeRP/stable/2024-07-01/runCommand.json 
+  - Microsoft.Compute/DiskRP/stable/2024-03-02/diskRPCommon.json
+  - Microsoft.Compute/DiskRP/stable/2024-03-02/disk.json
+  - Microsoft.Compute/DiskRP/stable/2024-03-02/diskAccess.json
+  - Microsoft.Compute/DiskRP/stable/2024-03-02/diskEncryptionSet.json
+  - Microsoft.Compute/DiskRP/stable/2024-03-02/diskRestorePoint.json
+  - Microsoft.Compute/DiskRP/stable/2024-03-02/snapshot.json
+  - Microsoft.Compute/Skus/stable/2021-07-01/skus.json
+  - Microsoft.Compute/GalleryRP/stable/2024-03-03/galleryRPCommon.json
+  - Microsoft.Compute/GalleryRP/stable/2024-03-03/gallery.json
+  - Microsoft.Compute/GalleryRP/stable/2024-03-03/sharedGallery.json
+  - Microsoft.Compute/GalleryRP/stable/2024-03-03/communityGallery.json
+  - Microsoft.Compute/CloudserviceRP/stable/2024-11-04/cloudService.json
 ```
 
 ### Tag: package-2024-11-04
