@@ -124,9 +124,11 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
   if (succeededCount > 0) {
     markdownContent += `${succeededContent}\n`;
   }
-  markdownContent += `## Total Failed Specs\n ${failedCount}\n`;
-  markdownContent += `## Total Disabled Specs in the Configuration\n ${undefinedCount}\n`;
-  markdownContent += `## Total Successful Specs\n ${succeededCount}\n`;
+  markdownContent += failedCount ? `## Total Failed Specs\n ${failedCount}\n` : "";
+  markdownContent += undefinedContent
+    ? `## Total Disabled Specs in the Configuration\n ${undefinedCount}\n`
+    : "";
+  markdownContent += succeededCount ? `## Total Successful Specs\n ${succeededCount}\n` : "";
   markdownContent += `## Total Specs Count\n ${specConfigPaths.length}\n\n`;
 
   // Write the markdown content to a file
