@@ -9,6 +9,9 @@ parameters:
     default: 'sample-typespecs'
     displayName: 'Batch Specs to Run'
 
+trigger: none
+pr: none
+
 extends:
   template: /eng/pipelines/templates/stages/archetype-spec-gen-sdk.yml
   parameters:
