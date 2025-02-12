@@ -13,7 +13,7 @@ using Azure.Core;
 @service({
   title: "Contoso Widget Manager",
 })
-@versioned(Contoso.WidgetManager.Versions)
+@versioned(Contoso.WidgetManager.Versions.2)
 namespace Azure.Contoso.WidgetManager;
 
 @doc("Versions info.")
