@@ -58,9 +58,9 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
   // Prepare variables
   let statusCode = 0;
   let markdownContent = "\n";
-  let failedContent = `## Spec Failures in the Automation Process\n`;
-  let succeededContent = `## Successful Specs in the Automation Process\n`;
-  let undefinedContent = `## Disabled Specs in the Automation Process\n`;
+  let failedContent = `## Spec Failures in the Generation Process\n`;
+  let succeededContent = `## Successful Specs in the Generation Process\n`;
+  let undefinedContent = `## Disabled Specs in the Generation Process\n`;
   let failedCount = 0;
   let undefinedCount = 0;
   let succeededCount = 0;
