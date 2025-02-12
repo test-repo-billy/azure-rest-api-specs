@@ -93,7 +93,7 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
     try {
       const executionReport = JSON.parse(fs.readFileSync(executionReportPath, "utf8"));
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const executionResult = executionReport.packages[0]?.result;
+      const executionResult = executionReport.executionResult;
       logMessage(`Execution Result:${executionResult}`);
 
       if (executionResult === "succeeded") {
@@ -125,7 +125,7 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
     markdownContent += `${succeededContent}\n`;
   }
   markdownContent += failedCount ? `## Total Failed Specs\n ${failedCount}\n` : "";
-  markdownContent += undefinedContent
+  markdownContent += undefinedCount
     ? `## Total Disabled Specs in the Configuration\n ${undefinedCount}\n`
     : "";
   markdownContent += succeededCount ? `## Total Successful Specs\n ${succeededCount}\n` : "";
