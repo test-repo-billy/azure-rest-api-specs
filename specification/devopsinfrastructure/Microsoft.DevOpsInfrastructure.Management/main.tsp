@@ -692,7 +692,7 @@ model Location is ProxyResource<LocationProperties> {
   @segment("locations")
   @doc("Name of the location.")
   @visibility("public")
-  name: string;
+  name: string;abc
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "No ProvisioningState"
