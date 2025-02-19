@@ -7,9 +7,8 @@ import {
   runSpecGenSdkCommand,
   getAllTypeSpecPaths,
 } from "./utils.js";
-import { LogLevel, logMessage, vsoAddAttachment } from "./log.js";
+import { LogLevel, logMessage, vsoAddAttachment, vsoLogIssue } from "./log.js";
 import { SpecGenSdkCmdInput } from "./types.js";
-import { detectChangedSpecConfigFiles } from "./change-files.js";
 
 export async function generateSdkForSingleSpec(): Promise<number> {
   // Parse the arguments
@@ -30,13 +29,19 @@ export async function generateSdkForSingleSpec(): Promise<number> {
   // Read the execution report to determine if the generation was successful
   const executionReportPath = path.join(
     commandInput.workingFolder,
-    `${commandInput.sdkRepoName}_tmp/execution-report.json`,
+    `${commandInput.sdkRepoName}_tmp/executionReport.json`
   );
   try {
     const executionReport = JSON.parse(fs.readFileSync(executionReportPath, "utf8"));
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    const executionResult = executionReport.executionResult;
+    const executionResult = executionReport.packages[0]?.result;
     logMessage(`Execution Result:${executionResult}`);
+
+    if (executionResult === undefined) {
+      vsoLogIssue(`Language emitter is disabled for ${specConfigPath}`, "warning");
+    } else if (executionResult !== "succeeded") {
+      vsoLogIssue(`Generation ${executionResult} for ${specConfigPath}`, "error");
+    }
   } catch (error) {
     logMessage(`Error reading execution report at ${executionReportPath}:${error}`, LogLevel.Error);
     statusCode = 1;
@@ -45,61 +50,8 @@ export async function generateSdkForSingleSpec(): Promise<number> {
   return statusCode;
 }
 
-/* Generate SDKs for spec pull request */
-export async function generateSdkForSpecPr(): Promise<number> {
-  // Parse the arguments
-  const commandInput: SpecGenSdkCmdInput = parseArguments();
-  // Construct the spec-gen-sdk command
-  const specGenSdkCommand = prepareSpecGenSdkCommand(commandInput);
-  // Get the spec paths from the changed files
-  const changedSpecs = await detectChangedSpecConfigFiles(commandInput);
-
-  let statusCode = 0;
-  for (const changedSpec of changedSpecs) {
-    if (!changedSpec.typespecProject && !changedSpec.readmeMd) {
-      logMessage("No spec config file found in the changed files", LogLevel.Warn);
-      continue;
-    }
-    if (changedSpec.typespecProject) {
-      specGenSdkCommand.push("--tsp-config-relative-path", changedSpec.typespecProject);
-    }
-    if (changedSpec.readmeMd) {
-      specGenSdkCommand.push("--readme-relative-path", changedSpec.readmeMd);
-    }
-    const changedSpecPath = changedSpec.typespecProject ?? changedSpec.readmeMd;
-    logMessage(`Generating SDK from ${changedSpecPath}`, LogLevel.Group);
-    logMessage(`Command:${specGenSdkCommand.join(" ")}`);
-    try {
-      await runSpecGenSdkCommand(specGenSdkCommand);
-      logMessage("Command executed successfully");
-    } catch (error) {
-      logMessage(`Error executing command:${error}`, LogLevel.Error);
-      statusCode = 1;
-    }
-    // Read the execution report to determine if the generation was successful
-    const executionReportPath = path.join(
-      commandInput.workingFolder,
-      `${commandInput.sdkRepoName}_tmp/execution-report.json`,
-    );
-    try {
-      const executionReport = JSON.parse(fs.readFileSync(executionReportPath, "utf8"));
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const executionResult = executionReport.executionResult;
-      logMessage(`Execution Result:${executionResult}`);
-    } catch (error) {
-      logMessage(
-        `Error reading execution report at ${executionReportPath}:${error}`,
-        LogLevel.Error,
-      );
-      statusCode = 1;
-    }
-    logMessage("ending group logging", LogLevel.EndGroup);
-  }
-  return statusCode;
-}
-
 /**
- * Generate SDKs for batch specs.
+ * Generate SDKs for all specs.
  */
 export async function generateSdkForBatchSpecs(runMode: string): Promise<number> {
   // Parse the arguments
@@ -112,9 +64,9 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
   // Prepare variables
   let statusCode = 0;
   let markdownContent = "\n";
-  let failedContent = `## Spec Failures in the Generation Process\n`;
-  let succeededContent = `## Successful Specs in the Generation Process\n`;
-  let undefinedContent = `## Disabled Specs in the Generation Process\n`;
+  let failedContent = `## Specs Failed in Generation\n`;
+  let succeededContent = `## Specs Succeeded in Generation\n`;
+  let undefinedContent = `## Specs disabled for this language emitter\n`;
   let failedCount = 0;
   let undefinedCount = 0;
   let succeededCount = 0;
@@ -142,12 +94,12 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
     // Read the execution report to determine if the generation was successful
     const executionReportPath = path.join(
       commandInput.workingFolder,
-      `${commandInput.sdkRepoName}_tmp/execution-report.json`,
+      `${commandInput.sdkRepoName}_tmp/executionReport.json`
     );
     try {
       const executionReport = JSON.parse(fs.readFileSync(executionReportPath, "utf8"));
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      const executionResult = executionReport.executionResult;
+      const executionResult = executionReport.packages[0]?.result;
       logMessage(`Execution Result:${executionResult}`);
 
       if (executionResult === "succeeded") {
@@ -156,14 +108,16 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
       } else if (executionResult === undefined) {
         undefinedContent += `${specConfigPath},`;
         undefinedCount++;
+        vsoLogIssue(`Language emitter is disabled for ${specConfigPath}`, "warning");
       } else {
         failedContent += `${specConfigPath},`;
         failedCount++;
+        vsoLogIssue(`Generation failed for ${specConfigPath}`, "error");
       }
     } catch (error) {
       logMessage(
         `Error reading execution report at ${executionReportPath}:${error}`,
-        LogLevel.Error,
+        LogLevel.Error
       );
       statusCode = 1;
     }
@@ -178,12 +132,10 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
   if (succeededCount > 0) {
     markdownContent += `${succeededContent}\n`;
   }
-  markdownContent += failedCount ? `## Total Failed Specs\n ${failedCount}\n` : "";
-  markdownContent += undefinedCount
-    ? `## Total Disabled Specs in the Configuration\n ${undefinedCount}\n`
-    : "";
-  markdownContent += succeededCount ? `## Total Successful Specs\n ${succeededCount}\n` : "";
-  markdownContent += `## Total Specs Count\n ${specConfigPaths.length}\n\n`;
+  markdownContent += `## Total Specs Failed:\n ${failedCount}\n`;
+  markdownContent += `## Total Specs Undefined this Language Emitter:\n ${undefinedCount}\n`;
+  markdownContent += `## Total Specs Succeeded:\n ${succeededCount}\n`;
+  markdownContent += `## Total Specs:\n ${specConfigPaths.length}\n\n`;
 
   // Write the markdown content to a file
   const markdownFilePath = path.join(commandInput.workingFolder, "out/logs/generation-summary.md");
@@ -212,14 +164,14 @@ function parseArguments(): SpecGenSdkCmdInput {
   // Get the arguments passed to the script
   const args: string[] = process.argv.slice(2);
   const localSpecRepoPath: string = path.resolve(
-    getArgumentValue(args, "--scp", path.join(__dirname, "..", "..")),
+    getArgumentValue(args, "--scp", path.join(__dirname, "..", ".."))
   );
   const sdkRepoName: string = getArgumentValue(args, "--lang", "azure-sdk-for-net");
   const localSdkRepoPath: string = path.resolve(
-    getArgumentValue(args, "--sdp", path.join(localSpecRepoPath, "..", sdkRepoName)),
+    getArgumentValue(args, "--sdp", path.join(localSpecRepoPath, "..", sdkRepoName))
   );
   const workingFolder: string = path.resolve(
-    getArgumentValue(args, "--wf", path.join(localSpecRepoPath, "..")),
+    getArgumentValue(args, "--wf", path.join(localSpecRepoPath, ".."))
   );
   return {
     workingFolder,
@@ -257,7 +209,7 @@ function prepareSpecGenSdkCommand(commandInput: SpecGenSdkCmdInput): string[] {
     "-c",
     commandInput.specCommitSha,
     "-t",
-    commandInput.isTriggeredByPipeline,
+    commandInput.isTriggeredByPipeline
   );
   if (commandInput.specRepoHttpsUrl) {
     specGenSdkCommand.push("--spec-repo-url", commandInput.specRepoHttpsUrl);
@@ -292,7 +244,7 @@ function getSpecPaths(runMode: string, specRepoPath: string): string[] {
     case "all-specs": {
       specConfigPaths.push(
         ...getAllTypeSpecPaths(specRepoPath),
-        ...findReadmeFiles(path.join(specRepoPath, "specification")),
+        ...findReadmeFiles(path.join(specRepoPath, "specification"))
       );
       break;
     }
