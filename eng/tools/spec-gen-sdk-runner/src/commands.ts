@@ -6,6 +6,7 @@ import {
   getArgumentValue,
   runSpecGenSdkCommand,
   getAllTypeSpecPaths,
+  resetGitRepo,
 } from "./utils.js";
 import { LogLevel, logMessage, vsoAddAttachment } from "./log.js";
 import { SpecGenSdkCmdInput } from "./types.js";
@@ -54,7 +55,6 @@ export async function generateSdkForSpecPr(): Promise<number> {
   // Get the spec paths from the changed files
   const changedSpecs = await detectChangedSpecConfigFiles(commandInput);
 
-  let statusCode = 0;
   for (const changedSpec of changedSpecs) {
     if (!changedSpec.typespecProject && !changedSpec.readmeMd) {
       logMessage("No spec config file found in the changed files", LogLevel.Warn);
@@ -70,11 +70,12 @@ export async function generateSdkForSpecPr(): Promise<number> {
     logMessage(`Generating SDK from ${changedSpecPath}`, LogLevel.Group);
     logMessage(`Command:${specGenSdkCommand.join(" ")}`);
     try {
+      await resetGitRepo(commandInput.localSdkRepoPath);
       await runSpecGenSdkCommand(specGenSdkCommand);
       logMessage("Command executed successfully");
     } catch (error) {
       logMessage(`Error executing command:${error}`, LogLevel.Error);
-      statusCode = 1;
+      return 1;
     }
     // Read the execution report to determine if the generation was successful
     const executionReportPath = path.join(
@@ -91,11 +92,11 @@ export async function generateSdkForSpecPr(): Promise<number> {
         `Error reading execution report at ${executionReportPath}:${error}`,
         LogLevel.Error,
       );
-      statusCode = 1;
+      return 1;
     }
     logMessage("ending group logging", LogLevel.EndGroup);
   }
-  return statusCode;
+  return 0;
 }
 
 /**
@@ -114,9 +115,9 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
   let markdownContent = "\n";
   let failedContent = `## Spec Failures in the Generation Process\n`;
   let succeededContent = `## Successful Specs in the Generation Process\n`;
-  let undefinedContent = `## Disabled Specs in the Generation Process\n`;
+  let notEnabledContent = `## Specs with SDK Not Enabled\n`;
   let failedCount = 0;
-  let undefinedCount = 0;
+  let notEnabledCount = 0;
   let succeededCount = 0;
 
   // Generate SDKs for each spec
@@ -129,6 +130,7 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
     }
     logMessage(`Command:${specGenSdkCommand.join(" ")}`);
     try {
+      await resetGitRepo(commandInput.localSdkRepoPath);
       await runSpecGenSdkCommand(specGenSdkCommand);
       logMessage("Command executed successfully");
     } catch (error) {
@@ -150,12 +152,12 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
       const executionResult = executionReport.executionResult;
       logMessage(`Execution Result:${executionResult}`);
 
-      if (executionResult === "succeeded") {
+      if (executionResult === "succeeded" || executionResult === "warning") {
         succeededContent += `${specConfigPath},`;
         succeededCount++;
-      } else if (executionResult === undefined) {
-        undefinedContent += `${specConfigPath},`;
-        undefinedCount++;
+      } else if (executionResult === "notEnabled") {
+        notEnabledContent += `${specConfigPath},`;
+        notEnabledCount++;
       } else {
         failedContent += `${specConfigPath},`;
         failedCount++;
@@ -172,15 +174,15 @@ export async function generateSdkForBatchSpecs(runMode: string): Promise<number>
   if (failedCount > 0) {
     markdownContent += `${failedContent}\n`;
   }
-  if (undefinedCount > 0) {
-    markdownContent += `${undefinedContent}\n`;
+  if (notEnabledCount > 0) {
+    markdownContent += `${notEnabledContent}\n`;
   }
   if (succeededCount > 0) {
     markdownContent += `${succeededContent}\n`;
   }
   markdownContent += failedCount ? `## Total Failed Specs\n ${failedCount}\n` : "";
-  markdownContent += undefinedCount
-    ? `## Total Disabled Specs in the Configuration\n ${undefinedCount}\n`
+  markdownContent += notEnabledCount
+    ? `## Total Specs with SDK not enabled in the Configuration\n ${notEnabledCount}\n`
     : "";
   markdownContent += succeededCount ? `## Total Successful Specs\n ${succeededCount}\n` : "";
   markdownContent += `## Total Specs Count\n ${specConfigPaths.length}\n\n`;

@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "PowerShell Launch Current File",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "${file}",
+      "cwd": "${cwd}",
+      "args": [
+        "-CheckAll","$true"
+      ]
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Mocha Tests",
@@ -21,19 +31,16 @@
       "type": "node",
       "request": "launch",
       "name": "spec-gen-run",
-      "program": "${workspaceFolder}/eng/scripts/spec-gen-sdk.js",
+      "program": "${workspaceFolder}/eng/tools/spec-gen-sdk-runner/cmd/spec-gen-sdk-runner.js",
       "args": [
-        "--scp", ".",
+        //"--scp", "/home/raychen/repos/github/forked/test-repo-billy/azure-rest-api-specs",
+        "--scp", "/home/raychen/repos/github/forked/test-repo-billy/tmp/azure-rest-api-specs",
         "--sdp", "/home/raychen/repos/github/azure-sdk-for-net",
-        "--l", "azure-sdk-for-net",
-        "--wk", "../"
-      ]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${file}"
+        "--lang", "azure-sdk-for-net",
+        "--wk", "/home/raychen/repos/tmp/sdkauto",
+        //"--rm", "sample-typespecs",
+      ],
+      "console": "integratedTerminal"
     }
   ]
 }

@@ -8,6 +8,25 @@ type Dirent = fs.Dirent;
 
 export const execAsync = promisify(exec);
 
+/**
+ * Reset unstaged changes in a git repository
+ * @param repoPath The path to the git repository
+ * @returns A promise that resolves when the reset is complete
+ */
+export async function resetGitRepo(repoPath: string): Promise<void> {
+  try {
+    const { stderr } = await execAsync("git reset --hard HEAD", {
+      cwd: repoPath,
+    });
+    if (stderr) {
+      logMessage(`Warning during git reset: ${stderr}`, LogLevel.Warn);
+    }
+    logMessage(`Successfully reset git repo at ${repoPath}`, LogLevel.Info);
+  } catch (error) {
+    throw new Error(`Failed to reset git repo at ${repoPath}: ${error}`);
+  }
+}
+
 /*
  * Common function to find files recursively with case-insensitive matching
  */
