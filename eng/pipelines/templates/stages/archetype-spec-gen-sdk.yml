@@ -161,7 +161,11 @@ extends:
               versionSpec: $(PythonVersion)
 
           - script: |
-              npm install -g @azure-tools/spec-gen-sdk@$(SpecGenSdkVersion)
+              #npm install -g @azure-tools/spec-gen-sdk@$(SpecGenSdkVersion)
+              cd $(SpecRepoDirectory)/eng-tmp/spec-gen-sdk
+              npm install
+              npm run build
+              npm install -g $(SpecRepoDirectory)/eng-tmp/spec-gen-sdk
             displayName: 'Install spec-gen-sdk'
 
           - script: |
