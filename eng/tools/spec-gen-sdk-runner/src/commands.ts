@@ -307,7 +307,10 @@ function getSpecPaths(runMode: string, specRepoPath: string): string[] {
       break;
     }
     case "sample-typespecs": {
-      specConfigPaths.push("specification/contosowidgetmanager/Contoso.Management/tspconfig.yaml");
+      specConfigPaths.push(
+        "specification/contosowidgetmanager/Contoso.Management/tspconfig.yaml",
+        "specification/contosowidgetmanager/Contoso.WidgetManager/tspconfig.yaml",
+      );
     }
   }
   return specConfigPaths;
