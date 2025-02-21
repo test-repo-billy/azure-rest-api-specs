@@ -15,7 +15,7 @@ export const execAsync = promisify(exec);
  */
 export async function resetGitRepo(repoPath: string): Promise<void> {
   try {
-    const { stderr } = await execAsync("git clean -fd && git reset --hard HEAD", {
+    const { stderr } = await execAsync("git clean -fdx && git reset --hard HEAD", {
       cwd: repoPath,
     });
     if (stderr) {
@@ -158,183 +158,92 @@ export function getChangedFiles(
   return undefined;
 }
 
-/*
- * The options for searching related folders
- */
-export type FsSearchOptions = {
-  searchFileRegex: RegExp;
-  treeId: string;
-  specFolder: string;
-};
-
-export type ListTree = {
-  mode: string;
-  type: string;
-  object: string;
-  file: string;
-}[];
-
-/**
- * Search for the related folder of a file
- * @param filePath The file path to search
- * @param options The search options
- * @returns The related folder of the file
- */
-export const searchRelatedFolder = (filePath: string, options: FsSearchOptions) => {
-  let searchPath = filePath;
-
-  while (searchPath !== "." && searchPath !== path.dirname(searchPath)) {
-    const fileName = path.basename(searchPath);
-    if (options.searchFileRegex.test(fileName)) {
-      return searchPath;
+export function findParentWithFile(
+  startPath: string,
+  searchFile: RegExp,
+  specFolder: string,
+): string | undefined {
+  let currentPath = startPath;
+  while (currentPath.startsWith(specFolder)) {
+    const files = fs.readdirSync(currentPath);
+    if (files.some((file) => searchFile.test(file))) {
+      return currentPath;
     }
-    searchPath = path.dirname(searchPath);
+    currentPath = path.dirname(currentPath);
   }
-
   return undefined;
-};
+}
 
-/**
- * Search for the shared library folder from peer's folder
- */
-export const searchSharedLibrary = (fileList: string[], options: FsSearchOptions) => {
-  const result: { [relatedFolder: string]: string[] } = {};
-  fileList.sort();
-  let lastFolder: string | undefined = undefined;
+export function searchRelatedParentFolders(
+  files: string[],
+  options: { searchFileRegex: RegExp; specFolder: string },
+): { [folderPath: string]: string[] } {
+  const result: { [folderPath: string]: string[] } = {};
 
-  for (const filePath of fileList) {
-    if (lastFolder !== undefined && filePath.startsWith(lastFolder)) {
-      result[lastFolder].push(filePath);
-    }
-    const relatedFolder = searchRelatedFolder(filePath, options);
-    if (relatedFolder === undefined) {
-      continue;
-    }
-    if (result[relatedFolder] === undefined) {
-      result[relatedFolder] = [];
-    }
-    result[relatedFolder].push(filePath);
-    lastFolder = relatedFolder;
-  }
-
-  return result;
-};
-
-/*
- * Search for the related type spec projects from a shared library
- */
-export const searchRelatedTypeSpecProjectBySharedLibrary = async (
-  sharedLibraries: { [relatedFolder: string]: string[] },
-  options: FsSearchOptions,
-) => {
-  const result: { [relatedFolder: string]: string[] } = {};
-  for (const sharedLibrary of Object.keys(sharedLibraries)) {
-    const parentFolder = path.dirname(sharedLibrary);
-    const fileNames = await getFilesInFolder(parentFolder, options);
-    for (const fileName of fileNames) {
-      const filePath = path.join(parentFolder, fileName);
-      const subFileNames = await getFilesInFolder(filePath, options);
-      for (const subFileName of subFileNames) {
-        if (options.searchFileRegex.test(subFileName)) {
-          if (!result[filePath]) {
-            result[filePath] = [];
-          }
-          result[filePath] = [...result[filePath], ...sharedLibraries[sharedLibrary]];
-        }
-      }
-    }
-  }
-  return result;
-};
-
-/**
- * Search from the parent folders for a list of files
- */
-export const searchRelatedParentFolders = async (fileList: string[], options: FsSearchOptions) => {
-  const result: { [relatedFolder: string]: string[] } = {};
-  fileList.sort();
-
-  for (const filePath of fileList) {
-    const relatedParentFolder = await searchRelatedParentFolder(filePath, options);
-    if (relatedParentFolder === undefined) {
-      continue;
-    }
-    if (result[relatedParentFolder] === undefined) {
-      result[relatedParentFolder] = [];
-    }
-    result[relatedParentFolder].push(filePath);
-  }
-
-  return result;
-};
-
-/*
- * Search from a nearest parent folder for the specific file pattern
- */
-export const searchRelatedParentFolder = async (filePath: string, options: FsSearchOptions) => {
-  let searchPath = filePath;
-
-  while (searchPath !== ".") {
-    const fileNames = await getFilesInFolder(searchPath, options);
-    for (const fileName of fileNames) {
-      if (options.searchFileRegex.test(fileName)) {
-        return searchPath;
-      }
-    }
-    searchPath = path.dirname(searchPath);
-  }
-
-  return undefined;
-};
-
-/*
- * Get the files in a folder
- */
-const getFilesInFolder = async (
-  searchPath: string,
-  options: FsSearchOptions,
-): Promise<string[]> => {
-  const workingFolder = ".";
-  const workPath = path.resolve(process.cwd(), workingFolder, options.specFolder, searchPath);
-  // Execute the git command using exec
-  const { stdout, stderr } = await execAsync(`git ls-tree ${options.treeId} ${workPath}`);
-  if (stderr) {
-    throw new Error(`Error executing git ls-tree ${options.treeId} ${workPath}: ${stderr}`);
-  }
-  const subTree = gitTreeResultToStringArray(stdout);
-  if (subTree.length === 0 || (subTree.length > 0 && subTree[0].type !== "tree")) {
-    return [];
-  }
-  const entryPath = path.join(workPath, "/");
-  const { stdout: treeEntry, stderr: treeEntryError } = await execAsync(
-    `git ls-tree ${options.treeId} ${entryPath}`,
-  );
-  if (treeEntryError) {
-    throw new Error(
-      `Error executing git ls-tree ${options.treeId} ${entryPath}: ${treeEntryError}`,
+  for (const file of files) {
+    const parentFolder = findParentWithFile(
+      path.dirname(file),
+      options.searchFileRegex,
+      options.specFolder,
     );
+    if (parentFolder) {
+      if (!result[parentFolder]) {
+        result[parentFolder] = [];
+      }
+      result[parentFolder].push(file);
+    }
   }
-  const subTreeEntry = gitTreeResultToStringArray(treeEntry);
-  return subTreeEntry.map((item) => item.file.slice(searchPath.length + 1));
-};
 
-/*
- * Convert the git tree result to a string array
- */
-export function gitTreeResultToStringArray(treeResult: string): ListTree {
-  if (treeResult === "") {
-    return [];
+  return result;
+}
+
+export function searchSharedLibrary(
+  files: string[],
+  options: { searchFileRegex: RegExp; specFolder: string },
+): string[] {
+  return files.filter((file) => options.searchFileRegex.test(file));
+}
+
+export function searchRelatedTypeSpecProjectBySharedLibrary(
+  sharedLibraries: string[],
+  options: { searchFileRegex: RegExp; specFolder: string },
+): { [folderPath: string]: string[] } {
+  const result: { [folderPath: string]: string[] } = {};
+
+  for (const library of sharedLibraries) {
+    const libraryDir = path.dirname(library);
+    const parentProjects = findAllTypeSpecProjects(
+      libraryDir,
+      options.searchFileRegex,
+      options.specFolder,
+    );
+
+    for (const projectPath of parentProjects) {
+      if (!result[projectPath]) {
+        result[projectPath] = [];
+      }
+      result[projectPath].push(library);
+    }
   }
-  const lines = treeResult.trim().split("\n");
-  const resultArray = lines.map((line) => {
-    const [mode, type, object, file] = line.split(/\s+/);
-    return {
-      mode,
-      type,
-      object,
-      file,
-    };
-  });
 
-  return resultArray;
+  return result;
+}
+
+function findAllTypeSpecProjects(
+  startPath: string,
+  searchFile: RegExp,
+  specFolder: string,
+): string[] {
+  const projects: string[] = [];
+  let currentPath = startPath;
+
+  while (currentPath.startsWith(specFolder)) {
+    const files = fs.readdirSync(currentPath);
+    if (files.some((file) => searchFile.test(file))) {
+      projects.push(currentPath);
+    }
+    currentPath = path.dirname(currentPath);
+  }
+
+  return projects;
 }
