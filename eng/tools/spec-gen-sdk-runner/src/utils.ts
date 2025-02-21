@@ -15,13 +15,14 @@ export const execAsync = promisify(exec);
  */
 export async function resetGitRepo(repoPath: string): Promise<void> {
   try {
-    const { stderr } = await execAsync("git reset --hard HEAD", {
+    const { stderr } = await execAsync("git clean -fd && git reset --hard HEAD", {
       cwd: repoPath,
     });
     if (stderr) {
       logMessage(`Warning during git reset: ${stderr}`, LogLevel.Warn);
+    } else {
+      logMessage(`Successfully reset git repo at ${repoPath}`, LogLevel.Info);
     }
-    logMessage(`Successfully reset git repo at ${repoPath}`, LogLevel.Info);
   } catch (error) {
     throw new Error(`Failed to reset git repo at ${repoPath}: ${error}`);
   }
