@@ -24,6 +24,9 @@ export function detectChangedSpecConfigFiles(commandInput: SpecGenSdkCmdInput): 
     logMessage("No files changed in the PR");
   }
   logMessage(`Changed files in the PR: ${prChangedFiles.length}`);
+  for (const file of prChangedFiles) {
+    logMessage(`\t${file}`);
+  }
   const fileList = prChangedFiles
     .filter((p) => p.startsWith("specification/"))
     .filter((p) => !p.includes("/scenarios/"));
