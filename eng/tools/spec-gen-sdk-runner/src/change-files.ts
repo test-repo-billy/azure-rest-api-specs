@@ -27,6 +27,12 @@ export function detectChangedSpecConfigFiles(commandInput: SpecGenSdkCmdInput): 
   for (const file of prChangedFiles) {
     logMessage(`\t${file}`);
   }
+  /*    const prChangedFiles = [
+    "specification/contosowidgetmanager/Contoso.WidgetManager.Shared/main.tsp",
+    "specification/contosowidgetmanager/Contoso.Management/employee.tsp",
+    "specification/contosowidgetmanager/Contoso.Management/main.tsp",
+    "specification/contosowidgetmanager/resource-manager/Microsoft.Contoso/preview/2021-10-01-preview/contoso.json",
+  ];*/
   const fileList = prChangedFiles
     .filter((p) => p.startsWith("specification/"))
     .filter((p) => !p.includes("/scenarios/"));
@@ -36,24 +42,26 @@ export function detectChangedSpecConfigFiles(commandInput: SpecGenSdkCmdInput): 
 
   const readmeMDResult = searchRelatedParentFolders(fileList, {
     searchFileRegex: readmeMdRegex,
-    specFolder: commandInput.localSpecRepoPath,
+    specRepoFolder: commandInput.localSpecRepoPath,
+    stopAtFolder: "specification",
   });
 
   const typespecProjectResult = searchRelatedParentFolders(fileList, {
     searchFileRegex: typespecProjectRegex,
-    specFolder: commandInput.localSpecRepoPath,
+    specRepoFolder: commandInput.localSpecRepoPath,
+    stopAtFolder: "specification",
   });
 
   const typespecProjectSharedLibraries = searchSharedLibrary(fileList, {
     searchFileRegex: typespecProjectSharedLibraryRegex,
-    specFolder: commandInput.localSpecRepoPath,
+    specRepoFolder: commandInput.localSpecRepoPath,
   });
 
   const typespecProjectResultSearchedBySharedLibrary = searchRelatedTypeSpecProjectBySharedLibrary(
     typespecProjectSharedLibraries,
     {
       searchFileRegex: typespecProjectRegex,
-      specFolder: commandInput.localSpecRepoPath,
+      specRepoFolder: commandInput.localSpecRepoPath,
     },
   );
 

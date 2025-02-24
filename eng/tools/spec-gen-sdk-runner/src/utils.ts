@@ -158,92 +158,151 @@ export function getChangedFiles(
   return undefined;
 }
 
+/**
+ * Searches upward from a starting path to find the nearest parent directory containing a file matching the given pattern
+ * @param startPath - The directory path to start searching from
+ * @param searchFile - Regular expression pattern to match the target file name
+ * @param specRepoFolder - The root folder of the repository
+ * @param stopAtFolder - Optional boundary directory where the search should stop
+ * @returns The path of the directory containing the matching file, or undefined if not found
+ */
 export function findParentWithFile(
   startPath: string,
   searchFile: RegExp,
-  specFolder: string,
+  specRepoFolder: string,
+  stopAtFolder?: string,
 ): string | undefined {
   let currentPath = startPath;
-  while (currentPath.startsWith(specFolder)) {
-    const files = fs.readdirSync(currentPath);
-    if (files.some((file) => searchFile.test(file))) {
-      return currentPath;
+
+  while (currentPath) {
+    try {
+      const absolutePath = path.resolve(specRepoFolder, currentPath);
+      const files = fs.readdirSync(absolutePath);
+      if (files.some((file) => searchFile.test(file.toLowerCase()))) {
+        return currentPath;
+      }
+    } catch (error) {
+      logMessage(`Error reading directory: ${currentPath} with ${error}`, LogLevel.Warn);
+      return undefined;
     }
     currentPath = path.dirname(currentPath);
+    if (stopAtFolder && currentPath === stopAtFolder) {
+      return undefined;
+    }
   }
   return undefined;
 }
 
+/**
+ * Searches for parent directories containing specific files for a list of files
+ * Optimizes the search by grouping files in the same directory to avoid redundant searches
+ * @param files - Array of file paths to process
+ * @param options - Search configuration options
+ * @returns Object mapping parent directory paths to arrays of related files
+ */
 export function searchRelatedParentFolders(
   files: string[],
-  options: { searchFileRegex: RegExp; specFolder: string },
+  options: { searchFileRegex: RegExp; specRepoFolder: string; stopAtFolder?: string },
 ): { [folderPath: string]: string[] } {
   const result: { [folderPath: string]: string[] } = {};
 
-  for (const file of files) {
+  // Group files by their directory path to avoid redundant searches
+  // Example: for files ["dir1/a.ts", "dir1/b.ts", "dir2/c.ts"]
+  // Creates: { "dir1": ["dir1/a.ts", "dir1/b.ts"], "dir2": ["dir2/c.ts"] }
+  // eslint-disable-next-line unicorn/no-array-reduce
+  const filesByDir = files.reduce<{ [dir: string]: string[] }>((acc, file) => {
+    const dir = path.dirname(file);
+    if (!acc[dir]) {
+      acc[dir] = [];
+    }
+    acc[dir].push(file);
+    return acc;
+  }, {});
+
+  // Search parent folder only once per unique directory
+  for (const [dir, dirFiles] of Object.entries(filesByDir)) {
     const parentFolder = findParentWithFile(
-      path.dirname(file),
+      dir,
       options.searchFileRegex,
-      options.specFolder,
+      options.specRepoFolder,
+      options.stopAtFolder,
     );
     if (parentFolder) {
       if (!result[parentFolder]) {
         result[parentFolder] = [];
       }
-      result[parentFolder].push(file);
+      result[parentFolder].push(...dirFiles);
     }
   }
 
   return result;
 }
 
+/**
+ * Identifies files that are part of a shared library based on their directory names
+ * @param files - Array of file paths to check
+ * @param options - Search configuration options
+ * @returns Array of files that belong to shared libraries
+ */
 export function searchSharedLibrary(
   files: string[],
-  options: { searchFileRegex: RegExp; specFolder: string },
+  options: { searchFileRegex: RegExp; specRepoFolder: string },
 ): string[] {
-  return files.filter((file) => options.searchFileRegex.test(file));
+  return files.filter((file) => {
+    const dirname = path.dirname(file);
+    return options.searchFileRegex.test(dirname);
+  });
 }
 
+/**
+ * Finds peer TypeSpec projects for shared libraries and maps them to their source libraries
+ * Assumes all shared libraries are from the same parent folder
+ * @param sharedLibraries - Array of shared library file paths (all from same parent)
+ * @param options - Search configuration options
+ * @returns Object mapping project directory paths to arrays of related shared library files
+ */
 export function searchRelatedTypeSpecProjectBySharedLibrary(
   sharedLibraries: string[],
-  options: { searchFileRegex: RegExp; specFolder: string },
+  options: { searchFileRegex: RegExp; specRepoFolder: string },
 ): { [folderPath: string]: string[] } {
+  if (sharedLibraries.length === 0) {
+    return {};
+  }
+
   const result: { [folderPath: string]: string[] } = {};
+  const managementSuffix = ".Management";
 
-  for (const library of sharedLibraries) {
-    const libraryDir = path.dirname(library);
-    const parentProjects = findAllTypeSpecProjects(
-      libraryDir,
-      options.searchFileRegex,
-      options.specFolder,
-    );
+  // Get parent directory from first library (all libraries share same parent)
+  const parentDir = path.dirname(path.dirname(sharedLibraries[0]));
+  const sourceLibDir = path.dirname(sharedLibraries[0]);
 
-    for (const projectPath of parentProjects) {
-      if (!result[projectPath]) {
-        result[projectPath] = [];
+  try {
+    const absoluteParentPath = path.resolve(options.specRepoFolder, parentDir);
+    const peerDirs = fs.readdirSync(absoluteParentPath, { withFileTypes: true });
+
+    // Find all peer directories containing TypeSpec projects
+    for (const peerDir of peerDirs) {
+      if (
+        !peerDir.isDirectory() ||
+        peerDir.name.endsWith(managementSuffix) ||
+        path.join(parentDir, peerDir.name) === sourceLibDir
+      ) {
+        continue;
       }
-      result[projectPath].push(library);
+
+      const peerPath = path.join(parentDir, peerDir.name);
+      try {
+        const peerFiles = fs.readdirSync(path.resolve(options.specRepoFolder, peerPath));
+        if (peerFiles.some((file) => options.searchFileRegex.test(file.toLowerCase()))) {
+          result[peerPath] = sharedLibraries;
+        }
+      } catch {
+        logMessage(`Error reading directory: ${peerPath}`, LogLevel.Warn);
+      }
     }
+  } catch {
+    logMessage(`Error reading directory: ${parentDir}`, LogLevel.Warn);
   }
 
   return result;
-}
-
-function findAllTypeSpecProjects(
-  startPath: string,
-  searchFile: RegExp,
-  specFolder: string,
-): string[] {
-  const projects: string[] = [];
-  let currentPath = startPath;
-
-  while (currentPath.startsWith(specFolder)) {
-    const files = fs.readdirSync(currentPath);
-    if (files.some((file) => searchFile.test(file))) {
-      projects.push(currentPath);
-    }
-    currentPath = path.dirname(currentPath);
-  }
-
-  return projects;
 }
