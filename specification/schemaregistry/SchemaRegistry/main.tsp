@@ -19,7 +19,7 @@ using Azure.Core;
   ]>
 )
 @service({
-  title: "Azure Schema Registry",
+  title: "Azure Schema Registry test 1",
 })
 
 // Supported operations.
