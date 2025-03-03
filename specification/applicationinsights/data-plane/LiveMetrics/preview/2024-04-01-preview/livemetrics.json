@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Live Metrics REST APIs for client SDKs.",
+    "title": "Live Metrics REST APIs for client SDKs. for testing",
     "version": "2024-04-01-preview",
     "description": "Live Metrics REST APIs.",
     "x-typespec-generated": [
