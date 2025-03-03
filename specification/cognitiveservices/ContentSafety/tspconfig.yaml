@@ -28,7 +28,13 @@ options:
     model-namespace: false
     flavor: azure
   "@azure-tools/typespec-ts":
+    # reference: https://github.com/Azure/autorest.typescript/blob/main/packages/typespec-test/test/loadTest/tspconfig.yaml 
     package-dir: "ai-content-safety-rest"
+    generateMetadata: true
+    generateSample: true
+    generateTest: true
+    azureSdkForJs: true
+    emitter-output-dir: "{project-root}/sdk/openai/ai-content-safety-rest"
     packageDetails:
       name: "@azure-rest/ai-content-safety"
       version: "1.0.0"
