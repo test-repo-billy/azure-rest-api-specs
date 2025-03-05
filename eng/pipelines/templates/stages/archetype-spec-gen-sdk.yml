@@ -114,7 +114,7 @@ extends:
 
             displayName: "Create Run Time Variables"
 
-          - ${{ if eq(variables['System.TeamProject'], 'internal') }}:
+          - ${{ if eq(variables['System.TeamProject'], 'playground') }}:
             - template: /eng/common/pipelines/templates/steps/sparse-checkout.yml
               parameters:
                 Paths:
