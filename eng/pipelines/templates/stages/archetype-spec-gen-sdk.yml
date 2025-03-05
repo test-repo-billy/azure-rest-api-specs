@@ -210,7 +210,7 @@ extends:
               ArtifactName: $(PipelineArtifactsName)
               ArtifactPath: $(GeneratedSDK.StagedArtifactsFolder)
 
-          - ${{ if (eq(variables['System.TeamProject'], 'internal')) }}:
+          - ${{ if eq(variables['System.TeamProject'], 'internal') }}:
             - task: PowerShell@2
               displayName: Add label to the spec PR
               condition: and(eq(variables['Build.Reason'], 'PullRequest'), ne(variables['BreakingChangeLabel'], ''), eq(variables['BreakingChangeLabelAction'], 'add'))
