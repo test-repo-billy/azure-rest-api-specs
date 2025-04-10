@@ -9,6 +9,5 @@ typescript:
   package-name: "@azure/arm-apicenter"
   output-folder: "$(typescript-sdks-folder)/sdk/apicenter/arm-apicenter"
   payload-flattening-threshold: 1
-  clear-output-folder: true
   generate-metadata: true
 ```
