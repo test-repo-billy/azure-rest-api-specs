@@ -3,7 +3,7 @@
   "info": {
     "title": "ScVmm",
     "version": "2023-10-07",
-    "description": "The Microsoft.ScVmm Rest API spec.",
+    "description": "The Microsoft.ScVmm Rest API spec. test",
     "x-typespec-generated": [
       {
         "emitter": "@azure-tools/typespec-autorest"
