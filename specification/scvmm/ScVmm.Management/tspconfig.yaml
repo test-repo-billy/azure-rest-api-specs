@@ -13,6 +13,11 @@ options:
     # `arm-resource-flattening` is only used for back-compat for specs existed on July 2024. All new service spec should NOT use this flag
     arm-resource-flattening: true
     output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/scvmm.json"
+  "@azure-tools/typespec-java":
+    package-dir: "azure-resourcemanager-scvmm"
+    flavor: "azure"
+    namespace: "com.azure.resourcemanager.scvmm"
+    service-name: "SCVMM"
   "@azure-tools/typespec-ts":
     experimental-extensible-enums: true
     package-dir: "arm-scvmm"
