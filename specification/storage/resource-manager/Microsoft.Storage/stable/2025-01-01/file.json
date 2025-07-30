@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2024-01-01",
+    "version": "2025-01-01",
     "title": "StorageManagementClient",
     "description": "The Azure Storage Management API."
   },
@@ -16,6 +16,151 @@
     "application/json"
   ],
   "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices": {
+      "get": {
+        "tags": [
+          "FileService"
+        ],
+        "operationId": "FileServices_List",
+        "x-ms-examples": {
+          "ListFileServices": {
+            "$ref": "./examples/FileServicesList.json"
+          }
+        },
+        "description": "List all file services in storage accounts",
+        "parameters": [
+          {
+            "$ref": "./storage.json#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "./storage.json#/parameters/StorageAccountName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK -- List file services operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/FileServiceItems"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/{FileServicesName}": {
+      "put": {
+        "tags": [
+          "FileService"
+        ],
+        "operationId": "FileServices_SetServiceProperties",
+        "x-ms-examples": {
+          "PutFileServices": {
+            "$ref": "./examples/FileServicesPut.json"
+          },
+          "PutFileServices_EnableSMBMultichannel": {
+            "$ref": "./examples/FileServicesPut_EnableSMBMultichannel.json"
+          },
+          "PutFileServices_EnableSecureSmbFeatures": {
+            "$ref": "./examples/FileServicesPut_EnableSecureSmbFeatures.json"
+          }
+        },
+        "description": "Sets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules. ",
+        "parameters": [
+          {
+            "$ref": "./storage.json#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "./storage.json#/parameters/StorageAccountName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/FileServicesName"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FileServiceProperties"
+            },
+            "description": "The properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK -- Sets The properties of a storage account’s File service successfully.",
+            "schema": {
+              "$ref": "#/definitions/FileServiceProperties"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "FileService"
+        ],
+        "operationId": "FileServices_GetServiceProperties",
+        "x-ms-examples": {
+          "GetFileServices": {
+            "$ref": "./examples/FileServicesGet.json"
+          }
+        },
+        "description": "Gets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.",
+        "parameters": [
+          {
+            "$ref": "./storage.json#/parameters/ResourceGroupName"
+          },
+          {
+            "$ref": "./storage.json#/parameters/StorageAccountName"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../common-types/resource-management/v1/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/FileServicesName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK -- returned the properties of a storage account’s File service.",
+            "schema": {
+              "$ref": "#/definitions/FileServiceProperties"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/{FileServicesName}/usages": {
       "get": {
         "tags": [
@@ -587,7 +732,7 @@
           "items": {
             "$ref": "#/definitions/FileServiceProperties"
           },
-          "description": "List of file services returned Test.",
+          "description": "List of file services returned.",
           "readOnly": true
         }
       }
