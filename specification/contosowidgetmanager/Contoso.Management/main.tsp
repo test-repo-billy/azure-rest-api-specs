@@ -33,3 +33,4 @@ enum Versions {
 }
 
 interface Operations extends Azure.ResourceManager.Operations {}
+// Another change so the PR isn't empty. But with correct spelling.
